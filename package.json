@@ -10,7 +10,9 @@
     "test": "vitest",
     "test:run": "vitest run",
     "preview": "vite preview",
-    "test:sites": "node --test tests/sites-worker.test.mjs"
+    "test:sites": "node --test tests/sites-worker.test.mjs",
+    "test:worker": "node --test tests/*.test.mjs",
+    "check": "pnpm typecheck && pnpm test:run && pnpm build && pnpm test:worker"
   },
   "dependencies": {
     "@phosphor-icons/react": "^2.1.10",

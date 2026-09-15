@@ -1,7 +1,16 @@
 import assert from "node:assert/strict";
-import { access } from "node:fs/promises";
+import { access, readFile } from "node:fs/promises";
 import test from "node:test";
 import worker from "../worker/index.js";
+
+test("package exposes one complete verification command", async () => {
+  const pkg = JSON.parse(await readFile(new URL("../package.json", import.meta.url)));
+
+  assert.equal(
+    pkg.scripts.check,
+    "pnpm typecheck && pnpm test:run && pnpm build && pnpm test:worker",
+  );
+});
 
 test("serves existing static assets without a fallback", async () => {
   const calls = [];
