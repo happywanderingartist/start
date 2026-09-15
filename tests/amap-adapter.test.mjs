@@ -155,3 +155,65 @@ test("planning rejects no route and malformed inputs without fabricated fallback
   await assert.rejects(() => planAmapLeg({ ...input, mode: "flying" }, { key: KEY, now: NOW, fetchImpl: async () => response({}) }), (error) => assertError(error, "INVALID_INPUT"));
   await assert.rejects(() => planAmapLeg({ ...input, from: { ...input.from, longitude: "bad" } }, { key: KEY, now: NOW, fetchImpl: async () => response({}) }), (error) => assertError(error, "INVALID_INPUT"));
 });
+
+test("normalizes errors without retaining a sensitive upstream cause", async () => {
+  const upstream = new Error(`upstream ${KEY} https://restapi.amap.com/v5/place/text?key=${KEY}`);
+  upstream.payload = { key: KEY, url: "https://restapi.amap.com/full" };
+  await assert.rejects(() => searchAmapPlaces({ keyword: "博物馆", city: "南京市" }, {
+    key: KEY,
+    fetchImpl: async () => { throw upstream; },
+  }), (error) => {
+    assertError(error, "NETWORK_ERROR");
+    assert.equal(error.cause, undefined);
+    const serializable = JSON.stringify(error);
+    for (const secret of [KEY, "restapi.amap.com", "payload", "stack"]) assert.equal(serializable.includes(secret), false);
+    return true;
+  });
+});
+
+test("rejects out-of-range request and provider coordinates", async () => {
+  const input = { from: { id: "from", longitude: 181, latitude: 32 }, to: { id: "to", longitude: 118, latitude: 32 }, city: "南京市", mode: "walking" };
+  await assert.rejects(() => planAmapLeg(input, { key: KEY, now: NOW, fetchImpl: async () => response({}) }), (error) => assertError(error, "INVALID_INPUT"));
+  await assert.rejects(() => planAmapLeg({ ...input, from: { ...input.from, longitude: 118, latitude: -91 } }, { key: KEY, now: NOW, fetchImpl: async () => response({}) }), (error) => assertError(error, "INVALID_INPUT"));
+  await assert.rejects(() => searchAmapPlaces({ keyword: "博物馆", city: "南京市" }, {
+    key: KEY,
+    fetchImpl: fixtureFetch(() => {}, { status: "1", pois: [{ ...PLACE, location: "181,32" }] }),
+  }), (error) => assertError(error, "INVALID_RESPONSE"));
+  await assert.rejects(() => searchAmapPlaces({ keyword: "博物馆", city: "南京市" }, {
+    key: KEY,
+    fetchImpl: fixtureFetch(() => {}, { status: "1", pois: [{ ...PLACE, location: "118,-91" }] }),
+  }), (error) => assertError(error, "INVALID_RESPONSE"));
+});
+
+test("rejects empty and non-numeric route metrics instead of accepting zero-value coercions", async () => {
+  const input = { from: { id: "from", longitude: 118.7, latitude: 32.0 }, to: { id: "to", longitude: 118.8, latitude: 32.1 }, city: "南京市", mode: "walking" };
+  for (const path of [
+    { distance: "", duration: "60" }, { distance: null, duration: "60" }, { distance: false, duration: "60" },
+    { distance: "100", duration: "" }, { distance: "100", duration: null }, { distance: "100", duration: false },
+    { distance: "-1", duration: "60" }, { distance: "100", duration: "not-a-number" },
+  ]) {
+    await assert.rejects(() => planAmapLeg(input, { key: KEY, now: NOW, fetchImpl: fixtureFetch(() => {}, { status: "1", route: { paths: [path] } }) }), (error) => assertError(error, "INVALID_RESPONSE"));
+  }
+});
+
+test("validates clock dependencies before fetching and rejects invalid clock values", async () => {
+  const input = { from: { id: "from", longitude: 118.7, latitude: 32.0 }, to: { id: "to", longitude: 118.8, latitude: 32.1 }, city: "南京市", mode: "walking" };
+  let calls = 0;
+  await assert.rejects(() => planAmapLeg(input, { key: KEY, fetchImpl: async () => { calls += 1; return response({}); } }), (error) => assertError(error, "INVALID_INPUT"));
+  assert.equal(calls, 0);
+  await assert.rejects(() => planAmapLeg(input, {
+    key: KEY, now: () => new Date("not-a-date"),
+    fetchImpl: fixtureFetch(() => {}, { status: "1", route: { paths: [{ distance: "100", duration: "60" }] } }),
+  }), (error) => assertError(error, "INVALID_INPUT"));
+});
+
+test("normalizes AbortError raised while parsing an upstream response as retryable timeout", async () => {
+  await assert.rejects(() => searchAmapPlaces({ keyword: "博物馆", city: "南京市" }, {
+    key: KEY,
+    fetchImpl: async () => ({ status: 200, ok: true, json: async () => { throw new DOMException("parse timeout", "AbortError"); } }),
+  }), (error) => {
+    assertError(error, "TIMEOUT");
+    assert.equal(error.retryable, true);
+    return true;
+  });
+});

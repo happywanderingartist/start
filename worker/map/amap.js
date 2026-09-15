@@ -16,10 +16,18 @@ function numberAt(value) {
   return typeof value === "number" && Number.isFinite(value) ? value : null;
 }
 
+function strictNumber(value) {
+  if (typeof value !== "number" && (typeof value !== "string" || value.trim() === "")) return null;
+  const parsed = Number(value);
+  return Number.isFinite(parsed) ? parsed : null;
+}
+
 function coordinateOf(location) {
   if (typeof location !== "string") fail("INVALID_RESPONSE", "Map provider returned an invalid coordinate");
-  const [longitude, latitude, ...remaining] = location.split(",").map(Number);
-  if (remaining.length || !Number.isFinite(longitude) || !Number.isFinite(latitude)) {
+  const [rawLongitude, rawLatitude, ...remaining] = location.split(",");
+  const longitude = strictNumber(rawLongitude);
+  const latitude = strictNumber(rawLatitude);
+  if (remaining.length || longitude === null || latitude === null || longitude < -180 || longitude > 180 || latitude < -90 || latitude > 90) {
     fail("INVALID_RESPONSE", "Map provider returned an invalid coordinate");
   }
   return { longitude, latitude };
@@ -72,6 +80,7 @@ async function requestAmap(path, params, { key, fetchImpl }) {
   try {
     body = await response.json();
   } catch (cause) {
+    if (cause?.name === "AbortError") fail("TIMEOUT", "Map provider request timed out", { retryable: true });
     fail("INVALID_RESPONSE", "Map provider returned an invalid response", { cause });
   }
   if (!body || body.status !== "1") fail("PROVIDER_ERROR", "Map provider returned an error", { retryable: false });
@@ -109,7 +118,7 @@ function normalizedRouteInput(input) {
   const city = requireText(input?.city, "city");
   if (!ROUTE_MODES.has(input?.mode)) fail("INVALID_INPUT", "A supported travel mode is required");
   for (const [label, place] of [["origin", input.from], ["destination", input.to]]) {
-    if (!place || typeof place.id !== "string" || place.id.trim() === "" || numberAt(place.longitude) === null || numberAt(place.latitude) === null) {
+    if (!place || typeof place.id !== "string" || place.id.trim() === "" || numberAt(place.longitude) === null || numberAt(place.latitude) === null || place.longitude < -180 || place.longitude > 180 || place.latitude < -90 || place.latitude > 90) {
       fail("INVALID_INPUT", `A valid ${label} is required`);
     }
   }
@@ -117,11 +126,18 @@ function normalizedRouteInput(input) {
 }
 
 function normalizePath(path, input, now) {
-  const distanceMeters = Number(path?.distance);
-  const durationSeconds = Number(path?.cost?.duration ?? path?.duration);
-  if (!Number.isFinite(distanceMeters) || !Number.isFinite(durationSeconds)) {
+  const distanceMeters = strictNumber(path?.distance);
+  const durationSeconds = strictNumber(path?.cost?.duration ?? path?.duration);
+  if (distanceMeters === null || durationSeconds === null || distanceMeters < 0 || durationSeconds < 0) {
     fail("INVALID_RESPONSE", "Map provider returned an invalid route");
   }
+  let computedAt;
+  try {
+    computedAt = now();
+  } catch {
+    fail("INVALID_INPUT", "A valid clock is required");
+  }
+  if (!(computedAt instanceof Date) || Number.isNaN(computedAt.getTime())) fail("INVALID_INPUT", "A valid clock is required");
   return {
     id: `${input.from.id}:${input.to.id}:${input.mode}`,
     fromPlaceId: input.from.id,
@@ -130,13 +146,14 @@ function normalizePath(path, input, now) {
     distanceMeters,
     durationSeconds,
     provider: AMAP_PROVIDER,
-    computedAt: now().toISOString(),
+    computedAt: computedAt.toISOString(),
     dataStatus: "fresh",
   };
 }
 
 export async function planAmapLeg(input, dependencies) {
   const normalizedInput = normalizedRouteInput(input);
+  if (typeof dependencies?.now !== "function") fail("INVALID_INPUT", "A clock is required");
   const isTransit = normalizedInput.mode === "transit";
   const path = isTransit ? "/v5/direction/transit/integrated" : `/v5/direction/${normalizedInput.mode}`;
   const body = await requestAmap(path, {
@@ -146,7 +163,6 @@ export async function planAmapLeg(input, dependencies) {
   }, dependencies);
   const paths = isTransit ? body.route?.transits : body.route?.paths;
   if (!Array.isArray(paths) || paths.length === 0) fail("NO_ROUTE", "Map provider returned no route");
-  if (typeof dependencies.now !== "function") fail("INVALID_INPUT", "A clock is required");
   return normalizePath(paths[0], normalizedInput, dependencies.now);
 }
 
