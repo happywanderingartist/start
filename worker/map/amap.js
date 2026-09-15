@@ -125,12 +125,7 @@ function normalizedRouteInput(input) {
   return { ...input, city };
 }
 
-function normalizePath(path, input, now) {
-  const distanceMeters = strictNumber(path?.distance);
-  const durationSeconds = strictNumber(path?.cost?.duration ?? path?.duration);
-  if (distanceMeters === null || durationSeconds === null || distanceMeters < 0 || durationSeconds < 0) {
-    fail("INVALID_RESPONSE", "Map provider returned an invalid route");
-  }
+function validatedNow(now) {
   let computedAt;
   try {
     computedAt = now();
@@ -138,6 +133,15 @@ function normalizePath(path, input, now) {
     fail("INVALID_INPUT", "A valid clock is required");
   }
   if (!(computedAt instanceof Date) || Number.isNaN(computedAt.getTime())) fail("INVALID_INPUT", "A valid clock is required");
+  return computedAt;
+}
+
+function normalizePath(path, input, computedAt) {
+  const distanceMeters = strictNumber(path?.distance);
+  const durationSeconds = strictNumber(path?.cost?.duration ?? path?.duration);
+  if (distanceMeters === null || durationSeconds === null || distanceMeters < 0 || durationSeconds < 0) {
+    fail("INVALID_RESPONSE", "Map provider returned an invalid route");
+  }
   return {
     id: `${input.from.id}:${input.to.id}:${input.mode}`,
     fromPlaceId: input.from.id,
@@ -154,6 +158,7 @@ function normalizePath(path, input, now) {
 export async function planAmapLeg(input, dependencies) {
   const normalizedInput = normalizedRouteInput(input);
   if (typeof dependencies?.now !== "function") fail("INVALID_INPUT", "A clock is required");
+  const computedAt = validatedNow(dependencies.now);
   const isTransit = normalizedInput.mode === "transit";
   const path = isTransit ? "/v5/direction/transit/integrated" : `/v5/direction/${normalizedInput.mode}`;
   const body = await requestAmap(path, {
@@ -163,7 +168,7 @@ export async function planAmapLeg(input, dependencies) {
   }, dependencies);
   const paths = isTransit ? body.route?.transits : body.route?.paths;
   if (!Array.isArray(paths) || paths.length === 0) fail("NO_ROUTE", "Map provider returned no route");
-  return normalizePath(paths[0], normalizedInput, dependencies.now);
+  return normalizePath(paths[0], normalizedInput, computedAt);
 }
 
 export { MapProviderError };

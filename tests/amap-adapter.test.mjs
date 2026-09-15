@@ -201,10 +201,12 @@ test("validates clock dependencies before fetching and rejects invalid clock val
   let calls = 0;
   await assert.rejects(() => planAmapLeg(input, { key: KEY, fetchImpl: async () => { calls += 1; return response({}); } }), (error) => assertError(error, "INVALID_INPUT"));
   assert.equal(calls, 0);
+  let invalidDateCalls = 0;
   await assert.rejects(() => planAmapLeg(input, {
     key: KEY, now: () => new Date("not-a-date"),
-    fetchImpl: fixtureFetch(() => {}, { status: "1", route: { paths: [{ distance: "100", duration: "60" }] } }),
+    fetchImpl: async () => { invalidDateCalls += 1; return response({ status: "1", route: { paths: [{ distance: "100", duration: "60" }] } }); },
   }), (error) => assertError(error, "INVALID_INPUT"));
+  assert.equal(invalidDateCalls, 0);
 });
 
 test("normalizes AbortError raised while parsing an upstream response as retryable timeout", async () => {
