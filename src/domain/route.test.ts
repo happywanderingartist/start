@@ -133,6 +133,13 @@ describe("assertRouteBundle", () => {
     expect(() => assertRouteBundle(bundle)).toThrow(/route\.stops\[1\]\.placeId.*missing place/i);
   });
 
+  it.each(["toString", "__proto__"])("rejects inherited place key %s", (placeId) => {
+    const bundle = cloneBundle();
+    bundle.route.stops[1].placeId = placeId;
+
+    expect(() => assertRouteBundle(bundle)).toThrow(/route\.stops\[1\]\.placeId.*missing place/i);
+  });
+
   it("rejects legs that do not connect adjacent stops", () => {
     const bundle = cloneBundle();
     bundle.route.legs[0].toPlaceId = "place-c";
@@ -161,6 +168,22 @@ describe("assertRouteBundle", () => {
     expect(() => assertRouteBundle(bundle)).toThrow(/route\.legs\[0\].*unavailable/i);
   });
 
+  it("rejects route aggregates that disagree with leg totals", () => {
+    const bundle = cloneBundle();
+    bundle.route.transportDistanceMeters = 999;
+
+    expect(() => assertRouteBundle(bundle)).toThrow(/transportDistanceMeters.*match/i);
+  });
+
+  it("rejects non-null route aggregates when any leg is unavailable", () => {
+    const bundle = cloneBundle();
+    bundle.route.legs[1].dataStatus = "unavailable";
+    bundle.route.legs[1].distanceMeters = null;
+    bundle.route.legs[1].durationSeconds = null;
+
+    expect(() => assertRouteBundle(bundle)).toThrow(/transportDistanceMeters.*unavailable/i);
+  });
+
   it("guards invalid nested primitives and reports their field paths", () => {
     const bundle = cloneBundle();
     (bundle.route.legs[0] as unknown as { distanceMeters: unknown }).distanceMeters = "820";
@@ -183,6 +206,8 @@ describe("summarizeRoute", () => {
     bundle.route.legs[1].dataStatus = "unavailable";
     bundle.route.legs[1].distanceMeters = null;
     bundle.route.legs[1].durationSeconds = null;
+    bundle.route.transportDistanceMeters = null;
+    bundle.route.transportDurationSeconds = null;
 
     expect(summarizeRoute(assertRouteBundle(bundle))).toEqual({
       distanceMeters: null,

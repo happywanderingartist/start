@@ -172,7 +172,7 @@ export function assertRouteBundle(value: unknown): RouteBundle {
   if (!isRecord(value.route)) fail("bundle.route", "must be an object");
   if (!isRecord(value.places)) fail("bundle.places", "must be an object");
 
-  const places: Record<string, Place> = {};
+  const places: Record<string, Place> = Object.create(null) as Record<string, Place>;
   for (const [key, rawPlace] of Object.entries(value.places)) {
     places[key] = placeAt(rawPlace, `bundle.places.${key}`);
     if (places[key].id !== key) fail(`bundle.places.${key}.id`, "must match its places key");
@@ -187,7 +187,7 @@ export function assertRouteBundle(value: unknown): RouteBundle {
   const legs = rawLegs.map((item, index) => legAt(item, `bundle.route.legs[${index}]`));
   if (legs.length !== Math.max(0, stops.length - 1)) fail("bundle.route.legs", "must contain one leg between each adjacent stop");
   stops.forEach((stop, index) => {
-    if (!places[stop.placeId]) fail(`bundle.route.stops[${index}].placeId`, "references a missing place");
+    if (!Object.hasOwn(places, stop.placeId)) fail(`bundle.route.stops[${index}].placeId`, "references a missing place");
     if (stop.order !== index + 1) fail(`bundle.route.stops[${index}].order`, "must match stop order");
   });
   legs.forEach((leg, index) => {
@@ -210,6 +210,19 @@ export function assertRouteBundle(value: unknown): RouteBundle {
     transportDurationSeconds: nullableNumberAt(route, "bundle.route.transportDurationSeconds"),
     suggestedTotalMinutes: nullableNumberAt(route, "bundle.route.suggestedTotalMinutes"),
   };
+  const summary = summarizeRoute({ route: parsedRoute, places });
+  if (parsedRoute.transportDistanceMeters !== summary.distanceMeters) {
+    fail(
+      "bundle.route.transportDistanceMeters",
+      summary.dataStatus === "unavailable" ? "must be null when legs are unavailable" : "must match leg summary",
+    );
+  }
+  if (parsedRoute.transportDurationSeconds !== summary.durationSeconds) {
+    fail(
+      "bundle.route.transportDurationSeconds",
+      summary.dataStatus === "unavailable" ? "must be null when legs are unavailable" : "must match leg summary",
+    );
+  }
   return { route: parsedRoute, places };
 }
 
