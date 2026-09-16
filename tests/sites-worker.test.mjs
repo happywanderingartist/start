@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import { access, readFile } from "node:fs/promises";
 import test from "node:test";
-import worker from "../worker/index.js";
+import worker, { createWorker } from "../worker/index.js";
 
 test("package exposes one complete verification command", async () => {
   const pkg = JSON.parse(await readFile(new URL("../package.json", import.meta.url)));
@@ -51,9 +51,9 @@ test("falls back to index.html for an unknown app route", async () => {
 });
 
 test("does not turn missing API or write requests into the app shell", async () => {
-  for (const request of [
-    new Request("https://example.test/api/missing", { headers: { accept: "application/json" } }),
-    new Request("https://example.test/flow", { method: "POST", headers: { accept: "text/html" } }),
+  for (const [request, expectedAssetCalls] of [
+    [new Request("https://example.test/api/missing", { headers: { accept: "application/json" } }), 0],
+    [new Request("https://example.test/flow", { method: "POST", headers: { accept: "text/html" } }), 1],
   ]) {
     let calls = 0;
     const response = await worker.fetch(request, {
@@ -66,8 +66,44 @@ test("does not turn missing API or write requests into the app shell", async () 
     });
 
     assert.equal(response.status, 404);
-    assert.equal(calls, 1);
+    assert.equal(calls, expectedAssetCalls);
   }
+});
+
+test("returns a JSON API 404 before trying static assets", async () => {
+  const apiWorker = createWorker({
+    fetchImpl: async () => { throw new Error("API test must not reach a provider"); },
+    cacheStorage: { async match() { return null; }, async put() {} },
+  });
+  let assetCalls = 0;
+
+  const response = await apiWorker.fetch(new Request("https://example.test/api/unknown", {
+    headers: { accept: "text/html" },
+  }), {
+    AMAP_WEB_SERVICE_KEY: "test-key",
+    ASSETS: { fetch: async () => { assetCalls += 1; return new Response("app", { status: 200 }); } },
+  });
+
+  assert.equal(response.status, 404);
+  assert.match(response.headers.get("content-type") ?? "", /^application\/json/);
+  assert.deepEqual(JSON.parse(await response.text()), {
+    error: { code: "API_NOT_FOUND", message: "接口不存在", retryable: false },
+  });
+  assert.equal(assetCalls, 0);
+});
+
+test("treats the API root as JSON namespace before static assets", async () => {
+  let assetCalls = 0;
+  const response = await createWorker().fetch(new Request("https://example.test/api", {
+    headers: { accept: "text/html" },
+  }), {
+    AMAP_WEB_SERVICE_KEY: "test-key",
+    ASSETS: { fetch: async () => { assetCalls += 1; return new Response("app", { status: 200 }); } },
+  });
+
+  assert.equal(response.status, 404);
+  assert.match(response.headers.get("content-type") ?? "", /^application\/json/);
+  assert.equal(assetCalls, 0);
 });
 
 test("emits the files required by Sites packaging", async () => {
