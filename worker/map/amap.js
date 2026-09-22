@@ -83,6 +83,9 @@ async function requestAmap(path, params, { key, fetchImpl }) {
     if (cause?.name === "AbortError") fail("TIMEOUT", "Map provider request timed out", { retryable: true });
     fail("INVALID_RESPONSE", "Map provider returned an invalid response", { cause });
   }
+  if (body?.infocode === "10021") {
+    fail("RATE_LIMIT", "Map provider rate limit reached", { retryable: true });
+  }
   if (!body || body.status !== "1") fail("PROVIDER_ERROR", "Map provider returned an error", { retryable: false });
   return body;
 }

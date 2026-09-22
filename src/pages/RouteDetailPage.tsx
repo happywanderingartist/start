@@ -55,7 +55,7 @@ export function RouteDetailPage() {
         <TopBar />
         <div className="detail-heading">
           <h1>{route.title}</h1>
-          <p><MapPin size={18} weight="fill" />{route.city} · {route.stops.length} 个地点 · 约 {route.estimatedTotalMinutes / 60} 小时</p>
+          <p><MapPin size={18} weight="fill" />{route.city} · {route.stops.length} 个地点 · {route.estimatedTotalMinutes === null ? "时长暂不可用" : `约 ${route.estimatedTotalMinutes} 分钟`}</p>
           <span className="data-disclosure"><Info size={17} />原型路线，POI 待核验</span>
         </div>
       </section>

@@ -3,8 +3,11 @@ import { act, cleanup, fireEvent, render, screen } from "@testing-library/react"
 import userEvent from "@testing-library/user-event";
 import { MemoryRouter } from "react-router-dom";
 import { AppRoutes } from "./App";
+import { route } from "./data/route";
 import { RouteSessionProvider } from "./state/RouteSessionContext";
 import { PROGRESS_STORAGE_KEY } from "./state/routeSession";
+
+const stopIds = route.stops.map((stop) => stop.id);
 
 function renderAt(path: string) {
   return render(
@@ -85,7 +88,7 @@ describe("fan route prototype", () => {
     renderAt("/routes/anpu-nanjing");
 
     expect(screen.getByText("地点故事、图片和具体入口将在POI核验后补充。")).toBeInTheDocument();
-    await user.click(screen.getByRole("button", { name: "展开 江南贡院／南京中国科举博物馆" }));
+    await user.click(screen.getByRole("button", { name: `展开 ${route.stops[1].name}` }));
     expect(screen.getByText("具体关联信息与开放时间待补充。")).toBeInTheDocument();
     expect(screen.getByText("地点故事、图片和具体入口将在POI核验后补充。")).toBeInTheDocument();
   });
@@ -126,7 +129,7 @@ describe("fan route prototype", () => {
     expect(await screen.findByRole("heading", { name: "古秦淮" })).toBeInTheDocument();
     expect(screen.getByText("0 / 5")).toBeInTheDocument();
     await user.click(screen.getByRole("button", { name: "我已到达" }));
-    expect(await screen.findByRole("heading", { name: "江南贡院／南京中国科举博物馆" })).toBeInTheDocument();
+    expect(await screen.findByRole("heading", { name: route.stops[1].name })).toBeInTheDocument();
     expect(screen.getByText("1 / 5")).toBeInTheDocument();
   });
 
@@ -158,10 +161,10 @@ describe("fan route prototype", () => {
     expect(screen.getByRole("heading", { name: "古秦淮" })).toBeInTheDocument();
 
     act(() => vi.advanceTimersByTime(1));
-    expect(screen.getByRole("heading", { name: "江南贡院／南京中国科举博物馆" })).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: route.stops[1].name })).toBeInTheDocument();
     expect(screen.getByRole("img", { name: "星粒正在陪你前进" })).toBeInTheDocument();
     expect(screen.getByText("1 / 5")).toBeInTheDocument();
-    expect(JSON.parse(window.localStorage.getItem(PROGRESS_STORAGE_KEY) ?? "{}").arrivedStopIds).toEqual(["stop-1"]);
+    expect(JSON.parse(window.localStorage.getItem(PROGRESS_STORAGE_KEY) ?? "{}").arrivedStopIds).toEqual([stopIds[0]]);
   });
 
   it("moves from final-stop arrival feedback into the compact completion state", () => {
@@ -172,7 +175,7 @@ describe("fan route prototype", () => {
         routeId: "route-anpu-nanjing-old-city",
         status: "in_progress",
         currentStopIndex: 4,
-        arrivedStopIds: ["stop-1", "stop-2", "stop-3", "stop-4"],
+        arrivedStopIds: stopIds.slice(0, 4),
         updatedAt: "2026-09-14T00:00:00.000Z",
       }),
     );
@@ -215,7 +218,7 @@ describe("fan route prototype", () => {
         routeId: "route-anpu-nanjing-old-city",
         status: "completed",
         currentStopIndex: 4,
-        arrivedStopIds: ["stop-1", "stop-2", "stop-3", "stop-4", "stop-5"],
+        arrivedStopIds: stopIds,
         updatedAt: "2026-09-14T00:00:00.000Z",
       }),
     );

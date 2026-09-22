@@ -12,6 +12,8 @@
     "preview": "vite preview",
     "test:sites": "node --test tests/sites-worker.test.mjs",
     "test:worker": "node --test tests/*.test.mjs",
+    "route:seed:candidates": "node scripts/confirm-seed-places.mjs candidates",
+    "route:seed:confirm": "node scripts/confirm-seed-places.mjs confirm",
     "check": "pnpm typecheck && pnpm test:run && pnpm build && pnpm test:worker"
   },
   "dependencies": {

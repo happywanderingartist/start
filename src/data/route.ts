@@ -1,51 +1,73 @@
 import seed from "../../docs/seed/route-anpu-nanjing.json";
+import {
+  assertRouteBundle,
+  summarizeRoute,
+  type MapDataStatus,
+  type RouteBundle,
+  type TravelMode,
+} from "../domain/route";
 
-export type TravelMode = "walk" | "transit";
-
-export interface RouteLeg {
+export interface CompatibilityRouteLeg {
   mode: TravelMode;
   minutes: number;
   meters: number;
-  status: "prototype_estimate";
+  status: Exclude<MapDataStatus, "unavailable">;
 }
 
 export interface RouteStop {
   id: string;
   order: number;
   name: string;
-  poiStatus: "pending_verification";
+  poiStatus: "confirmed";
   summary: string;
   detail: string;
-  toNext: RouteLeg | null;
+  toNext: CompatibilityRouteLeg | null;
 }
 
-export interface FanRoute {
+export interface CompatibilityRoute {
   id: string;
   title: string;
   city: string;
   artist: string;
-  theme: string;
-  estimatedTotalMinutes: number;
-  dataStatus: "prototype_estimate_pending_map_verification";
-  sourceNote: string;
+  estimatedTotalMinutes: number | null;
+  dataStatus: MapDataStatus;
   stops: RouteStop[];
 }
 
-function isFanRoute(value: unknown): value is FanRoute {
-  if (!value || typeof value !== "object") return false;
-  const candidate = value as Partial<FanRoute>;
-  return (
-    typeof candidate.id === "string" &&
-    typeof candidate.title === "string" &&
-    candidate.dataStatus === "prototype_estimate_pending_map_verification" &&
-    Array.isArray(candidate.stops) &&
-    candidate.stops.length === 5 &&
-    candidate.stops.every((stop, index) => stop.order === index + 1)
-  );
+export const routeBundle = assertRouteBundle(seed);
+
+export function createCompatibilityRoute(bundle: RouteBundle): CompatibilityRoute {
+  const estimatedTotalMinutes = bundle.route.suggestedTotalMinutes;
+  return {
+    id: bundle.route.id,
+    title: bundle.route.title,
+    city: bundle.route.city,
+    artist: bundle.route.artist,
+    estimatedTotalMinutes,
+    dataStatus: summarizeRoute(bundle).dataStatus,
+    stops: bundle.route.stops.map((stop, index) => {
+      const place = bundle.places[stop.placeId];
+      const leg = bundle.route.legs[index];
+      const toNext = !leg || leg.dataStatus === "unavailable" || leg.distanceMeters === null || leg.durationSeconds === null
+        ? null
+        : {
+            mode: leg.mode,
+            minutes: Math.ceil(leg.durationSeconds / 60),
+            meters: leg.distanceMeters,
+            status: leg.dataStatus,
+          };
+
+      return {
+        id: place.id,
+        order: stop.order,
+        name: place.name,
+        poiStatus: place.verificationStatus,
+        summary: place.address,
+        detail: stop.story,
+        toNext,
+      };
+    }),
+  };
 }
 
-if (!isFanRoute(seed)) {
-  throw new Error("路线种子数据格式无效");
-}
-
-export const route: FanRoute = seed;
+export const route = createCompatibilityRoute(routeBundle);

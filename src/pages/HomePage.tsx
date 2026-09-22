@@ -95,7 +95,7 @@ export function HomePage() {
             <div className="recommend-copy">
               <span className="route-tag">最近推荐</span>
               <h2>{route.title}</h2>
-              <p>{route.stops.length} 个地点 · 约 {route.estimatedTotalMinutes / 60} 小时 · 原型待核验</p>
+              <p>{route.stops.length} 个地点 · {route.estimatedTotalMinutes === null ? "时长暂不可用" : `约 ${route.estimatedTotalMinutes} 分钟`} · 原型待核验</p>
             </div>
             <Link to="/routes/anpu-nanjing" aria-label={`查看${route.title}`}><ArrowRight size={20} weight="bold" /></Link>
           </div>

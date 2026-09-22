@@ -101,6 +101,18 @@ test("search normalizes provider, timeout, and rate-limit failures without secre
     key: KEY,
     fetchImpl: fixtureFetch(() => {}, { message: "too many requests" }, 429),
   }), (error) => assertError(error, "RATE_LIMIT"));
+  await assert.rejects(() => searchAmapPlaces(base, {
+    key: KEY,
+    fetchImpl: fixtureFetch(() => {}, {
+      status: "0",
+      info: "CUQPS_HAS_EXCEEDED_THE_LIMIT",
+      infocode: "10021",
+    }),
+  }), (error) => {
+    assertError(error, "RATE_LIMIT");
+    assert.equal(error.retryable, true);
+    return true;
+  });
 });
 
 test("confirmation re-fetches provider POI by ID and returns a confirmed server-derived Place", async () => {
