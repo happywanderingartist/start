@@ -9,6 +9,7 @@
     "typecheck": "tsc --noEmit",
     "test": "vitest",
     "test:run": "vitest run",
+    "test:assets": "node --test tests/character-assets.test.mjs && node scripts/validate-character-assets.mjs character-assets/character-assets.json",
     "preview": "vite preview",
     "test:sites": "node --test tests/sites-worker.test.mjs",
     "test:worker": "node --test tests/*.test.mjs",
@@ -29,6 +30,7 @@
     "@types/react": "^19.2.2",
     "@types/react-dom": "^19.2.2",
     "jsdom": "^27.1.0",
+    "pngjs": "^7.0.0",
     "typescript": "^5.9.3",
     "vitest": "^3.2.4"
   }

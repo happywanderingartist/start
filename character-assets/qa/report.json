@@ -1,0 +1,16 @@
+{
+  "valid": true,
+  "manifest": "character-assets.json",
+  "canvas": {
+    "width": 1536,
+    "height": 1536
+  },
+  "anchor": {
+    "centerX": 768,
+    "footY": 1420
+  },
+  "candidateCount": 6,
+  "rejectedCandidateCount": 6,
+  "releaseAssetCount": 0,
+  "errors": []
+}

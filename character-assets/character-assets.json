@@ -1,0 +1,78 @@
+{
+  "version": 1,
+  "canvas": {
+    "width": 1536,
+    "height": 1536
+  },
+  "anchor": {
+    "centerX": 768,
+    "footY": 1420
+  },
+  "references": {
+    "R01": "references/R01_girl_final_reference.png",
+    "R02": "references/R02_boy_final_reference.png"
+  },
+  "candidates": [
+    {
+      "id": "girl_base_default_v1_draft",
+      "character": "girl",
+      "category": "base",
+      "state": "default",
+      "file": "validation/drafts/girl_identity_master_v1_draft.png",
+      "sourceReference": "R01",
+      "qaStatus": "rejected",
+      "checks": {}
+    },
+    {
+      "id": "boy_base_default_v1_draft",
+      "character": "boy",
+      "category": "base",
+      "state": "default",
+      "file": "validation/drafts/boy_identity_master_v1_draft.png",
+      "sourceReference": "R02",
+      "qaStatus": "rejected",
+      "checks": {}
+    },
+    {
+      "id": "girl_expression_validation_v1_draft",
+      "character": "girl",
+      "category": "expression",
+      "state": "validation",
+      "file": "validation/drafts/girl_expression_validation_v1_draft.png",
+      "sourceReference": "R01",
+      "qaStatus": "rejected",
+      "checks": {}
+    },
+    {
+      "id": "boy_expression_validation_v1_draft",
+      "character": "boy",
+      "category": "expression",
+      "state": "validation",
+      "file": "validation/drafts/boy_expression_validation_v1_draft.png",
+      "sourceReference": "R02",
+      "qaStatus": "rejected",
+      "checks": {}
+    },
+    {
+      "id": "girl_action_validation_v1_draft",
+      "character": "girl",
+      "category": "action",
+      "state": "validation",
+      "file": "validation/drafts/girl_action_validation_v1_draft.png",
+      "sourceReference": "R01",
+      "qaStatus": "rejected",
+      "checks": {}
+    },
+    {
+      "id": "boy_action_validation_v1_draft",
+      "character": "boy",
+      "category": "action",
+      "state": "validation",
+      "file": "validation/drafts/boy_action_validation_v1_draft.png",
+      "sourceReference": "R02",
+      "qaStatus": "rejected",
+      "checks": {}
+    }
+  ],
+  "releaseAssets": []
+}
