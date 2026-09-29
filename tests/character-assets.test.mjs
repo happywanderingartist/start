@@ -163,3 +163,9 @@ test("rejects a subject whose lowest visible pixel misses the foot baseline", as
   const report = await validate({ png: { subjectBottom: 1200 } });
   assert.equal(hasError(report, "foot-baseline-mismatch"), true);
 });
+
+test("mechanically validates pending candidates outside the draft archive", async () => {
+  const record = baseRecord({ qaStatus: "pending", checks: {} });
+  const report = await validate({ record, releaseAssets: [], png: { width: 512, height: 512 } });
+  assert.equal(hasError(report, "dimensions-mismatch"), true);
+});

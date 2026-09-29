@@ -72,7 +72,72 @@
       "sourceReference": "R02",
       "qaStatus": "rejected",
       "checks": {}
+    },
+    {
+      "id": "girl_base_default_v1",
+      "character": "girl",
+      "category": "base",
+      "state": "default",
+      "file": "girl/base/girl_base_default_v1.png",
+      "sourceReference": "R01",
+      "canvas": {
+        "width": 1536,
+        "height": 1536
+      },
+      "anchor": {
+        "centerX": 768,
+        "footY": 1420
+      },
+      "qaStatus": "accepted",
+      "checks": {
+        "sameFace": true,
+        "eyesLocked": true,
+        "faceShapeLocked": true,
+        "foreheadLocked": true,
+        "hairLocked": true,
+        "bodyLocked": true,
+        "materialLocked": true,
+        "neckNatural": true,
+        "notBulky": true,
+        "outfitSeparated": true,
+        "accessoryApproved": true,
+        "referenceAligned": true
+      }
+    },
+    {
+      "id": "boy_base_default_v1",
+      "character": "boy",
+      "category": "base",
+      "state": "default",
+      "file": "boy/base/boy_base_default_v1.png",
+      "sourceReference": "R02",
+      "canvas": {
+        "width": 1536,
+        "height": 1536
+      },
+      "anchor": {
+        "centerX": 768,
+        "footY": 1420
+      },
+      "qaStatus": "accepted",
+      "checks": {
+        "sameFace": true,
+        "eyesLocked": true,
+        "faceShapeLocked": true,
+        "foreheadLocked": true,
+        "hairLocked": true,
+        "bodyLocked": true,
+        "materialLocked": true,
+        "neckNatural": true,
+        "notBulky": true,
+        "outfitSeparated": true,
+        "accessoryApproved": true,
+        "referenceAligned": true
+      }
     }
   ],
-  "releaseAssets": []
+  "releaseAssets": [
+    "girl_base_default_v1",
+    "boy_base_default_v1"
+  ]
 }

@@ -48,13 +48,13 @@ function inspectPixels(png) {
   return { hasTransparency, bounds: { minX, minY, maxX, maxY } };
 }
 
-async function inspectReleasePng(root, manifest, record, errors) {
+async function inspectCandidatePng(root, manifest, record, errors) {
   const assetPath = path.resolve(root, record.file);
   let buffer;
   try {
     buffer = await readFile(assetPath);
   } catch {
-    pushError(errors, "file-missing", `Missing release PNG: ${record.file}`, record.id);
+    pushError(errors, "file-missing", `Missing candidate PNG: ${record.file}`, record.id);
     return;
   }
 
@@ -62,7 +62,7 @@ async function inspectReleasePng(root, manifest, record, errors) {
   try {
     png = PNG.sync.read(buffer);
   } catch {
-    pushError(errors, "png-invalid", `Cannot decode release PNG: ${record.file}`, record.id);
+    pushError(errors, "png-invalid", `Cannot decode candidate PNG: ${record.file}`, record.id);
     return;
   }
 
@@ -111,6 +111,10 @@ export async function validateCharacterAssets(manifestPath) {
   for (const record of candidates) {
     if (seen.has(record.id)) pushError(errors, "duplicate-id", `Duplicate candidate id: ${record.id}`, record.id);
     seen.add(record.id);
+    const normalizedFile = record.file.replaceAll("\\", "/");
+    if (!normalizedFile.startsWith("validation/drafts/")) {
+      await inspectCandidatePng(root, manifest, record, errors);
+    }
   }
 
   for (const id of releaseIds) {
@@ -130,7 +134,6 @@ export async function validateCharacterAssets(manifestPath) {
     if (!expected || record.id !== expected.id || normalizedFile !== expected.file) {
       pushError(errors, "filename-mismatch", `Manifest fields must resolve to ${expected?.file ?? "a supported category"}`, record.id);
     }
-    await inspectReleasePng(root, manifest, record, errors);
   }
 
   const report = {
