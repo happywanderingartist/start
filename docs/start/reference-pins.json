@@ -1,0 +1,79 @@
+[
+  {
+    "repo": "brianc/node-postgres",
+    "stars": 13218,
+    "owner": "brianc",
+    "pushedAt": "2026-10-01T15:52:44Z",
+    "sha": "0980cefebe0ae461da8883703be049fe13ca96cf",
+    "commitDate": "2026-09-30T15:36:10Z",
+    "reads": [
+      {
+        "file": "LICENSE",
+        "read": true,
+        "sha256": "192b8f5c96900f04a1271dec39688655d7416c1c6ea84a508e18b50d2b6751f3",
+        "bytes": 1077
+      },
+      {
+        "file": "packages/pg/lib/query.js",
+        "read": true,
+        "sha256": "ecf885185f0ad8b82c680a184d65bc08462fd2adee047218268c35dade9f8913",
+        "bytes": 7710
+      },
+      {
+        "file": "packages/pg/test/integration/client/query-tests.js",
+        "read": false,
+        "error": "fetch failed"
+      }
+    ]
+  },
+  {
+    "repo": "meilisearch/meilisearch",
+    "stars": 59460,
+    "owner": "meilisearch",
+    "pushedAt": "2026-10-01T22:10:07Z",
+    "sha": "a85bd66e9d7ce30e8e33a17db54b3a2de612e086",
+    "commitDate": "2026-09-29T13:51:58Z",
+    "reads": [
+      {
+        "file": "LICENSE",
+        "read": true,
+        "sha256": "315c57000333ab29e78c67d46e96494e987cdc2b76479fb745e4ad6b496de642",
+        "bytes": 354
+      },
+      {
+        "file": "LICENSE-MIT",
+        "read": true,
+        "sha256": "121168e4b0db909bf16badd9d1c51ad9aa356241487bf02ef69f8d1ef9e4be6f",
+        "bytes": 1070
+      },
+      {
+        "file": "crates/meilisearch/src/routes/multi_search.rs",
+        "read": true,
+        "sha256": "b531697c8ce69d8a100a28a5e20ba3565ec36779b994d1662bcdb96c79f2bc6a",
+        "bytes": 18608
+      }
+    ]
+  },
+  {
+    "repo": "strapi/strapi",
+    "stars": 73273,
+    "owner": "strapi",
+    "pushedAt": "2026-10-01T22:34:58Z",
+    "sha": "aa939d34f59aebe59aaa484f15b81721271864dc",
+    "commitDate": "2026-10-01T14:22:40Z",
+    "reads": [
+      {
+        "file": "LICENSE",
+        "read": true,
+        "sha256": "b651f49834c5726917e473ceab038d25e1115041374b615ff5d1688e7403d36d",
+        "bytes": 2423
+      },
+      {
+        "file": "packages/core/core/src/services/document-service/repository.ts",
+        "read": true,
+        "sha256": "b78109ac29e9b04582a30e369c2faed1c18d853c28a38de2d4254475570ba0d5",
+        "bytes": 26644
+      }
+    ]
+  }
+]
