@@ -1,0 +1,177 @@
+{
+  "route": {
+    "id": "route-anpu-nanjing-old-city",
+    "version": 1,
+    "title": "安溥·南京老城巷陌",
+    "city": "南京",
+    "artist": "安溥",
+    "stops": [
+      {
+        "placeId": "amap-B00190BTHK",
+        "order": 1,
+        "suggestedStayMinutes": 0,
+        "visitStatus": "upcoming",
+        "story": "地点故事、图片和具体入口将在POI核验后补充。",
+        "checkInTips": [],
+        "imageUrls": []
+      },
+      {
+        "placeId": "amap-B0KUO6U0QZ",
+        "order": 2,
+        "suggestedStayMinutes": 0,
+        "visitStatus": "upcoming",
+        "story": "具体关联信息与开放时间待补充。",
+        "checkInTips": [],
+        "imageUrls": []
+      },
+      {
+        "placeId": "amap-B0FFM6T3AH",
+        "order": 3,
+        "suggestedStayMinutes": 0,
+        "visitStatus": "upcoming",
+        "story": "拍照位置与人流提醒待补充。",
+        "checkInTips": [],
+        "imageUrls": []
+      },
+      {
+        "placeId": "amap-B0JA2BDQEX",
+        "order": 4,
+        "suggestedStayMinutes": 0,
+        "visitStatus": "upcoming",
+        "story": "进入规则和拍照说明待核验。",
+        "checkInTips": [],
+        "imageUrls": []
+      },
+      {
+        "placeId": "amap-B0FFGQ9HIL",
+        "order": 5,
+        "suggestedStayMinutes": 0,
+        "visitStatus": "upcoming",
+        "story": "具体定位、店铺和故事待补充。",
+        "checkInTips": [],
+        "imageUrls": []
+      }
+    ],
+    "legs": [
+      {
+        "id": "amap-B00190BTHK:amap-B0KUO6U0QZ:walk",
+        "fromPlaceId": "amap-B00190BTHK",
+        "toPlaceId": "amap-B0KUO6U0QZ",
+        "mode": "walk",
+        "distanceMeters": 131,
+        "durationSeconds": 105,
+        "provider": "amap",
+        "computedAt": "2026-09-17T15:33:35.047Z",
+        "dataStatus": "fresh"
+      },
+      {
+        "id": "amap-B0KUO6U0QZ:amap-B0FFM6T3AH:walk",
+        "fromPlaceId": "amap-B0KUO6U0QZ",
+        "toPlaceId": "amap-B0FFM6T3AH",
+        "mode": "walk",
+        "distanceMeters": 271,
+        "durationSeconds": 217,
+        "provider": "amap",
+        "computedAt": "2026-09-17T15:33:35.205Z",
+        "dataStatus": "fresh"
+      },
+      {
+        "id": "amap-B0FFM6T3AH:amap-B0JA2BDQEX:walk",
+        "fromPlaceId": "amap-B0FFM6T3AH",
+        "toPlaceId": "amap-B0JA2BDQEX",
+        "mode": "walk",
+        "distanceMeters": 782,
+        "durationSeconds": 626,
+        "provider": "amap",
+        "computedAt": "2026-09-17T15:33:35.280Z",
+        "dataStatus": "fresh"
+      },
+      {
+        "id": "amap-B0JA2BDQEX:amap-B0FFGQ9HIL:walk",
+        "fromPlaceId": "amap-B0JA2BDQEX",
+        "toPlaceId": "amap-B0FFGQ9HIL",
+        "mode": "walk",
+        "distanceMeters": 312,
+        "durationSeconds": 250,
+        "provider": "amap",
+        "computedAt": "2026-09-17T15:33:36.516Z",
+        "dataStatus": "fresh"
+      }
+    ],
+    "transportDistanceMeters": 1496,
+    "transportDurationSeconds": 1198,
+    "suggestedTotalMinutes": 20
+  },
+  "places": {
+    "amap-B00190BTHK": {
+      "id": "amap-B00190BTHK",
+      "city": "南京",
+      "name": "古秦淮",
+      "address": "秦淮小吃城负一楼(夫子庙地铁站2号口步行170米)",
+      "district": "秦淮区",
+      "category": "风景名胜;风景名胜;风景名胜",
+      "provider": "amap",
+      "providerPoiId": "B00190BTHK",
+      "coordinateSystem": "gcj02",
+      "longitude": 118.791979,
+      "latitude": 32.021349,
+      "verificationStatus": "confirmed"
+    },
+    "amap-B0KUO6U0QZ": {
+      "id": "amap-B0KUO6U0QZ",
+      "city": "南京",
+      "name": "中国科举博物馆(江南贡院)",
+      "address": "贡院街95号",
+      "district": "秦淮区",
+      "category": "风景名胜;风景名胜;风景名胜",
+      "provider": "amap",
+      "providerPoiId": "B0KUO6U0QZ",
+      "coordinateSystem": "gcj02",
+      "longitude": 118.790669,
+      "latitude": 32.020795,
+      "verificationStatus": "confirmed"
+    },
+    "amap-B0FFM6T3AH": {
+      "id": "amap-B0FFM6T3AH",
+      "city": "南京",
+      "name": "夫子庙-古秦淮西牌坊",
+      "address": "贡院街152号南京夫子庙",
+      "district": "秦淮区",
+      "category": "风景名胜;风景名胜相关;旅游景点",
+      "provider": "amap",
+      "providerPoiId": "B0FFM6T3AH",
+      "coordinateSystem": "gcj02",
+      "longitude": 118.788385,
+      "latitude": 32.019262,
+      "verificationStatus": "confirmed"
+    },
+    "amap-B0JA2BDQEX": {
+      "id": "amap-B0JA2BDQEX",
+      "city": "南京",
+      "name": "南京夫子庙ARTALL爱涛设计酒店",
+      "address": "平江府路191号(武定门地铁站3号口步行370米)",
+      "district": "秦淮区",
+      "category": "住宿服务;宾馆酒店;宾馆酒店",
+      "provider": "amap",
+      "providerPoiId": "B0JA2BDQEX",
+      "coordinateSystem": "gcj02",
+      "longitude": 118.792925,
+      "latitude": 32.016575,
+      "verificationStatus": "confirmed"
+    },
+    "amap-B0FFGQ9HIL": {
+      "id": "amap-B0FFGQ9HIL",
+      "city": "南京",
+      "name": "三七八巷",
+      "address": "秦淮区",
+      "district": "秦淮区",
+      "category": "地名地址信息;交通地名;道路名",
+      "provider": "amap",
+      "providerPoiId": "B0FFGQ9HIL",
+      "coordinateSystem": "gcj02",
+      "longitude": 118.790912,
+      "latitude": 32.015234,
+      "verificationStatus": "confirmed"
+    }
+  }
+}

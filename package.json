@@ -17,7 +17,9 @@
     "test:contracts": "node --test tests/contracts/*.node.ts",
     "typecheck:foundation": "node node_modules/typescript/bin/tsc -p tsconfig.foundation.json",
     "db:migrate": "node tooling/db/migrate.ts",
-    "test:db": "node --test tests/integration/catalog-db.node.ts"
+    "test:db": "node --test --test-concurrency=1 tests/integration/catalog-db.node.ts tests/integration/trust-read.node.ts",
+    "db:seed:historical": "node tooling/db/seed.ts",
+    "db:seed:reviewed": "node tooling/db/seed.ts --reviewed"
   },
   "dependencies": {
     "@phosphor-icons/react": "^2.1.10",

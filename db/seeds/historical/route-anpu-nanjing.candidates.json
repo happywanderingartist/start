@@ -1,0 +1,515 @@
+{
+  "routeId": "route-anpu-nanjing-old-city",
+  "candidateSets": [
+    {
+      "sourcePlaceId": "stop-1",
+      "keyword": "古秦淮",
+      "candidates": [
+        {
+          "provider": "amap",
+          "providerPoiId": "B00190BTHK",
+          "city": "南京",
+          "name": "古秦淮",
+          "address": "秦淮小吃城负一楼(夫子庙地铁站2号口步行170米)",
+          "district": "秦淮区",
+          "category": "风景名胜;风景名胜;风景名胜",
+          "coordinateSystem": "gcj02",
+          "longitude": 118.791979,
+          "latitude": 32.021349
+        },
+        {
+          "provider": "amap",
+          "providerPoiId": "B0FFM6T3AH",
+          "city": "南京",
+          "name": "夫子庙-古秦淮西牌坊",
+          "address": "贡院街152号南京夫子庙",
+          "district": "秦淮区",
+          "category": "风景名胜;风景名胜相关;旅游景点",
+          "coordinateSystem": "gcj02",
+          "longitude": 118.788385,
+          "latitude": 32.019262
+        },
+        {
+          "provider": "amap",
+          "providerPoiId": "B001917E76",
+          "city": "南京",
+          "name": "古秦淮购物一条街",
+          "address": "贡院街与夫子庙步行街交叉口西南80米",
+          "district": "秦淮区",
+          "category": "购物服务;特色商业街;特色商业街",
+          "coordinateSystem": "gcj02",
+          "longitude": 118.788384,
+          "latitude": 32.019219
+        },
+        {
+          "provider": "amap",
+          "providerPoiId": "B001911NZJ",
+          "city": "南京",
+          "name": "瞻园奥特莱斯商场",
+          "address": "夫子庙瞻园路9号",
+          "district": "秦淮区",
+          "category": "购物服务;商场;普通商场|购物服务;商场;购物中心|交通设施服务;停车场;公共停车场|购物服务;专卖店;古玩字画店",
+          "coordinateSystem": "gcj02",
+          "longitude": 118.786886,
+          "latitude": 32.019073
+        },
+        {
+          "provider": "amap",
+          "providerPoiId": "B0FFHLENFL",
+          "city": "南京",
+          "name": "古秦淮河大桥",
+          "address": "江宁区",
+          "district": "江宁区",
+          "category": "地名地址信息;交通地名;桥",
+          "coordinateSystem": "gcj02",
+          "longitude": 119.047943,
+          "latitude": 31.870554
+        },
+        {
+          "provider": "amap",
+          "providerPoiId": "B0FFL7QJ6F",
+          "city": "南京",
+          "name": "天之缘宾馆(古秦淮夫子庙步行街店)",
+          "address": "一品嘉园1-11室",
+          "district": "秦淮区",
+          "category": "住宿服务;住宿服务相关;住宿服务相关",
+          "coordinateSystem": "gcj02",
+          "longitude": 118.791638,
+          "latitude": 32.019563
+        },
+        {
+          "provider": "amap",
+          "providerPoiId": "B0L1XGQFS6",
+          "city": "南京",
+          "name": "乐乐至远·天津老味刨冰(夫子庙瞻园路店)",
+          "address": "瞻园路68号(古秦淮牌坊左侧)",
+          "district": "秦淮区",
+          "category": "餐饮服务;冷饮店;冷饮店",
+          "coordinateSystem": "gcj02",
+          "longitude": 118.789075,
+          "latitude": 32.021375
+        },
+        {
+          "provider": "amap",
+          "providerPoiId": "B001911KZA",
+          "city": "南京",
+          "name": "文源桥",
+          "address": "贡院街152号南京夫子庙",
+          "district": "秦淮区",
+          "category": "风景名胜;风景名胜相关;旅游景点",
+          "coordinateSystem": "gcj02",
+          "longitude": 118.791435,
+          "latitude": 32.02073
+        }
+      ]
+    },
+    {
+      "sourcePlaceId": "stop-2",
+      "keyword": "江南贡院／南京中国科举博物馆",
+      "candidates": [
+        {
+          "provider": "amap",
+          "providerPoiId": "B0KUO6U0QZ",
+          "city": "南京",
+          "name": "中国科举博物馆(江南贡院)",
+          "address": "贡院街95号",
+          "district": "秦淮区",
+          "category": "风景名胜;风景名胜;风景名胜",
+          "coordinateSystem": "gcj02",
+          "longitude": 118.790669,
+          "latitude": 32.020795
+        },
+        {
+          "provider": "amap",
+          "providerPoiId": "B0FFMC8III",
+          "city": "南京",
+          "name": "南京中国科举博物馆南馆",
+          "address": "贡院街95号(近夫子庙邮局)南京中国科举博物馆(江南贡院)内",
+          "district": "秦淮区",
+          "category": "科教文化服务;博物馆;博物馆",
+          "coordinateSystem": "gcj02",
+          "longitude": 118.79063,
+          "latitude": 32.02044
+        },
+        {
+          "provider": "amap",
+          "providerPoiId": "B0FFIPEK6K",
+          "city": "南京",
+          "name": "南京中国科举博物馆(江南贡院)南馆-西官廨",
+          "address": "贡院街95号江南贡院内",
+          "district": "秦淮区",
+          "category": "风景名胜;风景名胜相关;旅游景点",
+          "coordinateSystem": "gcj02",
+          "longitude": 118.791036,
+          "latitude": 32.020718
+        },
+        {
+          "provider": "amap",
+          "providerPoiId": "B0FFHN5SWB",
+          "city": "南京",
+          "name": "南京中国科举博物馆北馆",
+          "address": "贡院街118-4号附近",
+          "district": "秦淮区",
+          "category": "科教文化服务;博物馆;博物馆",
+          "coordinateSystem": "gcj02",
+          "longitude": 118.790677,
+          "latitude": 32.021284
+        },
+        {
+          "provider": "amap",
+          "providerPoiId": "B0FFGILAMH",
+          "city": "南京",
+          "name": "中国科举博物馆西北1门售票处",
+          "address": "贡院街江南贡院(夫子庙地铁站6号口步行410米)",
+          "district": "秦淮区",
+          "category": "生活服务;售票处;公园景点售票处",
+          "coordinateSystem": "gcj02",
+          "longitude": 118.789973,
+          "latitude": 32.02016
+        },
+        {
+          "provider": "amap",
+          "providerPoiId": "B0FFGP5EAC",
+          "city": "南京",
+          "name": "中国科举博物馆龙门西售票处",
+          "address": "贡院街95号中国科举博物馆(江南贡院)",
+          "district": "秦淮区",
+          "category": "生活服务;售票处;公园景点售票处",
+          "coordinateSystem": "gcj02",
+          "longitude": 118.790675,
+          "latitude": 32.020884
+        },
+        {
+          "provider": "amap",
+          "providerPoiId": "B0IG5CKPLY",
+          "city": "南京",
+          "name": "中国科举博物馆西北门售票处",
+          "address": "贡院街95号对面(夫子庙地铁站2号口步行320米)",
+          "district": "秦淮区",
+          "category": "生活服务;售票处;公园景点售票处",
+          "coordinateSystem": "gcj02",
+          "longitude": 118.790965,
+          "latitude": 32.02083
+        },
+        {
+          "provider": "amap",
+          "providerPoiId": "B0FFL4EUBJ",
+          "city": "南京",
+          "name": "南京中国科举博物馆(江南贡院)北馆-铁保手书碑",
+          "address": "南京中国科举博物馆南馆",
+          "district": "秦淮区",
+          "category": "风景名胜;风景名胜;风景名胜",
+          "coordinateSystem": "gcj02",
+          "longitude": 118.790712,
+          "latitude": 32.021064
+        },
+        {
+          "provider": "amap",
+          "providerPoiId": "B00190B8ZD",
+          "city": "南京",
+          "name": "南京市博物馆",
+          "address": "朝天宫4号",
+          "district": "秦淮区",
+          "category": "科教文化服务;博物馆;博物馆",
+          "coordinateSystem": "gcj02",
+          "longitude": 118.77545,
+          "latitude": 32.034552
+        },
+        {
+          "provider": "amap",
+          "providerPoiId": "B0LUA7K77W",
+          "city": "南京",
+          "name": "南京中国科举博物馆南馆-观景平台",
+          "address": "南京中国科举博物馆南馆",
+          "district": "秦淮区",
+          "category": "风景名胜;风景名胜相关;旅游景点",
+          "coordinateSystem": "gcj02",
+          "longitude": 118.788415,
+          "latitude": 32.019853
+        }
+      ]
+    },
+    {
+      "sourcePlaceId": "stop-3",
+      "keyword": "夫子庙牌坊",
+      "candidates": [
+        {
+          "provider": "amap",
+          "providerPoiId": "B0FFM6T3AH",
+          "city": "南京",
+          "name": "夫子庙-古秦淮西牌坊",
+          "address": "贡院街152号南京夫子庙",
+          "district": "秦淮区",
+          "category": "风景名胜;风景名胜相关;旅游景点",
+          "coordinateSystem": "gcj02",
+          "longitude": 118.788385,
+          "latitude": 32.019262
+        },
+        {
+          "provider": "amap",
+          "providerPoiId": "B0FFMB2JJA",
+          "city": "南京",
+          "name": "夫子庙牌坊",
+          "address": "平江府路80-1夫子庙秦淮风光带(东南角)",
+          "district": "秦淮区",
+          "category": "风景名胜;风景名胜相关;旅游景点",
+          "coordinateSystem": "gcj02",
+          "longitude": 118.792454,
+          "latitude": 32.015633
+        },
+        {
+          "provider": "amap",
+          "providerPoiId": "B0FFFPLTA8",
+          "city": "南京",
+          "name": "陈家牌坊",
+          "address": "平江府路80-1夫子庙秦淮风光带(西南角)",
+          "district": "秦淮区",
+          "category": "风景名胜;风景名胜;风景名胜",
+          "coordinateSystem": "gcj02",
+          "longitude": 118.777369,
+          "latitude": 32.013926
+        },
+        {
+          "provider": "amap",
+          "providerPoiId": "BV09297730",
+          "city": "南京",
+          "name": "夫子庙北牌坊(公交站)",
+          "address": "(停运)G19路",
+          "district": "秦淮区",
+          "category": "交通设施服务;公交车站;公交车站相关",
+          "coordinateSystem": "gcj02",
+          "longitude": 118.789684,
+          "latitude": 32.023324
+        },
+        {
+          "provider": "amap",
+          "providerPoiId": "B0MUVLX5RA",
+          "city": "南京",
+          "name": "南京夫子庙-牌坊(打卡点)",
+          "address": "贡院街152号南京夫子庙",
+          "district": "秦淮区",
+          "category": "风景名胜;风景名胜;观景点",
+          "coordinateSystem": "gcj02",
+          "longitude": 118.789119,
+          "latitude": 32.016391
+        },
+        {
+          "provider": "amap",
+          "providerPoiId": "B0KUBLWV4H",
+          "city": "南京",
+          "name": "老街牌坊",
+          "address": "平江府路80-1夫子庙秦淮风光带",
+          "district": "秦淮区",
+          "category": "风景名胜;风景名胜;风景名胜",
+          "coordinateSystem": "gcj02",
+          "longitude": 118.789217,
+          "latitude": 32.021785
+        },
+        {
+          "provider": "amap",
+          "providerPoiId": "B0FFFF28YI",
+          "city": "南京",
+          "name": "老门东牌坊",
+          "address": "箍桶巷与剪子巷交汇处",
+          "district": "秦淮区",
+          "category": "风景名胜;风景名胜;风景名胜",
+          "coordinateSystem": "gcj02",
+          "longitude": 118.787898,
+          "latitude": 32.012777
+        },
+        {
+          "provider": "amap",
+          "providerPoiId": "B0MUOX75V6",
+          "city": "南京",
+          "name": "北牌坊广场",
+          "address": "夫子庙景区步行街与贡院西街交叉口东20米",
+          "district": "秦淮区",
+          "category": "风景名胜;公园广场;城市广场",
+          "coordinateSystem": "gcj02",
+          "longitude": 118.788925,
+          "latitude": 32.022675
+        },
+        {
+          "provider": "amap",
+          "providerPoiId": "B0MGLLNI8K",
+          "city": "南京",
+          "name": "南京牛市牌坊",
+          "address": "集庆路6-41号(三山街地铁站1号口步行340米)",
+          "district": "秦淮区",
+          "category": "风景名胜;风景名胜;风景名胜",
+          "coordinateSystem": "gcj02",
+          "longitude": 118.77802,
+          "latitude": 32.023041
+        },
+        {
+          "provider": "amap",
+          "providerPoiId": "B0MUVLXJ5U",
+          "city": "南京",
+          "name": "南京夫子庙-戏院里牌坊(打卡点)",
+          "address": "贡院街152号南京夫子庙",
+          "district": "秦淮区",
+          "category": "风景名胜;风景名胜;观景点",
+          "coordinateSystem": "gcj02",
+          "longitude": 118.7918,
+          "latitude": 32.021545
+        }
+      ]
+    },
+    {
+      "sourcePlaceId": "stop-4",
+      "keyword": "ARTALL爱涛设计酒店",
+      "candidates": [
+        {
+          "provider": "amap",
+          "providerPoiId": "B0JA2BDQEX",
+          "city": "南京",
+          "name": "南京夫子庙ARTALL爱涛设计酒店",
+          "address": "平江府路191号(武定门地铁站3号口步行370米)",
+          "district": "秦淮区",
+          "category": "住宿服务;宾馆酒店;宾馆酒店",
+          "coordinateSystem": "gcj02",
+          "longitude": 118.792925,
+          "latitude": 32.016575
+        },
+        {
+          "provider": "amap",
+          "providerPoiId": "B0MBH5IANL",
+          "city": "南京",
+          "name": "Cupping Cafe(白鹭洲店)",
+          "address": "平江府路191号(ARTALL爱涛设计酒店旁)",
+          "district": "秦淮区",
+          "category": "餐饮服务;咖啡厅;咖啡厅",
+          "coordinateSystem": "gcj02",
+          "longitude": 118.792969,
+          "latitude": 32.016757
+        }
+      ]
+    },
+    {
+      "sourcePlaceId": "stop-5",
+      "keyword": "三七八巷",
+      "candidates": [
+        {
+          "provider": "amap",
+          "providerPoiId": "B0FFGQ9HIL",
+          "city": "南京",
+          "name": "三七八巷",
+          "address": "秦淮区",
+          "district": "秦淮区",
+          "category": "地名地址信息;交通地名;道路名",
+          "coordinateSystem": "gcj02",
+          "longitude": 118.790912,
+          "latitude": 32.015234
+        },
+        {
+          "provider": "amap",
+          "providerPoiId": "B00190BP4A",
+          "city": "南京",
+          "name": "三七八巷",
+          "address": "饮虹园37号(武定门地铁站3号口步行370米)",
+          "district": "秦淮区",
+          "category": "商务住宅;住宅区;住宅小区|地名地址信息;交通地名;道路名",
+          "coordinateSystem": "gcj02",
+          "longitude": 118.790913,
+          "latitude": 32.015373
+        },
+        {
+          "provider": "amap",
+          "providerPoiId": "B0FFI9LKRD",
+          "city": "南京",
+          "name": "三七八巷农贸市场",
+          "address": "平江府路80-1夫子庙秦淮风光带内(南侧)",
+          "district": "秦淮区",
+          "category": "购物服务;综合市场;农副产品市场",
+          "coordinateSystem": "gcj02",
+          "longitude": 118.790949,
+          "latitude": 32.014828
+        },
+        {
+          "provider": "amap",
+          "providerPoiId": "B0FFHVKEAL",
+          "city": "南京",
+          "name": "三七八巷与长乐路交叉口",
+          "address": "秦淮区",
+          "district": "秦淮区",
+          "category": "地名地址信息;交通地名;路口名",
+          "coordinateSystem": "gcj02",
+          "longitude": 118.791154,
+          "latitude": 32.015715
+        },
+        {
+          "provider": "amap",
+          "providerPoiId": "B0FFGGLZH9",
+          "city": "南京",
+          "name": "磊功巷与三七八巷交叉口",
+          "address": "秦淮区",
+          "district": "秦淮区",
+          "category": "地名地址信息;交通地名;路口名",
+          "coordinateSystem": "gcj02",
+          "longitude": 118.79078,
+          "latitude": 32.014957
+        },
+        {
+          "provider": "amap",
+          "providerPoiId": "B0FFKF6A19",
+          "city": "南京",
+          "name": "三七八巷熏鱼",
+          "address": "磊功巷14号(武定门地铁站3号口步行410米)",
+          "district": "秦淮区",
+          "category": "餐饮服务;中餐厅;中餐厅",
+          "coordinateSystem": "gcj02",
+          "longitude": 118.790078,
+          "latitude": 32.014988
+        },
+        {
+          "provider": "amap",
+          "providerPoiId": "B0KRL777NU",
+          "city": "南京",
+          "name": "三七八巷特色小吃(暂停营业)",
+          "address": "饮虹园37号三七八巷(武定门地铁站3号口步行290米)",
+          "district": "秦淮区",
+          "category": "餐饮服务;中餐厅;中餐厅",
+          "coordinateSystem": "gcj02",
+          "longitude": 118.79153,
+          "latitude": 32.015476
+        },
+        {
+          "provider": "amap",
+          "providerPoiId": "B0FFKRPEBG",
+          "city": "南京",
+          "name": "三七八巷蛋饺春卷店",
+          "address": "三七八巷饮虹园37号菜场西门面6",
+          "district": "秦淮区",
+          "category": "餐饮服务;中餐厅;中餐厅",
+          "coordinateSystem": "gcj02",
+          "longitude": 118.790706,
+          "latitude": 32.014655
+        },
+        {
+          "provider": "amap",
+          "providerPoiId": "B0LKSMI4GE",
+          "city": "南京",
+          "name": "三七八巷油端子",
+          "address": "饮虹园10号(武定门地铁站3号口步行220米)",
+          "district": "秦淮区",
+          "category": "购物服务;综合市场;农副产品市场",
+          "coordinateSystem": "gcj02",
+          "longitude": 118.792076,
+          "latitude": 32.01477
+        },
+        {
+          "provider": "amap",
+          "providerPoiId": "B0FFKRNHYX",
+          "city": "南京",
+          "name": "陆家老面馆三七八巷肥肠大肉面(花舟店)",
+          "address": "饮虹园37号三七八巷138号楼",
+          "district": "秦淮区",
+          "category": "餐饮服务;中餐厅;中餐厅",
+          "coordinateSystem": "gcj02",
+          "longitude": 118.790778,
+          "latitude": 32.015154
+        }
+      ]
+    }
+  ]
+}
