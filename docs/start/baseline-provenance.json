@@ -1,0 +1,1443 @@
+{
+  "date": "2026-10-02",
+  "backupDirectory": "D:/Downloads/fan-route-codex-handoff/integration-backups/2026-10-02-baseline-verified",
+  "bundle": {
+    "path": "start-all-refs.bundle",
+    "sha256": "40f8d114994d2aa0f58be51038626eacd8d94ae6e5d7d81e9b1b478f96e539ee",
+    "bytes": 64992711
+  },
+  "originalRoots": {
+    "main": {
+      "root": "D:/Downloads/fan-route-codex-handoff/fan-route-codex-handoff",
+      "head": "1def607be517cb2e5bbf7c183125836a113ea5ce",
+      "status": [
+        " M docs/references/README.md",
+        "?? character-assets/character-asset-spec.md",
+        "?? character-assets/references/R01_girl_final_reference.png",
+        "?? character-assets/references/R02_boy_final_reference.png",
+        "?? character-assets/validation/drafts/boy_action_validation_v1_draft.png",
+        "?? character-assets/validation/drafts/boy_expression_validation_v1_draft.png",
+        "?? character-assets/validation/drafts/boy_identity_master_v1_draft.png",
+        "?? character-assets/validation/drafts/girl_action_validation_v1_draft.png",
+        "?? character-assets/validation/drafts/girl_expression_validation_v1_draft.png",
+        "?? character-assets/validation/drafts/girl_identity_master_v1_draft.png",
+        "?? docs/references/start-home-light-visual-baseline.png",
+        "?? docs/references/start-p3-route-detail-visual-baseline.png",
+        "?? docs/references/start-p4-route-edit-visual-baseline.png",
+        "?? docs/references/start-p5-route-in-progress-visual-baseline.png",
+        "?? docs/references/start-p6-arrival-visual-baseline.png",
+        "?? docs/references/start-p7-photo-checkin-visual-baseline.png",
+        "?? docs/references/start-p8-route-complete-visual-baseline.png",
+        "?? docs/references/start-p9-my-trails-visual-baseline.png",
+        "?? docs/start-intake/2026-10-01/CURRENT_STATE_REPORT.md",
+        "?? docs/start-intake/2026-10-01/FIGMA_PLAN_SLICE_001.md",
+        "?? docs/start-intake/2026-10-01/INTEGRATION_BASELINE_PLAN.md",
+        "?? docs/start-intake/2026-10-01/REFERENCE_NOTE_001.md",
+        "?? docs/start-intake/2026-10-01/SLICE_001_IMPLEMENTATION_PLAN.md",
+        "?? docs/superpowers/plans/2026-09-28-character-asset-baseline.md"
+      ],
+      "files": [
+        {
+          "path": ".gitignore",
+          "hash": "1b561966aa95ac863a092485a5b4eb57a2ed0c9482e854726b5a853bfa2c79af"
+        },
+        {
+          "path": ".npmrc",
+          "hash": "f7dbda001b627b3a792fb6929303b517f047f03916f2c55227e81216d38a2008"
+        },
+        {
+          "path": ".openai/hosting.json",
+          "hash": "d532abb65cf9ae20634b464d954cb4a08a0de9f3cd3cdf7f9c3ec8948826d947"
+        },
+        {
+          "path": "AGENTS.md",
+          "hash": "20d7bd32b5cc117746801ee8bbac7a7a8c1bdb12a1b1ca55536f049414ff6388"
+        },
+        {
+          "path": "README.md",
+          "hash": "4b4764e9b66662b11bce357f483a366a7ba111b17ad68542f201ce3040cbc61c"
+        },
+        {
+          "path": "character-assets/character-asset-spec.md",
+          "hash": "a897bc8b9008ae001907f36e3a8661acfbab5eb6ea3884336c833c6e66c05d95"
+        },
+        {
+          "path": "character-assets/references/R01_girl_final_reference.png",
+          "hash": "14bde8df45d3ff6df36ca594ab5325d605151600960c020f1f84b60c43ea6a88"
+        },
+        {
+          "path": "character-assets/references/R02_boy_final_reference.png",
+          "hash": "e5101e28e72e198429cb930497f93a514760cde82376988dc93bd40f28b39d67"
+        },
+        {
+          "path": "character-assets/validation/drafts/boy_action_validation_v1_draft.png",
+          "hash": "a406f25c5d937c4b2a566499c11bc2e4c235bb1588a8c2baae55aa544b26c8a5"
+        },
+        {
+          "path": "character-assets/validation/drafts/boy_expression_validation_v1_draft.png",
+          "hash": "0dafd9056762bc4e9cd0da4e0087c7607a405182f11395ffdbc6904e6f58220a"
+        },
+        {
+          "path": "character-assets/validation/drafts/boy_identity_master_v1_draft.png",
+          "hash": "f907afd139f5307e099f36f20ff4abbec651d5ac478a41d3de879e5385ab520b"
+        },
+        {
+          "path": "character-assets/validation/drafts/girl_action_validation_v1_draft.png",
+          "hash": "cfa7ad40d7af2a3c6ba244c888bae679f05b9676789732c5dcb7087a35c22a09"
+        },
+        {
+          "path": "character-assets/validation/drafts/girl_expression_validation_v1_draft.png",
+          "hash": "f988a12784f1718e90e360aef4e1e8f1f06f89eff9d5320dcc24368f3341bbcb"
+        },
+        {
+          "path": "character-assets/validation/drafts/girl_identity_master_v1_draft.png",
+          "hash": "d901205b63974ae0a99da85b833e5ebd396526060cc551ec16295d690cebcad2"
+        },
+        {
+          "path": "design-qa.md",
+          "hash": "618833df974e53ec06a61f9c548d197c08df33dde72d60c516f14c0cc71cda8a"
+        },
+        {
+          "path": "docs/00-product-brief.md",
+          "hash": "5dd814e2bb58bf077d0efbb78ab3adbeeeb4a9b8dc8c601e64ad3d26da44b81c"
+        },
+        {
+          "path": "docs/01-prototype-scope.md",
+          "hash": "1eaf3fc525b0bd1c44551405789cc343de2f2ed8193cef421a6be2880a4b5511"
+        },
+        {
+          "path": "docs/02-screen-spec.md",
+          "hash": "d74faf711e5c13023064ca640dc1708188ff760e7d1a36fd4c0f00008d0d5dc8"
+        },
+        {
+          "path": "docs/03-interaction-flow.md",
+          "hash": "0c0add95a0e5a37ad093610375f77bd58f945ca2201c32abe0ac9ac09aa2af52"
+        },
+        {
+          "path": "docs/04-acceptance-criteria.md",
+          "hash": "6bd57be17b0fe6d049f617ac4d885d8fdf279528c2cc31aea926e89941197302"
+        },
+        {
+          "path": "docs/05-codex-kickoff-prompt.md",
+          "hash": "543ec40c569ac04b40326a717616c9ddd067cf7833d128db6ee16a1dc5620cba"
+        },
+        {
+          "path": "docs/references/README.md",
+          "hash": "0d98e2968070a43f9d38105909a2401748a6098ffc38c07fcc6a56d8219df32a"
+        },
+        {
+          "path": "docs/references/glass-style-01.png",
+          "hash": "579cdc7afb32cec7b4a6df0d76d28a5da2db0e1dab768b1ee1fc7adee9c240ad"
+        },
+        {
+          "path": "docs/references/glass-style-02.png",
+          "hash": "1b1e8b0738986483863510272754d034da13c53a3ac84e1ece9526e37a0c2a3e"
+        },
+        {
+          "path": "docs/references/glass-style-03.png",
+          "hash": "4133f18ebce1f198821a2fb9fe2b10d35d4be275324747718962d4ff6468c337"
+        },
+        {
+          "path": "docs/references/glass-style-04.png",
+          "hash": "c0f627c27ead70c9d881256816dbc95269f109642f215b9ba507078041b4733f"
+        },
+        {
+          "path": "docs/references/product-reference-01.png",
+          "hash": "5a26d305c23327571f834b7ce1a153595545a70eaa823de2b27f19b5a535debd"
+        },
+        {
+          "path": "docs/references/product-reference-02.png",
+          "hash": "67feec2a574827691c5c20755750197adc1752b5fc0c398f87a8461aaff1bfbf"
+        },
+        {
+          "path": "docs/references/product-reference-03.png",
+          "hash": "0dee1abf376690f53233b2999f25a16fcab9059db3694314aed170fa7bed7722"
+        },
+        {
+          "path": "docs/references/product-reference-04.png",
+          "hash": "08477dfd88085a706c35ee61e5cc2f2994dadb4f43d2d30ff11bc6e444311943"
+        },
+        {
+          "path": "docs/references/start-home-light-visual-baseline.png",
+          "hash": "05e931de7b5cf7a0ce1574928de8b4213cedfc0826a63526fb24a0dbb5788cef"
+        },
+        {
+          "path": "docs/references/start-p3-route-detail-visual-baseline.png",
+          "hash": "a6a1edc70fe571ecde3e2fc8dda9b7c30e8b719dad9e2c072c2e5b9586e81134"
+        },
+        {
+          "path": "docs/references/start-p4-route-edit-visual-baseline.png",
+          "hash": "14c6f6f20ed6ff837ffc9ac4d03e7d685bcac8e21ccd375405ad248adc7712e4"
+        },
+        {
+          "path": "docs/references/start-p5-route-in-progress-visual-baseline.png",
+          "hash": "54a4318b44b0f01a54cbb10dda8ba68caba86486434e0b41b4b4634cbb55fcd7"
+        },
+        {
+          "path": "docs/references/start-p6-arrival-visual-baseline.png",
+          "hash": "9edbbbe7421f0134ae62e22bd065803bee850c96bd2ec595066df2572506efc9"
+        },
+        {
+          "path": "docs/references/start-p7-photo-checkin-visual-baseline.png",
+          "hash": "56ee1c5903cb3debb446e5e26ff94ebb8ad0974f9c6653315cb706deaf75b286"
+        },
+        {
+          "path": "docs/references/start-p8-route-complete-visual-baseline.png",
+          "hash": "94820c0391421ddc8715f0eaaef18b82d14402719e9485594d35d12ee55f1de0"
+        },
+        {
+          "path": "docs/references/start-p9-my-trails-visual-baseline.png",
+          "hash": "2f5ed892f771b21c1b0977925d30cc39f52f8a7cca12bc25fa8b0d4e19bf8549"
+        },
+        {
+          "path": "docs/seed/route-anpu-nanjing.json",
+          "hash": "e43ce890c3a8ceb146ec2c1631ed5d5b6dc5beb67af5522f5c63ee18e9b1456e"
+        },
+        {
+          "path": "docs/start-intake/2026-10-01/CURRENT_STATE_REPORT.md",
+          "hash": "021bd70594f8c163e70f601c370272c02a3ff18c9249c96aced0ba4e4a44ccab"
+        },
+        {
+          "path": "docs/start-intake/2026-10-01/FIGMA_PLAN_SLICE_001.md",
+          "hash": "bcfd4fff28f96237692ab3d8fd6e1740cef314045701c86ab19931c3f2c1db7f"
+        },
+        {
+          "path": "docs/start-intake/2026-10-01/INTEGRATION_BASELINE_PLAN.md",
+          "hash": "d88c37f9ad62488103dc077c1707a86f3dfed7c63951ff4ee6ec14a790f16e46"
+        },
+        {
+          "path": "docs/start-intake/2026-10-01/REFERENCE_NOTE_001.md",
+          "hash": "d05c16950605032ecb65dcfccce4a99083ec0ca5b115d7e80105b97f854ef047"
+        },
+        {
+          "path": "docs/start-intake/2026-10-01/SLICE_001_IMPLEMENTATION_PLAN.md",
+          "hash": "ddaafbc7a70f543f09a059edb1d8c240333bfbfa235d581f36e965e76c889ead"
+        },
+        {
+          "path": "docs/superpowers/plans/2026-09-28-character-asset-baseline.md",
+          "hash": "e7f41b5c1b16bd3bbbe7246a7db0502e753906bbea8b5079e5aa1fe59f3dab33"
+        },
+        {
+          "path": "index.html",
+          "hash": "c3db0c7b54dbaa3c0c447d47555299b1a5fdcc8e726eb54b02cd853bf45f565d"
+        },
+        {
+          "path": "package.json",
+          "hash": "aae8e8c8625369e5eb0ef7e606221cf130bc6d19bdcc5ca15ea7f233f02b98f5"
+        },
+        {
+          "path": "pnpm-lock.yaml",
+          "hash": "18da1f82ca7240b78c8a78a891cf9f46aa86974974dcdeb90d183a5a99e97ffd"
+        },
+        {
+          "path": "pnpm-workspace.yaml",
+          "hash": "368dded5425b3a78b32746cf765a5b0e1efc51cad98903ad4a9d0561cd956e02"
+        },
+        {
+          "path": "public/assets/nanjing-abstract-city.png",
+          "hash": "8bc3a75e62fa73a0d94a4e9b475dd147d2b784d35b1458910e9f3475203ba787"
+        },
+        {
+          "path": "public/assets/star-pet-xingli.png",
+          "hash": "2e35f6c8007d987788acf504478d5f010b93d2c962f2926f7b040771e7b48aa3"
+        },
+        {
+          "path": "scripts/prepare-sites-build.mjs",
+          "hash": "b6a6adaa4fab3234676116dd1c9cb6611275ab9d92dd26f5bf402393e3744bf6"
+        },
+        {
+          "path": "src/App.test.tsx",
+          "hash": "9e1640f105a1d08c27b6b3c08f7ba585372711691f904615091ad4135310c87c"
+        },
+        {
+          "path": "src/App.tsx",
+          "hash": "8452d4c8e2333690326ce70001bed86454661c21054464ad4d626acc3a103a4a"
+        },
+        {
+          "path": "src/components/ActionDock.tsx",
+          "hash": "fda27796b1a90b3cc082521903da8b6cc7ac9817a73e93d81f3f37f38ca49daa"
+        },
+        {
+          "path": "src/components/AppChrome.tsx",
+          "hash": "869bf728d75e283ced56b40f233527c4ecbb6b3903210887d40e97134f2809c0"
+        },
+        {
+          "path": "src/components/Dialogs.tsx",
+          "hash": "4a759c87c3228cec0de5de9c62f77449ccfdfcac70a535bffd219866e674cd05"
+        },
+        {
+          "path": "src/components/RouteTimeline.tsx",
+          "hash": "3b98a2f85d4fd514596d7da74f38702dac5a20325533c16e1f815d7b05efa8ab"
+        },
+        {
+          "path": "src/components/StarPet.tsx",
+          "hash": "40db731aa98302bc159b1443922dee5578049856d14ef65073c1b32649651ed6"
+        },
+        {
+          "path": "src/data/route.test.ts",
+          "hash": "2d2decd8209f6aa416013888f49fdc25149e8caf9d1f9e99d23f841f8a74a772"
+        },
+        {
+          "path": "src/data/route.ts",
+          "hash": "264bb1bdfc8dde86ddaf20d1bc312fdc28d1fdce98d3d4f066cabae45149a8a1"
+        },
+        {
+          "path": "src/main.tsx",
+          "hash": "b4aaf97489a2ec7c86d02cb766114060238cddb89734bf36486b75e33cc8eda4"
+        },
+        {
+          "path": "src/pages/HomePage.tsx",
+          "hash": "456343cb073bbc4f04cab052b59070ea3a0135bb098e35872a297687923df934"
+        },
+        {
+          "path": "src/pages/LiveRoutePage.tsx",
+          "hash": "7533d1dea67ad9774a813e1c5177929d2925b1880d94b8214dca970b2aade39f"
+        },
+        {
+          "path": "src/pages/NavigationSimulationPage.tsx",
+          "hash": "b2c4533a90c8339bd8a069104d03c3064fd962ff99ac6aeccf0987073c4374b3"
+        },
+        {
+          "path": "src/pages/RouteDetailPage.tsx",
+          "hash": "abfc1c3d1bbea41c2ef9643fb056d03a066452519fa83f1fb61457a968af10a3"
+        },
+        {
+          "path": "src/state/RouteSessionContext.tsx",
+          "hash": "87b1168a8d70d07543428878d58c9e92c67ce23631741319fedbd8d8faee44dc"
+        },
+        {
+          "path": "src/state/routeSession.test.ts",
+          "hash": "0ac85bf86471182f11da8d588972b1809e63b99ff0c7d89eb3bde479fd2d335f"
+        },
+        {
+          "path": "src/state/routeSession.ts",
+          "hash": "f3e690f53f8c444096fc8a36747ae495dc3ca7741dae648146580aad28859544"
+        },
+        {
+          "path": "src/styles.css",
+          "hash": "6836d774b333ff45206696767db6c82ef2b8f920b8c5085adf273fa2e9f68370"
+        },
+        {
+          "path": "src/test/setup.ts",
+          "hash": "b0678bc69ab358a409a7a2e3e8a664ac85f3e9dec829fecc293ba3e1035a39d6"
+        },
+        {
+          "path": "tests/sites-worker.test.mjs",
+          "hash": "7ca98955f019e16434bea8823fc0b919f5d8cf0e4ea6c2372f0a34378312a5cc"
+        },
+        {
+          "path": "tests/test-helpers.mjs",
+          "hash": "19d2f6eb8be2570c2f039b30a8dc47231a8f77c4af44436fc1331b2477c4fa2e"
+        },
+        {
+          "path": "tsconfig.json",
+          "hash": "a7266d1c85fa6947c70073256d9a73e4c459e97b0b4ef24b5c48dcab498ef4c5"
+        },
+        {
+          "path": "vite.config.mjs",
+          "hash": "3722881a40f74d7af44a4ae366c90e54dbafd48add00cb73732f5dfe750afdd4"
+        },
+        {
+          "path": "worker/index.js",
+          "hash": "2dd0615a445143933d88d4271f54f5d63ee951421fcd08c5a7617bb09c564389"
+        }
+      ]
+    },
+    "map": {
+      "root": "D:/Downloads/fan-route-codex-handoff/.worktrees/fan-route-v0.2",
+      "head": "b9a4623292ca373869b9feb8343d6d36e0b1d36f",
+      "status": [
+        " M src/App.test.tsx",
+        "?? docs/adr/001-modular-monolith-and-vertical-slices.md",
+        "?? docs/adr/002-separate-route-version-and-journey.md",
+        "?? docs/adr/003-map-provider-boundary.md",
+        "?? docs/licenses/dependency-ledger.md",
+        "?? docs/product/fan-route-v0.3-core-flow.md",
+        "?? docs/product/fan-route-v0.3-product-architecture.md",
+        "?? docs/research/open-source-adoption-matrix.md",
+        "?? docs/superpowers/plans/2026-09-28-fan-route-v0.3-planning-foundation.md",
+        "?? src/api/mapClient.test.ts",
+        "?? src/api/mapClient.ts",
+        "?? src/data/routeRepository.test.ts",
+        "?? src/data/routeRepository.ts"
+      ],
+      "files": [
+        {
+          "path": ".gitignore",
+          "hash": "b14943094eea00b8c29919b8125b03ec406f28dc13bf3a5eebb9cd0018e6c89b"
+        },
+        {
+          "path": ".npmrc",
+          "hash": "4b86f5f917232873bbf42e48812de3a2869a739df361ffa4a3b117a9f4ff65aa"
+        },
+        {
+          "path": ".openai/hosting.json",
+          "hash": "d2841f8a91a91bab4f4a1e27671e7d3fe8f02261eb41996f43ac61e6970a9d74"
+        },
+        {
+          "path": "AGENTS.md",
+          "hash": "99f0145afc5d7c676f76c19e95a601334c2f3d504118a1ab40ca71b70cac24e4"
+        },
+        {
+          "path": "README.md",
+          "hash": "2e6c29f3aaad34cbcde17e16f60b423dad1df07af45dff024c7bbee223859358"
+        },
+        {
+          "path": "design-qa.md",
+          "hash": "ee86616f005c27cc4e08d100ff36892dd834772431903749f5fb6ada9974dfdf"
+        },
+        {
+          "path": "docs/00-product-brief.md",
+          "hash": "d6d28f20c5d64f3ec40cff6fb5aff1462372d03b810bc78ae21ff6e636ad45c7"
+        },
+        {
+          "path": "docs/01-prototype-scope.md",
+          "hash": "860f73fa028928de90f42bae128466f91e8061f32cbd3999b39ba34595451b7f"
+        },
+        {
+          "path": "docs/02-screen-spec.md",
+          "hash": "64b20059ceb4e2e1bb88760853d283ff2b18f9da5a6ab8c8fb607fa7fed9bb8a"
+        },
+        {
+          "path": "docs/03-interaction-flow.md",
+          "hash": "585586487cb72683ed3a4ae763d14d6dc3e86c53335185fb2bcb7cd1ac9ae2f5"
+        },
+        {
+          "path": "docs/04-acceptance-criteria.md",
+          "hash": "68f5fa7998734837068a546ce82d4d4a3cb7900e9cb1d994ad5bd60e4eaebf53"
+        },
+        {
+          "path": "docs/05-codex-kickoff-prompt.md",
+          "hash": "a891205b8f8b49ac9fbc512e1721fe5ee3eaaefd9226689e49792e68bb4efec1"
+        },
+        {
+          "path": "docs/adr/001-modular-monolith-and-vertical-slices.md",
+          "hash": "b4e4b367b643a1a98c8c76750599918b4cc4c9ab5f7e51b6e757f53d9bb4d8bf"
+        },
+        {
+          "path": "docs/adr/002-separate-route-version-and-journey.md",
+          "hash": "0198ff85e6d86fb4e47c65ea8ef84e77785e9147728b9c0729c29feb001dd422"
+        },
+        {
+          "path": "docs/adr/003-map-provider-boundary.md",
+          "hash": "9aa07dcdd7300ee476d69455e7312dbb5077e78abec02fe992723dfd8ce1fabf"
+        },
+        {
+          "path": "docs/handoff/2026-09-15-fan-route-v0.2-codex-handoff.md",
+          "hash": "352be64bdb44d00c9e74ffc0107d08b8f68c9b35555c6d4c5774821dfc98c378"
+        },
+        {
+          "path": "docs/handoff/2026-09-15-fan-route-v0.2-real-map-mvp-design.md",
+          "hash": "f06fed1ed0b74f4e8491087eeb37852b54240d015df33c7115cf11b339eacb98"
+        },
+        {
+          "path": "docs/handoff/2026-09-15-fan-route-v0.2-real-map-mvp.md",
+          "hash": "42f5d1b294c9bd4e91e11788eda8deb47fe974bc09efb1a2d29d60cb289a3ae4"
+        },
+        {
+          "path": "docs/handoff/README.md",
+          "hash": "d81794ae9484253ec34cb603028ef8a1ac26c4e52f1ae6f1508876f1c2ff39d5"
+        },
+        {
+          "path": "docs/licenses/dependency-ledger.md",
+          "hash": "8664751eb27fb50a18793d02f05b737992df30a3ba147d4ed1b0ad3c8f115436"
+        },
+        {
+          "path": "docs/product/fan-route-v0.3-core-flow.md",
+          "hash": "1ed9d1cfb95096b08321aeaf076f4e34f37060b0fb05973334104da96d57e2d8"
+        },
+        {
+          "path": "docs/product/fan-route-v0.3-product-architecture.md",
+          "hash": "044dd5bc4802ad62e9a0530043f8f050a070e743f078a410a96c848742362335"
+        },
+        {
+          "path": "docs/qa/task-4-review.md",
+          "hash": "b0e4dd2dd86412f98371d2129b5e8695a155bfab812faf0d1b38684137ed25c4"
+        },
+        {
+          "path": "docs/qa/task-5-review.md",
+          "hash": "2e7a9c2ed2901ae2e4fafa637c34278eb358c70d2e389864ba6fa2e13ccf1e9d"
+        },
+        {
+          "path": "docs/qa/task-6-review.md",
+          "hash": "69994eaf4a9009e81f99cec8fe7ba640ceb28d401ded6ac0fae56df35a546672"
+        },
+        {
+          "path": "docs/references/README.md",
+          "hash": "ad21b95c97f940f87e243c08255c5eb2794ec753a63238afe918f6290776500d"
+        },
+        {
+          "path": "docs/references/glass-style-01.png",
+          "hash": "579cdc7afb32cec7b4a6df0d76d28a5da2db0e1dab768b1ee1fc7adee9c240ad"
+        },
+        {
+          "path": "docs/references/glass-style-02.png",
+          "hash": "1b1e8b0738986483863510272754d034da13c53a3ac84e1ece9526e37a0c2a3e"
+        },
+        {
+          "path": "docs/references/glass-style-03.png",
+          "hash": "4133f18ebce1f198821a2fb9fe2b10d35d4be275324747718962d4ff6468c337"
+        },
+        {
+          "path": "docs/references/glass-style-04.png",
+          "hash": "c0f627c27ead70c9d881256816dbc95269f109642f215b9ba507078041b4733f"
+        },
+        {
+          "path": "docs/references/product-reference-01.png",
+          "hash": "5a26d305c23327571f834b7ce1a153595545a70eaa823de2b27f19b5a535debd"
+        },
+        {
+          "path": "docs/references/product-reference-02.png",
+          "hash": "67feec2a574827691c5c20755750197adc1752b5fc0c398f87a8461aaff1bfbf"
+        },
+        {
+          "path": "docs/references/product-reference-03.png",
+          "hash": "0dee1abf376690f53233b2999f25a16fcab9059db3694314aed170fa7bed7722"
+        },
+        {
+          "path": "docs/references/product-reference-04.png",
+          "hash": "08477dfd88085a706c35ee61e5cc2f2994dadb4f43d2d30ff11bc6e444311943"
+        },
+        {
+          "path": "docs/research/open-source-adoption-matrix.md",
+          "hash": "12f43fbb7118f83fee8f978c3087b2a6f077ac3d04a577a10cf7983c63e61948"
+        },
+        {
+          "path": "docs/seed/route-anpu-nanjing.candidates.json",
+          "hash": "4c27e25e22c818e25a7cf973ae32e79ba44451098018b9473bd531519115b66d"
+        },
+        {
+          "path": "docs/seed/route-anpu-nanjing.json",
+          "hash": "411584ff3b67728110ff0d80e7313c4fefbfa9b3336116ac1a8647debe771b7b"
+        },
+        {
+          "path": "docs/seed/route-anpu-nanjing.selections.json",
+          "hash": "b82a93e50260dcfd9d7d9bb7e0d45bde525a9a36d9ad4ce361f54cf2fc3e36c2"
+        },
+        {
+          "path": "docs/seed/route-anpu-nanjing.source.json",
+          "hash": "313f08f9cf6d159a055d0eebad82a9d987d77dc52e25013bdae9d94a1a514d96"
+        },
+        {
+          "path": "docs/superpowers/plans/2026-09-28-fan-route-v0.3-planning-foundation.md",
+          "hash": "42362bcc71cfc48c1a692d203d9ecd89dd7ed1d866d7857fa12f8bd84eba6a8b"
+        },
+        {
+          "path": "index.html",
+          "hash": "10b093b57e2f856d19ac99fa5970cdf713cf1f756d82c74592793dd9628fa0dd"
+        },
+        {
+          "path": "package.json",
+          "hash": "df18b9f7faf3ef2d6961c24fce4d955283404b8681f76e190795500ff947d4ef"
+        },
+        {
+          "path": "pnpm-lock.yaml",
+          "hash": "7d0394ade55f471f6e2530f1cc1c5321cb984232106ba082e92baa78868ebf7e"
+        },
+        {
+          "path": "pnpm-workspace.yaml",
+          "hash": "e5e5244310d158ca27330393ada3bbfd057d49db4645cf825f1b9638c6a6ee37"
+        },
+        {
+          "path": "public/assets/nanjing-abstract-city.png",
+          "hash": "8bc3a75e62fa73a0d94a4e9b475dd147d2b784d35b1458910e9f3475203ba787"
+        },
+        {
+          "path": "public/assets/star-pet-xingli.png",
+          "hash": "2e35f6c8007d987788acf504478d5f010b93d2c962f2926f7b040771e7b48aa3"
+        },
+        {
+          "path": "scripts/confirm-seed-places.mjs",
+          "hash": "d8950cf1eff8e413c8177ac58fc821e5269fd9efb8ba6feed73240746e5c5d2c"
+        },
+        {
+          "path": "scripts/prepare-sites-build.mjs",
+          "hash": "ea0855bb81a2b0425258ed95cc50f82a35ff95d9b88a30eb946580a6cc98c478"
+        },
+        {
+          "path": "src/App.test.tsx",
+          "hash": "4d07d1eddf4222b931ab20d37b229cd56c9b05f38c8f2d35ff5f0fe29ce2ba38"
+        },
+        {
+          "path": "src/App.tsx",
+          "hash": "988728095808a7d5bae0280418393af78bd743a929187f16ffa1518ac6c5ab23"
+        },
+        {
+          "path": "src/api/mapClient.test.ts",
+          "hash": "4b9eb096baa886b8e131c181a0fe911f51236262bca440956af808a740ca725f"
+        },
+        {
+          "path": "src/api/mapClient.ts",
+          "hash": "51a792babab1ed8ef0cab8b373729523e4752ba22127e980cffa604f34b71b7d"
+        },
+        {
+          "path": "src/components/ActionDock.tsx",
+          "hash": "1e8f4b3304c7bdcc0717d31110ff851bb5c0c1f5175dd3efad569f004bc92634"
+        },
+        {
+          "path": "src/components/AppChrome.tsx",
+          "hash": "ee1f70bbe25be9f36efc4d2d3f5db8ade7caf07503a1b1ce3fcb5adeeefeefe7"
+        },
+        {
+          "path": "src/components/Dialogs.tsx",
+          "hash": "908982235233e67c6f85e9c7ce4df73a145feaab6759048bea5a09af4552c2cb"
+        },
+        {
+          "path": "src/components/RouteTimeline.tsx",
+          "hash": "c627280e5c18a4e007ebb42a1cce31edc52ffa92104dcceaa30e8e65715787be"
+        },
+        {
+          "path": "src/components/StarPet.tsx",
+          "hash": "c968ddb3cfac6751717df12fffd16c0a1376e06bbca0dddf23c6d021b6040525"
+        },
+        {
+          "path": "src/data/route.test.ts",
+          "hash": "f84fb6044c17e9a91c026742409891c495825f887cd3287ecc885c81ec224258"
+        },
+        {
+          "path": "src/data/route.ts",
+          "hash": "187c475e36660c64e76c70046d29fa4f999127e58b64d86b29ac6c6bbf136e7b"
+        },
+        {
+          "path": "src/data/routeRepository.test.ts",
+          "hash": "cb1f0c5ccd782b4d4bd2bf75cc551338f3e26fbb29edd3ea10c6aa61e2d708b3"
+        },
+        {
+          "path": "src/data/routeRepository.ts",
+          "hash": "b26df2b157bb220887757ae762412ddd2d2639678776019eea81c034468d81f1"
+        },
+        {
+          "path": "src/domain/route.test.ts",
+          "hash": "6e475e81d83fedaf2dbc49368c9e601c44c6524ea6983ec02c67f0773b507916"
+        },
+        {
+          "path": "src/domain/route.ts",
+          "hash": "0d38fbcc59f4807c9ab18fc696868a3e7a5612794a00ce677fb54d0d9091898d"
+        },
+        {
+          "path": "src/main.tsx",
+          "hash": "6338c60a9af5f71ceb15d00662dd3484c271fdc3e30a8d47530bb39e7e10d505"
+        },
+        {
+          "path": "src/pages/HomePage.tsx",
+          "hash": "f6d8d81cfcc909e820816489be13fde870aae189043d054d51709f06515e068a"
+        },
+        {
+          "path": "src/pages/LiveRoutePage.tsx",
+          "hash": "ad98384bff52d77a6b0d9d8e78b4032e8d67c0e14b42f2eb7f9ac01d293e3b26"
+        },
+        {
+          "path": "src/pages/NavigationSimulationPage.tsx",
+          "hash": "ea5e86a8429ad6a9fbd35b5665972ea8d5d943fc36f6ba6646bb065f63246d1a"
+        },
+        {
+          "path": "src/pages/RouteDetailPage.tsx",
+          "hash": "978afd9473e12931a69c677887d974613604dad77277621021a19720d230d2a6"
+        },
+        {
+          "path": "src/state/RouteSessionContext.tsx",
+          "hash": "12b60fc0556876aae37b1c5ffcce5c03404aaf196cb92a58bf2bfa3102ba31e6"
+        },
+        {
+          "path": "src/state/routeSession.test.ts",
+          "hash": "781e130ee183af95065867ed205707517858f3ca50e022320162d319982baaa5"
+        },
+        {
+          "path": "src/state/routeSession.ts",
+          "hash": "cda9d2ffff5ef7b68ba72391f6932c4df310acd5230b969a8e246a118b3b2fdd"
+        },
+        {
+          "path": "src/styles.css",
+          "hash": "1cc65e95a377220363c237f50424fa300820c069c15096b6a4599d0c75c03fcc"
+        },
+        {
+          "path": "src/test/setup.ts",
+          "hash": "be20d0b69733ac606764fef77acb7f3d2a0d70e41d21f1b5de82dfdc4e65cf9d"
+        },
+        {
+          "path": "tests/amap-adapter.test.mjs",
+          "hash": "e33cde055fbb1758cb4827acc4d53c5c8d66d40089b121310890d41aa2fd772a"
+        },
+        {
+          "path": "tests/map-api-worker.test.mjs",
+          "hash": "cfd3c53907d44675361c2293a468f91702f70a219e100ef4cb61d6841df0a00d"
+        },
+        {
+          "path": "tests/route-calculation.test.mjs",
+          "hash": "337b9ff9d3a28b893e851df41bee46a7aa87ad3c7917de7c31a38f09cf9013e6"
+        },
+        {
+          "path": "tests/seed-confirmation.test.mjs",
+          "hash": "1c89ff36058f03bb2aab4bcd8abab842355eb35f8382cff285d654b9fb33252d"
+        },
+        {
+          "path": "tests/sites-worker.test.mjs",
+          "hash": "c274ab93f04284b86d52c8c99248c7f5db6550f0a181ecd3aa91451e9f97e355"
+        },
+        {
+          "path": "tests/test-helpers.mjs",
+          "hash": "f5d687f9aef300fa06d4105ebca8248ff30b7b8c435a12788b73740d42feecd4"
+        },
+        {
+          "path": "tsconfig.json",
+          "hash": "f2406e21a2835c9d3645b8b2ff257ee7ceb2e2373a13dc4802390ec0fa4675bf"
+        },
+        {
+          "path": "vite.config.mjs",
+          "hash": "d8816ec3588b48f0190fced32395c536415b9196cc6d44cc6e49c10c5d5d8d4b"
+        },
+        {
+          "path": "worker/api.js",
+          "hash": "97429cb85f1bf6e3434168596c940030572b68d2e6f5cf2005f9904ccbe701b2"
+        },
+        {
+          "path": "worker/index.js",
+          "hash": "9ccbdf2b2728bf5894dd1169740eda8706f111f827fa4df0f296896e037ec6b0"
+        },
+        {
+          "path": "worker/map/amap.js",
+          "hash": "9105cd05cd78e5fcf4749fb3c9f64f474e54a2931bacac57a0a9118b97834a1e"
+        },
+        {
+          "path": "worker/map/cache.js",
+          "hash": "e11a9d4758ff46827f6d1f3e2d87a14714e68043af30b2d78f54d0384df9c8e6"
+        },
+        {
+          "path": "worker/map/contracts.js",
+          "hash": "f0ce450eb66b97790d5583fe1e71d44d534a1d7acf4ffc6370bb9721a2549110"
+        },
+        {
+          "path": "worker/map/errors.js",
+          "hash": "0c5deb60c08877b960a549b75b9cb867ff04d8038741ef908b48f41f802498d1"
+        },
+        {
+          "path": "worker/route/calculate.js",
+          "hash": "f19c72eca3f111dcd877ea92dc2c2ef76718ac71268ed14eafc59ce0db7b5da8"
+        }
+      ]
+    },
+    "character": {
+      "root": "D:/Downloads/fan-route-codex-handoff/.worktrees/character-asset-baseline",
+      "head": "a8ece9707afca3a8106ec09b8d2a215dd30aa456",
+      "status": [
+        " M README.md",
+        " M character-assets/character-assets.json",
+        " M package.json",
+        " M scripts/validate-character-assets.mjs",
+        " M tests/character-assets.test.mjs",
+        " M tests/sites-worker.test.mjs",
+        "?? character-assets/qa/phase-one-acceptance.md"
+      ],
+      "files": [
+        {
+          "path": ".gitignore",
+          "hash": "b14943094eea00b8c29919b8125b03ec406f28dc13bf3a5eebb9cd0018e6c89b"
+        },
+        {
+          "path": ".npmrc",
+          "hash": "4b86f5f917232873bbf42e48812de3a2869a739df361ffa4a3b117a9f4ff65aa"
+        },
+        {
+          "path": ".openai/hosting.json",
+          "hash": "d2841f8a91a91bab4f4a1e27671e7d3fe8f02261eb41996f43ac61e6970a9d74"
+        },
+        {
+          "path": "AGENTS.md",
+          "hash": "99f0145afc5d7c676f76c19e95a601334c2f3d504118a1ab40ca71b70cac24e4"
+        },
+        {
+          "path": "README.md",
+          "hash": "0cfaaae2c9ef7ab8a05e55664034b2df9d851a521eaf236cc392ab325fba8682"
+        },
+        {
+          "path": "character-assets/boy/actions/boy_action_idle_v1.png",
+          "hash": "42191c498e57ef27cb3e585b154a7c7cef1504b41a80a50c5189367189f9fa80"
+        },
+        {
+          "path": "character-assets/boy/actions/boy_action_photo_v1.png",
+          "hash": "0fec4b10656e874d664bd9f7536726b6f822cc0933646b21e087f530f995e9cd"
+        },
+        {
+          "path": "character-assets/boy/actions/boy_action_walk_v1.png",
+          "hash": "d2e692af0cbce79f0e5a964df81ce59937057d430126d2288f4d526f48bf8760"
+        },
+        {
+          "path": "character-assets/boy/actions/boy_action_wave_v1.png",
+          "hash": "020dd2185dfc56996d9da62c8f1fa63da945ca2a4141bcf25a62ba886be9039a"
+        },
+        {
+          "path": "character-assets/boy/base/boy_base_default_v1.png",
+          "hash": "42191c498e57ef27cb3e585b154a7c7cef1504b41a80a50c5189367189f9fa80"
+        },
+        {
+          "path": "character-assets/boy/expressions/boy_expr_curious_v1.png",
+          "hash": "2bffa1dcac1381726d3c43dc03018636009b687c9c22a0eb5f85c2f31550422b"
+        },
+        {
+          "path": "character-assets/boy/expressions/boy_expr_default_v1.png",
+          "hash": "42191c498e57ef27cb3e585b154a7c7cef1504b41a80a50c5189367189f9fa80"
+        },
+        {
+          "path": "character-assets/boy/expressions/boy_expr_happy_open_eye_v1.png",
+          "hash": "4baf30450d32c484b041e473995b35738d339e33bbb8ad844f3d403e5ebf4a50"
+        },
+        {
+          "path": "character-assets/boy/expressions/boy_expr_surprised_v1.png",
+          "hash": "90bd4e5e342796921456e6524c12f9d5908ddfbb962740e1707dcf4c345657e2"
+        },
+        {
+          "path": "character-assets/character-asset-spec.md",
+          "hash": "d91a114b58a3cbd245cbcce9ed77105e086de20bb0f820f982c5c786ae444514"
+        },
+        {
+          "path": "character-assets/character-assets.json",
+          "hash": "b9ff07c82373d8449eca2927e0fc9c635bb117ae5b492433d74b736c8813cb74"
+        },
+        {
+          "path": "character-assets/girl/actions/girl_action_idle_v1.png",
+          "hash": "e42d3a337c4bf444b41f4de8195d822338ab6c25b05b0ade673d15c52676e8df"
+        },
+        {
+          "path": "character-assets/girl/actions/girl_action_photo_v1.png",
+          "hash": "ef5aa34dd976918383cccb3f69df0aee16d45c5859ef3cc050f683eedd0a490e"
+        },
+        {
+          "path": "character-assets/girl/actions/girl_action_walk_v1.png",
+          "hash": "21b90da4f27711537f722e83abaaabaf2dfb67b66570030757e8fd4ef94abd3b"
+        },
+        {
+          "path": "character-assets/girl/actions/girl_action_wave_v1.png",
+          "hash": "120a0ec76e688a02f27512839041465e5f107cca6a177eae78c05477c89d8e79"
+        },
+        {
+          "path": "character-assets/girl/base/girl_base_default_v1.png",
+          "hash": "e42d3a337c4bf444b41f4de8195d822338ab6c25b05b0ade673d15c52676e8df"
+        },
+        {
+          "path": "character-assets/girl/expressions/girl_expr_curious_v1.png",
+          "hash": "7331d955932fe02ae2486b19e783ff287dfce151fd3f680b8f5f1a4896a80cc9"
+        },
+        {
+          "path": "character-assets/girl/expressions/girl_expr_default_v1.png",
+          "hash": "e42d3a337c4bf444b41f4de8195d822338ab6c25b05b0ade673d15c52676e8df"
+        },
+        {
+          "path": "character-assets/girl/expressions/girl_expr_happy_open_eye_v1.png",
+          "hash": "82ca297000931c82ea849cf8922edc9a765bc733f8b2bf6002213bb0ae818a66"
+        },
+        {
+          "path": "character-assets/girl/expressions/girl_expr_surprised_v1.png",
+          "hash": "c007e913c24c89e9e406c97bf646562a84cc910ee001c954cc5d1022d7664b66"
+        },
+        {
+          "path": "character-assets/qa/contact-sheets/action-baseline-v1.png",
+          "hash": "74b7a54f2e3c91a67c57f204d63ec8c64c20211f0ec74377c8c9c85aa99a922b"
+        },
+        {
+          "path": "character-assets/qa/contact-sheets/expression-baseline-v1.png",
+          "hash": "4ab7251c39ebbc9855743538f220a1a9ee4c8f3a0797e5d5887a2158bf3a25e8"
+        },
+        {
+          "path": "character-assets/qa/contact-sheets/identity-baseline-v1.png",
+          "hash": "5149876f898c1b073c8289a3ee9b9023fdf23fa0f2cea25eabde03cb6810afa6"
+        },
+        {
+          "path": "character-assets/qa/phase-one-acceptance.md",
+          "hash": "772f9259273b16ec73ed537cb251bf614c3ecaddedc33015e65af4c57ab5c992"
+        },
+        {
+          "path": "character-assets/qa/report.json",
+          "hash": "410382eb95d084727c82726de4f5f25e15197e93e970778acec4c6932186ae4d"
+        },
+        {
+          "path": "character-assets/references/R01_girl_final_reference.png",
+          "hash": "14bde8df45d3ff6df36ca594ab5325d605151600960c020f1f84b60c43ea6a88"
+        },
+        {
+          "path": "character-assets/references/R02_boy_final_reference.png",
+          "hash": "e5101e28e72e198429cb930497f93a514760cde82376988dc93bd40f28b39d67"
+        },
+        {
+          "path": "character-assets/validation/drafts/boy_action_validation_v1_draft.png",
+          "hash": "a406f25c5d937c4b2a566499c11bc2e4c235bb1588a8c2baae55aa544b26c8a5"
+        },
+        {
+          "path": "character-assets/validation/drafts/boy_expression_validation_v1_draft.png",
+          "hash": "0dafd9056762bc4e9cd0da4e0087c7607a405182f11395ffdbc6904e6f58220a"
+        },
+        {
+          "path": "character-assets/validation/drafts/boy_identity_master_v1_draft.png",
+          "hash": "f907afd139f5307e099f36f20ff4abbec651d5ac478a41d3de879e5385ab520b"
+        },
+        {
+          "path": "character-assets/validation/drafts/girl_action_validation_v1_draft.png",
+          "hash": "cfa7ad40d7af2a3c6ba244c888bae679f05b9676789732c5dcb7087a35c22a09"
+        },
+        {
+          "path": "character-assets/validation/drafts/girl_expression_validation_v1_draft.png",
+          "hash": "f988a12784f1718e90e360aef4e1e8f1f06f89eff9d5320dcc24368f3341bbcb"
+        },
+        {
+          "path": "character-assets/validation/drafts/girl_identity_master_v1_draft.png",
+          "hash": "d901205b63974ae0a99da85b833e5ebd396526060cc551ec16295d690cebcad2"
+        },
+        {
+          "path": "design-qa.md",
+          "hash": "ee86616f005c27cc4e08d100ff36892dd834772431903749f5fb6ada9974dfdf"
+        },
+        {
+          "path": "docs/00-product-brief.md",
+          "hash": "d6d28f20c5d64f3ec40cff6fb5aff1462372d03b810bc78ae21ff6e636ad45c7"
+        },
+        {
+          "path": "docs/01-prototype-scope.md",
+          "hash": "860f73fa028928de90f42bae128466f91e8061f32cbd3999b39ba34595451b7f"
+        },
+        {
+          "path": "docs/02-screen-spec.md",
+          "hash": "64b20059ceb4e2e1bb88760853d283ff2b18f9da5a6ab8c8fb607fa7fed9bb8a"
+        },
+        {
+          "path": "docs/03-interaction-flow.md",
+          "hash": "585586487cb72683ed3a4ae763d14d6dc3e86c53335185fb2bcb7cd1ac9ae2f5"
+        },
+        {
+          "path": "docs/04-acceptance-criteria.md",
+          "hash": "68f5fa7998734837068a546ce82d4d4a3cb7900e9cb1d994ad5bd60e4eaebf53"
+        },
+        {
+          "path": "docs/05-codex-kickoff-prompt.md",
+          "hash": "a891205b8f8b49ac9fbc512e1721fe5ee3eaaefd9226689e49792e68bb4efec1"
+        },
+        {
+          "path": "docs/references/README.md",
+          "hash": "ad21b95c97f940f87e243c08255c5eb2794ec753a63238afe918f6290776500d"
+        },
+        {
+          "path": "docs/references/glass-style-01.png",
+          "hash": "579cdc7afb32cec7b4a6df0d76d28a5da2db0e1dab768b1ee1fc7adee9c240ad"
+        },
+        {
+          "path": "docs/references/glass-style-02.png",
+          "hash": "1b1e8b0738986483863510272754d034da13c53a3ac84e1ece9526e37a0c2a3e"
+        },
+        {
+          "path": "docs/references/glass-style-03.png",
+          "hash": "4133f18ebce1f198821a2fb9fe2b10d35d4be275324747718962d4ff6468c337"
+        },
+        {
+          "path": "docs/references/glass-style-04.png",
+          "hash": "c0f627c27ead70c9d881256816dbc95269f109642f215b9ba507078041b4733f"
+        },
+        {
+          "path": "docs/references/product-reference-01.png",
+          "hash": "5a26d305c23327571f834b7ce1a153595545a70eaa823de2b27f19b5a535debd"
+        },
+        {
+          "path": "docs/references/product-reference-02.png",
+          "hash": "67feec2a574827691c5c20755750197adc1752b5fc0c398f87a8461aaff1bfbf"
+        },
+        {
+          "path": "docs/references/product-reference-03.png",
+          "hash": "0dee1abf376690f53233b2999f25a16fcab9059db3694314aed170fa7bed7722"
+        },
+        {
+          "path": "docs/references/product-reference-04.png",
+          "hash": "08477dfd88085a706c35ee61e5cc2f2994dadb4f43d2d30ff11bc6e444311943"
+        },
+        {
+          "path": "docs/seed/route-anpu-nanjing.json",
+          "hash": "83c77de3a0898f8aac7095ed2127c7a3dc32778b5cece05a99e9e11eebe2fd54"
+        },
+        {
+          "path": "docs/superpowers/plans/2026-09-28-character-asset-baseline.md",
+          "hash": "e7f41b5c1b16bd3bbbe7246a7db0502e753906bbea8b5079e5aa1fe59f3dab33"
+        },
+        {
+          "path": "index.html",
+          "hash": "10b093b57e2f856d19ac99fa5970cdf713cf1f756d82c74592793dd9628fa0dd"
+        },
+        {
+          "path": "package.json",
+          "hash": "cc6366fdf23a7c62aedd74e83f6de053ee2b3108b13aa3ab5a8eaed94d791488"
+        },
+        {
+          "path": "pnpm-lock.yaml",
+          "hash": "b3988c73212b5e0a1db78473937557d6731e6b1ed3c89cc4e6defe35112d56ec"
+        },
+        {
+          "path": "pnpm-workspace.yaml",
+          "hash": "e5e5244310d158ca27330393ada3bbfd057d49db4645cf825f1b9638c6a6ee37"
+        },
+        {
+          "path": "public/assets/nanjing-abstract-city.png",
+          "hash": "8bc3a75e62fa73a0d94a4e9b475dd147d2b784d35b1458910e9f3475203ba787"
+        },
+        {
+          "path": "public/assets/star-pet-xingli.png",
+          "hash": "2e35f6c8007d987788acf504478d5f010b93d2c962f2926f7b040771e7b48aa3"
+        },
+        {
+          "path": "scripts/prepare-sites-build.mjs",
+          "hash": "ea0855bb81a2b0425258ed95cc50f82a35ff95d9b88a30eb946580a6cc98c478"
+        },
+        {
+          "path": "scripts/validate-character-assets.mjs",
+          "hash": "54f4f97b35f04e017ac77e240f07f09eb12a89451544cfa05fd8bde2b12dd854"
+        },
+        {
+          "path": "src/App.test.tsx",
+          "hash": "65e5465c24baf0c3a9261cd19ebf79ff578a2ac2943df7bf350e28b244e11645"
+        },
+        {
+          "path": "src/App.tsx",
+          "hash": "988728095808a7d5bae0280418393af78bd743a929187f16ffa1518ac6c5ab23"
+        },
+        {
+          "path": "src/components/ActionDock.tsx",
+          "hash": "1e8f4b3304c7bdcc0717d31110ff851bb5c0c1f5175dd3efad569f004bc92634"
+        },
+        {
+          "path": "src/components/AppChrome.tsx",
+          "hash": "ee1f70bbe25be9f36efc4d2d3f5db8ade7caf07503a1b1ce3fcb5adeeefeefe7"
+        },
+        {
+          "path": "src/components/Dialogs.tsx",
+          "hash": "908982235233e67c6f85e9c7ce4df73a145feaab6759048bea5a09af4552c2cb"
+        },
+        {
+          "path": "src/components/RouteTimeline.tsx",
+          "hash": "c627280e5c18a4e007ebb42a1cce31edc52ffa92104dcceaa30e8e65715787be"
+        },
+        {
+          "path": "src/components/StarPet.tsx",
+          "hash": "c968ddb3cfac6751717df12fffd16c0a1376e06bbca0dddf23c6d021b6040525"
+        },
+        {
+          "path": "src/data/route.test.ts",
+          "hash": "1f7382c09e5adc6fe613503cb4ab93d3ccfab169a979d33ee749a51a87b92cc3"
+        },
+        {
+          "path": "src/data/route.ts",
+          "hash": "9caf448ff12ee892b719b6977dc6ca69f511ff794b1a365151c27dbc60f83c07"
+        },
+        {
+          "path": "src/main.tsx",
+          "hash": "6338c60a9af5f71ceb15d00662dd3484c271fdc3e30a8d47530bb39e7e10d505"
+        },
+        {
+          "path": "src/pages/HomePage.tsx",
+          "hash": "ce579627f7ff812a94509b9d1f351924cb826387cadb09f28f0e4d626c79a141"
+        },
+        {
+          "path": "src/pages/LiveRoutePage.tsx",
+          "hash": "ad98384bff52d77a6b0d9d8e78b4032e8d67c0e14b42f2eb7f9ac01d293e3b26"
+        },
+        {
+          "path": "src/pages/NavigationSimulationPage.tsx",
+          "hash": "ea5e86a8429ad6a9fbd35b5665972ea8d5d943fc36f6ba6646bb065f63246d1a"
+        },
+        {
+          "path": "src/pages/RouteDetailPage.tsx",
+          "hash": "414f766076ebcd1eec03548902a3c7b37c33b5a0636ee60233833dd7d72b7440"
+        },
+        {
+          "path": "src/state/RouteSessionContext.tsx",
+          "hash": "12b60fc0556876aae37b1c5ffcce5c03404aaf196cb92a58bf2bfa3102ba31e6"
+        },
+        {
+          "path": "src/state/routeSession.test.ts",
+          "hash": "781e130ee183af95065867ed205707517858f3ca50e022320162d319982baaa5"
+        },
+        {
+          "path": "src/state/routeSession.ts",
+          "hash": "cda9d2ffff5ef7b68ba72391f6932c4df310acd5230b969a8e246a118b3b2fdd"
+        },
+        {
+          "path": "src/styles.css",
+          "hash": "1cc65e95a377220363c237f50424fa300820c069c15096b6a4599d0c75c03fcc"
+        },
+        {
+          "path": "src/test/setup.ts",
+          "hash": "be20d0b69733ac606764fef77acb7f3d2a0d70e41d21f1b5de82dfdc4e65cf9d"
+        },
+        {
+          "path": "tests/character-assets.test.mjs",
+          "hash": "2e6d1611a2af43c86e32dfa719c29363c76c0cdc6e33021e8d5baa8cda652e03"
+        },
+        {
+          "path": "tests/sites-worker.test.mjs",
+          "hash": "1d2f8ddf503f4db7ea55b5624d3df3004338d89f32336883982fed3a42288e03"
+        },
+        {
+          "path": "tests/test-helpers.mjs",
+          "hash": "f5d687f9aef300fa06d4105ebca8248ff30b7b8c435a12788b73740d42feecd4"
+        },
+        {
+          "path": "tsconfig.json",
+          "hash": "f2406e21a2835c9d3645b8b2ff257ee7ceb2e2373a13dc4802390ec0fa4675bf"
+        },
+        {
+          "path": "vite.config.mjs",
+          "hash": "d8816ec3588b48f0190fced32395c536415b9196cc6d44cc6e49c10c5d5d8d4b"
+        },
+        {
+          "path": "worker/index.js",
+          "hash": "1a234cdb94a777085b246520ca7b660b55c5977cef1e529b7ef33d9a17254c3d"
+        }
+      ]
+    }
+  },
+  "restore": {
+    "main": {
+      "directory": "D:\\Downloads\\fan-route-codex-handoff\\integration-backups\\2026-10-02-baseline-verified\\restored\\main",
+      "head": "1def607be517cb2e5bbf7c183125836a113ea5ce",
+      "dirtyFiles": 24,
+      "hashesChecked": 76,
+      "stateMatch": true,
+      "originalUnchanged": true
+    },
+    "map": {
+      "directory": "D:\\Downloads\\fan-route-codex-handoff\\integration-backups\\2026-10-02-baseline-verified\\restored\\map",
+      "head": "b9a4623292ca373869b9feb8343d6d36e0b1d36f",
+      "dirtyFiles": 13,
+      "hashesChecked": 88,
+      "stateMatch": true,
+      "originalUnchanged": true
+    },
+    "character": {
+      "directory": "D:\\Downloads\\fan-route-codex-handoff\\integration-backups\\2026-10-02-baseline-verified\\restored\\character",
+      "head": "a8ece9707afca3a8106ec09b8d2a215dd30aa456",
+      "dirtyFiles": 7,
+      "hashesChecked": 89,
+      "stateMatch": true,
+      "originalUnchanged": true
+    }
+  },
+  "migratedFiles": [
+    {
+      "source": "D:\\Downloads\\fan-route-codex-handoff\\start-v2-alignment\\2026-10-01\\CURRENT_STATE_REPORT.md",
+      "target": "docs/start/v2/CURRENT_STATE_REPORT.md",
+      "sha256": "5dbb7248aa0fbe7cd0cc90b422dcd38a6e8a23a64d3c7f718a90864c1d91156d"
+    },
+    {
+      "source": "D:\\Downloads\\fan-route-codex-handoff\\start-v2-alignment\\2026-10-01\\FIGMA_PLAN_SLICE_001.md",
+      "target": "docs/start/v2/FIGMA_PLAN_SLICE_001.md",
+      "sha256": "886dda11b125607d8aed1b3c951f314ebf4e18fdbe361d422194a725c58e2320"
+    },
+    {
+      "source": "D:\\Downloads\\fan-route-codex-handoff\\start-v2-alignment\\2026-10-01\\SLICE_001_IMPLEMENTATION_PLAN.md",
+      "target": "docs/start/v2/SLICE_001_IMPLEMENTATION_PLAN.md",
+      "sha256": "3f5b3af489786cf884caa90addd44ef3c7ce438a5f11009e0dbcdd121822d8db"
+    },
+    {
+      "source": "D:\\Downloads\\fan-route-codex-handoff\\start-v2-alignment\\2026-10-01\\SLICE_ROADMAP_V2.md",
+      "target": "docs/start/v2/SLICE_ROADMAP_V2.md",
+      "sha256": "8a998f8064632d4d57fb42bf9402c0c2c8adf9e0fabee5f529c94dcfc2c223b2"
+    },
+    {
+      "source": "D:\\Downloads\\fan-route-codex-handoff\\start-v2-alignment\\2026-10-01\\source\\START_PRODUCT_SPEC_V2_PACKAGE\\00_README.md",
+      "target": "docs/start/v2/source/START_PRODUCT_SPEC_V2_PACKAGE/00_README.md",
+      "sha256": "919d9bd7d6bd98de64a8c46f43c89a78ae943be430112f697bf95363c76d2cf1"
+    },
+    {
+      "source": "D:\\Downloads\\fan-route-codex-handoff\\start-v2-alignment\\2026-10-01\\source\\START_PRODUCT_SPEC_V2_PACKAGE\\01_START_DETAILED_PRD_V2.md",
+      "target": "docs/start/v2/source/START_PRODUCT_SPEC_V2_PACKAGE/01_START_DETAILED_PRD_V2.md",
+      "sha256": "59de41ec577c9723b42446a8645f83aa26dca369ad61711925dc1262fc0da0b2"
+    },
+    {
+      "source": "D:\\Downloads\\fan-route-codex-handoff\\start-v2-alignment\\2026-10-01\\source\\START_PRODUCT_SPEC_V2_PACKAGE\\02_START_P0_USER_FLOWS_V2.md",
+      "target": "docs/start/v2/source/START_PRODUCT_SPEC_V2_PACKAGE/02_START_P0_USER_FLOWS_V2.md",
+      "sha256": "e98fd0298086c3ae3ba92152153e4a3323f2d443fd2d15516edccf1a45f9ef55"
+    },
+    {
+      "source": "D:\\Downloads\\fan-route-codex-handoff\\start-v2-alignment\\2026-10-01\\source\\START_PRODUCT_SPEC_V2_PACKAGE\\03_START_INFORMATION_ARCHITECTURE_V2.md",
+      "target": "docs/start/v2/source/START_PRODUCT_SPEC_V2_PACKAGE/03_START_INFORMATION_ARCHITECTURE_V2.md",
+      "sha256": "b0853465477b81cdb1595d13abe34536ebed782e7e30d622dadbc562f9391405"
+    },
+    {
+      "source": "D:\\Downloads\\fan-route-codex-handoff\\start-v2-alignment\\2026-10-01\\source\\START_PRODUCT_SPEC_V2_PACKAGE\\04_START_DOMAIN_MODEL_V2.md",
+      "target": "docs/start/v2/source/START_PRODUCT_SPEC_V2_PACKAGE/04_START_DOMAIN_MODEL_V2.md",
+      "sha256": "db3bb70de9bc4c4a100fe4ae34cf4343cdb8b91dae720e2c0527b133f2a85850"
+    },
+    {
+      "source": "D:\\Downloads\\fan-route-codex-handoff\\start-v2-alignment\\2026-10-01\\source\\START_PRODUCT_SPEC_V2_PACKAGE\\05_START_SEARCH_AND_DISCOVERY_SPEC_V2.md",
+      "target": "docs/start/v2/source/START_PRODUCT_SPEC_V2_PACKAGE/05_START_SEARCH_AND_DISCOVERY_SPEC_V2.md",
+      "sha256": "ba9eded3b1fb97a37a617975117e85fabb07146780acfa254c399d8897b2f87d"
+    },
+    {
+      "source": "D:\\Downloads\\fan-route-codex-handoff\\start-v2-alignment\\2026-10-01\\source\\START_PRODUCT_SPEC_V2_PACKAGE\\06_START_TRUST_EVIDENCE_MODERATION_SPEC_V2.md",
+      "target": "docs/start/v2/source/START_PRODUCT_SPEC_V2_PACKAGE/06_START_TRUST_EVIDENCE_MODERATION_SPEC_V2.md",
+      "sha256": "ece8892f1dfc1c1929543de8a52d1d50615da11efe903fa9a566f8b6a6df3c84"
+    },
+    {
+      "source": "D:\\Downloads\\fan-route-codex-handoff\\start-v2-alignment\\2026-10-01\\source\\START_PRODUCT_SPEC_V2_PACKAGE\\07_START_JOURNEY_MEMORY_SPEC_V2.md",
+      "target": "docs/start/v2/source/START_PRODUCT_SPEC_V2_PACKAGE/07_START_JOURNEY_MEMORY_SPEC_V2.md",
+      "sha256": "6a25675b1543b89dff4e7091cd29ff6a645c011cdf39eea6dbf4f53eb1632873"
+    },
+    {
+      "source": "D:\\Downloads\\fan-route-codex-handoff\\start-v2-alignment\\2026-10-01\\source\\START_PRODUCT_SPEC_V2_PACKAGE\\08_START_COMMUNITY_EVENT_TRADE_SPEC_V2.md",
+      "target": "docs/start/v2/source/START_PRODUCT_SPEC_V2_PACKAGE/08_START_COMMUNITY_EVENT_TRADE_SPEC_V2.md",
+      "sha256": "917e18d2b02a4fc465bbfbabddc037305e86f7bd7466468b27da739396d0efb9"
+    },
+    {
+      "source": "D:\\Downloads\\fan-route-codex-handoff\\start-v2-alignment\\2026-10-01\\source\\START_PRODUCT_SPEC_V2_PACKAGE\\09_START_ME_CARD_DOLL_SPEC_V2.md",
+      "target": "docs/start/v2/source/START_PRODUCT_SPEC_V2_PACKAGE/09_START_ME_CARD_DOLL_SPEC_V2.md",
+      "sha256": "6682bc435977bae1d5df50fdeed9acd6913968b88191995c34bff4be9ff51fab"
+    },
+    {
+      "source": "D:\\Downloads\\fan-route-codex-handoff\\start-v2-alignment\\2026-10-01\\source\\START_PRODUCT_SPEC_V2_PACKAGE\\10_START_DESIGN_FIGMA_HANDOFF_V2.md",
+      "target": "docs/start/v2/source/START_PRODUCT_SPEC_V2_PACKAGE/10_START_DESIGN_FIGMA_HANDOFF_V2.md",
+      "sha256": "0a4bf0e88893b0d29fa52fd7f398c89fb20b31c8799ce01b6af9dd2646e12765"
+    },
+    {
+      "source": "D:\\Downloads\\fan-route-codex-handoff\\start-v2-alignment\\2026-10-01\\source\\START_PRODUCT_SPEC_V2_PACKAGE\\11_START_SLICE_ROADMAP_ACCEPTANCE_V2.md",
+      "target": "docs/start/v2/source/START_PRODUCT_SPEC_V2_PACKAGE/11_START_SLICE_ROADMAP_ACCEPTANCE_V2.md",
+      "sha256": "0eb6d8feff5551f57e8b563dbaa58a96ef157e9224a52e7756b2c61c7fb1c7c3"
+    },
+    {
+      "source": "D:\\Downloads\\fan-route-codex-handoff\\start-v2-alignment\\2026-10-01\\source\\START_PRODUCT_SPEC_V2_PACKAGE\\12_START_CODEX_ALIGNMENT_PATCH_V2.md",
+      "target": "docs/start/v2/source/START_PRODUCT_SPEC_V2_PACKAGE/12_START_CODEX_ALIGNMENT_PATCH_V2.md",
+      "sha256": "56d2bd55bdb21f73802f8b4fc6b5424bc9963144e43b13537dd265f073bcbf71"
+    },
+    {
+      "source": "D:\\Downloads\\fan-route-codex-handoff\\start-v2-alignment\\2026-10-01\\source\\START_PRODUCT_SPEC_V2_PACKAGE\\13_START_DECISION_LOG_V2.md",
+      "target": "docs/start/v2/source/START_PRODUCT_SPEC_V2_PACKAGE/13_START_DECISION_LOG_V2.md",
+      "sha256": "cf27d3fb73981b586f2214bb85d1c8351f6f67b5e3d59885ef1f9e35750c7e9f"
+    },
+    {
+      "source": "D:\\Downloads\\fan-route-codex-handoff\\start-v2-alignment\\2026-10-01\\source\\START_PRODUCT_SPEC_V2_PACKAGE\\MANIFEST.json",
+      "target": "docs/start/v2/source/START_PRODUCT_SPEC_V2_PACKAGE/MANIFEST.json",
+      "sha256": "7a082a01efa0dd78ff02b94570a39a2bcd915a9f2d1292f5c3d7c64e642fbd06"
+    },
+    {
+      "source": "D:\\Downloads\\fan-route-codex-handoff\\start-v2-alignment\\2026-10-01\\source\\START_PRODUCT_SPEC_V2_PACKAGE\\SOURCE_NOTE_CURRENT_SLICE_001.md",
+      "target": "docs/start/v2/source/START_PRODUCT_SPEC_V2_PACKAGE/SOURCE_NOTE_CURRENT_SLICE_001.md",
+      "sha256": "c48055b830d1b3a45bcf79e1a6b8742310b3852a227bd5dc3f3cad1551d484eb"
+    },
+    {
+      "source": "D:\\Downloads\\fan-route-codex-handoff\\fan-route-codex-handoff\\docs\\start-intake\\2026-10-01\\CURRENT_STATE_REPORT.md",
+      "target": "docs/start/history/intake-v1/CURRENT_STATE_REPORT.md",
+      "sha256": "021bd70594f8c163e70f601c370272c02a3ff18c9249c96aced0ba4e4a44ccab"
+    },
+    {
+      "source": "D:\\Downloads\\fan-route-codex-handoff\\fan-route-codex-handoff\\docs\\start-intake\\2026-10-01\\FIGMA_PLAN_SLICE_001.md",
+      "target": "docs/start/history/intake-v1/FIGMA_PLAN_SLICE_001.md",
+      "sha256": "bcfd4fff28f96237692ab3d8fd6e1740cef314045701c86ab19931c3f2c1db7f"
+    },
+    {
+      "source": "D:\\Downloads\\fan-route-codex-handoff\\fan-route-codex-handoff\\docs\\start-intake\\2026-10-01\\INTEGRATION_BASELINE_PLAN.md",
+      "target": "docs/start/history/intake-v1/INTEGRATION_BASELINE_PLAN.md",
+      "sha256": "d88c37f9ad62488103dc077c1707a86f3dfed7c63951ff4ee6ec14a790f16e46"
+    },
+    {
+      "source": "D:\\Downloads\\fan-route-codex-handoff\\fan-route-codex-handoff\\docs\\start-intake\\2026-10-01\\REFERENCE_NOTE_001.md",
+      "target": "docs/start/history/intake-v1/REFERENCE_NOTE_001.md",
+      "sha256": "d05c16950605032ecb65dcfccce4a99083ec0ca5b115d7e80105b97f854ef047"
+    },
+    {
+      "source": "D:\\Downloads\\fan-route-codex-handoff\\fan-route-codex-handoff\\docs\\start-intake\\2026-10-01\\SLICE_001_IMPLEMENTATION_PLAN.md",
+      "target": "docs/start/history/intake-v1/SLICE_001_IMPLEMENTATION_PLAN.md",
+      "sha256": "ddaafbc7a70f543f09a059edb1d8c240333bfbfa235d581f36e965e76c889ead"
+    },
+    {
+      "source": "D:/Downloads/fan-route-codex-handoff/.worktrees/start-slice-001/AGENTS.md",
+      "target": "docs/start/history/AGENTS-v0.1.md",
+      "sha256": "99f0145afc5d7c676f76c19e95a601334c2f3d504118a1ab40ca71b70cac24e4"
+    },
+    {
+      "source": "D:\\Downloads\\fan-route-codex-handoff\\.worktrees\\character-asset-baseline\\character-assets\\boy\\actions\\boy_action_idle_v1.png",
+      "target": "character-assets/boy/actions/boy_action_idle_v1.png",
+      "sha256": "42191c498e57ef27cb3e585b154a7c7cef1504b41a80a50c5189367189f9fa80"
+    },
+    {
+      "source": "D:\\Downloads\\fan-route-codex-handoff\\.worktrees\\character-asset-baseline\\character-assets\\boy\\actions\\boy_action_photo_v1.png",
+      "target": "character-assets/boy/actions/boy_action_photo_v1.png",
+      "sha256": "0fec4b10656e874d664bd9f7536726b6f822cc0933646b21e087f530f995e9cd"
+    },
+    {
+      "source": "D:\\Downloads\\fan-route-codex-handoff\\.worktrees\\character-asset-baseline\\character-assets\\boy\\actions\\boy_action_walk_v1.png",
+      "target": "character-assets/boy/actions/boy_action_walk_v1.png",
+      "sha256": "d2e692af0cbce79f0e5a964df81ce59937057d430126d2288f4d526f48bf8760"
+    },
+    {
+      "source": "D:\\Downloads\\fan-route-codex-handoff\\.worktrees\\character-asset-baseline\\character-assets\\boy\\actions\\boy_action_wave_v1.png",
+      "target": "character-assets/boy/actions/boy_action_wave_v1.png",
+      "sha256": "020dd2185dfc56996d9da62c8f1fa63da945ca2a4141bcf25a62ba886be9039a"
+    },
+    {
+      "source": "D:\\Downloads\\fan-route-codex-handoff\\.worktrees\\character-asset-baseline\\character-assets\\boy\\base\\boy_base_default_v1.png",
+      "target": "character-assets/boy/base/boy_base_default_v1.png",
+      "sha256": "42191c498e57ef27cb3e585b154a7c7cef1504b41a80a50c5189367189f9fa80"
+    },
+    {
+      "source": "D:\\Downloads\\fan-route-codex-handoff\\.worktrees\\character-asset-baseline\\character-assets\\boy\\expressions\\boy_expr_curious_v1.png",
+      "target": "character-assets/boy/expressions/boy_expr_curious_v1.png",
+      "sha256": "2bffa1dcac1381726d3c43dc03018636009b687c9c22a0eb5f85c2f31550422b"
+    },
+    {
+      "source": "D:\\Downloads\\fan-route-codex-handoff\\.worktrees\\character-asset-baseline\\character-assets\\boy\\expressions\\boy_expr_default_v1.png",
+      "target": "character-assets/boy/expressions/boy_expr_default_v1.png",
+      "sha256": "42191c498e57ef27cb3e585b154a7c7cef1504b41a80a50c5189367189f9fa80"
+    },
+    {
+      "source": "D:\\Downloads\\fan-route-codex-handoff\\.worktrees\\character-asset-baseline\\character-assets\\boy\\expressions\\boy_expr_happy_open_eye_v1.png",
+      "target": "character-assets/boy/expressions/boy_expr_happy_open_eye_v1.png",
+      "sha256": "4baf30450d32c484b041e473995b35738d339e33bbb8ad844f3d403e5ebf4a50"
+    },
+    {
+      "source": "D:\\Downloads\\fan-route-codex-handoff\\.worktrees\\character-asset-baseline\\character-assets\\boy\\expressions\\boy_expr_surprised_v1.png",
+      "target": "character-assets/boy/expressions/boy_expr_surprised_v1.png",
+      "sha256": "90bd4e5e342796921456e6524c12f9d5908ddfbb962740e1707dcf4c345657e2"
+    },
+    {
+      "source": "D:\\Downloads\\fan-route-codex-handoff\\.worktrees\\character-asset-baseline\\character-assets\\character-asset-spec.md",
+      "target": "character-assets/character-asset-spec.md",
+      "sha256": "d91a114b58a3cbd245cbcce9ed77105e086de20bb0f820f982c5c786ae444514"
+    },
+    {
+      "source": "D:\\Downloads\\fan-route-codex-handoff\\.worktrees\\character-asset-baseline\\character-assets\\character-assets.json",
+      "target": "character-assets/character-assets.json",
+      "sha256": "b9ff07c82373d8449eca2927e0fc9c635bb117ae5b492433d74b736c8813cb74"
+    },
+    {
+      "source": "D:\\Downloads\\fan-route-codex-handoff\\.worktrees\\character-asset-baseline\\character-assets\\girl\\actions\\girl_action_idle_v1.png",
+      "target": "character-assets/girl/actions/girl_action_idle_v1.png",
+      "sha256": "e42d3a337c4bf444b41f4de8195d822338ab6c25b05b0ade673d15c52676e8df"
+    },
+    {
+      "source": "D:\\Downloads\\fan-route-codex-handoff\\.worktrees\\character-asset-baseline\\character-assets\\girl\\actions\\girl_action_photo_v1.png",
+      "target": "character-assets/girl/actions/girl_action_photo_v1.png",
+      "sha256": "ef5aa34dd976918383cccb3f69df0aee16d45c5859ef3cc050f683eedd0a490e"
+    },
+    {
+      "source": "D:\\Downloads\\fan-route-codex-handoff\\.worktrees\\character-asset-baseline\\character-assets\\girl\\actions\\girl_action_walk_v1.png",
+      "target": "character-assets/girl/actions/girl_action_walk_v1.png",
+      "sha256": "21b90da4f27711537f722e83abaaabaf2dfb67b66570030757e8fd4ef94abd3b"
+    },
+    {
+      "source": "D:\\Downloads\\fan-route-codex-handoff\\.worktrees\\character-asset-baseline\\character-assets\\girl\\actions\\girl_action_wave_v1.png",
+      "target": "character-assets/girl/actions/girl_action_wave_v1.png",
+      "sha256": "120a0ec76e688a02f27512839041465e5f107cca6a177eae78c05477c89d8e79"
+    },
+    {
+      "source": "D:\\Downloads\\fan-route-codex-handoff\\.worktrees\\character-asset-baseline\\character-assets\\girl\\base\\girl_base_default_v1.png",
+      "target": "character-assets/girl/base/girl_base_default_v1.png",
+      "sha256": "e42d3a337c4bf444b41f4de8195d822338ab6c25b05b0ade673d15c52676e8df"
+    },
+    {
+      "source": "D:\\Downloads\\fan-route-codex-handoff\\.worktrees\\character-asset-baseline\\character-assets\\girl\\expressions\\girl_expr_curious_v1.png",
+      "target": "character-assets/girl/expressions/girl_expr_curious_v1.png",
+      "sha256": "7331d955932fe02ae2486b19e783ff287dfce151fd3f680b8f5f1a4896a80cc9"
+    },
+    {
+      "source": "D:\\Downloads\\fan-route-codex-handoff\\.worktrees\\character-asset-baseline\\character-assets\\girl\\expressions\\girl_expr_default_v1.png",
+      "target": "character-assets/girl/expressions/girl_expr_default_v1.png",
+      "sha256": "e42d3a337c4bf444b41f4de8195d822338ab6c25b05b0ade673d15c52676e8df"
+    },
+    {
+      "source": "D:\\Downloads\\fan-route-codex-handoff\\.worktrees\\character-asset-baseline\\character-assets\\girl\\expressions\\girl_expr_happy_open_eye_v1.png",
+      "target": "character-assets/girl/expressions/girl_expr_happy_open_eye_v1.png",
+      "sha256": "82ca297000931c82ea849cf8922edc9a765bc733f8b2bf6002213bb0ae818a66"
+    },
+    {
+      "source": "D:\\Downloads\\fan-route-codex-handoff\\.worktrees\\character-asset-baseline\\character-assets\\girl\\expressions\\girl_expr_surprised_v1.png",
+      "target": "character-assets/girl/expressions/girl_expr_surprised_v1.png",
+      "sha256": "c007e913c24c89e9e406c97bf646562a84cc910ee001c954cc5d1022d7664b66"
+    },
+    {
+      "source": "D:\\Downloads\\fan-route-codex-handoff\\.worktrees\\character-asset-baseline\\character-assets\\qa\\contact-sheets\\action-baseline-v1.png",
+      "target": "character-assets/qa/contact-sheets/action-baseline-v1.png",
+      "sha256": "74b7a54f2e3c91a67c57f204d63ec8c64c20211f0ec74377c8c9c85aa99a922b"
+    },
+    {
+      "source": "D:\\Downloads\\fan-route-codex-handoff\\.worktrees\\character-asset-baseline\\character-assets\\qa\\contact-sheets\\expression-baseline-v1.png",
+      "target": "character-assets/qa/contact-sheets/expression-baseline-v1.png",
+      "sha256": "4ab7251c39ebbc9855743538f220a1a9ee4c8f3a0797e5d5887a2158bf3a25e8"
+    },
+    {
+      "source": "D:\\Downloads\\fan-route-codex-handoff\\.worktrees\\character-asset-baseline\\character-assets\\qa\\contact-sheets\\identity-baseline-v1.png",
+      "target": "character-assets/qa/contact-sheets/identity-baseline-v1.png",
+      "sha256": "5149876f898c1b073c8289a3ee9b9023fdf23fa0f2cea25eabde03cb6810afa6"
+    },
+    {
+      "source": "D:\\Downloads\\fan-route-codex-handoff\\.worktrees\\character-asset-baseline\\character-assets\\qa\\phase-one-acceptance.md",
+      "target": "character-assets/qa/phase-one-acceptance.md",
+      "sha256": "772f9259273b16ec73ed537cb251bf614c3ecaddedc33015e65af4c57ab5c992"
+    },
+    {
+      "source": "D:\\Downloads\\fan-route-codex-handoff\\.worktrees\\character-asset-baseline\\character-assets\\qa\\report.json",
+      "target": "character-assets/qa/report.json",
+      "sha256": "410382eb95d084727c82726de4f5f25e15197e93e970778acec4c6932186ae4d"
+    },
+    {
+      "source": "D:\\Downloads\\fan-route-codex-handoff\\.worktrees\\character-asset-baseline\\character-assets\\references\\R01_girl_final_reference.png",
+      "target": "character-assets/references/R01_girl_final_reference.png",
+      "sha256": "14bde8df45d3ff6df36ca594ab5325d605151600960c020f1f84b60c43ea6a88"
+    },
+    {
+      "source": "D:\\Downloads\\fan-route-codex-handoff\\.worktrees\\character-asset-baseline\\character-assets\\references\\R02_boy_final_reference.png",
+      "target": "character-assets/references/R02_boy_final_reference.png",
+      "sha256": "e5101e28e72e198429cb930497f93a514760cde82376988dc93bd40f28b39d67"
+    },
+    {
+      "source": "D:\\Downloads\\fan-route-codex-handoff\\.worktrees\\character-asset-baseline\\character-assets\\validation\\drafts\\boy_action_validation_v1_draft.png",
+      "target": "character-assets/validation/drafts/boy_action_validation_v1_draft.png",
+      "sha256": "a406f25c5d937c4b2a566499c11bc2e4c235bb1588a8c2baae55aa544b26c8a5"
+    },
+    {
+      "source": "D:\\Downloads\\fan-route-codex-handoff\\.worktrees\\character-asset-baseline\\character-assets\\validation\\drafts\\boy_expression_validation_v1_draft.png",
+      "target": "character-assets/validation/drafts/boy_expression_validation_v1_draft.png",
+      "sha256": "0dafd9056762bc4e9cd0da4e0087c7607a405182f11395ffdbc6904e6f58220a"
+    },
+    {
+      "source": "D:\\Downloads\\fan-route-codex-handoff\\.worktrees\\character-asset-baseline\\character-assets\\validation\\drafts\\boy_identity_master_v1_draft.png",
+      "target": "character-assets/validation/drafts/boy_identity_master_v1_draft.png",
+      "sha256": "f907afd139f5307e099f36f20ff4abbec651d5ac478a41d3de879e5385ab520b"
+    },
+    {
+      "source": "D:\\Downloads\\fan-route-codex-handoff\\.worktrees\\character-asset-baseline\\character-assets\\validation\\drafts\\girl_action_validation_v1_draft.png",
+      "target": "character-assets/validation/drafts/girl_action_validation_v1_draft.png",
+      "sha256": "cfa7ad40d7af2a3c6ba244c888bae679f05b9676789732c5dcb7087a35c22a09"
+    },
+    {
+      "source": "D:\\Downloads\\fan-route-codex-handoff\\.worktrees\\character-asset-baseline\\character-assets\\validation\\drafts\\girl_expression_validation_v1_draft.png",
+      "target": "character-assets/validation/drafts/girl_expression_validation_v1_draft.png",
+      "sha256": "f988a12784f1718e90e360aef4e1e8f1f06f89eff9d5320dcc24368f3341bbcb"
+    },
+    {
+      "source": "D:\\Downloads\\fan-route-codex-handoff\\.worktrees\\character-asset-baseline\\character-assets\\validation\\drafts\\girl_identity_master_v1_draft.png",
+      "target": "character-assets/validation/drafts/girl_identity_master_v1_draft.png",
+      "sha256": "d901205b63974ae0a99da85b833e5ebd396526060cc551ec16295d690cebcad2"
+    },
+    {
+      "source": "D:/Downloads/fan-route-codex-handoff/.worktrees/character-asset-baseline/scripts/validate-character-assets.mjs",
+      "target": "scripts/validate-character-assets.mjs",
+      "sha256": "54f4f97b35f04e017ac77e240f07f09eb12a89451544cfa05fd8bde2b12dd854"
+    },
+    {
+      "source": "D:/Downloads/fan-route-codex-handoff/.worktrees/character-asset-baseline/tests/character-assets.test.mjs",
+      "target": "tests/character-assets.test.mjs",
+      "sha256": "2e6d1611a2af43c86e32dfa719c29363c76c0cdc6e33021e8d5baa8cda652e03"
+    },
+    {
+      "source": "D:/Downloads/fan-route-codex-handoff/integration-backups/start-baseline.mjs",
+      "target": "tooling/baseline/capture.mjs",
+      "sha256": "010056bc532880c83873672a2222beff6c1122da690662602ec16327069c47b4",
+      "currentSha256": "1162a9512fb149a926a9d427bf6733612d059fe0a4ca6437d5698f664ee4ea9b",
+      "derivation": "Independent review fix: recovery clone index normalization; backup-only restoration avoids original roots. sha256 retains exact original copied bytes."
+    },
+    {
+      "source": "D:/Downloads/fan-route-codex-handoff/integration-backups/resume-baseline.mjs",
+      "target": "tooling/baseline/recover.mjs",
+      "sha256": "7d1dd033ce3ff7e88aa367eb4bd89d07e77339404165c90b6b924497d91f7827",
+      "currentSha256": "b79926367790892db61e469271c5886e0cc456417cc324dfeea6ea9cf6b62da7",
+      "derivation": "Independent review fix: recovery clone index normalization; backup-only restoration avoids original roots. sha256 retains exact original copied bytes."
+    }
+  ],
+  "priorTests": "docs/start/v2/CURRENT_STATE_REPORT.md",
+  "notes": [
+    "First attempt preserved: LF/CRLF index refresh mismatch. Second capture resumed self-contained using only backup bytes; pristine index normalization restricted to recovery copies.",
+    "Regenerable dependencies/builds excluded; environment private configuration stays in original; no .env found in captured roots."
+  ]
+}

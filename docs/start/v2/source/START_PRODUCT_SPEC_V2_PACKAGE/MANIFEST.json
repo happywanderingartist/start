@@ -1,0 +1,82 @@
+{
+  "package": "START_PRODUCT_SPEC_V2_PACKAGE",
+  "date": "2026-10-01",
+  "file_count": 15,
+  "files": [
+    {
+      "file": "00_README.md",
+      "bytes": 1816,
+      "sha256": "919d9bd7d6bd98de64a8c46f43c89a78ae943be430112f697bf95363c76d2cf1"
+    },
+    {
+      "file": "01_START_DETAILED_PRD_V2.md",
+      "bytes": 6439,
+      "sha256": "59de41ec577c9723b42446a8645f83aa26dca369ad61711925dc1262fc0da0b2"
+    },
+    {
+      "file": "02_START_P0_USER_FLOWS_V2.md",
+      "bytes": 3972,
+      "sha256": "e98fd0298086c3ae3ba92152153e4a3323f2d443fd2d15516edccf1a45f9ef55"
+    },
+    {
+      "file": "03_START_INFORMATION_ARCHITECTURE_V2.md",
+      "bytes": 3889,
+      "sha256": "b0853465477b81cdb1595d13abe34536ebed782e7e30d622dadbc562f9391405"
+    },
+    {
+      "file": "04_START_DOMAIN_MODEL_V2.md",
+      "bytes": 7316,
+      "sha256": "db3bb70de9bc4c4a100fe4ae34cf4343cdb8b91dae720e2c0527b133f2a85850"
+    },
+    {
+      "file": "05_START_SEARCH_AND_DISCOVERY_SPEC_V2.md",
+      "bytes": 3283,
+      "sha256": "ba9eded3b1fb97a37a617975117e85fabb07146780acfa254c399d8897b2f87d"
+    },
+    {
+      "file": "06_START_TRUST_EVIDENCE_MODERATION_SPEC_V2.md",
+      "bytes": 2970,
+      "sha256": "ece8892f1dfc1c1929543de8a52d1d50615da11efe903fa9a566f8b6a6df3c84"
+    },
+    {
+      "file": "07_START_JOURNEY_MEMORY_SPEC_V2.md",
+      "bytes": 2948,
+      "sha256": "6a25675b1543b89dff4e7091cd29ff6a645c011cdf39eea6dbf4f53eb1632873"
+    },
+    {
+      "file": "08_START_COMMUNITY_EVENT_TRADE_SPEC_V2.md",
+      "bytes": 2198,
+      "sha256": "917e18d2b02a4fc465bbfbabddc037305e86f7bd7466468b27da739396d0efb9"
+    },
+    {
+      "file": "09_START_ME_CARD_DOLL_SPEC_V2.md",
+      "bytes": 2053,
+      "sha256": "6682bc435977bae1d5df50fdeed9acd6913968b88191995c34bff4be9ff51fab"
+    },
+    {
+      "file": "10_START_DESIGN_FIGMA_HANDOFF_V2.md",
+      "bytes": 3523,
+      "sha256": "0a4bf0e88893b0d29fa52fd7f398c89fb20b31c8799ce01b6af9dd2646e12765"
+    },
+    {
+      "file": "11_START_SLICE_ROADMAP_ACCEPTANCE_V2.md",
+      "bytes": 3217,
+      "sha256": "0eb6d8feff5551f57e8b563dbaa58a96ef157e9224a52e7756b2c61c7fb1c7c3"
+    },
+    {
+      "file": "12_START_CODEX_ALIGNMENT_PATCH_V2.md",
+      "bytes": 3589,
+      "sha256": "56d2bd55bdb21f73802f8b4fc6b5424bc9963144e43b13537dd265f073bcbf71"
+    },
+    {
+      "file": "13_START_DECISION_LOG_V2.md",
+      "bytes": 2278,
+      "sha256": "cf27d3fb73981b586f2214bb85d1c8351f6f67b5e3d59885ef1f9e35750c7e9f"
+    },
+    {
+      "file": "SOURCE_NOTE_CURRENT_SLICE_001.md",
+      "bytes": 718,
+      "sha256": "c48055b830d1b3a45bcf79e1a6b8742310b3852a227bd5dc3f3cad1551d484eb"
+    }
+  ]
+}

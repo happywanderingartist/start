@@ -12,7 +12,8 @@
     "preview": "vite preview",
     "test:sites": "node --test tests/sites-worker.test.mjs",
     "test:worker": "node --test tests/*.test.mjs",
-    "check": "pnpm typecheck && pnpm test:run && pnpm build && pnpm test:worker"
+    "check": "pnpm typecheck && pnpm test:run && pnpm build && pnpm test:worker",
+    "test:assets": "node --test tests/character-assets.test.mjs && node scripts/validate-character-assets.mjs character-assets/character-assets.json"
   },
   "dependencies": {
     "@phosphor-icons/react": "^2.1.10",
@@ -30,6 +31,7 @@
     "@types/react-dom": "^19.2.2",
     "jsdom": "^27.1.0",
     "typescript": "^5.9.3",
-    "vitest": "^3.2.4"
+    "vitest": "^3.2.4",
+    "pngjs": "7.0.0"
   }
 }

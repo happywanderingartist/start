@@ -1,27 +1,3 @@
-# Codex 项目约束
+# START implementation constraints
 
-## 产品原则
-
-- 核心任务是路线复刻，不是泛社交。
-- AI 输出是可编辑草稿，不是不可修改的答案。
-- 产品保存完整路线和进度，外部地图只承担当前路段导航。
-- 不使用固定“几点到几点”的时间表。
-- 路线必须表现出站点之间的连接、距离与预计时长。
-- 地点卡片折叠时简洁，展开后才显示故事、图片、姿势和菜单。
-
-## 本轮开发约束
-
-- 只实现首页、路线详情、路线进行中三个主要页面及必要弹层。
-- 使用 React、TypeScript、Vite 和移动端优先布局。
-- 使用本地 JSON 数据和 localStorage。
-- 不接真实 AI、地图、账号或后端。
-- 不安装大型 UI 组件库，优先使用少量可复用组件和原生 CSS。
-- 不擅自扩展功能；发现规格冲突时先记录并询问。
-
-## 验收纪律
-
-- 每完成一个页面，对照 `docs/04-acceptance-criteria.md` 自查。
-- 必须在约 390×844 视口验证。
-- 所有按钮必须有反馈，不能只有视觉没有行为。
-- 不得把占位数据包装成真实地图结果。
-
+User-approved START V2 in docs/start/v2 overrides the preserved v0.1 product scope (docs/start/history/AGENTS-v0.1.md). Only Slice 000 and Slice 001 authorized. Modular Monolith, PostgreSQL-first, shared backend and Provider Adapter. No UI development, Figma, later slices, deploy or merge to master. Retain old src and all tests. Do not reset/clean/delete old branches or overwrite old workspaces. Each task: implementation, independent review, fixes, regression, commit and provenance. Reference Before Implementation; do not copy reference source.
