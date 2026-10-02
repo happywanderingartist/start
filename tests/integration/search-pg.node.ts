@@ -60,7 +60,7 @@ test('multiple qualified public candidates rank before LIMIT; exact aliases shar
   const provider=new PostgresSearchProvider(admin);const input={q:'春日',normalizedQuery:'春日',resolvedIds:{artist:[],city:[],place:[],event:[]},residualTerms:['春日'],limit:1,offset:0};
   const first=await provider.search(input);assert.equal(first.artist.items[0].id,late);assert.equal(first.artist.hasMore,true);
   const second=await provider.search({...input,offset:1});assert.notEqual(second.artist.items[0].id,late);
-  await admin.query("insert into start_catalog.artist_alias(artist_id,alias,normalized_alias,locale) values($1,'青','青','zh')",[early]);await admin.query("update start_catalog.artist set canonical_name='青',normalized_name='青' where id=$1",[late]);
+  await admin.query("insert into start_catalog.artist_alias(artist_id,alias,normalized_alias,locale) values($1,'  青  ','青','zh')",[early]);await admin.query("update start_catalog.artist set canonical_name='青',normalized_name='青' where id=$1",[late]);
   const exact=await provider.search({...input,q:'青',normalizedQuery:'青',resolvedIds:{artist:[early,late,ids.artist,ids.sameName],city:[],place:[],event:[]},residualTerms:[]});assert.equal(exact.artist.items[0].id,early);
  }finally{await admin.query('ROLLBACK');}
 });

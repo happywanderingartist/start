@@ -13,3 +13,5 @@
 | Slice001任务4 四实体真实搜索 | 本行所属提交；任务3 a519ff5 | search12/12+contracts6/6+tsc；未知残余及alias排序先RED后GREEN；四SQL EXPLAIN | review_search P1连接词误删已修，只移除完整片段；多公开候选LIMIT回归、alias与canonical同tier；只读复审无critical/important | PostgreSQL派生视图、有限词典、不忽略残余、不固定南京、Provider contract四专属组 |
 
 | Slice001任务5 公共实体/Hub HTTP | 本行所属提交；任务4 fd6f670 | HTTP9/9+四实体search12/12+domain2/2+tsc；初始HTTP6RED→GREEN；owner启动拒绝RED→GREEN | review_api独立24只读PG/HTTP探针无阻塞；500诊断泄漏Minor固化回归；复审关闭 | 仅五种GET API，private/draft/withdraw404，输入400，DB503/internal500；真实bounded reader、事务快照；测试限定本机start_test_ |
+
+| Slice001任务6 Foundation验收 | 本行所属提交；任务5 e0bf002 | 全新PG库52/52，恢复库最终53/53；8迁移/22表逻辑hash持久化与异库restore；compiled五读+owner拒绝；旧21+18/assets13；原468backup/253hash/44WIP不变；rawcheckout66hash | review_foundation独立复审关闭；008主体core gate、alias normalized rank、restart Date/ISO断言均RED→GREEN；验收工具再审；无遗留Critical/Important | acceptance-evidence.json、SLICE001验收、官方PG artifact、dump/source hash；技术通过/内容未就绪；停止001 |

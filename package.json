@@ -19,7 +19,13 @@
     "db:migrate": "node tooling/db/migrate.ts",
     "test:db": "node --test --test-concurrency=1 tests/integration/catalog-db.node.ts tests/integration/trust-read.node.ts",
     "db:seed:historical": "node tooling/db/seed.ts",
-    "db:seed:reviewed": "node tooling/db/seed.ts --reviewed"
+    "db:seed:reviewed": "node tooling/db/seed.ts --reviewed",
+    "build:api": "node node_modules/typescript/bin/tsc -p tsconfig.api.json",
+    "start:api": "node dist/api/apps/api/src/server.js",
+    "test:domain": "node --test tests/domain/*.node.ts",
+    "test:search": "node --test tests/integration/search-pg.node.ts",
+    "test:api": "node --test tests/integration/public-api.node.ts",
+    "check:foundation": "pnpm typecheck:foundation && pnpm build:api && node --test --test-concurrency=1 tests/contracts/*.node.ts tests/domain/*.node.ts tests/integration/*.node.ts"
   },
   "dependencies": {
     "@phosphor-icons/react": "^2.1.10",

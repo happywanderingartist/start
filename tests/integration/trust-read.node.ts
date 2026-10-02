@@ -75,3 +75,16 @@ test('historical import refuses altered original bytes including candidate histo
  await fs.appendFile(path.join(scratch,file),'\n');await assert.rejects(seedHistorical(c,new URL('file:///'+scratch.replaceAll('\\','/')+'/')),/source.*hash|source.*bytes/i);await fs.copyFile(path.resolve('db/seeds/historical',file),path.join(scratch,file));
  }
 });
+
+test('severe core claims remove their Place, Relation and Event owners, including Route and footprint projections',()=>tx(async()=>{
+ for(const [column,key,query] of [
+  ['place_id',ids.bookstore,'select id from start_public.places where id=$1'],
+  ['relation_id',ids.relation,'select id from start_catalog.artist_place_relation where id=$1 and start_catalog.relation_public(id)'],
+  ['event_id',ids.event,'select id from start_public.events where id=$1'],
+ ]as const){await c.query('savepoint owner_claim');try{
+  await c.query("insert into start_catalog.claim(id,statement,verification,review,visibility,public_caveat,severe_dispute,is_core,"+column+") values($1,'Synthetic disputed core fact','disputed','approved','public','Serious test dispute',true,true,$2)",[randomUUID(),key]);
+  assert.equal((await c.query(query,[key])).rows.length,0,column);
+  if(column!=='event_id'){assert.equal((await c.query('select id from start_public.routes where id=$1',[ids.route])).rows.length,0,column);const a=(await c.query('select data from start_public.artists where id=$1',[ids.artist])).rows[0].data;assert.deepEqual(a.footprintCities,[]);}
+  else {const a=(await c.query('select data from start_public.artists where id=$1',[ids.artist])).rows[0].data;assert.deepEqual(a.eventCities,[]);}
+ }finally{await c.query('rollback to savepoint owner_claim');}}
+}));

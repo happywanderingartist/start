@@ -1,0 +1,1 @@
+{"extends":"./tsconfig.foundation.json","compilerOptions":{"noEmit":false,"allowImportingTsExtensions":true,"rewriteRelativeImportExtensions":true,"rootDir":".","outDir":"dist/api"},"include":["apps/api/**/*.ts","packages/**/*.ts"]}

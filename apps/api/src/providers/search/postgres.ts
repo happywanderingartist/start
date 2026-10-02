@@ -7,7 +7,7 @@ function projection(type:EntityType){
 }
 export function candidateQuery(type:EntityType):string{
  const p=projection(type);
- const exactAlias=type==='artist'?"OR EXISTS(SELECT FROM start_public.aliases a WHERE a.artist_id=v.id AND lower(normalize(a.alias,NFKC))=$1)":'';
+ const exactAlias=type==='artist'?"OR EXISTS(SELECT FROM start_public.aliases a WHERE a.artist_id=v.id AND a.normalized_alias=$1)":'';
  const doc=`lower(normalize(concat_ws(' ',v.name,v.data->>'whyWorthReplicating',v.data->>'relationSummary', (SELECT string_agg(c.name,' ') FROM start_public.cities c WHERE c.id=ANY(v.city_ids)),(SELECT string_agg(a.name,' ') FROM start_public.artists a WHERE a.id=ANY(v.artist_ids)),(SELECT string_agg(r.value->>'explanation',' ') FROM jsonb_array_elements(coalesce(v.data->'relations','[]')) r),(SELECT string_agg(p.name,' ') FROM start_public.places p WHERE p.id=ANY(${p.places})),(SELECT string_agg(e.name,' ') FROM start_public.events e WHERE e.id=ANY(${p.events}))),NFKC))`;
  return `SELECT v.data,v.name FROM start_public.${views[type]} v WHERE
  ($2::uuid[]='{}' OR v.artist_ids&&$2::uuid[]) AND ($3::uuid[]='{}' OR v.city_ids&&$3::uuid[]) AND

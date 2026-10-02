@@ -13,7 +13,7 @@ const admin=new pg.Client(testConfig('postgres'));
 const pool=new pg.Pool(testConfig('start_public_reader'));
 const server=createPublicServer(pool);let base='';
 before(async()=>{await admin.connect();await migrate(admin);await importBatch(admin,catalogFixture());await new Promise<void>(r=>server.listen(0,'127.0.0.1',r));const a=server.address();if(!a||typeof a==='string')throw Error('Missing TCP address');base=`http://127.0.0.1:${a.port}/api/v1`;});
-after(async()=>{await new Promise<void>((resolve,reject)=>server.close(e=>e?reject(e):resolve()));await pool.end();await admin.end();});
+after(async()=>{try{if(server.listening)await new Promise<void>((resolve,reject)=>server.close(e=>e?reject(e):resolve()));}finally{await pool.end();await admin.end();}});
 async function get(path:string){const response=await fetch(base+path);return{response,body:await response.json()};}
 test('HTTP four-entity search is real and empty residual results remain empty',async()=>{
  const r=await get('/search?q='+encodeURIComponent('台北'));assert.equal(r.response.status,200);const dto=SearchResponseSchema.parse(r.body);assert.deepEqual(dto.sections.map(s=>s.items.length),[1,1,1,1]);assert.equal(r.response.headers.get('cache-control'),'no-store');
