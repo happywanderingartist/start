@@ -1,9 +1,10 @@
+import {testConfig} from '../db-config.ts';
 import {test,before,after} from 'node:test';import assert from 'node:assert/strict';import pg from 'pg';
 import{migrate}from'../../tooling/db/migrate.ts';import{seedHistorical,importBatch}from'../../tooling/db/seed.ts';import{catalogFixture,ids}from'../fixtures/catalog.ts';
 import{Items,RouteDetailSchema}from'../../packages/api-contracts/src/schemas.ts';import{randomUUID}from'node:crypto';
 import fs from 'node:fs/promises';import path from 'node:path';
-const c=new pg.Client({host:'127.0.0.1',port:55432,user:'postgres',database:'start_test_foundation'});
-const reader=new pg.Client({host:'127.0.0.1',port:55432,user:'start_public_reader',database:'start_test_foundation'});
+const c=new pg.Client(testConfig('postgres'));
+const reader=new pg.Client(testConfig('start_public_reader'));
 before(async()=>{await c.connect();await migrate(c);await importBatch(c,catalogFixture());await reader.connect();});after(async()=>{await c.end();await reader.end();});
 test('historical seed establishes five canonical places and one unpublished route, preserving transport metadata',async()=>{
  await seedHistorical(c);const r=await c.query("select publication from start_catalog.route where slug='route-anpu-nanjing-old-city'");assert.equal(r.rows.length,1);assert.equal(r.rows[0].publication,'unpublished');
@@ -61,7 +62,7 @@ test('public runtime projections exist for all four entities, not a raw private 
  const r=await c.query("select table_name from information_schema.views where table_schema='start_public'");for(const name of ['artists','routes','places','events','aliases','cities'])assert.ok(r.rows.some(x=>x.table_name===name),name);
 });
 test('a reader-created temporary artist cannot override canonical public qualification and leak private identities',async()=>{
- const attacker=new pg.Client({host:'127.0.0.1',port:55432,user:'start_public_reader',database:'start_test_foundation'});await attacker.connect();await attacker.query('begin');try{
+ const attacker=new pg.Client(testConfig('start_public_reader'));await attacker.connect();await attacker.query('begin');try{
  await attacker.query('create temporary table artist(id uuid,canonical_name text,artist_type text,verification text,publication text,review text,visibility text)');
  await attacker.query("insert into artist values($1,'Forged','band','verified','published','approved','public')",[ids.privateArtist]);await attacker.query('grant select on artist to start_catalog_owner');
  assert.equal((await attacker.query('select id,name from start_public.artists where id=$1',[ids.privateArtist])).rows.length,0);

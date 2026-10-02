@@ -11,3 +11,5 @@
 | Slice001任务3 种子/公开资格/快照 | 本行所属提交；任务2 a916dd3 | RED历史seed/投影→GREEN；媒体漂移RED→006；22DB/trust+6contracts+tsc | review_trust Critical临时表shadow与Important来源hash均先复现RED→007/import校验→复审攻击0泄漏；来源损坏拒绝；无遗留阻塞 | 3历史JSON raw SHA/bytes、5POI4legs1496m1198s默认不发布；synthetic仅start_test_库；005/006/007 forward SQL |
 
 | Slice001任务4 四实体真实搜索 | 本行所属提交；任务3 a519ff5 | search12/12+contracts6/6+tsc；未知残余及alias排序先RED后GREEN；四SQL EXPLAIN | review_search P1连接词误删已修，只移除完整片段；多公开候选LIMIT回归、alias与canonical同tier；只读复审无critical/important | PostgreSQL派生视图、有限词典、不忽略残余、不固定南京、Provider contract四专属组 |
+
+| Slice001任务5 公共实体/Hub HTTP | 本行所属提交；任务4 fd6f670 | HTTP9/9+四实体search12/12+domain2/2+tsc；初始HTTP6RED→GREEN；owner启动拒绝RED→GREEN | review_api独立24只读PG/HTTP探针无阻塞；500诊断泄漏Minor固化回归；复审关闭 | 仅五种GET API，private/draft/withdraw404，输入400，DB503/internal500；真实bounded reader、事务快照；测试限定本机start_test_ |

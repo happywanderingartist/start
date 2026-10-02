@@ -1,8 +1,9 @@
+import {testConfig} from '../db-config.ts';
 import{test,before,after}from'node:test';import assert from'node:assert/strict';import pg from'pg';
 import{migrate}from'../../tooling/db/migrate.ts';import{importBatch}from'../../tooling/db/seed.ts';import{catalogFixture,ids}from'../fixtures/catalog.ts';import{DiscoveryService}from'../../apps/api/src/modules/discovery/service.ts';
 import{PostgresSearchProvider,candidateQuery}from'../../apps/api/src/providers/search/postgres.ts';
 import{randomUUID}from'node:crypto';import fs from'node:fs/promises';
-const admin=new pg.Client({host:'127.0.0.1',port:55432,user:'postgres',database:'start_test_foundation'});const pool=new pg.Pool({host:'127.0.0.1',port:55432,user:'start_public_reader',database:'start_test_foundation'});const service=new DiscoveryService(pool,c=>new PostgresSearchProvider(c));
+const admin=new pg.Client(testConfig('postgres'));const pool=new pg.Pool(testConfig('start_public_reader'));const service=new DiscoveryService(pool,c=>new PostgresSearchProvider(c));
 before(async()=>{await admin.connect();await migrate(admin);await importBatch(admin,catalogFixture());});after(async()=>{await admin.end();await pool.end();});
 test('city search really queries all four public entity groups in product order',async()=>{
  const r=await service.searchPublic({q:'台北'});assert.deepEqual(r.sections.map(s=>s.type),['artist','route','place','event']);assert.deepEqual(r.sections.map(s=>s.items.length),[1,1,1,1]);assert.equal(r.intent.kind,'city');

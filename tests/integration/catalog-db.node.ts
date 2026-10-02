@@ -1,6 +1,7 @@
+import {testConfig} from '../db-config.ts';
 import {test,before,after} from 'node:test';import assert from 'node:assert/strict';import pg from 'pg';import fs from 'node:fs/promises';import path from 'node:path';import {randomUUID} from 'node:crypto';
 import {migrate} from '../../tooling/db/migrate.ts';
-const c=new pg.Client({host:'127.0.0.1',port:55432,user:'postgres',database:'start_test_foundation'});
+const c=new pg.Client(testConfig('postgres'));
 before(async()=>{await c.connect();await migrate(c);});after(async()=>{await c.end();});
 test('migrations establish all canonical catalog and evidence identities instead of a Route-only database',async()=>{
   const r=await c.query("select table_name from information_schema.tables where table_schema='start_catalog' order by table_name");
@@ -61,7 +62,7 @@ test('Event dates and EventArtist FKs are constrained; cancellation is independe
  assert.deepEqual((await c.query('select status,publication from start_catalog.event where id=$1',[id(14)])).rows[0],{status:'cancelled',publication:'published'});
 }));
 test('runtime role cannot read private canonical tables or write schema',async()=>{
- const reader=new pg.Client({host:'127.0.0.1',port:55432,user:'start_public_reader',database:'start_test_foundation'});await reader.connect();try{
+ const reader=new pg.Client(testConfig('start_public_reader'));await reader.connect();try{
  await assert.rejects(reader.query('select * from start_catalog.artist'),(e:unknown)=>(e as {code:string}).code==='42501');
  await assert.rejects(reader.query('create table public.attack(id int)'),(e:unknown)=>(e as {code:string}).code==='42501');
  }finally{await reader.end();}
@@ -76,7 +77,7 @@ test('migration replay preserves checksum/time; changed applied SQL and failed n
  assert.deepEqual((await c.query('select * from start_migrations.applied order by name')).rows,before);
 });
 test('concurrent stop writes serialize with freezing in both lock orders, so committed frozen content cannot drift',async()=>{
- const a=new pg.Client({host:'127.0.0.1',port:55432,user:'postgres',database:'start_test_foundation'}),b=new pg.Client({host:'127.0.0.1',port:55432,user:'postgres',database:'start_test_foundation'});await a.connect();await b.connect();
+ const a=new pg.Client(testConfig('postgres')),b=new pg.Client(testConfig('postgres'));await a.connect();await b.connect();
  async function make(){const city=randomUUID(),place=randomUUID(),route=randomUUID(),revision=randomUUID(),stop=randomUUID();
   await c.query("insert into start_catalog.city values($1,'Concurrency','concurrency','CN',null)",[city]);
   await c.query("insert into start_catalog.place(id,city_id,name,normalized_name) values($1,$2,'Concurrency','concurrency')",[place,city]);
