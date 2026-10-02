@@ -1,0 +1,30 @@
+DO $$ BEGIN
+ IF NOT EXISTS (SELECT FROM pg_roles WHERE rolname='start_catalog_owner') THEN CREATE ROLE start_catalog_owner NOLOGIN; END IF;
+ IF NOT EXISTS (SELECT FROM pg_roles WHERE rolname='start_public_reader') THEN CREATE ROLE start_public_reader LOGIN NOINHERIT; END IF;
+END $$;
+CREATE SCHEMA start_catalog AUTHORIZATION start_catalog_owner;
+CREATE SCHEMA start_public AUTHORIZATION start_catalog_owner;
+REVOKE CREATE ON SCHEMA public FROM PUBLIC;
+SET LOCAL ROLE start_catalog_owner;
+SET LOCAL search_path=start_catalog,pg_catalog;
+CREATE TYPE verification_state AS ENUM ('unverified','partial','verified','disputed');
+CREATE TYPE review_state AS ENUM ('draft','pending','approved','rejected');
+CREATE TYPE publication_state AS ENUM ('unpublished','published','withdrawn');
+CREATE TYPE visibility_state AS ENUM ('public','private','sensitive');
+CREATE TABLE city(id uuid PRIMARY KEY,name text NOT NULL CHECK(length(name)>0),normalized_name text NOT NULL,country_code text NOT NULL,administrative_code text,UNIQUE(country_code,administrative_code));
+CREATE TABLE artist(id uuid PRIMARY KEY,canonical_name text NOT NULL CHECK(length(canonical_name)>0),normalized_name text NOT NULL,artist_type text NOT NULL,primary_media_id uuid,verification verification_state NOT NULL DEFAULT 'unverified',review review_state NOT NULL DEFAULT 'draft',publication publication_state NOT NULL DEFAULT 'unpublished',visibility visibility_state NOT NULL DEFAULT 'private');
+CREATE TABLE artist_alias(artist_id uuid NOT NULL REFERENCES artist,alias text NOT NULL,normalized_alias text NOT NULL,locale text NOT NULL,PRIMARY KEY(artist_id,normalized_alias));
+CREATE TABLE place(id uuid PRIMARY KEY,city_id uuid NOT NULL REFERENCES city,name text NOT NULL CHECK(length(name)>0),normalized_name text NOT NULL,address text,longitude double precision,latitude double precision,coordinate_system text,verification verification_state NOT NULL DEFAULT 'unverified',verified_at timestamptz,review review_state NOT NULL DEFAULT 'draft',publication publication_state NOT NULL DEFAULT 'unpublished',visibility visibility_state NOT NULL DEFAULT 'private',practical_info text,media_id uuid,
+ CHECK((longitude IS NULL AND latitude IS NULL AND coordinate_system IS NULL) OR (longitude IS NOT NULL AND latitude IS NOT NULL AND longitude BETWEEN -180 AND 180 AND latitude BETWEEN -90 AND 90 AND coordinate_system IN ('gcj02','wgs84','bd09'))));
+CREATE TABLE place_provider_ref(place_id uuid NOT NULL REFERENCES place,provider_key text NOT NULL,provider_place_id text NOT NULL,observed_at timestamptz NOT NULL,source_ref text NOT NULL,PRIMARY KEY(provider_key,provider_place_id));
+CREATE TABLE artist_place_relation(id uuid PRIMARY KEY,artist_id uuid NOT NULL REFERENCES artist,place_id uuid NOT NULL REFERENCES place,relation_type text NOT NULL,explanation text NOT NULL CHECK(length(explanation)>0),verification verification_state NOT NULL DEFAULT 'unverified',review review_state NOT NULL DEFAULT 'draft',visibility visibility_state NOT NULL DEFAULT 'private',public_caveat text,severe_dispute boolean NOT NULL DEFAULT false,credible_basis boolean NOT NULL DEFAULT false,reviewer text,reviewed_at timestamptz,review_reason text);
+CREATE TABLE route(id uuid PRIMARY KEY,slug text NOT NULL UNIQUE,city_id uuid NOT NULL REFERENCES city,linked_artist_id uuid REFERENCES artist,publication publication_state NOT NULL DEFAULT 'unpublished',published_revision_id uuid);
+CREATE TABLE route_revision(id uuid PRIMARY KEY,route_id uuid NOT NULL REFERENCES route,revision_number integer NOT NULL CHECK(revision_number>0),title text NOT NULL CHECK(length(title)>0),summary text NOT NULL,why_worth_replicating text NOT NULL,short_story text NOT NULL,hero_media_id uuid,verification verification_state NOT NULL DEFAULT 'unverified',review review_state NOT NULL DEFAULT 'draft',published_at timestamptz,frozen_at timestamptz,snapshot jsonb,metrics jsonb NOT NULL DEFAULT '{"distanceMeters":null,"transportSeconds":null,"provider":null,"computedAt":null,"coordinateSystem":null}',reviewer text,reviewed_at timestamptz,review_reason text,UNIQUE(route_id,revision_number),UNIQUE(route_id,id),CHECK((frozen_at IS NULL AND published_at IS NULL) OR (frozen_at IS NOT NULL AND published_at IS NOT NULL AND snapshot IS NOT NULL)));
+ALTER TABLE route ADD CONSTRAINT route_own_revision FOREIGN KEY(id,published_revision_id) REFERENCES route_revision(route_id,id) DEFERRABLE INITIALLY IMMEDIATE;
+CREATE TABLE route_stop(id uuid PRIMARY KEY,revision_id uuid NOT NULL REFERENCES route_revision,place_id uuid NOT NULL REFERENCES place,sequence integer NOT NULL CHECK(sequence>0),stop_note text NOT NULL,stay_minutes integer CHECK(stay_minutes>=0),artist_place_relation_id uuid REFERENCES artist_place_relation,place_snapshot jsonb NOT NULL DEFAULT '{}',UNIQUE(revision_id,sequence));
+CREATE INDEX relation_artist_place_idx ON artist_place_relation(artist_id,place_id);
+CREATE INDEX stop_place_revision_idx ON route_stop(place_id,revision_id);
+CREATE INDEX alias_lookup_idx ON artist_alias(normalized_alias);
+CREATE INDEX place_city_idx ON place(city_id);
+CREATE INDEX route_artist_city_idx ON route(linked_artist_id,city_id);
+RESET ROLE;

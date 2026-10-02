@@ -1,0 +1,15 @@
+SET LOCAL ROLE start_catalog_owner;
+SET LOCAL search_path=start_catalog,pg_catalog;
+CREATE TABLE event(id uuid PRIMARY KEY,title text NOT NULL CHECK(length(title)>0),normalized_title text NOT NULL,starts_at timestamptz NOT NULL,ends_at timestamptz,place_id uuid NOT NULL REFERENCES place,status text NOT NULL CHECK(status IN ('upcoming','ongoing','ended','cancelled')),publication publication_state NOT NULL DEFAULT 'unpublished',review review_state NOT NULL DEFAULT 'draft',visibility visibility_state NOT NULL DEFAULT 'private',verification verification_state NOT NULL DEFAULT 'unverified',hero_media_id uuid REFERENCES media_asset,source_observed_at timestamptz NOT NULL,source_timezone text NOT NULL, CHECK(ends_at IS NULL OR ends_at>=starts_at));
+CREATE TABLE event_artist(event_id uuid NOT NULL REFERENCES event,artist_id uuid NOT NULL REFERENCES artist,role text NOT NULL,PRIMARY KEY(event_id,artist_id));
+ALTER TABLE claim ADD FOREIGN KEY(event_id) REFERENCES event;
+CREATE TABLE event_evidence(event_id uuid NOT NULL REFERENCES event,evidence_source_id uuid NOT NULL REFERENCES evidence_source,PRIMARY KEY(event_id,evidence_source_id));
+CREATE INDEX event_place_idx ON event(place_id);
+CREATE INDEX event_artist_lookup_idx ON event_artist(artist_id,event_id);
+REVOKE ALL ON SCHEMA start_catalog FROM PUBLIC,start_public_reader;
+REVOKE ALL ON ALL TABLES IN SCHEMA start_catalog FROM PUBLIC,start_public_reader;
+REVOKE ALL ON ALL FUNCTIONS IN SCHEMA start_catalog FROM PUBLIC,start_public_reader;
+GRANT USAGE ON SCHEMA start_public TO start_public_reader;
+ALTER DEFAULT PRIVILEGES IN SCHEMA start_catalog REVOKE EXECUTE ON FUNCTIONS FROM PUBLIC;
+ALTER DEFAULT PRIVILEGES IN SCHEMA start_public REVOKE EXECUTE ON FUNCTIONS FROM PUBLIC;
+RESET ROLE;

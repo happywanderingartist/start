@@ -15,7 +15,9 @@
     "check": "pnpm typecheck && pnpm test:run && pnpm build && pnpm test:worker",
     "test:assets": "node --test tests/character-assets.test.mjs && node scripts/validate-character-assets.mjs character-assets/character-assets.json",
     "test:contracts": "node --test tests/contracts/*.node.ts",
-    "typecheck:foundation": "node node_modules/typescript/bin/tsc -p tsconfig.foundation.json"
+    "typecheck:foundation": "node node_modules/typescript/bin/tsc -p tsconfig.foundation.json",
+    "db:migrate": "node tooling/db/migrate.ts",
+    "test:db": "node --test tests/integration/catalog-db.node.ts"
   },
   "dependencies": {
     "@phosphor-icons/react": "^2.1.10",
