@@ -21,7 +21,7 @@ test('a top verified place relation cannot relabel unverified, partial or disput
   assert.equal(Items.place.safeParse({...item,topVerifiedRelation:null}).success,true);
 });
 test('search input rejects invalid pagination, UUID filters and Unicode overlength before reaching providers', () => {
-  for (const value of [{q:'a'.repeat(121)},{q:'x',limit:0},{q:'x',offset:1},{q:'x',cityId:'南京'},{q:'x',section:'user'}]) {
+  for (const value of [{q:'a'.repeat(121)},{q:'\0'},{q:'x',limit:0},{q:'x',offset:1},{q:'x',cityId:'南京'},{q:'x',section:'user'}]) {
     assert.equal(SearchInputSchema.safeParse(value).success,false,JSON.stringify(value));
   }
 });

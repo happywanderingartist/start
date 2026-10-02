@@ -3,7 +3,7 @@ export const Id = z.uuid();
 export const Verification = z.enum(['unverified','partial','verified','disputed']);
 export const EntityType = z.enum(['artist','route','place','event']);
 export const SearchInputSchema = z.strictObject({
-  q: z.string().refine(s=>[...s].length<=120).default(''), cityId: Id.optional(),
+  q: z.string().refine(s=>[...s].length<=120 && !s.includes('\0')).default(''), cityId: Id.optional(),
   section: EntityType.optional(), limit:z.number().int().min(1).max(30).default(10),
   offset:z.number().int().min(0).max(1000).default(0),
 }).refine(x=>x.section!==undefined || x.offset===0,'offset requires section');
