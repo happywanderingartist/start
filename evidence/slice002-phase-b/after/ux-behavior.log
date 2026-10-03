@@ -1,0 +1,4 @@
+PASSED Stop preview offers SOURCE and PLACE without a competing MAP action; nested source returns focus
+PASSED Optional Artist Event is deferred, expandable by keyboard and still reaches its read target
+PASSED Place WHY and address precede unknown photography information at 320/390/768
+PASSED 768 Search section index jumps to Event while result order and query remain intact

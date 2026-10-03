@@ -21,10 +21,14 @@
 2. 首次新增行为回归3/4：索引hash触发popstate重新render，结果瞬时清空。修复为截获分组链接、在原文档scrollIntoView，不更改查询/路由和历史。原同一断言4/4通过。after/ux-behavior-first-failure.json及log保存失败。
 3. 原18项回归发现320 MAP宽37.625px，原44×44断言未改。只增min-width44并保留小字视觉，全部18/18通过。after/browser-first-failure.json及log保存失败。
 4. IAB实看发现新Artist grid自动行高把768城市索引推到首屏外，虽不溢出仍不可接受。修复grid行高为auto/min-content/1fr，索引重新邻近身份且章节正文并置；最终768截图和独立复审核对。保留原末章锚点尾部空间。
+5. 最终独立审查提出两项轻微问题：320放大后的路线标题留下“线”孤字；768索引测试在1024px高度结果全可见，不能证明真实滚动。Route标题使用均衡换行与keep-all保留“春日城市路线”语义单元，不缩小主标题；新增索引检查改用768×600高度，强化scrollY>0、Event完整可见断言，仍保留规定768×1024截图。原18项不变，4项增强后重新通过；320最终图已复核无孤字。
+6. 独立复审发现protection-check.log在生成时仍被追加写入，其manifest hash过早冻结。将该日志视为一次已结束的历史保护检查输出，随后直接运行record-phase-b.mjs，不再把stdout重定向到清单中的文件；重新生成清单并独立核对全部条目。provenance明确snapshotGitHead和未提交差异，附原型文件hash，不把生成前HEAD冒充最终实施提交。
 
 ## 回归与证据边界
 
 原18项浏览器检查名称及断言不变，before/after均18/18，新增行为4/4。320×844、390×844、768×1024各五页；1280×900 Artist/Route/Place；49张before＋49张after，含18视口/18整页/13状态。PNG有每张实际尺寸/SHA256；IAB JPEG另存用于实看。SCREENSHOT_COMPARISON_INDEX.md与COMPARISON_GALLERY.html提供同名配对，派生comparison图只是并置原图、不替换原始证据。
+
+after/browser-failure.json与first-failure JSON/log为保留的首轮历史失败，最终状态以browser-report.json和ux-behavior-report.json为准。并置图生成时fontconfig提示不可写系统缓存，不影响原始截图或PNG生成；没有更改系统权限。
 
 pnpm check：typecheck、Vitest21/21、build、Node18/18通过；foundation typecheck、API编译、contract/domain9/9通过，完整输出在after/*.log。API/schema/fixture没有修改；本轮不运行migration/seed，不启动PostgreSQL，001真实PG历史结果不能冒充本轮UX验收。未实测真机中文键盘、真人任务成功率、真实资料长文、网络及地图Provider；不宣称完整WCAG审计。单城市变体/真实媒体lightbox仍是Phase A已披露未覆盖项。
 

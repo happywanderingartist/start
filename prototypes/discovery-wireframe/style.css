@@ -417,7 +417,9 @@ small,.muted {
 }
 .route .identity h1 {
   font-size:30px;
-  line-height:36px
+  line-height:36px;
+  text-wrap:balance;
+  word-break:keep-all
 }
 .route .actions {
   margin-top:32px;

@@ -1,0 +1,17 @@
+✔ search rejects route-only and unknown result types, rather than silently accepting a broken public contract (4.4818ms)
+✔ evidence links reject executable schemes before a client renders them (2.4134ms)
+✔ a top verified place relation cannot relabel unverified, partial or disputed evidence (4.3888ms)
+✔ search input rejects invalid pagination, UUID filters and Unicode overlength before reaching providers (1.7515ms)
+✔ all four searched empty groups are legal; duplicate groups, private fields and fake unrequested results are rejected (2.0838ms)
+✔ Unicode limit counts codepoints, allows 120 emoji and rejects 121; independent section pagination stays available (0.3412ms)
+✔ test writes require an explicit local start_test_ database and never reach a production name (1.5316ms)
+✔ normalization preserves unknown residual words and product order stays independent of entity scores (1.1713ms)
+✔ a native PG Date and its saved ISO string cannot impersonate a restart (4.6122ms)
+ℹ tests 9
+ℹ suites 0
+ℹ pass 9
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 373.4926

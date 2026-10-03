@@ -271,7 +271,7 @@
       },
       "width": 320,
       "height": 844,
-      "sha256": "7944dd72fb13b7aae614f87dfd7d0432617c4c634bd89422ead9e7587b9aa62e"
+      "sha256": "0a33532e8dd825cf485d00ba465efb054c2ebfc9e77a8ca3b9699211e5e513a0"
     },
     {
       "file": "320-route-full.png",
@@ -282,7 +282,7 @@
       },
       "width": 320,
       "height": 1565,
-      "sha256": "be6eb3fd45351f53419fc982561d3524b77ac8b45497edf01f075061e648f034"
+      "sha256": "2f33c2175f5741114f23d7d8733be5b6cbd169916a04ce1430db83f4c440ac36"
     },
     {
       "file": "320-place.png",
@@ -601,7 +601,7 @@
       },
       "width": 390,
       "height": 844,
-      "sha256": "26552c1cc7307c3f6a57ea29e24d52b27c37e3846b72ae1b24b5c1e40f96043b"
+      "sha256": "3974c335ea9c5c5cbdd0763257b460ff952f45a9e2b3fbc69e284a58cdaaa213"
     },
     {
       "file": "390-address.png",
@@ -617,5 +617,5 @@
   ],
   "browser": "149.0.7827.55",
   "scope": "Private grayscale regression; synthetic data; reduced-motion capture; not real API/DB/high-fidelity acceptance",
-  "generatedAt": "2026-10-03T06:52:54.842Z"
+  "generatedAt": "2026-10-03T07:03:39.483Z"
 }

@@ -2,7 +2,7 @@
 
 授权来源：本对话用户2026-10-03明确批准Phase B独立UX Review与六项修复，覆盖旧AGENTS中“仅Phase A”的阶段限制。五页沿用现有实现；本轮只改私有灰阶原型、相关检查、文档与证据。没有生产API/schema/fixture修改、高保真、Journey、merge/deploy。
 
-Git：从Phase A `74a103ec5ee7f8eab3ce471eacca8711b2a6b82f`建立 `feature/start-slice-002-phase-b`，复用已保护integration worktree。Phase A与Slice001分支指针保留，旧三线和44项WIP不得改动。证据写入独立 evidence/slice002-phase-b/before、after，原 evidence/slice002不覆盖。verify.mjs仅新增可选输出目录，原18项断言和测试名称不变。
+Git：从Phase A `74a103ec5ee7f8eab3ce471eacca8711b2a6b82f`建立 `feature/start-slice-002-phase-b`，复用已保护integration worktree。Phase A与Slice001分支指针保留，旧三线和44项WIP不得改动。证据写入独立 evidence/slice002-phase-b/before、after，原 evidence/slice002不覆盖。verify.mjs仅调整输出目录（默认Phase B after，可环境覆盖）和报告scope说明，原18项断言和测试名称不变。
 
 顺序：冻结before与功能基线 → 独立截图审查 → GitHub参考记录 → 新增可测行为失败证据 → 六项最小修复 → 原18项与新增检查回归 → 390/320/768/1280截图 → 独立复审 → 修复复审问题 → 保护hash和提交记录。主观层级判断与可测行为分别记录。
 

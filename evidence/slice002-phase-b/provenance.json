@@ -1,9 +1,75 @@
 {
-  "generatedAt": "2026-10-03T06:54:39.061Z",
+  "generatedAt": "2026-10-03T07:04:29.180Z",
   "phase": "B only",
   "phaseABaseline": "74a103ec5ee7f8eab3ce471eacca8711b2a6b82f",
   "branch": "feature/start-slice-002-phase-b",
-  "head": "74a103ec5ee7f8eab3ce471eacca8711b2a6b82f",
+  "snapshotGitHead": "d5bb671f5b71f9ca1830edac3f2a27f9248e1df1",
+  "snapshotWorkingChanges": [
+    " M docs/start/slice002/phase-b/PHASE_B_PLAN.md",
+    " M docs/start/slice002/phase-b/PHASE_B_REVIEW_FIX_RECORD.md",
+    " M evidence/slice002-phase-b/after/320-route-full.png",
+    " M evidence/slice002-phase-b/after/320-route.png",
+    " M evidence/slice002-phase-b/after/390-share.png",
+    "A  evidence/slice002-phase-b/after/browser-first-failure.log",
+    " M evidence/slice002-phase-b/after/browser-report.json",
+    "A  evidence/slice002-phase-b/after/browser.log",
+    "A  evidence/slice002-phase-b/after/foundation-build.log",
+    "A  evidence/slice002-phase-b/after/foundation-typecheck.log",
+    "A  evidence/slice002-phase-b/after/foundation-unit.log",
+    "A  evidence/slice002-phase-b/after/project-check.log",
+    "A  evidence/slice002-phase-b/after/ux-behavior-first-failure.log",
+    " M evidence/slice002-phase-b/after/ux-behavior-report.json",
+    "A  evidence/slice002-phase-b/after/ux-behavior.log",
+    "A  evidence/slice002-phase-b/before/browser.log",
+    "A  evidence/slice002-phase-b/before/ux-behavior.log",
+    " M evidence/slice002-phase-b/provenance.json",
+    " M prototypes/discovery-wireframe/record-phase-b.mjs",
+    " M prototypes/discovery-wireframe/style.css",
+    " M prototypes/discovery-wireframe/verify-phase-b.mjs",
+    "?? docs/start/slice002/phase-b/reference-pins.json"
+  ],
+  "sourceSnapshotFiles": [
+    {
+      "file": "prototypes/discovery-wireframe/app.js",
+      "sha256": "b99128579812af07d8056815f8e1f8ae57c548ac92f6027a2306c5a55656f1b0"
+    },
+    {
+      "file": "prototypes/discovery-wireframe/build-fixture.mjs",
+      "sha256": "faa947a1e5619520880f7ed5b798d2025575ea4ffcd9f7541ef072d793ed4c86"
+    },
+    {
+      "file": "prototypes/discovery-wireframe/fixture.json",
+      "sha256": "31ea11a61dd8758ad7e836cadf023202bc6dad75972b2c984498f6710ff95203"
+    },
+    {
+      "file": "prototypes/discovery-wireframe/index.html",
+      "sha256": "a5a92dcd8dda73e85d198b74350ab97557bc324bf30ead87239749fe47f574bf"
+    },
+    {
+      "file": "prototypes/discovery-wireframe/record-evidence.mjs",
+      "sha256": "907c2ee351e558d6030ad4e1b397e1eee6b95780842181e7aba1f6b87663d5df"
+    },
+    {
+      "file": "prototypes/discovery-wireframe/record-phase-b.mjs",
+      "sha256": "646399d86c45f619555dcc57f9da56a70df3d4c5334038173c4f9d3416a0bbfc"
+    },
+    {
+      "file": "prototypes/discovery-wireframe/server.mjs",
+      "sha256": "0ebfe04963bc3955dca68b4a8714cdabfdf574ea456771d9a2d901aa4b1027af"
+    },
+    {
+      "file": "prototypes/discovery-wireframe/style.css",
+      "sha256": "07188df043f4223db4f460a7e2e7f32620bcde2ca5c28c8bf37677f9432a9e78"
+    },
+    {
+      "file": "prototypes/discovery-wireframe/verify-phase-b.mjs",
+      "sha256": "12464a499a5e84b63f95dceb8185d4a13e76ef5036293a0a8723c86ad40ab38e"
+    },
+    {
+      "file": "prototypes/discovery-wireframe/verify.mjs",
+      "sha256": "628fae111a53dc5d5b32ec83afacd49c797ad12e7b60d5e0bc0c0c15d9e20991"
+    }
+  ],
   "protection": {
     "main": {
       "head": "1def607be517cb2e5bbf7c183125836a113ea5ce",
@@ -35,10 +101,148 @@
   "newBehaviorTests": 4,
   "changedTrackedFiles": [
     "AGENTS.md",
+    "docs/start/slice002/phase-b/INDEPENDENT_REVIEW_INITIAL.md",
+    "docs/start/slice002/phase-b/PHASE_B_PLAN.md",
+    "docs/start/slice002/phase-b/PHASE_B_REVIEW_FIX_RECORD.md",
+    "docs/start/slice002/phase-b/REFERENCE_NOTE_003.md",
+    "evidence/slice002-phase-b/390-home-comparison.png",
+    "evidence/slice002-phase-b/390-place-comparison.png",
+    "evidence/slice002-phase-b/390-route-comparison.png",
+    "evidence/slice002-phase-b/768-artist-comparison.png",
+    "evidence/slice002-phase-b/COMPARISON_GALLERY.html",
+    "evidence/slice002-phase-b/SCREENSHOT_COMPARISON_INDEX.md",
+    "evidence/slice002-phase-b/after/1280-artist-full.png",
+    "evidence/slice002-phase-b/after/1280-artist.png",
+    "evidence/slice002-phase-b/after/1280-place-full.png",
+    "evidence/slice002-phase-b/after/1280-place.png",
+    "evidence/slice002-phase-b/after/1280-route-full.png",
+    "evidence/slice002-phase-b/after/1280-route.png",
+    "evidence/slice002-phase-b/after/320-artist-full.png",
+    "evidence/slice002-phase-b/after/320-artist.png",
+    "evidence/slice002-phase-b/after/320-home-full.png",
+    "evidence/slice002-phase-b/after/320-home.png",
+    "evidence/slice002-phase-b/after/320-place-full.png",
+    "evidence/slice002-phase-b/after/320-place.png",
+    "evidence/slice002-phase-b/after/320-route-full.png",
+    "evidence/slice002-phase-b/after/320-route.png",
+    "evidence/slice002-phase-b/after/320-search-full.png",
+    "evidence/slice002-phase-b/after/320-search.png",
+    "evidence/slice002-phase-b/after/390-address.png",
+    "evidence/slice002-phase-b/after/390-artist-empty-chapter.png",
+    "evidence/slice002-phase-b/after/390-artist-full.png",
+    "evidence/slice002-phase-b/after/390-artist.png",
+    "evidence/slice002-phase-b/after/390-event-read.png",
+    "evidence/slice002-phase-b/after/390-home-focused.png",
+    "evidence/slice002-phase-b/after/390-home-full.png",
+    "evidence/slice002-phase-b/after/390-home.png",
+    "evidence/slice002-phase-b/after/390-place-full.png",
+    "evidence/slice002-phase-b/after/390-place.png",
+    "evidence/slice002-phase-b/after/390-route-full.png",
+    "evidence/slice002-phase-b/after/390-route-stop-preview.png",
+    "evidence/slice002-phase-b/after/390-route.png",
+    "evidence/slice002-phase-b/after/390-search-empty.png",
+    "evidence/slice002-phase-b/after/390-search-error.png",
+    "evidence/slice002-phase-b/after/390-search-exact-artist.png",
+    "evidence/slice002-phase-b/after/390-search-full.png",
+    "evidence/slice002-phase-b/after/390-search-loading.png",
+    "evidence/slice002-phase-b/after/390-search.png",
+    "evidence/slice002-phase-b/after/390-share.png",
+    "evidence/slice002-phase-b/after/390-source.png",
+    "evidence/slice002-phase-b/after/390-start-deferred.png",
+    "evidence/slice002-phase-b/after/390-verification.png",
+    "evidence/slice002-phase-b/after/768-artist-full.png",
+    "evidence/slice002-phase-b/after/768-artist.png",
+    "evidence/slice002-phase-b/after/768-home-full.png",
+    "evidence/slice002-phase-b/after/768-home.png",
+    "evidence/slice002-phase-b/after/768-place-full.png",
+    "evidence/slice002-phase-b/after/768-place.png",
+    "evidence/slice002-phase-b/after/768-route-full.png",
+    "evidence/slice002-phase-b/after/768-route.png",
+    "evidence/slice002-phase-b/after/768-search-full.png",
+    "evidence/slice002-phase-b/after/768-search.png",
+    "evidence/slice002-phase-b/after/browser-failure.json",
+    "evidence/slice002-phase-b/after/browser-first-failure.json",
+    "evidence/slice002-phase-b/after/browser-first-failure.log",
+    "evidence/slice002-phase-b/after/browser-report.json",
+    "evidence/slice002-phase-b/after/browser.log",
+    "evidence/slice002-phase-b/after/foundation-build.log",
+    "evidence/slice002-phase-b/after/foundation-typecheck.log",
+    "evidence/slice002-phase-b/after/foundation-unit.log",
+    "evidence/slice002-phase-b/after/iab-390-home.jpg",
+    "evidence/slice002-phase-b/after/iab-390-stop-preview.jpg",
+    "evidence/slice002-phase-b/after/iab-768-artist.jpg",
+    "evidence/slice002-phase-b/after/iab-768-home.jpg",
+    "evidence/slice002-phase-b/after/iab-768-place.jpg",
+    "evidence/slice002-phase-b/after/iab-768-route.jpg",
+    "evidence/slice002-phase-b/after/iab-768-search.jpg",
+    "evidence/slice002-phase-b/after/project-check.log",
+    "evidence/slice002-phase-b/after/ux-behavior-first-failure.json",
+    "evidence/slice002-phase-b/after/ux-behavior-first-failure.log",
+    "evidence/slice002-phase-b/after/ux-behavior-report.json",
+    "evidence/slice002-phase-b/after/ux-behavior.log",
+    "evidence/slice002-phase-b/before/1280-artist-full.png",
+    "evidence/slice002-phase-b/before/1280-artist.png",
+    "evidence/slice002-phase-b/before/1280-place-full.png",
+    "evidence/slice002-phase-b/before/1280-place.png",
+    "evidence/slice002-phase-b/before/1280-route-full.png",
+    "evidence/slice002-phase-b/before/1280-route.png",
+    "evidence/slice002-phase-b/before/320-artist-full.png",
+    "evidence/slice002-phase-b/before/320-artist.png",
+    "evidence/slice002-phase-b/before/320-home-full.png",
+    "evidence/slice002-phase-b/before/320-home.png",
+    "evidence/slice002-phase-b/before/320-place-full.png",
+    "evidence/slice002-phase-b/before/320-place.png",
+    "evidence/slice002-phase-b/before/320-route-full.png",
+    "evidence/slice002-phase-b/before/320-route.png",
+    "evidence/slice002-phase-b/before/320-search-full.png",
+    "evidence/slice002-phase-b/before/320-search.png",
+    "evidence/slice002-phase-b/before/390-address.png",
+    "evidence/slice002-phase-b/before/390-artist-empty-chapter.png",
+    "evidence/slice002-phase-b/before/390-artist-full.png",
+    "evidence/slice002-phase-b/before/390-artist.png",
+    "evidence/slice002-phase-b/before/390-event-read.png",
+    "evidence/slice002-phase-b/before/390-home-focused.png",
+    "evidence/slice002-phase-b/before/390-home-full.png",
+    "evidence/slice002-phase-b/before/390-home.png",
+    "evidence/slice002-phase-b/before/390-place-full.png",
+    "evidence/slice002-phase-b/before/390-place.png",
+    "evidence/slice002-phase-b/before/390-route-full.png",
+    "evidence/slice002-phase-b/before/390-route-stop-preview.png",
+    "evidence/slice002-phase-b/before/390-route.png",
+    "evidence/slice002-phase-b/before/390-search-empty.png",
+    "evidence/slice002-phase-b/before/390-search-error.png",
+    "evidence/slice002-phase-b/before/390-search-exact-artist.png",
+    "evidence/slice002-phase-b/before/390-search-full.png",
+    "evidence/slice002-phase-b/before/390-search-loading.png",
+    "evidence/slice002-phase-b/before/390-search.png",
+    "evidence/slice002-phase-b/before/390-share.png",
+    "evidence/slice002-phase-b/before/390-source.png",
+    "evidence/slice002-phase-b/before/390-start-deferred.png",
+    "evidence/slice002-phase-b/before/390-verification.png",
+    "evidence/slice002-phase-b/before/768-artist-full.png",
+    "evidence/slice002-phase-b/before/768-artist.png",
+    "evidence/slice002-phase-b/before/768-home-full.png",
+    "evidence/slice002-phase-b/before/768-home.png",
+    "evidence/slice002-phase-b/before/768-place-full.png",
+    "evidence/slice002-phase-b/before/768-place.png",
+    "evidence/slice002-phase-b/before/768-route-full.png",
+    "evidence/slice002-phase-b/before/768-route.png",
+    "evidence/slice002-phase-b/before/768-search-full.png",
+    "evidence/slice002-phase-b/before/768-search.png",
+    "evidence/slice002-phase-b/before/browser-report.json",
+    "evidence/slice002-phase-b/before/browser.log",
+    "evidence/slice002-phase-b/before/iab-390-home.jpg",
+    "evidence/slice002-phase-b/before/iab-390-route-observed.jpg",
+    "evidence/slice002-phase-b/before/iab-768-artist.jpg",
+    "evidence/slice002-phase-b/before/ux-behavior-report.json",
+    "evidence/slice002-phase-b/before/ux-behavior.log",
+    "evidence/slice002-phase-b/provenance.json",
     "prototypes/discovery-wireframe/README.md",
     "prototypes/discovery-wireframe/app.js",
     "prototypes/discovery-wireframe/index.html",
+    "prototypes/discovery-wireframe/record-phase-b.mjs",
     "prototypes/discovery-wireframe/style.css",
+    "prototypes/discovery-wireframe/verify-phase-b.mjs",
     "prototypes/discovery-wireframe/verify.mjs"
   ],
   "files": [
@@ -124,13 +328,13 @@
     },
     {
       "file": "after/320-route-full.png",
-      "bytes": 33140,
-      "sha256": "be6eb3fd45351f53419fc982561d3524b77ac8b45497edf01f075061e648f034"
+      "bytes": 33275,
+      "sha256": "2f33c2175f5741114f23d7d8733be5b6cbd169916a04ce1430db83f4c440ac36"
     },
     {
       "file": "after/320-route.png",
-      "bytes": 20334,
-      "sha256": "7944dd72fb13b7aae614f87dfd7d0432617c4c634bd89422ead9e7587b9aa62e"
+      "bytes": 20456,
+      "sha256": "0a33532e8dd825cf485d00ba465efb054c2ebfc9e77a8ca3b9699211e5e513a0"
     },
     {
       "file": "after/320-search-full.png",
@@ -239,8 +443,8 @@
     },
     {
       "file": "after/390-share.png",
-      "bytes": 24278,
-      "sha256": "26552c1cc7307c3f6a57ea29e24d52b27c37e3846b72ae1b24b5c1e40f96043b"
+      "bytes": 24275,
+      "sha256": "3974c335ea9c5c5cbdd0763257b460ff952f45a9e2b3fbc69e284a58cdaaa213"
     },
     {
       "file": "after/390-source.png",
@@ -325,7 +529,7 @@
     {
       "file": "after/browser-report.json",
       "bytes": 15593,
-      "sha256": "1ccd2b3c26505dc0b6019c57f8cc045468d7b3107f19455835411bc65ea02057"
+      "sha256": "476acf216c5bc94a45c93d675bea3b5f9e0cd183e904e0b5de960fa62ef3a93f"
     },
     {
       "file": "after/browser.log",
@@ -400,7 +604,7 @@
     {
       "file": "after/ux-behavior-report.json",
       "bytes": 750,
-      "sha256": "bf951ea01cc417d0d47c73eef1cdc9a0039d9aafe2c5ed9cda042ca45798014a"
+      "sha256": "6b617c32c85da9dc8adb9f3840705159ae63d0e1983500a3db29b2d0a6586cf6"
     },
     {
       "file": "after/ux-behavior.log",
@@ -691,6 +895,11 @@
       "file": "COMPARISON_GALLERY.html",
       "bytes": 17037,
       "sha256": "165c2dc556a257770867d13213acdfa6fc1f6879ae4e2b773c0a89ac358699f8"
+    },
+    {
+      "file": "protection-check.log",
+      "bytes": 1162,
+      "sha256": "e1fa17fae7c3c73330aec54fcbe8a4156e0d8fb7b044ea317e5756dd3b956ce6"
     },
     {
       "file": "SCREENSHOT_COMPARISON_INDEX.md",
