@@ -1,0 +1,19 @@
+PASS Home primary input, three navigation items, focus and IME
+PASS Exact artist remains a choice, four ordered sections; no evidence/metrics in rows
+PASS Query and scroll restore after Artist Hub, including browser back
+PASS Unknown query empty, never fixed route; city order; alias
+PASS Loading, empty, error and retry recover
+PASS Event minimal read target, no Event Hub
+PASS Artist index click, sticky and scroll sync, empty chapter
+PASS Route immediate Start/stops; preview/source/verification and focus restoration
+PASS MAP jump and markers associate with stops; nullable metrics
+PASS START explicitly deferred; Place via Stop Preview
+PASS Place address in document within one scroll; missing data honest
+PASS Deep links/unknown IDs/reload truthful; no prototype API
+PASS 320/390/768 five pages +1280 three pages: no overflow, >=44px targets, desktop split
+PASS Home shortcuts reach Artist and Route directly; ordinary motion works
+PASS Nanjing results use their own Route/Place fixture; never fixed Taipei detail
+PASS Share fallback and address action remain explicit local-prototype actions
+PASS Complete five-page minimum prototype path
+PASS No browser runtime errors
+18 tests passed; 49 PNG screenshots

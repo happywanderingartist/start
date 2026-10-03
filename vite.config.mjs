@@ -19,7 +19,8 @@ export default defineConfig({
     environment: "jsdom",
     setupFiles: "./src/test/setup.ts",
     css: true,
-    exclude: ["tests/**", "node_modules/**"],
+    // Recovery copies are evidence, not a second application test root.
+    exclude: ["tests/**", "node_modules/**", ".context/**"],
   },
   plugins: [react()],
 });

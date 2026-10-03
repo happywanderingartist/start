@@ -1,0 +1,35 @@
+PASS Home primary input, three navigation items, focus and IME
+PASS Exact artist remains a choice, four ordered sections; no evidence/metrics in rows
+PASS Query and scroll restore after Artist Hub, including browser back
+PASS Unknown query empty, never fixed route; city order; alias
+PASS Loading, empty, error and retry recover
+PASS Event minimal read target, no Event Hub
+PASS Artist index click, sticky and scroll sync, empty chapter
+PASS Route immediate Start/stops; preview/source/verification and focus restoration
+PASS MAP jump and markers associate with stops; nullable metrics
+PASS START explicitly deferred; Place via Stop Preview
+PASS Place address in document within one scroll; missing data honest
+PASS Deep links/unknown IDs/reload truthful; no prototype API
+PASS 320/390/768 five pages +1280 three pages: no overflow, >=44px targets, desktop split
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
++ actual - expected
+
++ '/search'
+- '/artists/10000000-0000-4000-8000-000000000001'
+
+    at file:///D:/Downloads/fan-route-codex-handoff/.worktrees/start-slice-001/prototypes/discovery-wireframe/verify.mjs:25:278
+    at async test (file:///D:/Downloads/fan-route-codex-handoff/.worktrees/start-slice-001/prototypes/discovery-wireframe/verify.mjs:6:30)
+    at async file:///D:/Downloads/fan-route-codex-handoff/.worktrees/start-slice-001/prototypes/discovery-wireframe/verify.mjs:25:2 {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: '/search',
+  expected: '/artists/10000000-0000-4000-8000-000000000001',
+  operator: 'strictEqual',
+  diff: 'simple'
+}
+
+Node.js v24.18.1

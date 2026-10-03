@@ -1,0 +1,141 @@
+{
+  "tests": [
+    {
+      "name": "Home primary input, three navigation items, focus and IME",
+      "status": "passed"
+    },
+    {
+      "name": "Exact artist remains a choice, four ordered sections; no evidence/metrics in rows",
+      "status": "passed"
+    },
+    {
+      "name": "Query and scroll restore after Artist Hub, including browser back",
+      "status": "passed"
+    },
+    {
+      "name": "Unknown query empty, never fixed route; city order; alias",
+      "status": "passed"
+    },
+    {
+      "name": "Loading, empty, error and retry recover",
+      "status": "passed"
+    },
+    {
+      "name": "Event minimal read target, no Event Hub",
+      "status": "passed"
+    },
+    {
+      "name": "Artist index click, sticky and scroll sync, empty chapter",
+      "status": "passed"
+    },
+    {
+      "name": "Route immediate Start/stops; preview/source/verification and focus restoration",
+      "status": "passed"
+    }
+  ],
+  "shots": [
+    {
+      "file": "390-home-focused.png",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "width": 390,
+      "height": 844,
+      "sha256": "949958663de7d4f66e73d30823695d9c19943cedffb08780379c1f0db7d84631"
+    },
+    {
+      "file": "390-search-exact-artist.png",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "width": 390,
+      "height": 1025,
+      "sha256": "d2209dc5346a1797ef614ecbb7d2a3990cd6a3371489a3578f2be114638b42a6"
+    },
+    {
+      "file": "390-search-loading.png",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "width": 390,
+      "height": 844,
+      "sha256": "bb6a865d698c023a8f6ea0f7d9230bf96b9fc2d730d65afc865c25774cc58b53"
+    },
+    {
+      "file": "390-search-empty.png",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "width": 390,
+      "height": 844,
+      "sha256": "da9d3b7cd54542c4975338f55190c29aaa1e0fcaaeb1f8c31344e081a2bc1264"
+    },
+    {
+      "file": "390-search-error.png",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "width": 390,
+      "height": 844,
+      "sha256": "c1af5dc21758369ae23300a45943346ad94e81b3c1bea54ee1e89e2b4c215213"
+    },
+    {
+      "file": "390-event-read.png",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "width": 390,
+      "height": 961,
+      "sha256": "634d95410d0b28c803d27ba4e5bd07c76b2f21333d45bbbe8269ee4c506c3294"
+    },
+    {
+      "file": "390-artist-empty-chapter.png",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "width": 390,
+      "height": 2143,
+      "sha256": "981b9c85023409e3b116d119bdf7a13b7d94d789137c2252cbfaf4c88d5fda33"
+    },
+    {
+      "file": "390-route-stop-preview.png",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "width": 390,
+      "height": 1295,
+      "sha256": "f903cb584be123849b7fafe414231df1d2504319fedc0a6ada8845b4f3f2b42c"
+    },
+    {
+      "file": "390-source.png",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "width": 390,
+      "height": 1295,
+      "sha256": "fcd3919966264c86bb69b1a842334d6948da6a9bfb239622b4b1370cd2d5c559"
+    },
+    {
+      "file": "390-verification.png",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "width": 390,
+      "height": 1295,
+      "sha256": "a35b6bcb984684f55d7160385b943ba6b97295a9ea9cb6519b5a3097364a5b7c"
+    }
+  ],
+  "errors": [],
+  "error": "AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:\n\n  assert((await page.locator('#map').boundingBox()).y<100)\n",
+  "stack": "AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:\n\n  assert((await page.locator('#map').boundingBox()).y<100)\n\n    at file:///D:/Downloads/fan-route-codex-handoff/.worktrees/start-slice-001/prototypes/discovery-wireframe/verify.mjs:20:150\n    at async test (file:///D:/Downloads/fan-route-codex-handoff/.worktrees/start-slice-001/prototypes/discovery-wireframe/verify.mjs:6:30)\n    at async file:///D:/Downloads/fan-route-codex-handoff/.worktrees/start-slice-001/prototypes/discovery-wireframe/verify.mjs:20:2"
+}
