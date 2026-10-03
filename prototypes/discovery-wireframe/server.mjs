@@ -1,4 +1,24 @@
-import http from 'node:http';import fs from 'node:fs/promises';import path from 'node:path';import{fileURLToPath}from'node:url';
-const root=fileURLToPath(new URL('./',import.meta.url));
-export function createServer(){return http.createServer(async(req,res)=>{try{const u=new URL(req.url,'http://localhost');if(req.method!=='GET'||u.pathname.startsWith('/api/')){res.writeHead(404);res.end();return;}const assets={'/app.js':'app.js','/style.css':'style.css','/fixture.json':'fixture.json'};const name=assets[u.pathname]??'index.html';const data=await fs.readFile(path.join(root,name));res.writeHead(200,{'content-type':name.endsWith('.js')?'text/javascript':name.endsWith('.css')?'text/css':name.endsWith('.json')?'application/json':'text/html; charset=utf-8','cache-control':'no-store'});res.end(data);}catch{res.writeHead(500);res.end('Prototype resource unavailable');}});}
-if(process.argv[1]===fileURLToPath(import.meta.url))createServer().listen(4312,'127.0.0.1',()=>console.log('Wireframe http://127.0.0.1:4312 — synthetic, Phase A only'));
+import http from 'node:http';
+import fs from 'node:fs/promises';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+const root = fileURLToPath(new URL('./', import.meta.url));
+export function createServer() { return http.createServer(async (req, res) => { try {
+    const u = new URL(req.url, 'http://localhost');
+    if (req.method !== 'GET' || u.pathname.startsWith('/api/')) {
+        res.writeHead(404);
+        res.end();
+        return;
+    }
+    const assets = { '/app.js': 'app.js', '/style.css': 'style.css', '/fixture.json': 'fixture.json' };
+    const name = assets[u.pathname] ?? 'index.html';
+    const data = await fs.readFile(path.join(root, name));
+    res.writeHead(200, { 'content-type': name.endsWith('.js') ? 'text/javascript' : name.endsWith('.css') ? 'text/css' : name.endsWith('.json') ? 'application/json' : 'text/html; charset=utf-8', 'cache-control': 'no-store' });
+    res.end(data);
+}
+catch {
+    res.writeHead(500);
+    res.end('Prototype resource unavailable');
+} }); }
+if (process.argv[1] === fileURLToPath(import.meta.url))
+    createServer().listen(4312, '127.0.0.1', () => console.log('Wireframe http://127.0.0.1:4312 — synthetic, Phase A only'));

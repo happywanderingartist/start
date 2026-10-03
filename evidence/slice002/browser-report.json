@@ -601,7 +601,7 @@
       },
       "width": 390,
       "height": 844,
-      "sha256": "56511e483332bf67034f9d5f0b36bf2447bb4948b964587187c24e4b8eefdde4"
+      "sha256": "a1a932b1446cc993dda438432f1eab8862103be580b78c46689f1cda94670af7"
     },
     {
       "file": "390-address.png",
@@ -617,5 +617,5 @@
   ],
   "browser": "149.0.7827.55",
   "scope": "Phase A only; synthetic data; reduced-motion capture; not real API/DB/high-fidelity acceptance",
-  "generatedAt": "2026-10-03T02:40:53.748Z"
+  "generatedAt": "2026-10-03T02:54:57.636Z"
 }
