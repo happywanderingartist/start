@@ -168,7 +168,7 @@ small,.muted {
   top:190px;
   left:50%;
   transform:translateX(-50%);
-  width:280px;
+  width:300px;
   text-align:center
 }
 .start-prompt h1 {
@@ -177,21 +177,31 @@ small,.muted {
   font-weight:400
 }
 .start-prompt form {
-  margin-top:8px
+  margin-top:12px;
+  display:flex;
+  gap:8px;
+  align-items:center
 }
 .start-prompt input {
-  width:248px;
-  height:52px
+  width:280px;
+  height:56px;
+  border:2px solid #555;
+  border-radius:10px;
+  font-size:16px
 }
 .question {
+  font-size:14px;
+  line-height:20px;
+  color:#777
+}
+#home-hint {
   display:block;
-  font-size:27px;
-  line-height:36px;
-  margin-top:8px
+  margin-top:8px;
+  font-size:11px
 }
 .suggestions {
   position:absolute;
-  top:335px;
+  top:365px;
   left:0;
   right:0;
   height:270px
@@ -199,11 +209,12 @@ small,.muted {
 .bubble {
   position:absolute;
   min-height:44px;
-  background:#eee;
-  border:1px solid #ddd;
+  background:none;
+  border:1px solid #e6e6e6;
   border-radius:24px;
   padding:10px 16px;
-  font-size:13px
+  font-size:12px;
+  color:#666
 }
 .bubble:nth-child(1) {
   left:32px;
@@ -223,8 +234,8 @@ small,.muted {
   top:510px;
   width:78px;
   height:96px;
-  background:#e8e8e8;
-  border:1px dashed #aaa;
+  background:#f3f3f3;
+  border:1px solid #e2e2e2;
   display:grid;
   place-content:center;
   text-align:center;
@@ -292,6 +303,9 @@ small,.muted {
 .results {
   margin-top:32px
 }
+.result-index {
+  display:none
+}
 .results .section {
   margin-top:30px
 }
@@ -335,13 +349,13 @@ small,.muted {
   justify-self:start
 }
 .artist h1 {
-  font-size:32px;
-  line-height:36px
+  font-size:34px;
+  line-height:40px
 }
 .city-index {
   display:flex;
   gap:24px;
-  margin-top:28px;
+  margin-top:36px;
   height:44px;
   overflow-x:auto;
   white-space:nowrap;
@@ -370,8 +384,8 @@ small,.muted {
   margin-bottom:64px
 }
 .chapter h2 {
-  font-size:22px;
-  line-height:28px;
+  font-size:24px;
+  line-height:30px;
   margin-bottom:16px;
   letter-spacing:1px
 }
@@ -386,8 +400,47 @@ small,.muted {
 .chapter .chapter-empty+.chapter-empty {
   margin-top:0
 }
+.optional-event {
+  margin-top:16px;
+  color:#666;
+  font-size:12px
+}
+.optional-event summary {
+  min-height:44px;
+  display:list-item;
+  align-content:center;
+  cursor:pointer;
+  width:100%
+}
+.optional-event .rule-row {
+  min-height:52px
+}
+.route .identity h1 {
+  font-size:30px;
+  line-height:36px
+}
+.route .actions {
+  margin-top:32px;
+  gap:32px;
+  align-items:center
+}
+.route [data-action="start"] {
+  font-size:18px;
+  font-weight:700;
+  border-bottom:2px solid #222
+}
+.route [data-action="share"],.route [data-action="map"] {
+  font-size:12px;
+  font-weight:400;
+  color:#666;
+  letter-spacing:.5px
+}
+.route [data-action="map"] {
+  min-width:44px;
+  justify-content:flex-end
+}
 .route .stops {
-  margin-top:56px
+  margin-top:40px
 }
 .route .stops .section-label {
   margin-bottom:0
@@ -471,9 +524,9 @@ small,.muted {
   margin-top:16px
 }
 .mini-info {
-  height:96px;
+  height:80px;
   padding:14px;
-  background:#eee;
+  background:#f2f2f2;
   display:flex;
   flex-direction:column;
   justify-content:space-between
@@ -496,12 +549,13 @@ small,.muted {
   text-align:left
 }
 .address strong {
-  font-size:12px;
+  font-size:14px;
   letter-spacing:1px;
   display:block
 }
 .address span {
-  font-size:13px;
+  font-size:16px;
+  line-height:24px;
   overflow-wrap:anywhere
 }
 .image-slot {
@@ -599,6 +653,9 @@ dialog:focus {
 .start-prompt {
   width:280px
 }
+.start-prompt input {
+  width:260px
+}
 .bubble:nth-child(2) {
   right:16px
 }
@@ -634,29 +691,81 @@ dialog:focus {
 .home {
   max-width:720px
 }
+.home .start-prompt {
+  width:400px;
+  top:210px
+}
+.home .start-prompt input {
+  width:380px
+}
+.home.focused .start-prompt {
+  top:124px
+}
 .nav {
   max-width:720px
 }
 .suggestions {
-  left:110px;
-  right:110px
+  left:140px;
+  right:140px;
+  top:410px
 }
 .doll {
-  left:calc(50% + 29px)
+  left:calc(50% + 29px);
+  top:545px
+}
+.search-layout {
+  display:grid;
+  grid-template-columns:128px minmax(0,1fr);
+  gap:40px;
+  margin-top:48px
+}
+.result-index:not([hidden]) {
+  display:flex;
+  flex-direction:column;
+  position:sticky;
+  top:24px;
+  align-self:start;
+  font-size:12px;
+  color:#666
+}
+.result-index a {
+  min-height:44px;
+  display:flex;
+  align-items:center
 }
 .results {
-  max-width:560px;
-  margin-left:auto;
-  margin-right:auto
+  width:100%;
+  margin:0
 }
-.artist-layout {
+.search-layout:has(.result-index[hidden]) {
+  display:block
+}
+.search-layout .state {
+  margin-top:0
+}
+.artist {
   display:grid;
   grid-template-columns:156px minmax(0,1fr);
-  gap:40px;
-  margin-top:40px
+  grid-template-rows:auto min-content 1fr;
+  column-gap:40px;
+  align-items:start
+}
+.artist>.back {
+  grid-column:1/-1;
+  justify-self:start
+}
+.artist>.identity {
+  grid-column:1;
+  grid-row:2;
+  margin-top:32px
+}
+.artist-layout {
+  display:contents
 }
 .artist .city-index {
-  margin-top:0;
+  grid-column:1;
+  grid-row:3;
+  margin-top:32px;
   height:auto;
   max-height:340px;
   flex-direction:column;
@@ -670,13 +779,15 @@ dialog:focus {
   padding-left:8px
 }
 .chapters {
-  margin-top:0
+  grid-column:2;
+  grid-row:2/span 2;
+  margin-top:32px
 }
 .route-layout {
   display:grid;
   grid-template-columns:minmax(0,1fr) minmax(0,1fr);
   gap:32px;
-  margin-top:56px
+  margin-top:40px
 }
 .route .stops {
   margin-top:0
@@ -731,8 +842,11 @@ dialog:focus {
   max-width:850px
 }
 .artist-layout {
+  display:contents
+}
+.artist {
   grid-template-columns:220px minmax(0,1fr);
-  gap:100px
+  column-gap:100px
 }
 .chapters {
   max-width:640px
@@ -756,7 +870,7 @@ dialog:focus {
   grid-template-columns:1fr 1fr
 }
 .place .mini-info {
-  height:96px
+  height:80px
 }
 .place .image-slot {
   height:260px

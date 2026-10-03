@@ -5,7 +5,7 @@ import { mkdir, writeFile, readFile } from 'node:fs/promises';
 import { createHash } from 'node:crypto';
 const r = createRequire(process.env.START_BROWSER_MODULES ?? 'C:/Users/15049/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/entry.js');
 const { chromium } = r('playwright');
-const root = new URL('../../evidence/slice002/', import.meta.url);
+const root = new URL(process.env.START_WIREFRAME_EVIDENCE_URL ?? '../../evidence/slice002-phase-b/after/', import.meta.url);
 await mkdir(root, { recursive: true });
 const server = createServer();
 await new Promise(r => server.listen(0, '127.0.0.1', r));
@@ -54,7 +54,7 @@ try {
     await test('Share fallback and address action remain explicit local-prototype actions', async () => { await ready(page, paths.route); await page.getByRole('button', { name: 'SHARE ↗' }).click(); await page.getByRole('heading', { name: '分享给朋友', exact: true }).waitFor(); await image(page, '390-share'); await page.keyboard.press('Escape'); await ready(page, paths.place); await page.locator('.address').click(); assert((await page.getByRole('dialog').innerText()).includes('测试地址')); await image(page, '390-address'); await page.keyboard.press('Escape'); });
     await test('Complete five-page minimum prototype path', async () => { await ready(page, '/'); await page.getByLabel('想从什么开始').fill('台北'); await page.getByLabel('想从什么开始').press('Enter'); await page.getByRole('heading', { name: 'ARTIST', exact: true }).waitFor(); await page.locator('.results a').first().click(); await page.locator('#city-0 .rule-row').first().click(); assert.equal(new URL(page.url()).pathname, paths.route); await page.locator('[data-stop="1"]').click(); await page.getByRole('link', { name: 'PLACE ↗' }).click(); assert.equal(new URL(page.url()).pathname, paths.place); });
     await test('No browser runtime errors', async () => assert.deepEqual(errors, []));
-    await writeFile(new URL('browser-report.json', root), JSON.stringify({ status: 'passed', tests, shots, browser: browser.version(), scope: 'Phase A only; synthetic data; reduced-motion capture; not real API/DB/high-fidelity acceptance', generatedAt: new Date().toISOString() }, null, 2) + '\n');
+    await writeFile(new URL('browser-report.json', root), JSON.stringify({ status: 'passed', tests, shots, browser: browser.version(), scope: 'Private grayscale regression; synthetic data; reduced-motion capture; not real API/DB/high-fidelity acceptance', generatedAt: new Date().toISOString() }, null, 2) + '\n');
     console.log(`${tests.length} tests passed; ${shots.length} PNG screenshots`);
 }
 catch (e) {

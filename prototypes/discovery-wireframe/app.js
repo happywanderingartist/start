@@ -1,4 +1,4 @@
-// Private Phase A presentation only. Never used as the product SearchProvider.
+// Private Phase A/B presentation only. Never used as the product SearchProvider.
 const app = document.querySelector('#app'), sheet = document.querySelector('#sheet');
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 let data, searchTimer, selectedStop = 1, composing = false, originFocus, searchGeneration = 0, departureScroll = null;
@@ -38,11 +38,11 @@ sheet.addEventListener('click', e => { if (e.target === sheet) {
 } });
 function source() { const s = data.route.sources[0]; openSheet('SOURCE', `<p>${esc(s.title)}</p><p class="sheet-detail">来源不可用 · 此处是合成测试来源，不能证明真实艺人到访。</p><div class="sheet-actions"><a href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">打开来源 ↗</a>${action('verification', 'VERIFICATION ↗')}</div>`); }
 function verification() { openSheet('VERIFICATION', `<p>Place：首站地点字段为 verified；其余站点为 unverified。</p><p>ArtistPlaceRelation：unverified；这是关联可信度。</p><p>Claim：无已核验主张。Source：unavailable。</p><p class="sheet-detail">Route 为合成已发布读模型。发布状态并不表示地点、关联或主张都已核验。</p>`); }
-function stopPreview(n) { selectedStop = n; syncMarkers(); const s = currentRoute().stops[n - 1]; openSheet(`${String(n).padStart(2, '0')} · ${s.name}`, `<p class="eyebrow">${esc(data.hub.identity.canonicalName)} · 年份未收录</p><p>合成线索用于布局验证；不声称艺人真实到访。</p><div class="sheet-actions">${action('source', 'SOURCE ↗')}<a href="${placeUrl(s.placeId)}">PLACE ↗</a>${action('show-map', 'MAP ↓')}</div>`); }
+function stopPreview(n) { selectedStop = n; syncMarkers(); const s = currentRoute().stops[n - 1]; openSheet(`${String(n).padStart(2, '0')} · ${s.name}`, `<p class="eyebrow">${esc(data.hub.identity.canonicalName)} · 年份未收录</p><p>合成线索用于布局验证；不声称艺人真实到访。</p><div class="sheet-actions">${action('source', 'SOURCE ↗')}<a href="${placeUrl(s.placeId)}">PLACE ↗</a></div>`); }
 function syncMarkers() { document.querySelectorAll('[data-stop],[data-marker]').forEach(el => { const n = Number(el.dataset.stop ?? el.dataset.marker); el.classList.toggle('active', n === selectedStop); el.setAttribute('aria-pressed', String(n === selectedStop)); }); const status = document.querySelector('#map-status'); if (status)
     status.textContent = `已选 ${String(selectedStop).padStart(2, '0')} · ${currentRoute().stops[selectedStop - 1].name}；距离与时长暂无数据`; }
 function home() {
-    app.innerHTML = `<main class="page home"><p class="brand">START</p><div class="start-prompt"><h1>Start with</h1><form data-search><input type="search" maxlength="120" autocomplete="off" aria-label="想从什么开始" placeholder="艺人 / 城市 / 地点" aria-describedby="home-hint"></form><span class="question">?</span><div class="suggestion-list" hidden></div><span class="muted" id="home-hint">输入后按回车搜索</span></div><div class="suggestions"><button class="bubble" data-href="/artists/10000000-0000-4000-8000-000000000001">苏打绿 ↗</button><button class="bubble" data-href="/routes/10000000-0000-4000-8000-000000000070">春日城市路线 ↗</button><button class="bubble" data-href="/places/10000000-0000-4000-8000-000000000020">从一家书店开始 ↗</button></div><button class="doll" data-action="doll" aria-label="Doll 占位，低频轻互动待后续实现">DOLL<br>比例占位</button></main><nav class="nav" aria-label="主导航"><a href="/" aria-current="page">Start</a><button data-action="deferred-nav">Community</button><button data-action="deferred-nav">Me</button></nav>`;
+    app.innerHTML = `<main class="page home"><p class="brand">START</p><div class="start-prompt"><h1>Start with</h1><form data-search><input type="search" maxlength="120" autocomplete="off" aria-label="想从什么开始" placeholder="艺人 / 城市 / 地点" aria-describedby="home-hint"><span class="question" aria-hidden="true">?</span></form><div class="suggestion-list" hidden></div><span class="muted" id="home-hint">输入后按回车搜索</span></div><div class="suggestions"><button class="bubble" data-href="/artists/10000000-0000-4000-8000-000000000001">苏打绿 ↗</button><button class="bubble" data-href="/routes/10000000-0000-4000-8000-000000000070">春日城市路线 ↗</button><button class="bubble" data-href="/places/10000000-0000-4000-8000-000000000020">从一家书店开始 ↗</button></div><button class="doll" data-action="doll" aria-label="Doll 占位，低频轻互动待后续实现">DOLL<br>比例占位</button></main><nav class="nav" aria-label="主导航"><a href="/" aria-current="page">Start</a><button data-action="deferred-nav">Community</button><button data-action="deferred-nav">Me</button></nav>`;
     const input = app.querySelector('input'), page = app.querySelector('.home'), list = app.querySelector('.suggestion-list');
     const suggest = () => { const q = input.value.trim(); list.hidden = !q; list.innerHTML = q ? ['苏打绿', '台北', '春日书店'].filter(x => x.includes(q) || q.toLowerCase() === 'sodagreen').slice(0, 5).map(x => `<button type="button" data-query="${esc(x)}">${esc(x)} ↗</button>`).join('') : ''; };
     input.addEventListener('focus', () => page.classList.add('focused'));
@@ -54,11 +54,13 @@ function home() {
     input.addEventListener('compositionstart', () => composing = true);
     input.addEventListener('compositionend', () => { composing = false; suggest(); });
 }
-function search() { const q = qs().get('q') ?? ''; app.innerHTML = `<main class="page search"><header class="search-header">${back}<form data-search><input type="search" aria-label="搜索艺人、城市、地点" maxlength="120" value="${esc(q)}" placeholder="艺人 / 城市 / 地点"></form></header><div class="results" aria-live="polite"></div></main>`; loadResults(q); }
+function search() { const q = qs().get('q') ?? ''; app.innerHTML = `<main class="page search"><header class="search-header">${back}<form data-search><input type="search" aria-label="搜索艺人、城市、地点" maxlength="120" value="${esc(q)}" placeholder="艺人 / 城市 / 地点"></form></header><div class="search-layout"><nav class="result-index" aria-label="搜索结果分组" hidden></nav><div class="results" aria-live="polite"></div></div></main>`; loadResults(q); }
 function loadResults(q) {
     clearTimeout(searchTimer);
     const generation = ++searchGeneration;
     const target = app.querySelector('.results');
+    const index = app.querySelector('.result-index');
+    index.hidden = true;
     const scenario = qs().get('state');
     target.innerHTML = `<div class="state" role="status"><p>正在查找…</p><div class="skeleton"></div><div class="skeleton"></div></div>`;
     if (scenario === 'loading')
@@ -79,13 +81,15 @@ function loadResults(q) {
             return;
         }
         const sections = data.search.sections.map(s => ({ ...s, items: s.items.filter(item => mode === 'nanjing' ? (s.type === 'artist' || item.city.id === data.hub.footprintCities[1].city.id) : mode === 'place' ? s.type === 'place' && item.name.includes('春日') : mode === 'event' ? s.type === 'event' : mode === 'city' ? (s.type === 'artist' || item.city.id === data.hub.footprintCities[0].city.id) : true) }));
-        target.innerHTML = sections.map(s => `<section class="section"><h2>${({ artist: 'ARTIST', route: 'ROUTE', place: 'PLACE', event: 'EVENT' })[s.type]}</h2>${s.items.length ? s.items.map((i, n) => s.type === 'artist' ? row(artistUrl, i.canonicalName, i.footprintCities.map(c => c.city.name).join(' / ')) : s.type === 'route' ? row(routeUrl(i), i.title, `${i.artist.canonicalName} · ${i.city.name}`, String(n + 1).padStart(2, '0')) : s.type === 'place' ? row(placeUrl(i.id), '• ' + i.name, i.city.name) : `<button class="rule-row" data-action="event"><span class="event-date">12 / 01</span><span class="row-label">${esc(i.title)}<span class="row-meta">LIVE · ${esc(i.city.name)} · 已取消（测试）</span></span><span class="arrow">↗</span></button>`).join('') : '<p class="muted">暂无匹配内容</p>'}</section>`).join('');
+        target.innerHTML = sections.map(s => `<section class="section" id="result-${s.type}"><h2>${({ artist: 'ARTIST', route: 'ROUTE', place: 'PLACE', event: 'EVENT' })[s.type]}</h2>${s.items.length ? s.items.map((i, n) => s.type === 'artist' ? row(artistUrl, i.canonicalName, i.footprintCities.map(c => c.city.name).join(' / ')) : s.type === 'route' ? row(routeUrl(i), i.title, `${i.artist.canonicalName} · ${i.city.name}`, String(n + 1).padStart(2, '0')) : s.type === 'place' ? row(placeUrl(i.id), '• ' + i.name, i.city.name) : `<button class="rule-row" data-action="event"><span class="event-date">12 / 01</span><span class="row-label">${esc(i.title)}<span class="row-meta">LIVE · ${esc(i.city.name)} · 已取消（测试）</span></span><span class="arrow">↗</span></button>`).join('') : '<p class="muted">暂无匹配内容</p>'}</section>`).join('');
+        index.innerHTML = sections.map(s => `<a href="#result-${s.type}" data-result="${s.type}">${s.type.toUpperCase()}</a>`).join('');
+        index.hidden = false;
         requestAnimationFrame(() => window.scrollTo(0, entry.scroll ?? 0));
     }, 240);
 }
 function artist() {
     const cityLabels = [...data.hub.footprintCities.map(c => c.city.name), ...data.presentation.extraCityLabels];
-    app.innerHTML = `<main class="page artist">${back}<header class="identity"><h1>${esc(data.hub.identity.canonicalName)}</h1><p class="eyebrow">ARTIST / CITY BOOKLET</p></header><div class="artist-layout"><nav class="city-index" aria-label="城市索引">${cityLabels.map((c, i) => `<a href="#city-${i}" data-city="${i}" ${i === 0 ? 'aria-current="true"' : ''}>${esc(c)}</a>`).join('')}</nav><div class="chapters">${cityLabels.map((c, i) => `<section class="chapter" id="city-${i}"><h2><small>${String(i + 1).padStart(2, '0')}</small>${esc(c)}</h2>${i < 2 ? data.hub.recommendedRoutes.filter(r => r.city.name === c).map((r, n) => row(routeUrl(r), r.title, '', String(n + 1).padStart(2, '0'))).join('') : '<p class="chapter-empty">暂无可公开推荐路线</p><p class="chapter-empty"><small>布局压力示例，不表示真实艺人足迹</small></p>'}${i === 0 ? `<div style="margin-top:28px"><h3 class="eyebrow">OPTIONAL EVENT</h3><button class="rule-row" data-action="event"><span class="row-label">${esc(data.event.title)}<span class="row-meta">12 / 01 · 已取消（测试）</span></span><span class="arrow">↗</span></button></div>` : ''}</section>`).join('')}</div></div></main>`;
+    app.innerHTML = `<main class="page artist">${back}<header class="identity"><h1>${esc(data.hub.identity.canonicalName)}</h1><p class="eyebrow">ARTIST / CITY BOOKLET</p></header><div class="artist-layout"><nav class="city-index" aria-label="城市索引">${cityLabels.map((c, i) => `<a href="#city-${i}" data-city="${i}" ${i === 0 ? 'aria-current="true"' : ''}>${esc(c)}</a>`).join('')}</nav><div class="chapters">${cityLabels.map((c, i) => `<section class="chapter" id="city-${i}"><h2><small>${String(i + 1).padStart(2, '0')}</small>${esc(c)}</h2>${i < 2 ? data.hub.recommendedRoutes.filter(r => r.city.name === c).map((r, n) => row(routeUrl(r), r.title, '', String(n + 1).padStart(2, '0'))).join('') : '<p class="chapter-empty">暂无可公开推荐路线</p><p class="chapter-empty"><small>布局压力示例，不表示真实艺人足迹</small></p>'}${i === 0 ? `<details class="optional-event"><summary>相关活动 <span class="muted">（可选）</span></summary><button class="rule-row" data-action="event"><span class="row-label">${esc(data.event.title)}<span class="row-meta">12 / 01 · 已取消（测试）</span></span><span class="arrow">↗</span></button></details>` : ''}</section>`).join('')}</div></div></main>`;
     requestAnimationFrame(syncCity);
 }
 function syncCity() { const chapters = [...app.querySelectorAll('.chapter')]; if (!chapters.length)
@@ -106,8 +110,8 @@ function route() { const r = currentRoute(); if (selectedStop > r.stops.length)
 function place() { const p = data.places.find(p => location.pathname.endsWith(p.identity.id)); if (!p) {
     app.innerHTML = `<main class="page">${back}${blank('地点不存在', '该链接没有对应的合成读模型。')}</main>`;
     return;
-} app.innerHTML = `<main class="page place">${back}<header class="identity"><h1>${esc(p.identity.name)}</h1><p class="eyebrow">${esc(p.identity.city.name)}</p><p class="muted">${esc(p.relatedArtists[0].canonicalName)} / 年份未收录</p></header><div class="place-layout"><section class="why"><h2>WHY HERE</h2><p>${esc(p.artistRelations[0].explanation)}</p>${action('source', 'SOURCE ↗')}</section><section class="here"><h2>HERE</h2><div class="mini-grid"><div class="mini-info"><h3>PHOTO SPOT</h3><p>暂未收录</p></div><div class="mini-info"><h3>ANGLE</h3><p>暂未收录</p></div></div><button class="address" data-action="address"><strong>ADDRESS ↗</strong><span>${esc(p.address ?? '地址暂未收录')}</span></button><p class="notice">营业时间 / 到访提示暂未收录</p></section><section class="section reference"><div class="section-label"><h2>REFERENCE</h2><span class="muted">无已授权媒体</span></div><div class="image-slot">图片结构占位 · 不引用真实人物素材</div><p class="notice">Photo Spot / Angle / Reference 等待真实资料。</p></section><section class="related"><h2>RELATED</h2>${row(routeUrl(p.relatedRoutes[0]), p.relatedRoutes[0].title)}${row(artistUrl, p.relatedArtists[0].canonicalName)}</section></div></main>`; }
-function render() { clearTimeout(searchTimer); searchGeneration++; document.title = 'START · Phase A 灰阶原型'; if (location.pathname === '/')
+} app.innerHTML = `<main class="page place">${back}<header class="identity"><h1>${esc(p.identity.name)}</h1><p class="eyebrow">${esc(p.identity.city.name)}</p><p class="muted">${esc(p.relatedArtists[0].canonicalName)} / 年份未收录</p></header><div class="place-layout"><section class="why"><h2>WHY</h2><p>${esc(p.artistRelations[0].explanation)}</p>${action('source', 'SOURCE ↗')}</section><section class="here"><h2>HERE</h2><button class="address" data-action="address"><strong>ADDRESS ↗</strong><span>${esc(p.address ?? '地址暂未收录')}</span></button><div class="mini-grid"><div class="mini-info"><h3>PHOTO SPOT</h3><p>暂未收录</p></div><div class="mini-info"><h3>ANGLE</h3><p>暂未收录</p></div></div><p class="notice">营业时间 / 到访提示暂未收录</p></section><section class="section reference"><div class="section-label"><h2>REFERENCE</h2><span class="muted">无已授权媒体</span></div><div class="image-slot">图片结构占位 · 不引用真实人物素材</div><p class="notice">Photo Spot / Angle / Reference 等待真实资料。</p></section><section class="related"><h2>RELATED</h2>${row(routeUrl(p.relatedRoutes[0]), p.relatedRoutes[0].title)}${row(artistUrl, p.relatedArtists[0].canonicalName)}</section></div></main>`; }
+function render() { clearTimeout(searchTimer); searchGeneration++; document.title = 'START · Phase B 灰阶原型'; if (location.pathname === '/')
     home();
 else if (location.pathname === '/search')
     search();
@@ -139,6 +143,10 @@ document.addEventListener('click', async (e) => { const target = e.target.closes
     return; if (target.matches('[data-back]')) {
     e.preventDefault();
     returnBack();
+    return;
+} if (target.dataset.result) {
+    e.preventDefault();
+    document.querySelector('#result-' + target.dataset.result)?.scrollIntoView();
     return;
 } if (target.dataset.city !== undefined) {
     e.preventDefault();
@@ -175,10 +183,6 @@ document.addEventListener('click', async (e) => { const target = e.target.closes
         verification();
         break;
     case 'map':
-        document.querySelector('#map')?.scrollIntoView();
-        break;
-    case 'show-map':
-        sheet.close();
         document.querySelector('#map')?.scrollIntoView();
         break;
     case 'start':

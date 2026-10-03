@@ -1,0 +1,244 @@
+{
+  "tests": [
+    {
+      "name": "Home primary input, three navigation items, focus and IME",
+      "status": "passed"
+    },
+    {
+      "name": "Exact artist remains a choice, four ordered sections; no evidence/metrics in rows",
+      "status": "passed"
+    },
+    {
+      "name": "Query and scroll restore after Artist Hub, including browser back",
+      "status": "passed"
+    },
+    {
+      "name": "Unknown query empty, never fixed route; city order; alias",
+      "status": "passed"
+    },
+    {
+      "name": "Loading, empty, error and retry recover",
+      "status": "passed"
+    },
+    {
+      "name": "Event minimal read target, no Event Hub",
+      "status": "passed"
+    },
+    {
+      "name": "Artist index click, sticky and scroll sync, empty chapter",
+      "status": "passed"
+    },
+    {
+      "name": "Route immediate Start/stops; preview/source/verification and focus restoration",
+      "status": "passed"
+    },
+    {
+      "name": "MAP jump and markers associate with stops; nullable metrics",
+      "status": "passed"
+    },
+    {
+      "name": "START explicitly deferred; Place via Stop Preview",
+      "status": "passed"
+    },
+    {
+      "name": "Place address in document within one scroll; missing data honest",
+      "status": "passed"
+    },
+    {
+      "name": "Deep links/unknown IDs/reload truthful; no prototype API",
+      "status": "passed"
+    }
+  ],
+  "shots": [
+    {
+      "file": "390-home-focused.png",
+      "fullPage": false,
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "width": 390,
+      "height": 844,
+      "sha256": "bf29533351ebeb4272cd9acd1d8ac91efa10c2e26d93f85308ad9ba49f3a4841"
+    },
+    {
+      "file": "390-search-exact-artist.png",
+      "fullPage": false,
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "width": 390,
+      "height": 844,
+      "sha256": "88d0a38b17d9a9f003a7e44c3fbe293c709bf8092fc43ef120335b538ddc616f"
+    },
+    {
+      "file": "390-search-loading.png",
+      "fullPage": false,
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "width": 390,
+      "height": 844,
+      "sha256": "bb6a865d698c023a8f6ea0f7d9230bf96b9fc2d730d65afc865c25774cc58b53"
+    },
+    {
+      "file": "390-search-empty.png",
+      "fullPage": false,
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "width": 390,
+      "height": 844,
+      "sha256": "da9d3b7cd54542c4975338f55190c29aaa1e0fcaaeb1f8c31344e081a2bc1264"
+    },
+    {
+      "file": "390-search-error.png",
+      "fullPage": false,
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "width": 390,
+      "height": 844,
+      "sha256": "c1af5dc21758369ae23300a45943346ad94e81b3c1bea54ee1e89e2b4c215213"
+    },
+    {
+      "file": "390-event-read.png",
+      "fullPage": false,
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "width": 390,
+      "height": 844,
+      "sha256": "db737e5fa0799b93582acebcfa281a3979d22af0e7fa3da742d9654ff8801093"
+    },
+    {
+      "file": "390-artist-empty-chapter.png",
+      "fullPage": false,
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "width": 390,
+      "height": 844,
+      "sha256": "9cb634334d9574c9cd42aacca701f96d390bb211aed64e788cdd2d0cef19e338"
+    },
+    {
+      "file": "390-route-stop-preview.png",
+      "fullPage": false,
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "width": 390,
+      "height": 844,
+      "sha256": "ed6100ecc6f672f27d45b4d5935416fd13726006fad07a5f52ef9764dcc9b480"
+    },
+    {
+      "file": "390-source.png",
+      "fullPage": false,
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "width": 390,
+      "height": 844,
+      "sha256": "9fe416021a12451bacb52b60dda671eec9268e88d73c832c018851c33ecd2ad7"
+    },
+    {
+      "file": "390-verification.png",
+      "fullPage": false,
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "width": 390,
+      "height": 844,
+      "sha256": "4e09e640efa892ce0acb8d7946ed72e438d4192eddc5540d57bbeb15751f3ce5"
+    },
+    {
+      "file": "390-start-deferred.png",
+      "fullPage": false,
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "width": 390,
+      "height": 844,
+      "sha256": "0a39031ff4646b08ed86ff96bb97462ede4aa67b2a6d949cf486afb73cb274ff"
+    },
+    {
+      "file": "320-home.png",
+      "fullPage": false,
+      "viewport": {
+        "width": 320,
+        "height": 844
+      },
+      "width": 320,
+      "height": 844,
+      "sha256": "5f6d40609a32fc1ed1023a21fb3d9b55a0e013fbc27f60cff5da598306781249"
+    },
+    {
+      "file": "320-home-full.png",
+      "fullPage": true,
+      "viewport": {
+        "width": 320,
+        "height": 844
+      },
+      "width": 320,
+      "height": 844,
+      "sha256": "5f6d40609a32fc1ed1023a21fb3d9b55a0e013fbc27f60cff5da598306781249"
+    },
+    {
+      "file": "320-search.png",
+      "fullPage": false,
+      "viewport": {
+        "width": 320,
+        "height": 844
+      },
+      "width": 320,
+      "height": 844,
+      "sha256": "26d859a399c62eea56dddffbe4d129e1c2a7c8d625756b5a0455c575a41f7f55"
+    },
+    {
+      "file": "320-search-full.png",
+      "fullPage": true,
+      "viewport": {
+        "width": 320,
+        "height": 844
+      },
+      "width": 320,
+      "height": 961,
+      "sha256": "3c5455a0880c7b8c0077ee9f57822dc28e57c952a289cc5c0687aacab4c802de"
+    },
+    {
+      "file": "320-artist.png",
+      "fullPage": false,
+      "viewport": {
+        "width": 320,
+        "height": 844
+      },
+      "width": 320,
+      "height": 844,
+      "sha256": "d450e3e64c1d64f625463ffbca1064ebfa515461c23f9fcfb70f0b6f0363cba1"
+    },
+    {
+      "file": "320-artist-full.png",
+      "fullPage": true,
+      "viewport": {
+        "width": 320,
+        "height": 844
+      },
+      "width": 320,
+      "height": 2123,
+      "sha256": "ba22e5551be360ab9f562193438d1412e3f46a6d24d87c69da48d4ec62b55f9d"
+    }
+  ],
+  "errors": [],
+  "error": "AssertionError [ERR_ASSERTION]: 320 route small targets\n+ actual - expected\n\n+ [\n+   {\n+     h: 44,\n+     name: 'MAP ↓',\n+     w: 37.625\n+   }\n+ ]\n- []\n",
+  "stack": "AssertionError [ERR_ASSERTION]: 320 route small targets\n+ actual - expected\n\n+ [\n+   {\n+     h: 44,\n+     name: 'MAP ↓',\n+     w: 37.625\n+   }\n+ ]\n- []\n\n    at file:///D:/Downloads/fan-route-codex-handoff/.worktrees/start-slice-001/prototypes/discovery-wireframe/verify.mjs:43:20\n    at async test (file:///D:/Downloads/fan-route-codex-handoff/.worktrees/start-slice-001/prototypes/discovery-wireframe/verify.mjs:16:33)\n    at async file:///D:/Downloads/fan-route-codex-handoff/.worktrees/start-slice-001/prototypes/discovery-wireframe/verify.mjs:35:5"
+}
