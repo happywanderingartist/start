@@ -1,6 +1,6 @@
 # Phase B Review / Fix Record
 
-状态：实施、功能回归和截图已完成，最终独立复审待补入。本轮仅Phase B，Phase A五页继续复用，未进入C/D、高保真、正式Figma、Journey、merge/deploy。
+状态：实施→独立审查→修复→回归→记录闭环完成，最终独立复审通过。本轮仅Phase B，Phase A五页继续复用，未进入C/D、高保真、正式Figma、Journey、merge/deploy。
 
 ## 六项修复与任务结果
 
@@ -34,4 +34,20 @@ pnpm check：typecheck、Vitest21/21、build、Node18/18通过；foundation type
 
 verify.mjs仅调整证据输出目录（默认Phase B after，可环境覆盖）和报告scope说明，不改变测试名、断言或通过label；Phase A历史报告与截图原封保留。API/生产源/tests/资产94份及旧三工作区253hash/WIP需以最终provenance验证。阶段入口README和AGENTS追加最新授权，历史记录不回写为“已经做过B”。
 
-Git基线为74a103ec5ee7f8eab3ce471eacca8711b2a6b82f，分支feature/start-slice-002-phase-b。每次提交、最终独立复审及保护核验记录在后续段落；不会merge至master或继续C。
+Git基线为74a103ec5ee7f8eab3ce471eacca8711b2a6b82f，分支feature/start-slice-002-phase-b。不会merge至master或继续C。
+
+## 最终独立复审与 Git 收尾
+
+审查者`/root/review_phase_b_final`采用fresh context只读审查完整范围`74a103ec5ee7f8eab3ce471eacca8711b2a6b82f..b9afc1a9d0a959290b320881ab0cbd0811a9b056`，逐页查看五页390/768、320 Route/Place、1280 Artist/Route/Place、Home focused、Stop Preview和来源/核验状态。结论：“可提交Phase B验收”，六项全部满足，无未解决critical/important/minor；仅限本阶段，不代表Phase C批准。
+
+独立审查读取日志而未代替实施者执行测试；实施者已实际运行完整回归。审查者另行核对132份最终证据和10份原型源码hash全部相符，94份受保护实现与253份旧工作区文件匹配，Phase A与Slice001指针保留，修复了日志hash过早冻结问题。审查拒绝判断真机、真人用户研究、真实资料长文、完整辅助技术/WCAG、生产API/DB/地图Provider、高保真和部署，和本记录边界一致。
+
+| 提交 | 成果与验收依据 |
+| --- | --- |
+| d5bb671f5b71f9ca1830edac3f2a27f9248e1df1 | 六项灰阶修复、独立初审、原18及新4项回归、49组对比证据、参考记录 |
+| b9afc1a9d0a959290b320881ab0cbd0811a9b056 | 独立复审后的320标题、真实索引滚动检查、日志与来源pin、证据完整性修复；此提交是最终被审查的实施源码 |
+| 此文件所在收尾提交 | 只更新最终审查/提交归属与provenance；通过`git log -1 -- docs/start/slice002/phase-b/PHASE_B_REVIEW_FIX_RECORD.md`获得，不包含后续功能 |
+
+最终provenance中的snapshotGitHead表示生成时Git状态，snapshotWorkingChanges记录尚未提交的证据/文档收尾，不等同于“已提交源码未审查”；sourceSnapshotFiles逐一记录实际源码hash。最终实施源码是上述b9afc1a，后续收尾不改原型、API/schema/fixture或测试。原三工作区44项WIP保持24+13+7，253hash及94保护文件通过；旧Phase A的49张截图hash不变。
+
+前后配对入口：`evidence/slice002-phase-b/COMPARISON_GALLERY.html`和`SCREENSHOT_COMPARISON_INDEX.md`。所有已知偏差、历史失败和未覆盖范围已在本文记录。Phase B完成后停止，等待用户下一阶段指令。
