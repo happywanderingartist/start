@@ -8,7 +8,7 @@ test("package exposes one complete verification command", async () => {
 
   assert.equal(
     pkg.scripts.check,
-    "pnpm typecheck && pnpm test:run && pnpm build && pnpm test:worker",
+    "pnpm test:assets && pnpm typecheck && pnpm test:run && pnpm build && pnpm test:worker",
   );
 });
 

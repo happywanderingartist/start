@@ -8,6 +8,12 @@ const LOCKED_ANCHOR = { centerX: 768, footY: 1420 };
 const FOOT_TOLERANCE = 8;
 const CATEGORY_FOLDER = { base: "base", expression: "expressions", action: "actions" };
 const CATEGORY_PREFIX = { base: "base", expression: "expr", action: "action" };
+const PHASE_ONE_RELEASE_IDS = [
+  "girl_base_default_v1",
+  "boy_base_default_v1",
+  ...["girl", "boy"].flatMap((character) => ["default", "curious", "happy_open_eye", "surprised"].map((state) => `${character}_expr_${state}_v1`)),
+  ...["girl", "boy"].flatMap((character) => ["idle", "wave", "walk", "photo"].map((state) => `${character}_action_${state}_v1`)),
+];
 
 function pushError(errors, code, message, assetId) {
   errors.push({ code, message, ...(assetId ? { assetId } : {}) });
@@ -24,6 +30,23 @@ function expectedIdentity(record) {
 function hasAcceptedChecks(record) {
   const values = Object.values(record.checks ?? {});
   return values.length > 0 && values.every((value) => value === true);
+}
+
+export function validatePhaseOneCoverage(manifest) {
+  const releaseIds = new Set(Array.isArray(manifest.releaseAssets) ? manifest.releaseAssets : []);
+  const missing = PHASE_ONE_RELEASE_IDS.filter((id) => !releaseIds.has(id));
+  const expected = new Set(PHASE_ONE_RELEASE_IDS);
+  const unexpected = [...releaseIds].filter((id) => !expected.has(id));
+  const errors = [];
+  if (missing.length > 0) errors.push({
+    code: "phase-one-coverage-missing",
+    message: `Missing required phase-one release assets: ${missing.join(", ")}`,
+  });
+  if (unexpected.length > 0) errors.push({
+    code: "phase-one-coverage-unexpected",
+    message: `Unexpected phase-one release assets: ${unexpected.join(", ")}`,
+  });
+  return errors;
 }
 
 function inspectPixels(png) {
@@ -135,6 +158,8 @@ export async function validateCharacterAssets(manifestPath) {
       pushError(errors, "filename-mismatch", `Manifest fields must resolve to ${expected?.file ?? "a supported category"}`, record.id);
     }
   }
+
+  if (manifest.phaseOneComplete === true) errors.push(...validatePhaseOneCoverage(manifest));
 
   const report = {
     valid: errors.length === 0,

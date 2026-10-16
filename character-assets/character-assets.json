@@ -1,5 +1,6 @@
 {
   "version": 1,
+  "phaseOneComplete": true,
   "canvas": {
     "width": 1536,
     "height": 1536

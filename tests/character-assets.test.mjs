@@ -6,9 +6,10 @@ import test from "node:test";
 import { PNG } from "pngjs";
 
 let validateCharacterAssets;
+let validatePhaseOneCoverage;
 
 try {
-  ({ validateCharacterAssets } = await import("../scripts/validate-character-assets.mjs"));
+  ({ validateCharacterAssets, validatePhaseOneCoverage } = await import("../scripts/validate-character-assets.mjs"));
 } catch {
   // The first TDD run intentionally reaches this branch.
 }
@@ -27,6 +28,27 @@ const acceptedChecks = {
   accessoryApproved: true,
   referenceAligned: true,
 };
+
+const phaseOneReleaseIds = [
+  "girl_base_default_v1",
+  "boy_base_default_v1",
+  "girl_expr_default_v1",
+  "girl_expr_curious_v1",
+  "girl_expr_happy_open_eye_v1",
+  "girl_expr_surprised_v1",
+  "boy_expr_default_v1",
+  "boy_expr_curious_v1",
+  "boy_expr_happy_open_eye_v1",
+  "boy_expr_surprised_v1",
+  "girl_action_idle_v1",
+  "girl_action_wave_v1",
+  "girl_action_walk_v1",
+  "girl_action_photo_v1",
+  "boy_action_idle_v1",
+  "boy_action_wave_v1",
+  "boy_action_walk_v1",
+  "boy_action_photo_v1",
+];
 
 function baseRecord(overrides = {}) {
   return {
@@ -168,4 +190,16 @@ test("mechanically validates pending candidates outside the draft archive", asyn
   const record = baseRecord({ qaStatus: "pending", checks: {} });
   const report = await validate({ record, releaseAssets: [], png: { width: 512, height: 512 } });
   assert.equal(hasError(report, "dimensions-mismatch"), true);
+});
+
+test("phase-one coverage rejects a release set missing required expression and action states", () => {
+  assert.equal(typeof validatePhaseOneCoverage, "function", "validator should export validatePhaseOneCoverage");
+  const errors = validatePhaseOneCoverage(baseManifest([baseRecord()], ["girl_base_default_v1"]));
+  assert.equal(errors.some((error) => error.code === "phase-one-coverage-missing"), true);
+});
+
+test("phase-one coverage accepts exactly the locked 18 states and rejects an extra state", () => {
+  assert.deepEqual(validatePhaseOneCoverage({ releaseAssets: phaseOneReleaseIds }), []);
+  const errors = validatePhaseOneCoverage({ releaseAssets: [...phaseOneReleaseIds, "girl_action_jump_v1"] });
+  assert.equal(errors.some((error) => error.code === "phase-one-coverage-unexpected"), true);
 });
