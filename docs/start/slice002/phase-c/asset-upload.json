@@ -1,0 +1,16 @@
+[
+  {
+    "success": true,
+    "imageHash": "2cb01045ec753f01c1fb2d8650632a948a9d1560",
+    "sizeBytes": 2031202,
+    "contentType": "image/png",
+    "placedOnNodeId": "4:2"
+  },
+  {
+    "success": true,
+    "imageHash": "d14b939e1e2e39fae3d1458b171380ed3320eae8",
+    "sizeBytes": 2837284,
+    "contentType": "image/png",
+    "placedOnNodeId": "4:3"
+  }
+]

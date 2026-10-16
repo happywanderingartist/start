@@ -1,0 +1,207 @@
+{
+  "runId": "start-slice002-phase-c-20261003",
+  "fileKey": "iFJGaka6C1EqGlwMnzKYCI",
+  "baselineCommit": "45a44b348696c6f5af8be6bfdbbb79d591c72c29",
+  "step": "guided-magazine-v3-written-awaiting-render-check",
+  "entities": {
+    "createdNodeIds": [
+      "3:2",
+      "3:3"
+    ],
+    "mutatedNodeIds": [
+      "0:1"
+    ],
+    "pages": {
+      "00 Context & Direction": "0:1",
+      "01 START Library": "3:2",
+      "02 Discovery Screens": "3:3"
+    },
+    "collections": {
+      "START Primitives": "VariableCollectionId:3:4",
+      "START Semantic": "VariableCollectionId:3:5"
+    },
+    "variables": {
+      "color/background": "VariableID:3:29",
+      "color/surface": "VariableID:3:30",
+      "color/text": "VariableID:3:31",
+      "color/secondary": "VariableID:3:32",
+      "color/border": "VariableID:3:33",
+      "color/subtle": "VariableID:3:34",
+      "color/accent": "VariableID:3:35",
+      "color/accent-ink": "VariableID:3:36",
+      "color/error": "VariableID:3:37",
+      "space/4": "VariableID:3:38",
+      "space/8": "VariableID:3:39",
+      "space/12": "VariableID:3:40",
+      "space/16": "VariableID:3:41",
+      "space/20": "VariableID:3:42",
+      "space/24": "VariableID:3:43",
+      "space/32": "VariableID:3:44",
+      "space/40": "VariableID:3:45",
+      "space/48": "VariableID:3:46",
+      "space/64": "VariableID:3:47",
+      "radius/input": "VariableID:3:48",
+      "radius/object": "VariableID:3:49",
+      "radius/sheet": "VariableID:3:50",
+      "size/hit-min": "VariableID:3:51"
+    },
+    "primitiveVariables": {
+      "paper": "VariableID:3:6",
+      "white": "VariableID:3:7",
+      "ink": "VariableID:3:8",
+      "secondary": "VariableID:3:9",
+      "line": "VariableID:3:10",
+      "soft": "VariableID:3:11",
+      "accent": "VariableID:3:12",
+      "accentInk": "VariableID:3:13",
+      "error": "VariableID:3:14",
+      "space/4": "VariableID:3:15",
+      "space/8": "VariableID:3:16",
+      "space/12": "VariableID:3:17",
+      "space/16": "VariableID:3:18",
+      "space/20": "VariableID:3:19",
+      "space/24": "VariableID:3:20",
+      "space/32": "VariableID:3:21",
+      "space/40": "VariableID:3:22",
+      "space/48": "VariableID:3:23",
+      "space/64": "VariableID:3:24",
+      "radius/input": "VariableID:3:25",
+      "radius/object": "VariableID:3:26",
+      "radius/sheet": "VariableID:3:27",
+      "hit/min": "VariableID:3:28"
+    },
+    "styles": {
+      "START/Display": "S:7fa751d710eb71e884c5d3f568e7af34f8b51a61,",
+      "START/Title": "S:e0a336f27dec0731cdda494d2ae8e014f0731c9b,",
+      "START/Chapter": "S:b34590588cd3e0f650a90f93b142666b41043ab1,",
+      "START/Body": "S:7ffd37867f21da20290c0a8ad8053c4ed9b805ce,",
+      "START/Label": "S:c4d88c230ec19362416c952352f62e4d836f9159,",
+      "START/Caption": "S:1fd1a2946338e60d47ebbb4998a86302961d9cc0,",
+      "START/Accent": "S:d8e28df4dd6c6ee6605c7837eae76bcaec8a1f12,"
+    },
+    "fonts": [
+      {
+        "role": "START/Display",
+        "font": {
+          "family": "Inter",
+          "style": "Bold"
+        },
+        "size": 32,
+        "lineHeight": 38
+      },
+      {
+        "role": "START/Title",
+        "font": {
+          "family": "Noto Sans SC",
+          "style": "Bold"
+        },
+        "size": 28,
+        "lineHeight": 36
+      },
+      {
+        "role": "START/Chapter",
+        "font": {
+          "family": "Noto Sans SC",
+          "style": "Bold"
+        },
+        "size": 22,
+        "lineHeight": 30
+      },
+      {
+        "role": "START/Body",
+        "font": {
+          "family": "Noto Sans SC",
+          "style": "Regular"
+        },
+        "size": 16,
+        "lineHeight": 24
+      },
+      {
+        "role": "START/Label",
+        "font": {
+          "family": "Noto Sans SC",
+          "style": "Medium"
+        },
+        "size": 14,
+        "lineHeight": 22
+      },
+      {
+        "role": "START/Caption",
+        "font": {
+          "family": "Noto Sans SC",
+          "style": "Regular"
+        },
+        "size": 12,
+        "lineHeight": 18
+      },
+      {
+        "role": "START/Accent",
+        "font": {
+          "family": "Caveat",
+          "style": "Regular"
+        },
+        "size": 18,
+        "lineHeight": 24
+      }
+    ]
+  },
+  "guidedLetteringV2": {
+    "fileKey": "iFJGaka6C1EqGlwMnzKYCI",
+    "home": "7:2",
+    "logoComponent": "12:19",
+    "logoInstance": "12:38",
+    "invitationComponent": "12:26",
+    "invitationInstance": "12:45",
+    "createdNodeIds": [
+      "12:19",
+      "12:20",
+      "12:21",
+      "12:22",
+      "12:23",
+      "12:24",
+      "12:25",
+      "12:26",
+      "12:27",
+      "12:28",
+      "12:29",
+      "12:30",
+      "12:31",
+      "12:32",
+      "12:33",
+      "12:34",
+      "12:35",
+      "12:36",
+      "12:37",
+      "12:38",
+      "12:45"
+    ],
+    "mutatedNodeIds": [
+      "7:5",
+      "7:8",
+      "7:2",
+      "7:7"
+    ],
+    "variableIds": [
+      "VariableID:12:9",
+      "VariableID:12:10",
+      "VariableID:12:11",
+      "VariableID:12:12",
+      "VariableID:12:13",
+      "VariableID:12:14",
+      "VariableID:12:15",
+      "VariableID:12:16",
+      "VariableID:12:17",
+      "VariableID:12:18"
+    ],
+    "rollback": "Hide 12:38 and 12:45; show preserved 7:5 and 7:8. Sources retained."
+  },
+  "guidedMagazineV3": {
+    "home": "7:2",
+    "backup": "19:25",
+    "logo": "19:102",
+    "title": "19:108",
+    "book": "19:88",
+    "ticket": "19:136",
+    "screenshotVerified": false
+  }
+}
