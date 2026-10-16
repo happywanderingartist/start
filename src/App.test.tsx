@@ -33,28 +33,55 @@ describe("fan route prototype", () => {
     renderAt("/");
 
     const mascot = screen.getByRole("img", { name: "星粒正在等待你的路线灵感" });
-    const prompt = screen.getByLabelText("想去哪里，想沿着谁的星迹？");
+    const prompt = screen.getByLabelText("搜索已有路线");
 
     expect(mascot.compareDocumentPosition(prompt) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
     expect(screen.getByRole("heading", { name: "今天想沿着谁的星迹出发？" })).toBeInTheDocument();
   });
 
-  it("moves from searching to ready before opening the route", () => {
+  it("shows a published match without pretending to generate or opening it automatically", () => {
     vi.useFakeTimers();
     renderAt("/");
 
-    fireEvent.change(screen.getByLabelText("想去哪里，想沿着谁的星迹？"), { target: { value: "南京 安溥" } });
-    fireEvent.click(screen.getByRole("button", { name: "整理路线" }));
+    fireEvent.change(screen.getByLabelText("搜索已有路线"), { target: { value: "南京 安溥" } });
+    fireEvent.click(screen.getByRole("button", { name: "搜索路线" }));
 
     expect(screen.getByRole("img", { name: "星粒正在寻找路线" })).toBeInTheDocument();
-    expect(screen.getByRole("status")).toHaveTextContent("正在整理星迹");
-
-    act(() => vi.advanceTimersByTime(760));
-    expect(screen.getByRole("img", { name: "星粒已经找到路线" })).toBeInTheDocument();
-    expect(screen.getByRole("status")).toHaveTextContent("路线已找到，即将打开");
+    expect(screen.getByRole("status")).toHaveTextContent("正在搜索已收录路线");
 
     act(() => vi.advanceTimersByTime(360));
-    expect(screen.getByRole("heading", { name: "安溥·南京老城巷陌" })).toBeInTheDocument();
+    expect(screen.getByRole("img", { name: "星粒已经找到路线" })).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: "找到 1 条已收录路线" })).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: /查看安溥·南京老城巷陌/ })).toBeInTheDocument();
+    expect(screen.queryByText("路线进行中")).not.toBeInTheDocument();
+    vi.useRealTimers();
+  });
+
+  it("shows an honest empty state and lets the user view published routes", () => {
+    vi.useFakeTimers();
+    renderAt("/");
+
+    fireEvent.change(screen.getByLabelText("搜索已有路线"), { target: { value: "苏打绿 台北" } });
+    fireEvent.click(screen.getByRole("button", { name: "搜索路线" }));
+    act(() => vi.advanceTimersByTime(360));
+
+    expect(screen.getByRole("status")).toHaveTextContent("还没有找到相关路线");
+    expect(screen.queryByRole("link", { name: /查看安溥·南京老城巷陌/ })).not.toBeInTheDocument();
+    fireEvent.click(screen.getByRole("button", { name: "查看已有路线" }));
+    expect(screen.getByRole("link", { name: /查看安溥·南京老城巷陌/ })).toBeInTheDocument();
+    vi.useRealTimers();
+  });
+
+  it("returns published recommendations for an empty search without an AI-understanding claim", () => {
+    vi.useFakeTimers();
+    renderAt("/");
+
+    fireEvent.click(screen.getByRole("button", { name: "搜索路线" }));
+    act(() => vi.advanceTimersByTime(360));
+
+    expect(screen.getByRole("heading", { name: "找到 1 条已收录路线" })).toBeInTheDocument();
+    expect(screen.getByText("当前测试版从已收录路线中匹配")).toBeInTheDocument();
+    expect(screen.queryByText(/AI.*理解|已理解/)).not.toBeInTheDocument();
     vi.useRealTimers();
   });
 
@@ -62,7 +89,7 @@ describe("fan route prototype", () => {
     const user = userEvent.setup();
     renderAt("/");
 
-    const input = screen.getByLabelText("想去哪里，想沿着谁的星迹？");
+    const input = screen.getByLabelText("搜索已有路线");
     const cityCondition = screen.getByRole("button", { name: "南京" });
     await user.click(cityCondition);
     expect(input).toHaveValue("南京");
