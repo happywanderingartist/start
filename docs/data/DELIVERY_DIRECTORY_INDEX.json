@@ -1,0 +1,457 @@
+[
+  {
+    "directory": "apple-music-reference-2026-10-04",
+    "original": "D:/Downloads/fan-route-codex-handoff/deliveries/apple-music-reference-2026-10-04",
+    "includedRootMarkdown": [],
+    "fullCurrentSourceIncluded": false
+  },
+  {
+    "directory": "design-skills-install-2026-10-03",
+    "original": "D:/Downloads/fan-route-codex-handoff/deliveries/design-skills-install-2026-10-03",
+    "includedRootMarkdown": [
+      "INSTALL_REPORT.md"
+    ],
+    "fullCurrentSourceIncluded": false
+  },
+  {
+    "directory": "START_ACCOUNT_FOUNDATION_2026-10-05",
+    "original": "D:/Downloads/fan-route-codex-handoff/deliveries/START_ACCOUNT_FOUNDATION_2026-10-05",
+    "includedRootMarkdown": [
+      "LOGIN_VISUAL_SPEC.md",
+      "PLAN.md",
+      "README.md"
+    ],
+    "fullCurrentSourceIncluded": true
+  },
+  {
+    "directory": "START_ADMIN_CONTENT_VISUAL_2026-10-07",
+    "original": "D:/Downloads/fan-route-codex-handoff/deliveries/START_ADMIN_CONTENT_VISUAL_2026-10-07",
+    "includedRootMarkdown": [
+      "ADMIN_DESIGN.md",
+      "PROGRESS.md",
+      "TEXT_IMPORT_IMPLEMENTATION.md"
+    ],
+    "fullCurrentSourceIncluded": true
+  },
+  {
+    "directory": "START_ALL_HOME_SELECTION_2026-10-04",
+    "original": "D:/Downloads/fan-route-codex-handoff/deliveries/START_ALL_HOME_SELECTION_2026-10-04",
+    "includedRootMarkdown": [
+      "README.md"
+    ],
+    "fullCurrentSourceIncluded": false
+  },
+  {
+    "directory": "START_AMAP_INTEGRATION_2026-10-07",
+    "original": "D:/Downloads/fan-route-codex-handoff/deliveries/START_AMAP_INTEGRATION_2026-10-07",
+    "includedRootMarkdown": [
+      "PROGRESS.md"
+    ],
+    "fullCurrentSourceIncluded": true
+  },
+  {
+    "directory": "START_ARTIST_DISCOVERY_VISUAL_2026-10-07",
+    "original": "D:/Downloads/fan-route-codex-handoff/deliveries/START_ARTIST_DISCOVERY_VISUAL_2026-10-07",
+    "includedRootMarkdown": [
+      "PROGRESS.md",
+      "VISUAL_BRIEF.md"
+    ],
+    "fullCurrentSourceIncluded": false
+  },
+  {
+    "directory": "START_BACKPACK_AI_HANDOFF_2026-10-04",
+    "original": "D:/Downloads/fan-route-codex-handoff/deliveries/START_BACKPACK_AI_HANDOFF_2026-10-04",
+    "includedRootMarkdown": [
+      "00_README.md"
+    ],
+    "fullCurrentSourceIncluded": false
+  },
+  {
+    "directory": "START_CERAMIC_PAGE_SUITE_2026-10-04",
+    "original": "D:/Downloads/fan-route-codex-handoff/deliveries/START_CERAMIC_PAGE_SUITE_2026-10-04",
+    "includedRootMarkdown": [
+      "OPEN_SOURCE_REVIEW.md",
+      "PAGE_SPEC.md",
+      "PROMPTS.md",
+      "README.md"
+    ],
+    "fullCurrentSourceIncluded": false
+  },
+  {
+    "directory": "START_COMMUNITY_IMPLEMENTATION_2026-10-05",
+    "original": "D:/Downloads/fan-route-codex-handoff/deliveries/START_COMMUNITY_IMPLEMENTATION_2026-10-05",
+    "includedRootMarkdown": [
+      "DELIVERY_REPORT.md",
+      "IMPLEMENTATION_NOTES.md"
+    ],
+    "fullCurrentSourceIncluded": false
+  },
+  {
+    "directory": "START_COMMUNITY_VISUAL_REVIEW_2026-10-05",
+    "original": "D:/Downloads/fan-route-codex-handoff/deliveries/START_COMMUNITY_VISUAL_REVIEW_2026-10-05",
+    "includedRootMarkdown": [
+      "DELIVERY_REPORT.md",
+      "DESIGN_CONTRACT.md"
+    ],
+    "fullCurrentSourceIncluded": false
+  },
+  {
+    "directory": "START_COMMUNITY_VISUAL_REVIEW_2026-10-05_v2",
+    "original": "D:/Downloads/fan-route-codex-handoff/deliveries/START_COMMUNITY_VISUAL_REVIEW_2026-10-05_v2",
+    "includedRootMarkdown": [
+      "DELIVERY_REPORT.md",
+      "DESIGN_CONTRACT.md"
+    ],
+    "fullCurrentSourceIncluded": false
+  },
+  {
+    "directory": "START_COMPLETE_VISUAL_SUITE_2026-10-04",
+    "original": "D:/Downloads/fan-route-codex-handoff/deliveries/START_COMPLETE_VISUAL_SUITE_2026-10-04",
+    "includedRootMarkdown": [],
+    "fullCurrentSourceIncluded": false
+  },
+  {
+    "directory": "START_DESIGN_TOOL_SETUP_2026-10-05",
+    "original": "D:/Downloads/fan-route-codex-handoff/deliveries/START_DESIGN_TOOL_SETUP_2026-10-05",
+    "includedRootMarkdown": [
+      "design-contract.md",
+      "DESIGN.md",
+      "HALLMARK_STUDY.md",
+      "implementation-handoff.md",
+      "INSTALLATION_REPORT.md"
+    ],
+    "fullCurrentSourceIncluded": false
+  },
+  {
+    "directory": "START_DISCOVERY_OPEN_DESIGN_2026-10-05",
+    "original": "D:/Downloads/fan-route-codex-handoff/deliveries/START_DISCOVERY_OPEN_DESIGN_2026-10-05",
+    "includedRootMarkdown": [
+      "design-contract.md",
+      "DESIGN.md",
+      "implementation-handoff.md",
+      "OPEN_DESIGN_PROMPT.md",
+      "PAGE_DESIGN_PLAN.md",
+      "REFERENCE_ALIGNMENT.md",
+      "REVIEW_01_CONTRACT.md",
+      "REVIEW_02_IMPLEMENTATION.md"
+    ],
+    "fullCurrentSourceIncluded": false
+  },
+  {
+    "directory": "START_DOLL_ARC_REVIEW_2026-10-05",
+    "original": "D:/Downloads/fan-route-codex-handoff/deliveries/START_DOLL_ARC_REVIEW_2026-10-05",
+    "includedRootMarkdown": [
+      "DESIGN_NOTES.md"
+    ],
+    "fullCurrentSourceIncluded": false
+  },
+  {
+    "directory": "START_DOLL_CARD_REVIEW_2026-10-05",
+    "original": "D:/Downloads/fan-route-codex-handoff/deliveries/START_DOLL_CARD_REVIEW_2026-10-05",
+    "includedRootMarkdown": [
+      "DESIGN_NOTES.md"
+    ],
+    "fullCurrentSourceIncluded": false
+  },
+  {
+    "directory": "START_DOLL_IMPLEMENTATION_2026-10-05",
+    "original": "D:/Downloads/fan-route-codex-handoff/deliveries/START_DOLL_IMPLEMENTATION_2026-10-05",
+    "includedRootMarkdown": [
+      "DELIVERY_REPORT.md"
+    ],
+    "fullCurrentSourceIncluded": false
+  },
+  {
+    "directory": "START_DOLL_SCENE_REVIEW_2026-10-05",
+    "original": "D:/Downloads/fan-route-codex-handoff/deliveries/START_DOLL_SCENE_REVIEW_2026-10-05",
+    "includedRootMarkdown": [
+      "DESIGN_NOTES.md"
+    ],
+    "fullCurrentSourceIncluded": false
+  },
+  {
+    "directory": "START_EDITORIAL_CORE_PAGES_2026-10-04",
+    "original": "D:/Downloads/fan-route-codex-handoff/deliveries/START_EDITORIAL_CORE_PAGES_2026-10-04",
+    "includedRootMarkdown": [
+      "PROMPTS.md",
+      "README.md"
+    ],
+    "fullCurrentSourceIncluded": false
+  },
+  {
+    "directory": "START_FINAL_LAYOUT_REVIEW_2026-10-06",
+    "original": "D:/Downloads/fan-route-codex-handoff/deliveries/START_FINAL_LAYOUT_REVIEW_2026-10-06",
+    "includedRootMarkdown": [
+      "AMAP_CLOUD_RESEARCH_2026-10-07.md",
+      "BACKEND_DECISIONS_DRAFT.md",
+      "BACKEND_GITHUB_RESEARCH.md",
+      "BACKEND_IMPLEMENTATION_PLAN_2026-10-07.md",
+      "BACKEND_READINESS_REPORT_2026-10-07.md",
+      "DESIGN_NOTES.md",
+      "FREE_HOSTING_CHECK_2026-10-07.md",
+      "PLACE_UPLOAD_SPEC.md",
+      "PRODUCT_ARCHITECTURE.md"
+    ],
+    "fullCurrentSourceIncluded": true
+  },
+  {
+    "directory": "START_HIFI_HOME_2026-10-04",
+    "original": "D:/Downloads/fan-route-codex-handoff/deliveries/START_HIFI_HOME_2026-10-04",
+    "includedRootMarkdown": [
+      "DESIGN_SPEC.md",
+      "PROMPTS.md",
+      "README.md",
+      "START_HIFI_CERAMIC_REFRESH.md",
+      "START_HIFI_CERAMIC_STEPS.md"
+    ],
+    "fullCurrentSourceIncluded": false
+  },
+  {
+    "directory": "START_HOME_CAROUSEL_V2_2026-10-06",
+    "original": "D:/Downloads/fan-route-codex-handoff/deliveries/START_HOME_CAROUSEL_V2_2026-10-06",
+    "includedRootMarkdown": [
+      "DESIGN_NOTES.md"
+    ],
+    "fullCurrentSourceIncluded": false
+  },
+  {
+    "directory": "START_HOME_COMBINED_PALE_2026-10-04",
+    "original": "D:/Downloads/fan-route-codex-handoff/deliveries/START_HOME_COMBINED_PALE_2026-10-04",
+    "includedRootMarkdown": [
+      "PROMPT.md",
+      "README.md"
+    ],
+    "fullCurrentSourceIncluded": false
+  },
+  {
+    "directory": "START_HOME_DESIGN_KIT_2026-10-03_v1",
+    "original": "D:/Downloads/fan-route-codex-handoff/deliveries/START_HOME_DESIGN_KIT_2026-10-03_v1",
+    "includedRootMarkdown": [
+      "00_README.md",
+      "01_START_HOME_DESIGN_PROMPT_CN.md",
+      "02_REFERENCE_INDEX.md",
+      "03_REFERENCE_LINKS.md"
+    ],
+    "fullCurrentSourceIncluded": false
+  },
+  {
+    "directory": "START_HOME_FIRST_PALETTE_SOFT_ORANGE_2026-10-04",
+    "original": "D:/Downloads/fan-route-codex-handoff/deliveries/START_HOME_FIRST_PALETTE_SOFT_ORANGE_2026-10-04",
+    "includedRootMarkdown": [
+      "PROMPT.md",
+      "README.md"
+    ],
+    "fullCurrentSourceIncluded": false
+  },
+  {
+    "directory": "START_HOME_INTEGRATION_2026-10-06",
+    "original": "D:/Downloads/fan-route-codex-handoff/deliveries/START_HOME_INTEGRATION_2026-10-06",
+    "includedRootMarkdown": [
+      "CHANGE_NOTES.md"
+    ],
+    "fullCurrentSourceIncluded": false
+  },
+  {
+    "directory": "START_HOME_MEMORY_PALETTE_TRIALS_2026-10-04",
+    "original": "D:/Downloads/fan-route-codex-handoff/deliveries/START_HOME_MEMORY_PALETTE_TRIALS_2026-10-04",
+    "includedRootMarkdown": [
+      "FONT_AND_COLOR_RULES.md",
+      "PROMPTS.md",
+      "README.md"
+    ],
+    "fullCurrentSourceIncluded": false
+  },
+  {
+    "directory": "START_HOME_NEW_FIVE_PALETTES_2026-10-04",
+    "original": "D:/Downloads/fan-route-codex-handoff/deliveries/START_HOME_NEW_FIVE_PALETTES_2026-10-04",
+    "includedRootMarkdown": [
+      "PROMPTS.md",
+      "README.md"
+    ],
+    "fullCurrentSourceIncluded": false
+  },
+  {
+    "directory": "START_JOURNEY_MEMORY_PROTOTYPE_2026-10-05",
+    "original": "D:/Downloads/fan-route-codex-handoff/deliveries/START_JOURNEY_MEMORY_PROTOTYPE_2026-10-05",
+    "includedRootMarkdown": [
+      "DELIVERY_REPORT.md",
+      "DESIGN_REVIEW.md",
+      "PALETTE_AND_UI_CONTRACT.md",
+      "README.md"
+    ],
+    "fullCurrentSourceIncluded": false
+  },
+  {
+    "directory": "START_LOCAL_PLATFORM_2026-10-08",
+    "original": "D:/Downloads/fan-route-codex-handoff/deliveries/START_LOCAL_PLATFORM_2026-10-08",
+    "includedRootMarkdown": [
+      "COMMUNITY_MEMBERSHIP_2026-10-15.md",
+      "CURRENT_STATE_REPORT.md",
+      "INTEGRATION_UPDATE_2026-10-14.md",
+      "MARKET_PLAN_2026-10-15.md",
+      "PLAN.md",
+      "PROGRESS.md",
+      "PUBLIC_FRONTEND_PLAN.md",
+      "PUBLIC_FRONTEND_REPORT.md",
+      "README.md",
+      "RECHECK_REPORT.md",
+      "REVIEW.md",
+      "ROUTE_SORTING_2026-10-15.md",
+      "ROUTE_SUBMISSION_UPDATE_2026-10-14.md",
+      "STABILITY_REVIEW_2026-10-14.md"
+    ],
+    "fullCurrentSourceIncluded": true
+  },
+  {
+    "directory": "START_LOCATION_VISUAL_V1_2026-10-06",
+    "original": "D:/Downloads/fan-route-codex-handoff/deliveries/START_LOCATION_VISUAL_V1_2026-10-06",
+    "includedRootMarkdown": [
+      "DESIGN_NOTES.md"
+    ],
+    "fullCurrentSourceIncluded": false
+  },
+  {
+    "directory": "START_ME_IMPLEMENTATION_2026-10-05",
+    "original": "D:/Downloads/fan-route-codex-handoff/deliveries/START_ME_IMPLEMENTATION_2026-10-05",
+    "includedRootMarkdown": [
+      "DELIVERY_REPORT.md"
+    ],
+    "fullCurrentSourceIncluded": false
+  },
+  {
+    "directory": "START_ME_VISUAL_REVIEW_2026-10-05",
+    "original": "D:/Downloads/fan-route-codex-handoff/deliveries/START_ME_VISUAL_REVIEW_2026-10-05",
+    "includedRootMarkdown": [
+      "DELIVERY_REPORT.md",
+      "DESIGN_CONTRACT.md"
+    ],
+    "fullCurrentSourceIncluded": false
+  },
+  {
+    "directory": "START_ME_VISUAL_REVIEW_2026-10-05_v2",
+    "original": "D:/Downloads/fan-route-codex-handoff/deliveries/START_ME_VISUAL_REVIEW_2026-10-05_v2",
+    "includedRootMarkdown": [
+      "DELIVERY_REPORT.md",
+      "DESIGN_CONTRACT.md"
+    ],
+    "fullCurrentSourceIncluded": false
+  },
+  {
+    "directory": "START_ME_VISUAL_REVIEW_2026-10-05_v3",
+    "original": "D:/Downloads/fan-route-codex-handoff/deliveries/START_ME_VISUAL_REVIEW_2026-10-05_v3",
+    "includedRootMarkdown": [
+      "DELIVERY_REPORT.md",
+      "DESIGN_CONTRACT.md"
+    ],
+    "fullCurrentSourceIncluded": false
+  },
+  {
+    "directory": "START_ME_VISUAL_REVIEW_2026-10-05_v4",
+    "original": "D:/Downloads/fan-route-codex-handoff/deliveries/START_ME_VISUAL_REVIEW_2026-10-05_v4",
+    "includedRootMarkdown": [
+      "DESIGN_CONTRACT.md"
+    ],
+    "fullCurrentSourceIncluded": false
+  },
+  {
+    "directory": "START_PLACE_DIRECTORY_REFERENCE_2026-10-06",
+    "original": "D:/Downloads/fan-route-codex-handoff/deliveries/START_PLACE_DIRECTORY_REFERENCE_2026-10-06",
+    "includedRootMarkdown": [
+      "design-contract.md",
+      "DESIGN.md",
+      "implementation-handoff.md"
+    ],
+    "fullCurrentSourceIncluded": false
+  },
+  {
+    "directory": "START_PLACE_UPLOAD_REVIEW_2026-10-06",
+    "original": "D:/Downloads/fan-route-codex-handoff/deliveries/START_PLACE_UPLOAD_REVIEW_2026-10-06",
+    "includedRootMarkdown": [],
+    "fullCurrentSourceIncluded": false
+  },
+  {
+    "directory": "START_PRODUCT_AND_HOME_DESIGN_KIT_2026-10-03_v2",
+    "original": "D:/Downloads/fan-route-codex-handoff/deliveries/START_PRODUCT_AND_HOME_DESIGN_KIT_2026-10-03_v2",
+    "includedRootMarkdown": [
+      "00_README.md",
+      "01_START_HOME_DESIGN_PROMPT_CN.md",
+      "02_REFERENCE_INDEX.md",
+      "03_REFERENCE_LINKS.md",
+      "04_START_PRODUCT_BRIEF_FOR_AI.md"
+    ],
+    "fullCurrentSourceIncluded": false
+  },
+  {
+    "directory": "START_ROUTE_INTAKE_2026-10-07",
+    "original": "D:/Downloads/fan-route-codex-handoff/deliveries/START_ROUTE_INTAKE_2026-10-07",
+    "includedRootMarkdown": [
+      "ARTIST_CITY_DISCOVERY.md",
+      "COMMUNITY_EVENT_LINKAGE.md",
+      "ROUTE_INTAKE.md"
+    ],
+    "fullCurrentSourceIncluded": true
+  },
+  {
+    "directory": "START_SIX_PALETTES_2026-10-04",
+    "original": "D:/Downloads/fan-route-codex-handoff/deliveries/START_SIX_PALETTES_2026-10-04",
+    "includedRootMarkdown": [
+      "PROMPTS.md",
+      "README.md"
+    ],
+    "fullCurrentSourceIncluded": false
+  },
+  {
+    "directory": "START_SLICE_002_PHASE_A_DELIVERY_2026-10-03",
+    "original": "D:/Downloads/fan-route-codex-handoff/deliveries/START_SLICE_002_PHASE_A_DELIVERY_2026-10-03",
+    "includedRootMarkdown": [
+      "AGENTS.md",
+      "README_FIRST.md",
+      "SCREENSHOT_INDEX.md"
+    ],
+    "fullCurrentSourceIncluded": false
+  },
+  {
+    "directory": "START_TICKET_IMPLEMENTATION_2026-10-05",
+    "original": "D:/Downloads/fan-route-codex-handoff/deliveries/START_TICKET_IMPLEMENTATION_2026-10-05",
+    "includedRootMarkdown": [
+      "DELIVERY_REPORT.md",
+      "IMPLEMENTATION_NOTES.md"
+    ],
+    "fullCurrentSourceIncluded": false
+  },
+  {
+    "directory": "START_TICKET_VISUAL_REVIEW_2026-10-05",
+    "original": "D:/Downloads/fan-route-codex-handoff/deliveries/START_TICKET_VISUAL_REVIEW_2026-10-05",
+    "includedRootMarkdown": [
+      "DELIVERY_REPORT.md",
+      "DESIGN_CONTRACT.md"
+    ],
+    "fullCurrentSourceIncluded": false
+  },
+  {
+    "directory": "START_TRADE_IMPLEMENTATION_2026-10-05",
+    "original": "D:/Downloads/fan-route-codex-handoff/deliveries/START_TRADE_IMPLEMENTATION_2026-10-05",
+    "includedRootMarkdown": [
+      "DELIVERY_REPORT.md"
+    ],
+    "fullCurrentSourceIncluded": false
+  },
+  {
+    "directory": "START_TRADE_VISUAL_REVIEW_2026-10-05",
+    "original": "D:/Downloads/fan-route-codex-handoff/deliveries/START_TRADE_VISUAL_REVIEW_2026-10-05",
+    "includedRootMarkdown": [
+      "DELIVERY_REPORT.md",
+      "DESIGN_CONTRACT.md"
+    ],
+    "fullCurrentSourceIncluded": false
+  },
+  {
+    "directory": "START_TRADE_VISUAL_REVIEW_2026-10-05_v2",
+    "original": "D:/Downloads/fan-route-codex-handoff/deliveries/START_TRADE_VISUAL_REVIEW_2026-10-05_v2",
+    "includedRootMarkdown": [
+      "DELIVERY_REPORT.md",
+      "DESIGN_CONTRACT.md"
+    ],
+    "fullCurrentSourceIncluded": false
+  }
+]

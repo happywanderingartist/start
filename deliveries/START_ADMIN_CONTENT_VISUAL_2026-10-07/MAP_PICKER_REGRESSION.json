@@ -1,0 +1,21 @@
+{
+  "fixtureData": true,
+  "widths": [
+    320,
+    375,
+    390,
+    414,
+    768,
+    834,
+    1440
+  ],
+  "flows": [
+    "empty/error/retry/query change clears stale choice",
+    "late response ignored after city change",
+    "spoofed message refused/no automatic artist visit/category normalized",
+    "duplicate stop prevented/provider ID reused after remove",
+    "place POI binds real fields/association recheck",
+    "venue uses shared POI record"
+  ],
+  "pageErrors": []
+}

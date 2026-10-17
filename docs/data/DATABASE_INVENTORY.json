@@ -1,0 +1,161 @@
+{
+  "at": "2026-10-17T06:11:03.372Z",
+  "database": "start_acceptance",
+  "containsPrivateRows": false,
+  "tables": [
+    {
+      "table_schema": "start_accounts",
+      "table_name": "auth_identities",
+      "count": 4
+    },
+    {
+      "table_schema": "start_accounts",
+      "table_name": "profiles",
+      "count": 4
+    },
+    {
+      "table_schema": "start_accounts",
+      "table_name": "users",
+      "count": 4
+    },
+    {
+      "table_schema": "start_app",
+      "table_name": "admins",
+      "count": 1
+    },
+    {
+      "table_schema": "start_app",
+      "table_name": "audit",
+      "count": 39
+    },
+    {
+      "table_schema": "start_app",
+      "table_name": "checkins",
+      "count": 0
+    },
+    {
+      "table_schema": "start_app",
+      "table_name": "communities",
+      "count": 1
+    },
+    {
+      "table_schema": "start_app",
+      "table_name": "community_applications",
+      "count": 1
+    },
+    {
+      "table_schema": "start_app",
+      "table_name": "community_requests",
+      "count": 0
+    },
+    {
+      "table_schema": "start_app",
+      "table_name": "contacts",
+      "count": 0
+    },
+    {
+      "table_schema": "start_app",
+      "table_name": "content",
+      "count": 4
+    },
+    {
+      "table_schema": "start_app",
+      "table_name": "contributions",
+      "count": 2
+    },
+    {
+      "table_schema": "start_app",
+      "table_name": "corrections",
+      "count": 0
+    },
+    {
+      "table_schema": "start_app",
+      "table_name": "dolls",
+      "count": 1
+    },
+    {
+      "table_schema": "start_app",
+      "table_name": "exchanges",
+      "count": 1
+    },
+    {
+      "table_schema": "start_app",
+      "table_name": "favorites",
+      "count": 0
+    },
+    {
+      "table_schema": "start_app",
+      "table_name": "idempotency",
+      "count": 20
+    },
+    {
+      "table_schema": "start_app",
+      "table_name": "listing_comments",
+      "count": 0
+    },
+    {
+      "table_schema": "start_app",
+      "table_name": "listings",
+      "count": 1
+    },
+    {
+      "table_schema": "start_app",
+      "table_name": "media",
+      "count": 0
+    },
+    {
+      "table_schema": "start_app",
+      "table_name": "memberships",
+      "count": 1
+    },
+    {
+      "table_schema": "start_app",
+      "table_name": "notifications",
+      "count": 2
+    },
+    {
+      "table_schema": "start_app",
+      "table_name": "revisions",
+      "count": 5
+    },
+    {
+      "table_schema": "start_app",
+      "table_name": "settings",
+      "count": 0
+    },
+    {
+      "table_schema": "start_app",
+      "table_name": "shares",
+      "count": 0
+    },
+    {
+      "table_schema": "start_app",
+      "table_name": "submissions",
+      "count": 3
+    }
+  ],
+  "content": [
+    {
+      "kind": "artist",
+      "total": 1,
+      "published": 1
+    },
+    {
+      "kind": "event",
+      "total": 1,
+      "published": 1
+    },
+    {
+      "kind": "place",
+      "total": 1,
+      "published": 1
+    },
+    {
+      "kind": "route",
+      "total": 1,
+      "published": 1
+    }
+  ],
+  "testDatabaseCount": 172,
+  "accessible": true
+}

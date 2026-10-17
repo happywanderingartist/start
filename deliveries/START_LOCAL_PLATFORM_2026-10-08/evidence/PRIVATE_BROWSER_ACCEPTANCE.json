@@ -1,0 +1,97 @@
+{
+  "at": "2026-10-17T06:11:24.298Z",
+  "fixtureTransportOnly": true,
+  "realIdentity": false,
+  "checks": [
+    "membership API IDs resolve to actual community names",
+    "doll link opens approved doll route",
+    {
+      "hash": "#/me",
+      "width": 320
+    },
+    {
+      "hash": "#/submit?kind=place",
+      "width": 320
+    },
+    {
+      "hash": "#/submit?kind=route",
+      "width": 320
+    },
+    {
+      "hash": "#/me",
+      "width": 375
+    },
+    {
+      "hash": "#/submit?kind=place",
+      "width": 375
+    },
+    {
+      "hash": "#/submit?kind=route",
+      "width": 375
+    },
+    {
+      "hash": "#/me",
+      "width": 390
+    },
+    {
+      "hash": "#/submit?kind=place",
+      "width": 390
+    },
+    {
+      "hash": "#/submit?kind=route",
+      "width": 390
+    },
+    {
+      "hash": "#/me",
+      "width": 414
+    },
+    {
+      "hash": "#/submit?kind=place",
+      "width": 414
+    },
+    {
+      "hash": "#/submit?kind=route",
+      "width": 414
+    },
+    {
+      "hash": "#/me",
+      "width": 768
+    },
+    {
+      "hash": "#/submit?kind=place",
+      "width": 768
+    },
+    {
+      "hash": "#/submit?kind=route",
+      "width": 768
+    },
+    {
+      "hash": "#/me",
+      "width": 834
+    },
+    {
+      "hash": "#/submit?kind=place",
+      "width": 834
+    },
+    {
+      "hash": "#/submit?kind=route",
+      "width": 834
+    },
+    "invalid form does not issue writes",
+    "extraction displays only source-grounded candidates",
+    "map messages with wrong token ignored",
+    "map selection fills name and real coordinate binding",
+    "manual location edit invalidates old coordinates",
+    "tab visibility change preserves unsent form",
+    "duplicate submissions suppressed while pending",
+    "duplicate map stop is not appended",
+    "pointer drag preserves station fields",
+    "keyboard sorting cancellation restores original order",
+    "keyboard sorting commits",
+    "emulated touch sorts cards with reduced motion",
+    "route stop order can be changed without changing route name",
+    "new route places submit reviewed coordinates and inherit route source",
+    "failed route submission keeps entered data and allows retry"
+  ],
+  "errors": []
+}

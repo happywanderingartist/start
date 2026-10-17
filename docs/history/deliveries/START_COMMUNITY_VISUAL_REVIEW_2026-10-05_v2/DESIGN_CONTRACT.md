@@ -1,0 +1,19 @@
+# Community 第一版视觉合约
+
+阶段：用户已确认继续，按计划只制作本批静态视觉稿；四页与空状态获明确视觉确认前不接入现有业务原型。
+
+使用 Interaction Design、Apple Design、Hallmark 后确定结构。目的为发现圈子里值得参与的活动，回到已加入/关注的圈子；承接 Apple Music 的标题、分组、相关内容及连续返回，内容采用 START 旅行杂志章节。拒绝无限 Feed 与等大卡墙。方案 A 为分章节活动/目录，方案 B 为满屏社群卡墙；选 A，信息更清楚且与用户原方向一致。
+
+发现：发现/我的社群切换 → 近期专题活动 → 关联艺人 → 我的圈子 → 关联路线 → 现场动态。我的社群：Joined、Followed、Recommended 三个独立分组。社群详情：身份/兴趣 → 简介 → 加入/关注主次 → 近期活动 → 相关路线 → 一则轻量公告。活动详情：原创海报 → 名称/艺人关联 → 明确日期、地点、状态、须知 → 演示意向 → 关联路线和社群 → 现场公告后续说明。空状态各有不同原因与返回路径，不用同一个通用空卡替代。
+
+色卡沿用九色组合，基色 #FBF3E8/#3F241C，活动海报湖蓝/冰蓝/芒果，目录薄亚麻分组与少量叶绿。系统字体标题 28、正文 14–16，章名 20；元数据 12。Logo 原始 PNG 保持 SHA256。没有艺人照片、活动摄影和真实活动资料，本批用原创图形海报，不把参考商业摄影和人物直接复制进产品。
+
+所有名称、日期、成员状态和活动内容为明确标示的合成视觉样本，不代表真实活动、报名、会员关系或艺人到访；不生成虚假成员总数。活动按钮仅为位置示意。取消/结束状态禁止参与动作的实现规则留待批准后，空稿展示资料缺失而非伪造时间。
+
+GitHub 前置：按 agent-reach GitHub 路径检索社群/活动与测试。前次 gh 已确认未登录，本轮使用官方公开仓库。Gathio 候选未成功读取，不作为成熟证据。Mastodon https://github.com/mastodon/mastodon 展示 AGPL-3.0、spec/、Vitest 配置与 Ruby CI，维护组织 mastodon；stars 和提交日期以公开页面读到内容为准。优势是关注/发现/个人关系的分离与成熟状态测试组织；明确局限是以动态 Feed 和联邦网络为核心，不能直接提供 START 的活动优先杂志结构。本次只借鉴关系分离，不复制代码、不安装依赖。官方提交页 https://github.com/mastodon/mastodon/commits/main/；CI https://github.com/mastodon/mastodon/actions/workflows/test-ruby.yml。
+
+交付：四页正常稿、四页空稿、两个高清审阅板、八份可编辑 HTML 与共享 CSS；六宽度、图片解码与信息可见性仅为静态检查，不能当业务测试。Open Design 独立 community-visual-v1/ 展示；生成引擎状态与预览分开记录。旧原型与票根均不改动。
+
+公开页读取结果：约 50.4k stars；提交页抓取展示 2026-09-09 的 Link cards/Private replies 等更新，不能把抓取记录当实时最新提交。社群详情静态稿展示未加入的行动层级；发现和我的社群展示关系分组样本，这些稿未串为可操作状态流程。
+
+V2 revision requested by user: direct functional titles, combined two supplied palettes. Cream/linen remain majority surfaces, dark coffee readable text/primary controls, ice/leaf/clay distinct cover families, lake metadata and orange small art/notice accent. Never colour every section. Original logo and layout retained. Source V1 preserved. Visual approval remains pending; Community V2 is a revision preview, not runtime replacement. No user approval inferred.

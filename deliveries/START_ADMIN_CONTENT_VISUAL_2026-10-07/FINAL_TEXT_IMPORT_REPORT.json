@@ -1,0 +1,599 @@
+{
+  "phase": "approved visual implemented and locally verified; memory demo only",
+  "provider": "local llama.cpp b11429",
+  "model": "Qwen2.5-1.5B-Instruct Q4_K_M",
+  "paidModelApi": false,
+  "unitTests": 17,
+  "freshIndependentReview": "Two important findings fixed RED to GREEN; final followup passed",
+  "nativeOpenDesignCanvas": false,
+  "openDesignFilePreview": true,
+  "persistentDatabase": false,
+  "realDeviceAcceptance": false,
+  "preview": "http://127.0.0.1:4327/#route",
+  "files": [
+    {
+      "name": "server.mjs",
+      "sha256": "431a19cf16c5e73a0dc24678d0eb027e0c8693841e7799f3b211a9d6befd257e"
+    },
+    {
+      "name": "place-extractor.mjs",
+      "sha256": "08966f9f68d94dcf413e5f0ec77490e92724f43b06801c4173febf5fa3de8482"
+    },
+    {
+      "name": "admin.js",
+      "sha256": "56e1229b273aea7c344ecc104482d5571ae4c820a003c8f690febdd1f18aebbb"
+    },
+    {
+      "name": "admin.css",
+      "sha256": "9a72662f3c32b7a7b1b833fdf7f4f501bddcb428f31084fb3c7c622ba109cd26"
+    },
+    {
+      "name": "index.html",
+      "sha256": "5a67dc876754b2d3e0ed7608ad1c01b1c5d3a895001d6cbd45a77e67da331e01"
+    },
+    {
+      "name": "batch-domain.js",
+      "sha256": "18b3b47d9692b78a73b4179d0f2910fae23f6974889ff6c53cac6fb12ea961d1"
+    },
+    {
+      "name": "text-import.html",
+      "sha256": "8b97bc1fc4c319f04e7d7075737323ff965fa3a93b265506d84f679c339baa20"
+    },
+    {
+      "name": "text-import.css",
+      "sha256": "23c03723a600220d135ca7943826723c0a2f1df35d6f0aa153fcb46b2cb89c0a"
+    },
+    {
+      "name": "text-import.js",
+      "sha256": "2f294d41e44913a81555267539d8690c208e132e06a6a3fc0aba26fd36a474b0"
+    },
+    {
+      "name": "map-picker.js",
+      "sha256": "1ef945639ddd36a7dde19925ccddd4727d3f45344084f8f00b51267d18100f03"
+    }
+  ],
+  "evidence": {
+    "LOCAL_MODEL_CHECK.json": [
+      {
+        "label": "未知城市",
+        "ms": 1544,
+        "items": [
+          {
+            "name": "趵突泉",
+            "city": "",
+            "citySource": "unknown",
+            "sourceSnippet": "趵突泉",
+            "sourceStart": 2,
+            "sourceEnd": 5,
+            "evidenceSource": "model-excerpt",
+            "warning": "",
+            "reviewRequired": true,
+            "id": "candidate-0",
+            "duplicate": false
+          },
+          {
+            "name": "大明湖",
+            "city": "",
+            "citySource": "unknown",
+            "sourceSnippet": "大明湖",
+            "sourceStart": 8,
+            "sourceEnd": 11,
+            "evidenceSource": "model-excerpt",
+            "warning": "",
+            "reviewRequired": true,
+            "id": "candidate-1",
+            "duplicate": false
+          }
+        ],
+        "rejected": 0,
+        "provider": "local-llama",
+        "model": "Qwen2.5-1.5B",
+        "publication": "candidate"
+      },
+      {
+        "label": "重复名称",
+        "ms": 1183,
+        "items": [
+          {
+            "name": "星巴克",
+            "city": "上海",
+            "citySource": "text",
+            "sourceSnippet": "星巴克",
+            "sourceStart": 3,
+            "sourceEnd": 6,
+            "evidenceSource": "exact-name",
+            "warning": "原文片段已按名称精确定位，请核对上下文。",
+            "reviewRequired": true,
+            "id": "candidate-0",
+            "duplicate": true
+          },
+          {
+            "name": "星巴克",
+            "city": "南京",
+            "citySource": "text",
+            "sourceSnippet": "星巴克",
+            "sourceStart": 10,
+            "sourceEnd": 13,
+            "evidenceSource": "exact-name",
+            "warning": "原文片段已按名称精确定位，请核对上下文。",
+            "reviewRequired": true,
+            "id": "candidate-1",
+            "duplicate": true
+          }
+        ],
+        "rejected": 0,
+        "provider": "local-llama",
+        "model": "Qwen2.5-1.5B",
+        "publication": "candidate"
+      },
+      {
+        "label": "原文关闭描述",
+        "ms": 1124,
+        "items": [
+          {
+            "name": "不贵书店",
+            "city": "济南",
+            "citySource": "text",
+            "sourceSnippet": "不贵书店已停业",
+            "sourceStart": 3,
+            "sourceEnd": 10,
+            "evidenceSource": "model-excerpt",
+            "warning": "原文附近包含地点变更或关闭描述，请核对当前情况。",
+            "reviewRequired": true,
+            "id": "candidate-0",
+            "duplicate": false
+          }
+        ],
+        "rejected": 0,
+        "provider": "local-llama",
+        "model": "Qwen2.5-1.5B",
+        "publication": "candidate"
+      },
+      {
+        "label": "济南",
+        "ms": 4200,
+        "items": [
+          {
+            "name": "趵突泉",
+            "city": "济南",
+            "citySource": "text",
+            "sourceSnippet": "趵突泉",
+            "sourceStart": 5,
+            "sourceEnd": 8,
+            "evidenceSource": "model-excerpt",
+            "warning": "",
+            "reviewRequired": true,
+            "id": "candidate-0",
+            "duplicate": false
+          },
+          {
+            "name": "李清照纪念堂",
+            "city": "济南",
+            "citySource": "text",
+            "sourceSnippet": "李清照纪念堂",
+            "sourceStart": 11,
+            "sourceEnd": 17,
+            "evidenceSource": "model-excerpt",
+            "warning": "",
+            "reviewRequired": true,
+            "id": "candidate-1",
+            "duplicate": false
+          },
+          {
+            "name": "大明湖",
+            "city": "济南",
+            "citySource": "text",
+            "sourceSnippet": "大明湖",
+            "sourceStart": 18,
+            "sourceEnd": 21,
+            "evidenceSource": "model-excerpt",
+            "warning": "",
+            "reviewRequired": true,
+            "id": "candidate-2",
+            "duplicate": false
+          },
+          {
+            "name": "曲水亭街",
+            "city": "济南",
+            "citySource": "text",
+            "sourceSnippet": "曲水亭街",
+            "sourceStart": 22,
+            "sourceEnd": 26,
+            "evidenceSource": "model-excerpt",
+            "warning": "",
+            "reviewRequired": true,
+            "id": "candidate-3",
+            "duplicate": false
+          },
+          {
+            "name": "厚德泉",
+            "city": "济南",
+            "citySource": "text",
+            "sourceSnippet": "厚德泉",
+            "sourceStart": 27,
+            "sourceEnd": 30,
+            "evidenceSource": "model-excerpt",
+            "warning": "",
+            "reviewRequired": true,
+            "id": "candidate-4",
+            "duplicate": false
+          },
+          {
+            "name": "不贵书店",
+            "city": "济南",
+            "citySource": "text",
+            "sourceSnippet": "不贵书店",
+            "sourceStart": 33,
+            "sourceEnd": 37,
+            "evidenceSource": "model-excerpt",
+            "warning": "",
+            "reviewRequired": true,
+            "id": "candidate-5",
+            "duplicate": false
+          }
+        ],
+        "rejected": 0,
+        "provider": "local-llama",
+        "model": "Qwen2.5-1.5B",
+        "publication": "candidate"
+      },
+      {
+        "label": "混合城市",
+        "ms": 2632,
+        "items": [
+          {
+            "name": "外滩",
+            "city": "上海",
+            "citySource": "text",
+            "sourceSnippet": "外滩",
+            "sourceStart": 3,
+            "sourceEnd": 5,
+            "evidenceSource": "model-excerpt",
+            "warning": "",
+            "reviewRequired": true,
+            "id": "candidate-0",
+            "duplicate": false
+          },
+          {
+            "name": "上海邮政博物馆",
+            "city": "上海",
+            "citySource": "text",
+            "sourceSnippet": "上海邮政博物馆",
+            "sourceStart": 6,
+            "sourceEnd": 13,
+            "evidenceSource": "model-excerpt",
+            "warning": "",
+            "reviewRequired": true,
+            "id": "candidate-1",
+            "duplicate": false
+          },
+          {
+            "name": "夫子庙",
+            "city": "南京",
+            "citySource": "text",
+            "sourceSnippet": "夫子庙",
+            "sourceStart": 17,
+            "sourceEnd": 20,
+            "evidenceSource": "model-excerpt",
+            "warning": "",
+            "reviewRequired": true,
+            "id": "candidate-2",
+            "duplicate": false
+          },
+          {
+            "name": "三七八巷",
+            "city": "南京",
+            "citySource": "text",
+            "sourceSnippet": "三七八巷",
+            "sourceStart": 21,
+            "sourceEnd": 25,
+            "evidenceSource": "model-excerpt",
+            "warning": "",
+            "reviewRequired": true,
+            "id": "candidate-3",
+            "duplicate": false
+          }
+        ],
+        "rejected": 0,
+        "provider": "local-llama",
+        "model": "Qwen2.5-1.5B",
+        "publication": "candidate"
+      },
+      {
+        "label": "空",
+        "ms": 431,
+        "items": [],
+        "rejected": 0,
+        "provider": "local-llama",
+        "model": "Qwen2.5-1.5B",
+        "publication": "candidate"
+      }
+    ],
+    "TEXT_IMPORT_CHECK.json": {
+      "kind": "browser with controlled API fixtures; real model/map checked separately",
+      "checks": [
+        "append preserves six original stops; POI data unverified; undo only new unreferenced places",
+        "place collection imports independently without creating route",
+        "name/city edits clear POI; source edits invalidate previous candidates",
+        "manual supplement, ordering, deletion work",
+        "late extraction after cancel ignored",
+        "manual correction during pending recognition wins over late response",
+        "model unavailable retains input and allows manual fallback",
+        "spoofed parent message rejected",
+        "overlong input never silently truncated",
+        "seven widths, populated state, parent and embedded document no horizontal overflow",
+        "nested map prefill; Escape closes nested then outer; reduced motion"
+      ],
+      "errors": []
+    },
+    "TEXT_IMPORT_LIVE_CHECK.json": {
+      "realLocalModel": true,
+      "realAMapPoi": true,
+      "realMapTiles": true,
+      "explicitPoiSelection": true,
+      "routeOriginalSixPreserved": true,
+      "undoVerified": true,
+      "mobile390NoOverflow": true,
+      "pageErrors": []
+    },
+    "OPEN_DESIGN_TEXT_IMPORT_CHECK.json": {
+      "url": "http://127.0.0.1:53625/api/projects/23d86b85-b67b-42f0-8b1b-d7c118a9d81c/raw/admin-content-visual-v1/index.html",
+      "openDesignFilePreview": true,
+      "nativeDesktopCanvas": false,
+      "realLocalModel": true,
+      "realAMap": true,
+      "sourceHashMatches": true,
+      "reusedPoiRetainsSeparateEvidence": true,
+      "undoLatestPreservesOldImport": true,
+      "visibleContributionSource": true,
+      "pageErrors": []
+    },
+    "BROWSER_CHECK.json": {
+      "widths": [
+        {
+          "width": 320,
+          "view": "library",
+          "overflow": false
+        },
+        {
+          "width": 320,
+          "view": "place",
+          "overflow": false
+        },
+        {
+          "width": 320,
+          "view": "route",
+          "overflow": false
+        },
+        {
+          "width": 320,
+          "view": "event",
+          "overflow": false
+        },
+        {
+          "width": 320,
+          "view": "media",
+          "overflow": false
+        },
+        {
+          "width": 320,
+          "view": "review",
+          "overflow": false
+        },
+        {
+          "width": 375,
+          "view": "library",
+          "overflow": false
+        },
+        {
+          "width": 375,
+          "view": "place",
+          "overflow": false
+        },
+        {
+          "width": 375,
+          "view": "route",
+          "overflow": false
+        },
+        {
+          "width": 375,
+          "view": "event",
+          "overflow": false
+        },
+        {
+          "width": 375,
+          "view": "media",
+          "overflow": false
+        },
+        {
+          "width": 375,
+          "view": "review",
+          "overflow": false
+        },
+        {
+          "width": 390,
+          "view": "library",
+          "overflow": false
+        },
+        {
+          "width": 390,
+          "view": "place",
+          "overflow": false
+        },
+        {
+          "width": 390,
+          "view": "route",
+          "overflow": false
+        },
+        {
+          "width": 390,
+          "view": "event",
+          "overflow": false
+        },
+        {
+          "width": 390,
+          "view": "media",
+          "overflow": false
+        },
+        {
+          "width": 390,
+          "view": "review",
+          "overflow": false
+        },
+        {
+          "width": 414,
+          "view": "library",
+          "overflow": false
+        },
+        {
+          "width": 414,
+          "view": "place",
+          "overflow": false
+        },
+        {
+          "width": 414,
+          "view": "route",
+          "overflow": false
+        },
+        {
+          "width": 414,
+          "view": "event",
+          "overflow": false
+        },
+        {
+          "width": 414,
+          "view": "media",
+          "overflow": false
+        },
+        {
+          "width": 414,
+          "view": "review",
+          "overflow": false
+        },
+        {
+          "width": 768,
+          "view": "library",
+          "overflow": false
+        },
+        {
+          "width": 768,
+          "view": "place",
+          "overflow": false
+        },
+        {
+          "width": 768,
+          "view": "route",
+          "overflow": false
+        },
+        {
+          "width": 768,
+          "view": "event",
+          "overflow": false
+        },
+        {
+          "width": 768,
+          "view": "media",
+          "overflow": false
+        },
+        {
+          "width": 768,
+          "view": "review",
+          "overflow": false
+        },
+        {
+          "width": 834,
+          "view": "library",
+          "overflow": false
+        },
+        {
+          "width": 834,
+          "view": "place",
+          "overflow": false
+        },
+        {
+          "width": 834,
+          "view": "route",
+          "overflow": false
+        },
+        {
+          "width": 834,
+          "view": "event",
+          "overflow": false
+        },
+        {
+          "width": 834,
+          "view": "media",
+          "overflow": false
+        },
+        {
+          "width": 834,
+          "view": "review",
+          "overflow": false
+        },
+        {
+          "width": 1440,
+          "view": "library",
+          "overflow": false
+        },
+        {
+          "width": 1440,
+          "view": "place",
+          "overflow": false
+        },
+        {
+          "width": 1440,
+          "view": "route",
+          "overflow": false
+        },
+        {
+          "width": 1440,
+          "view": "event",
+          "overflow": false
+        },
+        {
+          "width": 1440,
+          "view": "media",
+          "overflow": false
+        },
+        {
+          "width": 1440,
+          "view": "review",
+          "overflow": false
+        }
+      ],
+      "flows": [
+        "catalog search/clear",
+        "edit title/cover/preview/unsaved retain/session save/blocked publish",
+        "new route/empty/add existing place/save to catalog",
+        "route reorder/preview references same place",
+        "local image preview/reject unsupported file/no upload",
+        "return requires reason/demo approve requires two checks",
+        "refresh resets demo data",
+        "keyboard navigation/preview/Escape/reduced motion"
+      ],
+      "errors": [],
+      "writes": []
+    },
+    "MAP_PICKER_REGRESSION.json": {
+      "fixtureData": true,
+      "widths": [
+        320,
+        375,
+        390,
+        414,
+        768,
+        834,
+        1440
+      ],
+      "flows": [
+        "empty/error/retry/query change clears stale choice",
+        "late response ignored after city change",
+        "spoofed message refused/no automatic artist visit/category normalized",
+        "duplicate stop prevented/provider ID reused after remove",
+        "place POI binds real fields/association recheck",
+        "venue uses shared POI record"
+      ],
+      "pageErrors": []
+    }
+  }
+}

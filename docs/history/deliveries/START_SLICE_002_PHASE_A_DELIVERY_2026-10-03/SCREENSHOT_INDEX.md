@@ -1,0 +1,55 @@
+# 截图索引（可移植链接）
+
+49张真实浏览器截图。五页总览为派生索引图，不计入49张截图。
+
+| 文件 | viewport | 类型 |
+| --- | --- | --- |
+| [390-home-focused.png](evidence/slice002/390-home-focused.png) | 390×844 | 视口/状态 |
+| [390-search-exact-artist.png](evidence/slice002/390-search-exact-artist.png) | 390×844 | 视口/状态 |
+| [390-search-loading.png](evidence/slice002/390-search-loading.png) | 390×844 | 视口/状态 |
+| [390-search-empty.png](evidence/slice002/390-search-empty.png) | 390×844 | 视口/状态 |
+| [390-search-error.png](evidence/slice002/390-search-error.png) | 390×844 | 视口/状态 |
+| [390-event-read.png](evidence/slice002/390-event-read.png) | 390×844 | 视口/状态 |
+| [390-artist-empty-chapter.png](evidence/slice002/390-artist-empty-chapter.png) | 390×844 | 视口/状态 |
+| [390-route-stop-preview.png](evidence/slice002/390-route-stop-preview.png) | 390×844 | 视口/状态 |
+| [390-source.png](evidence/slice002/390-source.png) | 390×844 | 视口/状态 |
+| [390-verification.png](evidence/slice002/390-verification.png) | 390×844 | 视口/状态 |
+| [390-start-deferred.png](evidence/slice002/390-start-deferred.png) | 390×844 | 视口/状态 |
+| [320-home.png](evidence/slice002/320-home.png) | 320×844 | 视口/状态 |
+| [320-home-full.png](evidence/slice002/320-home-full.png) | 320×844 | 整页 |
+| [320-search.png](evidence/slice002/320-search.png) | 320×844 | 视口/状态 |
+| [320-search-full.png](evidence/slice002/320-search-full.png) | 320×844 | 整页 |
+| [320-artist.png](evidence/slice002/320-artist.png) | 320×844 | 视口/状态 |
+| [320-artist-full.png](evidence/slice002/320-artist-full.png) | 320×844 | 整页 |
+| [320-route.png](evidence/slice002/320-route.png) | 320×844 | 视口/状态 |
+| [320-route-full.png](evidence/slice002/320-route-full.png) | 320×844 | 整页 |
+| [320-place.png](evidence/slice002/320-place.png) | 320×844 | 视口/状态 |
+| [320-place-full.png](evidence/slice002/320-place-full.png) | 320×844 | 整页 |
+| [390-home.png](evidence/slice002/390-home.png) | 390×844 | 视口/状态 |
+| [390-home-full.png](evidence/slice002/390-home-full.png) | 390×844 | 整页 |
+| [390-search.png](evidence/slice002/390-search.png) | 390×844 | 视口/状态 |
+| [390-search-full.png](evidence/slice002/390-search-full.png) | 390×844 | 整页 |
+| [390-artist.png](evidence/slice002/390-artist.png) | 390×844 | 视口/状态 |
+| [390-artist-full.png](evidence/slice002/390-artist-full.png) | 390×844 | 整页 |
+| [390-route.png](evidence/slice002/390-route.png) | 390×844 | 视口/状态 |
+| [390-route-full.png](evidence/slice002/390-route-full.png) | 390×844 | 整页 |
+| [390-place.png](evidence/slice002/390-place.png) | 390×844 | 视口/状态 |
+| [390-place-full.png](evidence/slice002/390-place-full.png) | 390×844 | 整页 |
+| [768-home.png](evidence/slice002/768-home.png) | 768×1024 | 视口/状态 |
+| [768-home-full.png](evidence/slice002/768-home-full.png) | 768×1024 | 整页 |
+| [768-search.png](evidence/slice002/768-search.png) | 768×1024 | 视口/状态 |
+| [768-search-full.png](evidence/slice002/768-search-full.png) | 768×1024 | 整页 |
+| [768-artist.png](evidence/slice002/768-artist.png) | 768×1024 | 视口/状态 |
+| [768-artist-full.png](evidence/slice002/768-artist-full.png) | 768×1024 | 整页 |
+| [768-route.png](evidence/slice002/768-route.png) | 768×1024 | 视口/状态 |
+| [768-route-full.png](evidence/slice002/768-route-full.png) | 768×1024 | 整页 |
+| [768-place.png](evidence/slice002/768-place.png) | 768×1024 | 视口/状态 |
+| [768-place-full.png](evidence/slice002/768-place-full.png) | 768×1024 | 整页 |
+| [1280-artist.png](evidence/slice002/1280-artist.png) | 1280×900 | 视口/状态 |
+| [1280-artist-full.png](evidence/slice002/1280-artist-full.png) | 1280×900 | 整页 |
+| [1280-route.png](evidence/slice002/1280-route.png) | 1280×900 | 视口/状态 |
+| [1280-route-full.png](evidence/slice002/1280-route-full.png) | 1280×900 | 整页 |
+| [1280-place.png](evidence/slice002/1280-place.png) | 1280×900 | 视口/状态 |
+| [1280-place-full.png](evidence/slice002/1280-place-full.png) | 1280×900 | 整页 |
+| [390-share.png](evidence/slice002/390-share.png) | 390×844 | 视口/状态 |
+| [390-address.png](evidence/slice002/390-address.png) | 390×844 | 视口/状态 |

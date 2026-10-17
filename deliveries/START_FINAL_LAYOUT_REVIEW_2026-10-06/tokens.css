@@ -1,0 +1,15 @@
+/* START Slice002 Phase C · existing approved direction */
+:root {
+  --paper:#FBF3E8; --coffee:#702720; --ice:#CBE5FE; --orange:#C87950;
+  --surface:#FFF9F2; --rule:#D7BEB0; --muted:#835344; --scrim:rgba(40,18,14,.34);
+  --font-body:system-ui,"PingFang SC","Microsoft YaHei",sans-serif;
+  --font-brand:Georgia,"Times New Roman",serif; --font-number:ui-monospace,monospace;
+  --text-small:.875rem; --text-body:1rem; --text-section:1.125rem; --text-title:1.75rem;
+  --space-1:4px; --space-2:8px; --space-3:12px; --space-4:16px; --space-5:20px;
+  --space-6:24px; --space-8:32px; --space-12:48px; --space-16:64px;
+  --radius-small:8px; --radius-medium:12px; --radius-sheet:16px;
+  --shadow-paper:4px 4px 0 var(--ice); --shadow-sheet:0 16px 48px rgba(55,23,17,.16);
+  --press:120ms; --sheet-enter:200ms; --sheet-exit:150ms;
+  --ease-out:cubic-bezier(.23,1,.32,1); --ease-in:cubic-bezier(.32,0,.67,0);
+  --page-inset:20px; --reading-max:1120px; --line-max:70ch;
+}

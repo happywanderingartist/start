@@ -1,0 +1,69 @@
+{
+  "at": "2026-10-17T06:11:52.176Z",
+  "results": [
+    {
+      "name": "platform",
+      "passed": true,
+      "exitCode": 0
+    },
+    {
+      "name": "browser",
+      "passed": true,
+      "exitCode": 0
+    },
+    {
+      "name": "public-browser",
+      "passed": true,
+      "exitCode": 0
+    },
+    {
+      "name": "private-browser",
+      "passed": true,
+      "exitCode": 0
+    },
+    {
+      "name": "community-browser",
+      "passed": true,
+      "exitCode": 0
+    },
+    {
+      "name": "market-browser",
+      "passed": true,
+      "exitCode": 0
+    },
+    {
+      "name": "book-browser",
+      "passed": true,
+      "exitCode": 0
+    },
+    {
+      "name": "backup",
+      "passed": true,
+      "exitCode": 0
+    },
+    {
+      "name": "legacy",
+      "passed": true,
+      "exitCode": 0
+    },
+    {
+      "name": "existing-integrations",
+      "passed": true,
+      "exitCode": 0
+    },
+    {
+      "name": "local-smoke",
+      "passed": false,
+      "exitCode": 3221226505
+    },
+    {
+      "name": "public-live-preview",
+      "passed": true,
+      "exitCode": 0
+    }
+  ],
+  "realWechat": false,
+  "realGps": false,
+  "cloudConnected": false,
+  "testDatabaseOnly": true
+}

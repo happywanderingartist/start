@@ -1,0 +1,35 @@
+{
+  "at": "2026-10-17T06:11:26.418Z",
+  "fixtureTransportOnly": true,
+  "realIdentity": false,
+  "checks": [
+    "join suppresses duplicate writes and confirms server result",
+    "reload retains joined state",
+    "community overview reads joined communities",
+    "Me links back to joined community",
+    "failed leave preserves membership",
+    "leave removes membership from Me",
+    "unknown membership is not displayed as not joined",
+    "unconfigured identity and signed-out state do not permit writes",
+    "late mutation response does not replace another page",
+    {
+      "width": 320
+    },
+    {
+      "width": 375
+    },
+    {
+      "width": 390
+    },
+    {
+      "width": 414
+    },
+    {
+      "width": 768
+    },
+    {
+      "width": 834
+    }
+  ],
+  "errors": []
+}

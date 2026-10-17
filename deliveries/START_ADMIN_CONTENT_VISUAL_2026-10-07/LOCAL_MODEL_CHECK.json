@@ -1,0 +1,256 @@
+[
+  {
+    "label": "未知城市",
+    "ms": 1544,
+    "items": [
+      {
+        "name": "趵突泉",
+        "city": "",
+        "citySource": "unknown",
+        "sourceSnippet": "趵突泉",
+        "sourceStart": 2,
+        "sourceEnd": 5,
+        "evidenceSource": "model-excerpt",
+        "warning": "",
+        "reviewRequired": true,
+        "id": "candidate-0",
+        "duplicate": false
+      },
+      {
+        "name": "大明湖",
+        "city": "",
+        "citySource": "unknown",
+        "sourceSnippet": "大明湖",
+        "sourceStart": 8,
+        "sourceEnd": 11,
+        "evidenceSource": "model-excerpt",
+        "warning": "",
+        "reviewRequired": true,
+        "id": "candidate-1",
+        "duplicate": false
+      }
+    ],
+    "rejected": 0,
+    "provider": "local-llama",
+    "model": "Qwen2.5-1.5B",
+    "publication": "candidate"
+  },
+  {
+    "label": "重复名称",
+    "ms": 1183,
+    "items": [
+      {
+        "name": "星巴克",
+        "city": "上海",
+        "citySource": "text",
+        "sourceSnippet": "星巴克",
+        "sourceStart": 3,
+        "sourceEnd": 6,
+        "evidenceSource": "exact-name",
+        "warning": "原文片段已按名称精确定位，请核对上下文。",
+        "reviewRequired": true,
+        "id": "candidate-0",
+        "duplicate": true
+      },
+      {
+        "name": "星巴克",
+        "city": "南京",
+        "citySource": "text",
+        "sourceSnippet": "星巴克",
+        "sourceStart": 10,
+        "sourceEnd": 13,
+        "evidenceSource": "exact-name",
+        "warning": "原文片段已按名称精确定位，请核对上下文。",
+        "reviewRequired": true,
+        "id": "candidate-1",
+        "duplicate": true
+      }
+    ],
+    "rejected": 0,
+    "provider": "local-llama",
+    "model": "Qwen2.5-1.5B",
+    "publication": "candidate"
+  },
+  {
+    "label": "原文关闭描述",
+    "ms": 1124,
+    "items": [
+      {
+        "name": "不贵书店",
+        "city": "济南",
+        "citySource": "text",
+        "sourceSnippet": "不贵书店已停业",
+        "sourceStart": 3,
+        "sourceEnd": 10,
+        "evidenceSource": "model-excerpt",
+        "warning": "原文附近包含地点变更或关闭描述，请核对当前情况。",
+        "reviewRequired": true,
+        "id": "candidate-0",
+        "duplicate": false
+      }
+    ],
+    "rejected": 0,
+    "provider": "local-llama",
+    "model": "Qwen2.5-1.5B",
+    "publication": "candidate"
+  },
+  {
+    "label": "济南",
+    "ms": 4200,
+    "items": [
+      {
+        "name": "趵突泉",
+        "city": "济南",
+        "citySource": "text",
+        "sourceSnippet": "趵突泉",
+        "sourceStart": 5,
+        "sourceEnd": 8,
+        "evidenceSource": "model-excerpt",
+        "warning": "",
+        "reviewRequired": true,
+        "id": "candidate-0",
+        "duplicate": false
+      },
+      {
+        "name": "李清照纪念堂",
+        "city": "济南",
+        "citySource": "text",
+        "sourceSnippet": "李清照纪念堂",
+        "sourceStart": 11,
+        "sourceEnd": 17,
+        "evidenceSource": "model-excerpt",
+        "warning": "",
+        "reviewRequired": true,
+        "id": "candidate-1",
+        "duplicate": false
+      },
+      {
+        "name": "大明湖",
+        "city": "济南",
+        "citySource": "text",
+        "sourceSnippet": "大明湖",
+        "sourceStart": 18,
+        "sourceEnd": 21,
+        "evidenceSource": "model-excerpt",
+        "warning": "",
+        "reviewRequired": true,
+        "id": "candidate-2",
+        "duplicate": false
+      },
+      {
+        "name": "曲水亭街",
+        "city": "济南",
+        "citySource": "text",
+        "sourceSnippet": "曲水亭街",
+        "sourceStart": 22,
+        "sourceEnd": 26,
+        "evidenceSource": "model-excerpt",
+        "warning": "",
+        "reviewRequired": true,
+        "id": "candidate-3",
+        "duplicate": false
+      },
+      {
+        "name": "厚德泉",
+        "city": "济南",
+        "citySource": "text",
+        "sourceSnippet": "厚德泉",
+        "sourceStart": 27,
+        "sourceEnd": 30,
+        "evidenceSource": "model-excerpt",
+        "warning": "",
+        "reviewRequired": true,
+        "id": "candidate-4",
+        "duplicate": false
+      },
+      {
+        "name": "不贵书店",
+        "city": "济南",
+        "citySource": "text",
+        "sourceSnippet": "不贵书店",
+        "sourceStart": 33,
+        "sourceEnd": 37,
+        "evidenceSource": "model-excerpt",
+        "warning": "",
+        "reviewRequired": true,
+        "id": "candidate-5",
+        "duplicate": false
+      }
+    ],
+    "rejected": 0,
+    "provider": "local-llama",
+    "model": "Qwen2.5-1.5B",
+    "publication": "candidate"
+  },
+  {
+    "label": "混合城市",
+    "ms": 2632,
+    "items": [
+      {
+        "name": "外滩",
+        "city": "上海",
+        "citySource": "text",
+        "sourceSnippet": "外滩",
+        "sourceStart": 3,
+        "sourceEnd": 5,
+        "evidenceSource": "model-excerpt",
+        "warning": "",
+        "reviewRequired": true,
+        "id": "candidate-0",
+        "duplicate": false
+      },
+      {
+        "name": "上海邮政博物馆",
+        "city": "上海",
+        "citySource": "text",
+        "sourceSnippet": "上海邮政博物馆",
+        "sourceStart": 6,
+        "sourceEnd": 13,
+        "evidenceSource": "model-excerpt",
+        "warning": "",
+        "reviewRequired": true,
+        "id": "candidate-1",
+        "duplicate": false
+      },
+      {
+        "name": "夫子庙",
+        "city": "南京",
+        "citySource": "text",
+        "sourceSnippet": "夫子庙",
+        "sourceStart": 17,
+        "sourceEnd": 20,
+        "evidenceSource": "model-excerpt",
+        "warning": "",
+        "reviewRequired": true,
+        "id": "candidate-2",
+        "duplicate": false
+      },
+      {
+        "name": "三七八巷",
+        "city": "南京",
+        "citySource": "text",
+        "sourceSnippet": "三七八巷",
+        "sourceStart": 21,
+        "sourceEnd": 25,
+        "evidenceSource": "model-excerpt",
+        "warning": "",
+        "reviewRequired": true,
+        "id": "candidate-3",
+        "duplicate": false
+      }
+    ],
+    "rejected": 0,
+    "provider": "local-llama",
+    "model": "Qwen2.5-1.5B",
+    "publication": "candidate"
+  },
+  {
+    "label": "空",
+    "ms": 431,
+    "items": [],
+    "rejected": 0,
+    "provider": "local-llama",
+    "model": "Qwen2.5-1.5B",
+    "publication": "candidate"
+  }
+]

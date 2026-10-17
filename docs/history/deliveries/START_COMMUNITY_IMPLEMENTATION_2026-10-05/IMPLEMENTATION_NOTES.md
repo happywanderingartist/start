@@ -1,0 +1,7 @@
+# Community approved implementation
+
+Approval: user “确认，减少无关解释性文字即可”. Only Community batch approved. Me, doll animation, submissions remain behind their visual approval gates.
+
+Skills: Interaction Design (visible/reversible state), Apple Design (native type hierarchy and immediate press feedback), Hallmark (approved palette, restrained editorial structure), executing-plans and TDD. GitHub first: refreshed official Mastodon repository using agent-reach gh route; gh auth absent, public official page fallback. Previous visual contract records stars ~50.4k, maintenance organisation, AGPL-3.0, Sep09 cached commit and spec/Vitest/RubyCI. Current official page confirms follow/discover, tests and license, latest commit unavailable. Strength: distinct relationships and mature testing organisation. Limit: feed/federation does not meet START event-first magazine structure. No code copied or dependency installed.
+
+Independent copy of approved ticket prototype, server4315. Static Community templates retain approved structure; only unnecessary explanation reduced. Essential sample/non-official/venue status stays visible. Browser controller uses existing navigation and history; hash-mode supports Open Design preview. State key start.community.demo.v1. Session storage only, no account or real signup. Reversible membership and interest. Unknown ids and cancelled/ended/incomplete activities cannot accept interest. State module first red test failed for missing module, then implemented. Original home artwork/logo and journey/memory modules retained byte-identically.

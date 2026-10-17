@@ -1,0 +1,69 @@
+{
+  "at": "2026-10-17T06:11:03.647Z",
+  "source": "local acceptance DB public API serialization; not verified production data",
+  "catalog": {
+    "artists": [
+      {
+        "id": "cc88072f-78b6-4e1b-8c71-3d7073eb09d5",
+        "name": "安溥",
+        "genres": [
+          "流行"
+        ]
+      }
+    ],
+    "places": [
+      {
+        "id": "65bf9fe9-62ee-45f4-93d5-8570807e5da7",
+        "city": "济南",
+        "name": "趵突泉",
+        "poiId": "B001",
+        "source": "用户核对参考",
+        "category": "景点",
+        "latitude": 36,
+        "longitude": 117,
+        "coordinateSystem": "gcj02",
+        "artistIds": [
+          "cc88072f-78b6-4e1b-8c71-3d7073eb09d5"
+        ]
+      }
+    ],
+    "routes": [
+      {
+        "id": "868b2ecf-a92b-407c-aa1e-58e19b1acc7f",
+        "city": "济南",
+        "name": "济南 Citywalk",
+        "source": "用户参考顺序",
+        "artistId": "cc88072f-78b6-4e1b-8c71-3d7073eb09d5",
+        "placeIds": [
+          "65bf9fe9-62ee-45f4-93d5-8570807e5da7"
+        ]
+      }
+    ],
+    "events": [
+      {
+        "id": "cde7aac9-55db-4f5d-9477-e0c5275df33b",
+        "city": "济南",
+        "name": "改期",
+        "source": "官方取消公告",
+        "status": "cancelled",
+        "placeId": "65bf9fe9-62ee-45f4-93d5-8570807e5da7",
+        "startsAt": "2026-10-10T12:00:00Z",
+        "timeZone": "Asia/Shanghai",
+        "artistIds": [
+          "cc88072f-78b6-4e1b-8c71-3d7073eb09d5"
+        ]
+      }
+    ],
+    "communities": [
+      {
+        "id": "a3f1d5da-267b-4f6a-8605-3fa877dfe695",
+        "artist_id": "cc88072f-78b6-4e1b-8c71-3d7073eb09d5",
+        "manager_id": null,
+        "name": "安溥社群",
+        "description": "新简介",
+        "notice": "周末见"
+      }
+    ],
+    "listings": []
+  }
+}

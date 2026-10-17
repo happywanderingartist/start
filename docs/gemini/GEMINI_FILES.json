@@ -1,0 +1,23 @@
+{
+  "at": "2026-10-17T07:16:19.324Z",
+  "sourceFiles": 66,
+  "sourceCharacters": 384375,
+  "handoffDocuments": 15,
+  "files": [
+    {
+      "file": "START_GEMINI_HANDOFF_2026-10-17.pdf",
+      "bytes": 1255514,
+      "sha256": "433c82a7dc645d2683d39e19faf781c80476b96a7b9c275564c2745e033b9ef8"
+    },
+    {
+      "file": "START_GEMINI_HANDOFF_2026-10-17.txt",
+      "bytes": 66392,
+      "sha256": "6b471b764157716b3113cff4ed059e4df7de63c06fdc3bf7d393c2c72778afe3"
+    },
+    {
+      "file": "START_GEMINI_SOURCE_CORE_2026-10-17.txt",
+      "bytes": 402878,
+      "sha256": "56058651c193aa574786182af2729772a130d5c2532f0b5b640b6cc9fbff8372"
+    }
+  ]
+}

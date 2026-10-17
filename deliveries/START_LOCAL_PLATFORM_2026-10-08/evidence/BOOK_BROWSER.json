@@ -1,0 +1,53 @@
+{
+  "at": "2026-10-17T06:11:33.814Z",
+  "isolatedRealDatabase": true,
+  "fixtureIdentity": true,
+  "realWechat": false,
+  "checks": [
+    "retry after lost success reuses key and photos without duplicate record",
+    "private photo and approved ticket use stored data",
+    {
+      "recordDetailWidth": 320
+    },
+    {
+      "recordDetailWidth": 375
+    },
+    {
+      "recordDetailWidth": 390
+    },
+    {
+      "recordDetailWidth": 414
+    },
+    {
+      "recordDetailWidth": 768
+    },
+    {
+      "recordDetailWidth": 834
+    },
+    "preview omits unselected text and photos",
+    "anonymous share exposes only selected content through scoped media URL",
+    "reload retains share management and revoke denies old link",
+    "delete supports cancel and removes stored record after confirmation",
+    {
+      "width": 320
+    },
+    {
+      "width": 375
+    },
+    {
+      "width": 390
+    },
+    {
+      "width": 414
+    },
+    {
+      "width": 768
+    },
+    {
+      "width": 834
+    },
+    "keyboard navigation and reduced motion",
+    "anonymous private Book is blocked"
+  ],
+  "errors": []
+}

@@ -1,0 +1,41 @@
+{
+  "mapLoaded": true,
+  "status": "高德地点查询结果 · 暂未关联艺人打卡",
+  "results": 10,
+  "canvas": 1,
+  "widths": [
+    {
+      "width": 320,
+      "overflow": false,
+      "mapWidth": 280
+    },
+    {
+      "width": 375,
+      "overflow": false,
+      "mapWidth": 335
+    },
+    {
+      "width": 390,
+      "overflow": false,
+      "mapWidth": 350
+    },
+    {
+      "width": 414,
+      "overflow": false,
+      "mapWidth": 374
+    },
+    {
+      "width": 768,
+      "overflow": false,
+      "mapWidth": 704
+    },
+    {
+      "width": 834,
+      "overflow": false,
+      "mapWidth": 770
+    }
+  ],
+  "selection": "true",
+  "bookstores": 10,
+  "failures": []
+}

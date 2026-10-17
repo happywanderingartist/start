@@ -1,0 +1,25 @@
+{
+  "at": "2026-10-17T06:11:49.935Z",
+  "passed": false,
+  "failure": {
+    "message": "Expected values to be strictly equal:\n\n503 !== 200\n",
+    "code": "ERR_ASSERTION"
+  },
+  "results": [
+    {
+      "label": "local database and no production identity",
+      "status": 200
+    },
+    {
+      "label": "published query",
+      "status": 200
+    },
+    {
+      "label": "admin blocked without verified identity",
+      "status": 503
+    }
+  ],
+  "keysPrinted": false,
+  "realGps": false,
+  "realWechat": false
+}

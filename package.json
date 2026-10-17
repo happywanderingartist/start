@@ -1,53 +1,17 @@
 {
-  "name": "fan-route-prototype",
-  "version": "0.0.0",
+  "name": "start-current-platform",
   "private": true,
   "type": "module",
+  "description": "Current START local platform and design handoff; old TypeScript engine preserved in Git history",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build && node scripts/prepare-sites-build.mjs",
-    "typecheck": "tsc --noEmit",
-    "test": "vitest",
-    "test:run": "vitest run",
-    "preview": "vite preview",
-    "test:sites": "node --test tests/sites-worker.test.mjs",
-    "test:worker": "node --test tests/*.test.mjs",
-    "check": "pnpm typecheck && pnpm test:run && pnpm build && pnpm test:worker",
-    "test:assets": "node --test tests/character-assets.test.mjs && node scripts/validate-character-assets.mjs character-assets/character-assets.json",
-    "test:contracts": "node --test tests/contracts/*.node.ts",
-    "typecheck:foundation": "node node_modules/typescript/bin/tsc -p tsconfig.foundation.json",
-    "db:migrate": "node tooling/db/migrate.ts",
-    "test:db": "node --test --test-concurrency=1 tests/integration/catalog-db.node.ts tests/integration/trust-read.node.ts",
-    "db:seed:historical": "node tooling/db/seed.ts",
-    "db:seed:reviewed": "node tooling/db/seed.ts --reviewed",
-    "build:api": "node node_modules/typescript/bin/tsc -p tsconfig.api.json",
-    "start:api": "node dist/api/apps/api/src/server.js",
-    "test:domain": "node --test tests/domain/*.node.ts",
-    "test:search": "node --test tests/integration/search-pg.node.ts",
-    "test:api": "node --test tests/integration/public-api.node.ts",
-    "check:foundation": "pnpm typecheck:foundation && pnpm build:api && node --test --test-concurrency=1 tests/contracts/*.node.ts tests/domain/*.node.ts tests/integration/*.node.ts"
+    "start": "node deliveries/START_LOCAL_PLATFORM_2026-10-08/boot.mjs",
+    "test:platform": "node --test --test-concurrency=1 deliveries/START_LOCAL_PLATFORM_2026-10-08/tests/*.test.mjs",
+    "test:book": "node deliveries/START_LOCAL_PLATFORM_2026-10-08/tests/book-browser-acceptance.mjs",
+    "test:acceptance": "node deliveries/START_LOCAL_PLATFORM_2026-10-08/acceptance.mjs"
   },
   "dependencies": {
-    "@phosphor-icons/react": "^2.1.10",
-    "@vitejs/plugin-react": "5.0.4",
     "pg": "8.16.3",
-    "react": "19.2.0",
-    "react-dom": "19.2.0",
-    "react-router-dom": "^7.9.5",
-    "vite": "6.4.2",
-    "zod": "4.1.12"
-  },
-  "devDependencies": {
-    "@testing-library/jest-dom": "6.9.1",
-    "@testing-library/react": "^16.3.0",
-    "@testing-library/user-event": "^14.6.1",
-    "@types/node": "24.10.0",
-    "@types/pg": "8.15.5",
-    "@types/react": "^19.2.2",
-    "@types/react-dom": "^19.2.2",
-    "jsdom": "^27.1.0",
-    "pngjs": "7.0.0",
-    "typescript": "^5.9.3",
-    "vitest": "^3.2.4"
+    "zod": "4.1.12",
+    "pngjs": "7.0.0"
   }
 }

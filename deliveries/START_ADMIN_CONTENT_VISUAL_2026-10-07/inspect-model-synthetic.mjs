@@ -1,0 +1,2 @@
+import {extractPlaces} from './place-extractor.mjs';
+console.log(await extractPlaces({text:'上海：星巴克。南京：星巴克。',fetchImpl:async(url,opts)=>{const r=await fetch(url,opts);const data=await r.clone().json();console.log('Synthetic test raw model output:',data.choices?.[0]?.message?.content);return r;}}));

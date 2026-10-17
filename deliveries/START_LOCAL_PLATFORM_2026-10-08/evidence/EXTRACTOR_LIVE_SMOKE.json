@@ -1,0 +1,40 @@
+{
+  "at": "2026-10-14T11:07:00.824Z",
+  "passed": true,
+  "realModel": true,
+  "cloud": false,
+  "result": {
+    "items": [
+      {
+        "name": "上海邮政博物馆",
+        "city": "上海",
+        "citySource": "text",
+        "sourceSnippet": "上海邮政博物馆",
+        "sourceStart": 5,
+        "sourceEnd": 12,
+        "evidenceSource": "model-excerpt",
+        "warning": "",
+        "reviewRequired": true,
+        "id": "candidate-0",
+        "duplicate": false
+      },
+      {
+        "name": "乍浦路桥",
+        "city": "上海",
+        "citySource": "text",
+        "sourceSnippet": "乍浦路桥",
+        "sourceStart": 16,
+        "sourceEnd": 20,
+        "evidenceSource": "model-excerpt",
+        "warning": "",
+        "reviewRequired": true,
+        "id": "candidate-1",
+        "duplicate": false
+      }
+    ],
+    "rejected": 0,
+    "provider": "local-llama",
+    "model": "Qwen2.5-1.5B",
+    "publication": "candidate"
+  }
+}

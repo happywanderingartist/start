@@ -1,0 +1,114 @@
+{
+  "source": "start_test_browser_699c36415a5841d79d186edccaeee441",
+  "restored": "start_test_restore_6985691e0de94302a37fa15d939694c7",
+  "archive": "D:\\Downloads\\fan-route-codex-handoff\\deliveries\\START_LOCAL_PLATFORM_2026-10-08\\evidence\\backups\\start_test_restore_6985691e0de94302a37fa15d939694c7\\database.dump",
+  "archiveSha256": "eaa421328296ebba1c3f2e29c8ae2176f29230e6aefaf6ef143132beeef981b6",
+  "tables": [
+    {
+      "table": "start_accounts.auth_identities",
+      "rows": 1
+    },
+    {
+      "table": "start_accounts.profiles",
+      "rows": 1
+    },
+    {
+      "table": "start_accounts.users",
+      "rows": 1
+    },
+    {
+      "table": "start_app.admins",
+      "rows": 1
+    },
+    {
+      "table": "start_app.audit",
+      "rows": 6
+    },
+    {
+      "table": "start_app.checkins",
+      "rows": 0
+    },
+    {
+      "table": "start_app.communities",
+      "rows": 0
+    },
+    {
+      "table": "start_app.community_applications",
+      "rows": 0
+    },
+    {
+      "table": "start_app.community_requests",
+      "rows": 0
+    },
+    {
+      "table": "start_app.contacts",
+      "rows": 0
+    },
+    {
+      "table": "start_app.content",
+      "rows": 2
+    },
+    {
+      "table": "start_app.contributions",
+      "rows": 0
+    },
+    {
+      "table": "start_app.corrections",
+      "rows": 0
+    },
+    {
+      "table": "start_app.dolls",
+      "rows": 0
+    },
+    {
+      "table": "start_app.exchanges",
+      "rows": 0
+    },
+    {
+      "table": "start_app.favorites",
+      "rows": 0
+    },
+    {
+      "table": "start_app.idempotency",
+      "rows": 6
+    },
+    {
+      "table": "start_app.listing_comments",
+      "rows": 0
+    },
+    {
+      "table": "start_app.listings",
+      "rows": 0
+    },
+    {
+      "table": "start_app.media",
+      "rows": 1
+    },
+    {
+      "table": "start_app.memberships",
+      "rows": 0
+    },
+    {
+      "table": "start_app.notifications",
+      "rows": 0
+    },
+    {
+      "table": "start_app.revisions",
+      "rows": 4
+    },
+    {
+      "table": "start_app.settings",
+      "rows": 0
+    },
+    {
+      "table": "start_app.shares",
+      "rows": 0
+    },
+    {
+      "table": "start_app.submissions",
+      "rows": 0
+    }
+  ],
+  "mediaFiles": 1,
+  "oldDatabasesUntouched": true
+}

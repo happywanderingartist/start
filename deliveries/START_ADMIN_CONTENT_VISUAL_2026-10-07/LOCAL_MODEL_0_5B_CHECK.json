@@ -1,0 +1,142 @@
+[
+  {
+    "label": "济南",
+    "ms": 3214,
+    "items": [
+      {
+        "name": "李清照纪念堂",
+        "city": "济南",
+        "citySource": "text",
+        "sourceSnippet": "李清照纪念堂",
+        "sourceStart": 11,
+        "sourceEnd": 17,
+        "reviewRequired": true,
+        "id": "candidate-0",
+        "duplicate": false
+      },
+      {
+        "name": "大明湖",
+        "city": "济南",
+        "citySource": "text",
+        "sourceSnippet": "大明湖",
+        "sourceStart": 18,
+        "sourceEnd": 21,
+        "reviewRequired": true,
+        "id": "candidate-1",
+        "duplicate": false
+      },
+      {
+        "name": "曲水亭街",
+        "city": "济南",
+        "citySource": "text",
+        "sourceSnippet": "曲水亭街",
+        "sourceStart": 22,
+        "sourceEnd": 26,
+        "reviewRequired": true,
+        "id": "candidate-2",
+        "duplicate": false
+      },
+      {
+        "name": "厚德泉",
+        "city": "济南",
+        "citySource": "text",
+        "sourceSnippet": "厚德泉",
+        "sourceStart": 27,
+        "sourceEnd": 30,
+        "reviewRequired": true,
+        "id": "candidate-3",
+        "duplicate": false
+      },
+      {
+        "name": "不贵书店",
+        "city": "济南",
+        "citySource": "text",
+        "sourceSnippet": "不贵书店",
+        "sourceStart": 33,
+        "sourceEnd": 37,
+        "reviewRequired": true,
+        "id": "candidate-4",
+        "duplicate": false
+      }
+    ],
+    "rejected": 1,
+    "provider": "local-llama",
+    "model": "Qwen2.5-0.5B",
+    "publication": "candidate"
+  },
+  {
+    "label": "混合城市",
+    "ms": 969,
+    "items": [
+      {
+        "name": "外滩",
+        "city": "上海",
+        "citySource": "text",
+        "sourceSnippet": "外滩",
+        "sourceStart": 3,
+        "sourceEnd": 5,
+        "reviewRequired": true,
+        "id": "candidate-0",
+        "duplicate": false
+      },
+      {
+        "name": "夫子庙",
+        "city": "南京",
+        "citySource": "text",
+        "sourceSnippet": "夫子庙",
+        "sourceStart": 17,
+        "sourceEnd": 20,
+        "reviewRequired": true,
+        "id": "candidate-1",
+        "duplicate": false
+      },
+      {
+        "name": "三七八巷",
+        "city": "南京",
+        "citySource": "text",
+        "sourceSnippet": "三七八巷",
+        "sourceStart": 21,
+        "sourceEnd": 25,
+        "reviewRequired": true,
+        "id": "candidate-2",
+        "duplicate": false
+      }
+    ],
+    "rejected": 0,
+    "provider": "local-llama",
+    "model": "Qwen2.5-0.5B",
+    "publication": "candidate"
+  },
+  {
+    "label": "空",
+    "ms": 789,
+    "items": [
+      {
+        "name": "安溥",
+        "city": "上海",
+        "citySource": "text",
+        "sourceSnippet": "安溥",
+        "sourceStart": 3,
+        "sourceEnd": 5,
+        "reviewRequired": true,
+        "id": "candidate-0",
+        "duplicate": false
+      },
+      {
+        "name": "苏打绿",
+        "city": "上海",
+        "citySource": "text",
+        "sourceSnippet": "苏打绿",
+        "sourceStart": 6,
+        "sourceEnd": 9,
+        "reviewRequired": true,
+        "id": "candidate-1",
+        "duplicate": false
+      }
+    ],
+    "rejected": 0,
+    "provider": "local-llama",
+    "model": "Qwen2.5-0.5B",
+    "publication": "candidate"
+  }
+]

@@ -1,0 +1,5 @@
+// A separate, explicitly labelled visual prototype. Never changes original assets or adds an identity.
+const badge=document.createElement('aside');badge.setAttribute('aria-label','视觉原型');badge.innerHTML='<a>视觉原型 · 返回数据前台</a>';badge.querySelector('a').href=location.origin+'/app/#/me';Object.assign(badge.style,{position:'fixed',bottom:'78px',right:'12px',zIndex:'100',padding:'8px 12px',background:'#fbf3e8',border:'1px solid #d7beb0',borderRadius:'24px',font:'12px system-ui'});document.body.append(badge);
+function normalize(){document.querySelectorAll('#app a[href^="/"],#sheet a[href^="/"]').forEach(a=>{const path=a.getAttribute('href');a.href=location.origin+(path==='/'||path==='/community'?'/app/#'+path:'/app/legacy-me.html#'+path);});}
+const observer=new MutationObserver(normalize);observer.observe(document.body,{childList:true,subtree:true});normalize();
+document.addEventListener('click',e=>{const button=e.target.closest('[data-href]');if(button&&['/','/community'].includes(button.dataset.href)){e.preventDefault();e.stopImmediatePropagation();location.href='/app/#'+button.dataset.href;}},true);

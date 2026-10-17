@@ -1,0 +1,67 @@
+/* Apple Design + Hallmark audit: preserve brand; clarify hierarchy and content density. */
+#app .home{padding-top:40px;padding-bottom:56px}
+#app .home-brand{margin-bottom:54px}
+#app .home .recommend{margin-top:22px}
+#app .home .section-head h2{font-size:20px;line-height:1.3}
+#app .home .card-body h3{font-size:22px;line-height:1.23;letter-spacing:-.025em}
+#app .home .card-body{padding:12px 15px 8px}
+#app .home .cover{height:120px}
+#app .home .controls{margin-top:0}
+#app .home .place-directory{margin-top:14px}
+#app .layout-review h2{font-size:20px;line-height:1.3;letter-spacing:-.015em}
+#app .layout-review .category-rail{gap:6px;padding:10px 0}
+#app .layout-review .category-rail button{padding:8px 12px}
+#app .layout-review .review-place-row{grid-template-columns:56px minmax(0,1fr) 16px;gap:12px;padding:10px 0}
+#app .layout-review .place-image{height:56px;font:600 20px/1.3 system-ui;color:#3F241C}
+#app .layout-review .review-place-row strong{font-size:15px;font-weight:650}
+#app .layout-review .review-place-row small{font-size:12px;line-height:1.4}
+#app .community-review{padding-top:20px;padding-bottom:56px}
+#app .community-review>header h1{margin:0;line-height:1.2}
+#app .community-review .joined-summary{margin:16px 0 20px;padding-bottom:14px}
+#app .community-review .joined-summary .directory-heading{min-height:44px}
+#app .community-review .membership-group{margin-top:6px}
+#app .community-review .membership-row{font-size:14px;min-height:48px}
+#app .community-review .membership-empty{font-size:12px;margin:4px 0}
+#app .community-review .city-heading{margin-top:0;min-height:44px}
+#app .community-review #city-checkins .place-directory{margin-top:0}
+#app .community-review .review-tabs{padding-top:4px;padding-bottom:10px}
+#app .community-review .review-zone:not(.joined-summary){margin-top:24px}
+#app .community-review .event-preview{padding:16px}
+#app .community-review .event-preview h3{font-size:21px;line-height:1.3;margin:8px 0}
+#app .community-review .event-preview span{font-size:13px}
+#app .community-review .market-zone{padding:18px;background:#CBE5FE}
+#app .community-review .market-zone p{font-size:23px;margin:10px 0 14px}
+#app .community-review .market-items a{padding:14px 12px;min-height:70px}
+#app .community-review .market-items small{font-size:12px}
+#app .me-screen>.heading{margin-top:20px;margin-bottom:20px}
+#app .me-screen .profile-card{border-radius:16px}
+#app .me-screen .bottom-nav{margin-top:20px}
+@media(min-width:390px){#app .community-review .joined-summary{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);column-gap:18px}#app .community-review .joined-summary>.directory-heading{grid-column:1/-1}#app .community-review .membership-row{grid-template-columns:minmax(0,1fr) 12px;gap:6px}#app .community-review .membership-row>small{display:none}#app .community-review .membership-row>span:first-child{overflow-wrap:anywhere}}
+@media(min-width:768px){
+#app .home{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);column-gap:32px;max-width:1040px;padding:40px 32px 56px}
+#app .home>.home-brand,#app .home>.start-prompt,#app .home>.step-strip{grid-column:1/-1}
+#app .home>.home-brand{max-width:620px;width:100%;margin:0 auto 52px}
+#app .home>.recommend,#app .home>.place-directory{margin-top:30px;min-width:0}
+#app .home .recommend-card{flex-basis:86%}
+#app .home .cover{height:148px}
+#app .home .card-body h3{font-size:23px}
+#app .home .viewport{margin-right:0}
+#app .home .step-strip{margin-top:24px;max-width:700px;width:100%;justify-self:center}
+#app .community-review{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:0 28px;max-width:1040px;padding:32px 32px 56px}
+#app .community-review>header,#app .community-review>.joined-summary,#app .community-review>.city-heading,#app .community-review>.review-tabs{grid-column:1/-1}
+#app .community-review>#city-checkins{grid-column:1;grid-row:5/span 2;min-width:0;padding-top:14px}
+#app .community-review>#review-events{grid-column:2;grid-row:5;margin-top:14px}
+#app .community-review>#review-market{grid-column:2;grid-row:6;margin-top:20px;align-self:start}
+#app .community-review .joined-summary{padding-bottom:18px}
+#app .community-review .market-zone p{font-size:25px}
+}
+@media(prefers-reduced-motion:reduce){#app .layout-review *{scroll-behavior:auto;transition:none}}
+
+/* Locked independent PNG, uniform aspect ratio. Animate the container, never squash the image. */
+#app .home .home-companion{position:absolute;right:25px;bottom:calc(100% - 10px);width:88px;height:98px;display:block;overflow:visible;border:0;background:transparent;transform-origin:50% 90%;animation:companion-idle 4s var(--ease-out,cubic-bezier(.23,1,.32,1)) infinite}
+#app .home .home-companion img{position:static;display:block;width:100%;height:100%;max-width:100%;object-fit:contain;transform:none;mix-blend-mode:normal}
+#app .home .companion-pause{position:absolute;right:0;bottom:calc(100% - 4px);border:0;background:transparent;color:#3B7789;min-width:44px;min-height:44px;padding:0;font-size:14px}
+#app .home .home-companion[data-paused=true],#app .home .start-prompt:has(input:focus) .home-companion{animation-play-state:paused}
+@keyframes companion-idle{0%,100%{transform:translateY(0) rotate(-1deg)}50%{transform:translateY(-3px) rotate(1deg)}}
+@media(prefers-reduced-motion:reduce){#app .home .home-companion{animation:none}}
+

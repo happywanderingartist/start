@@ -1,0 +1,6 @@
+import fs from 'node:fs/promises';import path from 'node:path';import {fileURLToPath} from 'node:url';import {execFileSync} from 'node:child_process';import {Pool} from './src/runtime.mjs';
+const data=fileURLToPath(new URL('./data/pg/',import.meta.url)),bin=fileURLToPath(new URL('../../integration-runtime/postgresql-18.6/pgsql/bin/',import.meta.url));
+await fs.access(path.join(data,'PG_VERSION'));
+try{execFileSync(path.join(bin,'pg_ctl.exe'),['-D',data,'status'],{stdio:'ignore',windowsHide:true,timeout:10000});}catch{execFileSync(path.join(bin,'pg_ctl.exe'),['-D',data,'-l',fileURLToPath(new URL('./evidence/postgres.log',import.meta.url)),'-o','-h 127.0.0.1 -p 55435','-t','30','-w','start'],{stdio:'ignore',windowsHide:true,timeout:35000});}
+const pool=new Pool({host:'127.0.0.1',port:55435,user:'start_local',database:'postgres'});try{const actual=(await pool.query("SELECT current_setting('data_directory') AS dir")).rows[0].dir;if(path.resolve(actual)!==path.resolve(data))throw Error('Port belongs to a different database; no migration executed');if(!(await pool.query('SELECT 1 FROM pg_database WHERE datname=$1',['start_acceptance'])).rowCount)await pool.query('CREATE DATABASE start_acceptance');}finally{await pool.end();}
+await import('./server.mjs');

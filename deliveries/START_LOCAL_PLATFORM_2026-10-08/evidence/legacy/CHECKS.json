@@ -1,0 +1,132 @@
+{
+  "samples": [
+    {
+      "width": 320,
+      "route": "home.html"
+    },
+    {
+      "width": 320,
+      "route": "home.html#/community"
+    },
+    {
+      "width": 320,
+      "route": "home.html#/me"
+    },
+    {
+      "width": 320,
+      "route": "choose-doll.html"
+    },
+    {
+      "width": 320,
+      "route": "home.html#/me/doll"
+    },
+    {
+      "width": 390,
+      "route": "home.html"
+    },
+    {
+      "width": 390,
+      "route": "home.html#/community"
+    },
+    {
+      "width": 390,
+      "route": "home.html#/me"
+    },
+    {
+      "width": 390,
+      "route": "choose-doll.html"
+    },
+    {
+      "width": 390,
+      "route": "home.html#/me/doll"
+    },
+    {
+      "width": 414,
+      "route": "home.html"
+    },
+    {
+      "width": 414,
+      "route": "home.html#/community"
+    },
+    {
+      "width": 414,
+      "route": "home.html#/me"
+    },
+    {
+      "width": 414,
+      "route": "choose-doll.html"
+    },
+    {
+      "width": 414,
+      "route": "home.html#/me/doll"
+    },
+    {
+      "width": 768,
+      "route": "home.html"
+    },
+    {
+      "width": 768,
+      "route": "home.html#/community"
+    },
+    {
+      "width": 768,
+      "route": "home.html#/me"
+    },
+    {
+      "width": 768,
+      "route": "choose-doll.html"
+    },
+    {
+      "width": 768,
+      "route": "home.html#/me/doll"
+    },
+    {
+      "width": 1024,
+      "route": "home.html"
+    },
+    {
+      "width": 1024,
+      "route": "home.html#/community"
+    },
+    {
+      "width": 1024,
+      "route": "home.html#/me"
+    },
+    {
+      "width": 1024,
+      "route": "choose-doll.html"
+    },
+    {
+      "width": 1024,
+      "route": "home.html#/me/doll"
+    },
+    {
+      "width": 1280,
+      "route": "home.html"
+    },
+    {
+      "width": 1280,
+      "route": "home.html#/community"
+    },
+    {
+      "width": 1280,
+      "route": "home.html#/me"
+    },
+    {
+      "width": 1280,
+      "route": "choose-doll.html"
+    },
+    {
+      "width": 1280,
+      "route": "home.html#/me/doll"
+    }
+  ],
+  "errors": [],
+  "checks": [
+    "home no market shortcut",
+    "list filter",
+    "Community to market",
+    "no daily character switch",
+    "first-choice preview"
+  ]
+}

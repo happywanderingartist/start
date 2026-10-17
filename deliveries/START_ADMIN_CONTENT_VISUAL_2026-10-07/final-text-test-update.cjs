@@ -1,0 +1,2 @@
+const fs=require('node:fs');let s=fs.readFileSync('verify-text-live.cjs','utf8');s=s.replace("await f.locator('#review-title').scrollIntoViewIfNeeded();","await page.frame({url:/text-import.html/}).evaluate(()=>document.querySelector('#review-title').scrollIntoView({block:'start'}));");fs.writeFileSync('verify-text-live.cjs',s);
+let check=fs.readFileSync('verify-local-model.mjs','utf8');check=check.replace("const cases=[", "const cases=[['未知城市','打卡趵突泉，再去大明湖。'],['重复名称','上海：星巴克。南京：星巴克。'],['原文关闭描述','济南：不贵书店已停业，具体开放信息请核对。'],");fs.writeFileSync('verify-local-model.mjs',check);

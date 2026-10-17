@@ -1,0 +1,1 @@
+{"name":"start-local-acceptance","private":true,"type":"module","scripts":{"start":"node boot.mjs","test":"node acceptance.mjs"}}

@@ -1,0 +1,2 @@
+const {chromium}=require('C:/Users/15049/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright');
+(async()=>{const b=await chromium.launch({channel:'msedge',headless:true});try{const p=await b.newPage();await p.goto('http://127.0.0.1:4327/#route');if(await p.locator('[data-action="text-import"]').count()!==1)throw Error('Approved route text-import entry is missing');}finally{await b.close();}})().catch(e=>{console.error(e.message);process.exitCode=1;});

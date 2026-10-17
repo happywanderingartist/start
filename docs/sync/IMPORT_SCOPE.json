@@ -1,0 +1,297 @@
+{
+  "at": "2026-10-17T07:32:38.976Z",
+  "repository": "happywanderingartist/start",
+  "base": "b22e26ba2b022d5d8e48dd9c590a20998100e79c",
+  "currentDirectories": [
+    "START_LOCAL_PLATFORM_2026-10-08",
+    "START_ACCOUNT_FOUNDATION_2026-10-05",
+    "START_FINAL_LAYOUT_REVIEW_2026-10-06",
+    "START_ADMIN_CONTENT_VISUAL_2026-10-07",
+    "START_AMAP_INTEGRATION_2026-10-07",
+    "START_ROUTE_INTAKE_2026-10-07"
+  ],
+  "helperScripts": [
+    "deliveries/adapt-doll-v6.mjs",
+    "deliveries/build-doll-arc-v4.mjs",
+    "deliveries/build-doll-card-v5.mjs",
+    "deliveries/build-doll-implementation.mjs",
+    "deliveries/build-doll-scene-v6.mjs",
+    "deliveries/build-me-implementation.mjs",
+    "deliveries/build-me-v4.mjs",
+    "deliveries/check-community-joined-regression.mjs",
+    "deliveries/check-final-layout.mjs",
+    "deliveries/check-home-doll.mjs",
+    "deliveries/check-home-integration.mjs",
+    "deliveries/close-doll-v6.mjs",
+    "deliveries/close-me-implementation.mjs",
+    "deliveries/doll-person-preview.mjs",
+    "deliveries/doll-state-test-first.mjs",
+    "deliveries/draw-final-layout.cjs",
+    "deliveries/extend-doll-v3.mjs",
+    "deliveries/fix-doll-pointer.mjs",
+    "deliveries/fix-me-long-data.mjs",
+    "deliveries/integrate-home.cjs",
+    "deliveries/me-safe-area.mjs",
+    "deliveries/prepare-doll-tests.mjs",
+    "deliveries/record-me-v4.mjs",
+    "deliveries/refine-me-validation.mjs",
+    "deliveries/revise-me-v2.mjs",
+    "deliveries/revise-palette-v2.mjs",
+    "deliveries/update-me-assertions.mjs",
+    "deliveries/wire-me.mjs"
+  ],
+  "previousTrackedFiles": 497,
+  "copiedSourceFiles": 574,
+  "skipped": [
+    {
+      "path": "deliveries/START_LOCAL_PLATFORM_2026-10-08/data",
+      "reason": "runtime/private/cache/archive excluded"
+    },
+    {
+      "path": "deliveries/START_LOCAL_PLATFORM_2026-10-08/evidence/acceptance-backup.log",
+      "reason": "runtime/private/cache/archive excluded"
+    },
+    {
+      "path": "deliveries/START_LOCAL_PLATFORM_2026-10-08/evidence/acceptance-book-browser.log",
+      "reason": "runtime/private/cache/archive excluded"
+    },
+    {
+      "path": "deliveries/START_LOCAL_PLATFORM_2026-10-08/evidence/acceptance-browser.log",
+      "reason": "runtime/private/cache/archive excluded"
+    },
+    {
+      "path": "deliveries/START_LOCAL_PLATFORM_2026-10-08/evidence/acceptance-community-browser.log",
+      "reason": "runtime/private/cache/archive excluded"
+    },
+    {
+      "path": "deliveries/START_LOCAL_PLATFORM_2026-10-08/evidence/acceptance-existing-integrations.log",
+      "reason": "runtime/private/cache/archive excluded"
+    },
+    {
+      "path": "deliveries/START_LOCAL_PLATFORM_2026-10-08/evidence/acceptance-legacy.log",
+      "reason": "runtime/private/cache/archive excluded"
+    },
+    {
+      "path": "deliveries/START_LOCAL_PLATFORM_2026-10-08/evidence/acceptance-local-smoke.log",
+      "reason": "runtime/private/cache/archive excluded"
+    },
+    {
+      "path": "deliveries/START_LOCAL_PLATFORM_2026-10-08/evidence/acceptance-market-browser.log",
+      "reason": "runtime/private/cache/archive excluded"
+    },
+    {
+      "path": "deliveries/START_LOCAL_PLATFORM_2026-10-08/evidence/acceptance-platform.log",
+      "reason": "runtime/private/cache/archive excluded"
+    },
+    {
+      "path": "deliveries/START_LOCAL_PLATFORM_2026-10-08/evidence/acceptance-private-browser.log",
+      "reason": "runtime/private/cache/archive excluded"
+    },
+    {
+      "path": "deliveries/START_LOCAL_PLATFORM_2026-10-08/evidence/acceptance-public-browser.log",
+      "reason": "runtime/private/cache/archive excluded"
+    },
+    {
+      "path": "deliveries/START_LOCAL_PLATFORM_2026-10-08/evidence/acceptance-public-live-preview.log",
+      "reason": "runtime/private/cache/archive excluded"
+    },
+    {
+      "path": "deliveries/START_LOCAL_PLATFORM_2026-10-08/evidence/additional-green.log",
+      "reason": "runtime/private/cache/archive excluded"
+    },
+    {
+      "path": "deliveries/START_LOCAL_PLATFORM_2026-10-08/evidence/additional-red.log",
+      "reason": "runtime/private/cache/archive excluded"
+    },
+    {
+      "path": "deliveries/START_LOCAL_PLATFORM_2026-10-08/evidence/admin-review-media-red.log",
+      "reason": "runtime/private/cache/archive excluded"
+    },
+    {
+      "path": "deliveries/START_LOCAL_PLATFORM_2026-10-08/evidence/all-tests.log",
+      "reason": "runtime/private/cache/archive excluded"
+    },
+    {
+      "path": "deliveries/START_LOCAL_PLATFORM_2026-10-08/evidence/backup-acceptance.log",
+      "reason": "runtime/private/cache/archive excluded"
+    },
+    {
+      "path": "deliveries/START_LOCAL_PLATFORM_2026-10-08/evidence/backups/start_test_restore_0da7c9b110aa4d139ade9653c9b3d9d4/database.dump",
+      "reason": "runtime/private/cache/archive excluded"
+    },
+    {
+      "path": "deliveries/START_LOCAL_PLATFORM_2026-10-08/evidence/backups/start_test_restore_1a7d3985183b46f7a682cb966b24521e/database.dump",
+      "reason": "runtime/private/cache/archive excluded"
+    },
+    {
+      "path": "deliveries/START_LOCAL_PLATFORM_2026-10-08/evidence/backups/start_test_restore_2c9f982157a1486c80ec95209ffd48c4/database.dump",
+      "reason": "runtime/private/cache/archive excluded"
+    },
+    {
+      "path": "deliveries/START_LOCAL_PLATFORM_2026-10-08/evidence/backups/start_test_restore_35538e01b78b4d0d92504e2300b89436/database.dump",
+      "reason": "runtime/private/cache/archive excluded"
+    },
+    {
+      "path": "deliveries/START_LOCAL_PLATFORM_2026-10-08/evidence/backups/start_test_restore_3a62543b6b434863a6420a148fbfa4cc/database.dump",
+      "reason": "runtime/private/cache/archive excluded"
+    },
+    {
+      "path": "deliveries/START_LOCAL_PLATFORM_2026-10-08/evidence/backups/start_test_restore_3fb5bb2166d84ffeb2843a6128022b4c/database.dump",
+      "reason": "runtime/private/cache/archive excluded"
+    },
+    {
+      "path": "deliveries/START_LOCAL_PLATFORM_2026-10-08/evidence/backups/start_test_restore_52c35d380bbd452d9b11def6403bf944/database.dump",
+      "reason": "runtime/private/cache/archive excluded"
+    },
+    {
+      "path": "deliveries/START_LOCAL_PLATFORM_2026-10-08/evidence/backups/start_test_restore_6985691e0de94302a37fa15d939694c7/database.dump",
+      "reason": "runtime/private/cache/archive excluded"
+    },
+    {
+      "path": "deliveries/START_LOCAL_PLATFORM_2026-10-08/evidence/backups/start_test_restore_6cd59d765b1748da92d0da717bd4ee11/database.dump",
+      "reason": "runtime/private/cache/archive excluded"
+    },
+    {
+      "path": "deliveries/START_LOCAL_PLATFORM_2026-10-08/evidence/backups/start_test_restore_89e7d56203f74b1da6fc7989683995e2/database.dump",
+      "reason": "runtime/private/cache/archive excluded"
+    },
+    {
+      "path": "deliveries/START_LOCAL_PLATFORM_2026-10-08/evidence/backups/start_test_restore_ad03eb03126c4149872c477710415492/database.dump",
+      "reason": "runtime/private/cache/archive excluded"
+    },
+    {
+      "path": "deliveries/START_LOCAL_PLATFORM_2026-10-08/evidence/backups/start_test_restore_b7ceedc781e54758a0a901fcb0c3f0cb/database.dump",
+      "reason": "runtime/private/cache/archive excluded"
+    },
+    {
+      "path": "deliveries/START_LOCAL_PLATFORM_2026-10-08/evidence/backups/start_test_restore_ca7a4f18a9044184853ec31649932c7d/database.dump",
+      "reason": "runtime/private/cache/archive excluded"
+    },
+    {
+      "path": "deliveries/START_LOCAL_PLATFORM_2026-10-08/evidence/backups/start_test_restore_cb0bca8635c04901a14879acc7ee267f/database.dump",
+      "reason": "runtime/private/cache/archive excluded"
+    },
+    {
+      "path": "deliveries/START_LOCAL_PLATFORM_2026-10-08/evidence/backups/start_test_restore_dab4217fd44149b5b96d47904a40cea3/database.dump",
+      "reason": "runtime/private/cache/archive excluded"
+    },
+    {
+      "path": "deliveries/START_LOCAL_PLATFORM_2026-10-08/evidence/backups/start_test_restore_dc84d776b5f542ada4cb3cd5ba476c30/database.dump",
+      "reason": "runtime/private/cache/archive excluded"
+    },
+    {
+      "path": "deliveries/START_LOCAL_PLATFORM_2026-10-08/evidence/backups/start_test_restore_e3b474aec2eb4747a5e561fedd0f56a5/database.dump",
+      "reason": "runtime/private/cache/archive excluded"
+    },
+    {
+      "path": "deliveries/START_LOCAL_PLATFORM_2026-10-08/evidence/binding-red.log",
+      "reason": "runtime/private/cache/archive excluded"
+    },
+    {
+      "path": "deliveries/START_LOCAL_PLATFORM_2026-10-08/evidence/browser-acceptance.log",
+      "reason": "runtime/private/cache/archive excluded"
+    },
+    {
+      "path": "deliveries/START_LOCAL_PLATFORM_2026-10-08/evidence/browser-media-red.log",
+      "reason": "runtime/private/cache/archive excluded"
+    },
+    {
+      "path": "deliveries/START_LOCAL_PLATFORM_2026-10-08/evidence/existing-integrations.log",
+      "reason": "runtime/private/cache/archive excluded"
+    },
+    {
+      "path": "deliveries/START_LOCAL_PLATFORM_2026-10-08/evidence/http-media-green.log",
+      "reason": "runtime/private/cache/archive excluded"
+    },
+    {
+      "path": "deliveries/START_LOCAL_PLATFORM_2026-10-08/evidence/http-media-red.log",
+      "reason": "runtime/private/cache/archive excluded"
+    },
+    {
+      "path": "deliveries/START_LOCAL_PLATFORM_2026-10-08/evidence/import-green.log",
+      "reason": "runtime/private/cache/archive excluded"
+    },
+    {
+      "path": "deliveries/START_LOCAL_PLATFORM_2026-10-08/evidence/import-red.log",
+      "reason": "runtime/private/cache/archive excluded"
+    },
+    {
+      "path": "deliveries/START_LOCAL_PLATFORM_2026-10-08/evidence/initdb.log",
+      "reason": "runtime/private/cache/archive excluded"
+    },
+    {
+      "path": "deliveries/START_LOCAL_PLATFORM_2026-10-08/evidence/legacy-acceptance.log",
+      "reason": "runtime/private/cache/archive excluded"
+    },
+    {
+      "path": "deliveries/START_LOCAL_PLATFORM_2026-10-08/evidence/local-smoke.log",
+      "reason": "runtime/private/cache/archive excluded"
+    },
+    {
+      "path": "deliveries/START_LOCAL_PLATFORM_2026-10-08/evidence/media-revoke-green.log",
+      "reason": "runtime/private/cache/archive excluded"
+    },
+    {
+      "path": "deliveries/START_LOCAL_PLATFORM_2026-10-08/evidence/media-revoke-red.log",
+      "reason": "runtime/private/cache/archive excluded"
+    },
+    {
+      "path": "deliveries/START_LOCAL_PLATFORM_2026-10-08/evidence/platform-green.log",
+      "reason": "runtime/private/cache/archive excluded"
+    },
+    {
+      "path": "deliveries/START_LOCAL_PLATFORM_2026-10-08/evidence/platform-red.log",
+      "reason": "runtime/private/cache/archive excluded"
+    },
+    {
+      "path": "deliveries/START_LOCAL_PLATFORM_2026-10-08/evidence/postgres.log",
+      "reason": "runtime/private/cache/archive excluded"
+    },
+    {
+      "path": "deliveries/START_LOCAL_PLATFORM_2026-10-08/evidence/review-red.log",
+      "reason": "runtime/private/cache/archive excluded"
+    },
+    {
+      "path": "deliveries/START_LOCAL_PLATFORM_2026-10-08/evidence/routes-red.log",
+      "reason": "runtime/private/cache/archive excluded"
+    },
+    {
+      "path": "deliveries/START_LOCAL_PLATFORM_2026-10-08/evidence/share-photo-red.log",
+      "reason": "runtime/private/cache/archive excluded"
+    },
+    {
+      "path": "deliveries/START_FINAL_LAYOUT_REVIEW_2026-10-06/backend-readiness-evidence",
+      "reason": "runtime/private/cache/archive excluded"
+    },
+    {
+      "path": "deliveries/START_FINAL_LAYOUT_REVIEW_2026-10-06/login-review",
+      "reason": "runtime/private/cache/archive excluded"
+    },
+    {
+      "path": "deliveries/START_ADMIN_CONTENT_VISUAL_2026-10-07/local-extractor",
+      "reason": "runtime/private/cache/archive excluded"
+    },
+    {
+      "path": "deliveries/START_ADMIN_CONTENT_VISUAL_2026-10-07/server.stderr.log",
+      "reason": "runtime/private/cache/archive excluded"
+    },
+    {
+      "path": "deliveries/START_ADMIN_CONTENT_VISUAL_2026-10-07/server.stdout.log",
+      "reason": "runtime/private/cache/archive excluded"
+    },
+    {
+      "path": "deliveries/START_AMAP_INTEGRATION_2026-10-07/server-error.log",
+      "reason": "runtime/private/cache/archive excluded"
+    },
+    {
+      "path": "deliveries/START_AMAP_INTEGRATION_2026-10-07/server.log",
+      "reason": "runtime/private/cache/archive excluded"
+    },
+    {
+      "path": "deliveries/START_AMAP_INTEGRATION_2026-10-07/server.stderr.log",
+      "reason": "runtime/private/cache/archive excluded"
+    }
+  ],
+  "rawArchiveTag": "start-handoff-2026-10-17",
+  "preservedOldCode": "archive/pre-platform-import-2026-10-17 and previous history/backup branches"
+}

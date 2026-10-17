@@ -1,0 +1,19 @@
+{
+  "source": "../START_ARTIST_DISCOVERY_VISUAL_2026-10-07/design.css:2",
+  "font": "system sans",
+  "framework": "vanilla isolated visual artifact",
+  "colors": {
+    "paper": "#FBF3E8",
+    "ink": "#3F241C",
+    "coffee": "#702720",
+    "ice": "#CBE5FE",
+    "blue": "#3B7789",
+    "orange": "#F24E07",
+    "linen": "#EAE5DA"
+  },
+  "motion": "press response and reduced motion",
+  "spacing": "4/8px multiples",
+  "preserve": "logo, combined palette, Apple Music hierarchy",
+  "mapPicker": "search first; real AMap map/POI; shared selection; candidate draft only; no artist inference",
+  "validation": "42 base view checks; 7 picker widths; actual desktop/mobile map screenshots; error and keyboard cases"
+}

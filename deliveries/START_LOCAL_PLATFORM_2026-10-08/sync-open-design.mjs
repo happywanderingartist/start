@@ -1,0 +1,9 @@
+import fs from 'node:fs/promises';import path from 'node:path';import assert from 'node:assert/strict';
+const projectId='23d86b85-b67b-42f0-8b1b-d7c118a9d81c',origin='http://127.0.0.1:53625';
+const r=await fetch(origin+'/api/projects/'+projectId,{signal:AbortSignal.timeout(5000)});assert.ok(r.ok,'Open Design project unavailable');const project=await r.json();
+const expected='D:\\AI-Data\\Data\\OpenDesign\\namespaces\\release-stable-win\\data\\projects\\'+projectId;
+// Verify the actual project directory before creating a new independent evidence folder.
+const root=project.resolvedDir??project.project?.resolvedDir;assert.equal(path.resolve(root),path.resolve(expected));const target=path.join(root,'local-acceptance-2026-10-08');await fs.mkdir(target,{recursive:true});
+await fs.copyFile(new URL('./evidence/ADMIN_LOCAL_390.png',import.meta.url),path.join(target,'ADMIN_LOCAL_390.png'));
+const html='<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>START 本地验收</title><style>body{margin:24px;background:#fbf3e8;color:#3f241c;font:16px system-ui;line-height:1.6}a{color:#3b7789}img{width:390px;max-width:100%;height:auto}iframe{width:100%;height:850px;border:1px solid #eae5da}</style><h1>START 本地验收</h1><p>沿用已确认后台布局。以下截图来自自动化测试专用数据库；测试身份不代表微信登录。在线后台未配置真实身份时只读，不提供个人写入。</p><p><a href="http://127.0.0.1:4330/admin/" target="_blank" rel="noopener">打开本地后台</a> · <a href="http://127.0.0.1:4330/api/status" target="_blank" rel="noopener">查看连接状态</a></p><img src="ADMIN_LOCAL_390.png" alt="390像素宽的后台地点编辑验收截图"><h2>本机后台</h2><iframe src="http://127.0.0.1:4330/admin/" title="本机后台，只读等待登录配置"></iframe></html>';
+await fs.writeFile(path.join(target,'index.html'),html);console.log(origin+'/api/projects/'+projectId+'/raw/local-acceptance-2026-10-08/index.html');

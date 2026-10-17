@@ -1,0 +1,33 @@
+{
+  "at": "2026-10-17T06:11:28.489Z",
+  "fixtureTransportOnly": true,
+  "realIdentity": false,
+  "checks": [
+    "publish binds artist from joined community",
+    "edit preserves draft on failure and updates on success",
+    "publisher controls listing status",
+    "comments escape content and support deletion",
+    "request cannot be submitted twice",
+    "accept and withdraw state feedback",
+    {
+      "width": 320
+    },
+    {
+      "width": 375
+    },
+    {
+      "width": 390
+    },
+    {
+      "width": 414
+    },
+    {
+      "width": 768
+    },
+    {
+      "width": 834
+    },
+    "unconfigured login disables writes"
+  ],
+  "errors": []
+}

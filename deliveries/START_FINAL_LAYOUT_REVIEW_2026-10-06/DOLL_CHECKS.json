@@ -1,0 +1,14 @@
+{
+  "errors": [],
+  "checks": [
+    "preserved aspect ratio",
+    "motion changes transform",
+    "pause and resume",
+    "reduced motion",
+    "five boy outfits selectable and saved",
+    "saved outfit restored",
+    "four expressions",
+    "accessories hidden",
+    "home role restored"
+  ]
+}

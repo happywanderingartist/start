@@ -1,0 +1,153 @@
+{
+  "database": "start_test_browser_699c36415a5841d79d186edccaeee441",
+  "testIdentitiesOnly": true,
+  "noRealWechat": true,
+  "checks": [
+    "approved editor persists to PostgreSQL and reloads",
+    "publish changes unified public query",
+    "browser decodes and normalizes uploaded image to validated PNG",
+    "private cover survives save and reload without becoming public",
+    "empty review view usable",
+    {
+      "width": 320,
+      "view": "library"
+    },
+    {
+      "width": 320,
+      "view": "place"
+    },
+    {
+      "width": 320,
+      "view": "route"
+    },
+    {
+      "width": 320,
+      "view": "event"
+    },
+    {
+      "width": 320,
+      "view": "media"
+    },
+    {
+      "width": 375,
+      "view": "library"
+    },
+    {
+      "width": 375,
+      "view": "place"
+    },
+    {
+      "width": 375,
+      "view": "route"
+    },
+    {
+      "width": 375,
+      "view": "event"
+    },
+    {
+      "width": 375,
+      "view": "media"
+    },
+    {
+      "width": 390,
+      "view": "library"
+    },
+    {
+      "width": 390,
+      "view": "place"
+    },
+    {
+      "width": 390,
+      "view": "route"
+    },
+    {
+      "width": 390,
+      "view": "event"
+    },
+    {
+      "width": 390,
+      "view": "media"
+    },
+    {
+      "width": 414,
+      "view": "library"
+    },
+    {
+      "width": 414,
+      "view": "place"
+    },
+    {
+      "width": 414,
+      "view": "route"
+    },
+    {
+      "width": 414,
+      "view": "event"
+    },
+    {
+      "width": 414,
+      "view": "media"
+    },
+    {
+      "width": 768,
+      "view": "library"
+    },
+    {
+      "width": 768,
+      "view": "place"
+    },
+    {
+      "width": 768,
+      "view": "route"
+    },
+    {
+      "width": 768,
+      "view": "event"
+    },
+    {
+      "width": 768,
+      "view": "media"
+    },
+    {
+      "width": 834,
+      "view": "library"
+    },
+    {
+      "width": 834,
+      "view": "place"
+    },
+    {
+      "width": 834,
+      "view": "route"
+    },
+    {
+      "width": 834,
+      "view": "event"
+    },
+    {
+      "width": 834,
+      "view": "media"
+    },
+    {
+      "width": 1440,
+      "view": "library"
+    },
+    {
+      "width": 1440,
+      "view": "place"
+    },
+    {
+      "width": 1440,
+      "view": "route"
+    },
+    {
+      "width": 1440,
+      "view": "event"
+    },
+    {
+      "width": 1440,
+      "view": "media"
+    }
+  ],
+  "errors": []
+}

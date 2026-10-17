@@ -1,0 +1,21 @@
+{
+  "database": "start_test_client_47a537ad354e4e2694f7ea85ec67b82c",
+  "testIdentityOnly": true,
+  "realWechat": false,
+  "steps": [
+    "private submission",
+    "approval notification",
+    "artist city category list",
+    "multi-view point relation",
+    "independent route",
+    "event venue",
+    "community membership",
+    "market binding",
+    "public listing comment and delete",
+    "private Book",
+    "selected share revoke",
+    "single doll outfit persistence",
+    "publisher controlled listing"
+  ],
+  "passed": true
+}

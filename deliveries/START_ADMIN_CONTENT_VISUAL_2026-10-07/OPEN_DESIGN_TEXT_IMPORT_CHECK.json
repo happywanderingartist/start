@@ -1,0 +1,12 @@
+{
+  "url": "http://127.0.0.1:53625/api/projects/23d86b85-b67b-42f0-8b1b-d7c118a9d81c/raw/admin-content-visual-v1/index.html",
+  "openDesignFilePreview": true,
+  "nativeDesktopCanvas": false,
+  "realLocalModel": true,
+  "realAMap": true,
+  "sourceHashMatches": true,
+  "reusedPoiRetainsSeparateEvidence": true,
+  "undoLatestPreservesOldImport": true,
+  "visibleContributionSource": true,
+  "pageErrors": []
+}

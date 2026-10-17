@@ -1,0 +1,7 @@
+{
+  "failureMessage": "地点查询失败，请重新搜索。",
+  "recovered": "高德地点查询结果 · 暂未关联艺人打卡",
+  "keyboardSearch": true,
+  "reducedMotion": true,
+  "navigationHost": "uri.amap.com"
+}

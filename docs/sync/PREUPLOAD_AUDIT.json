@@ -1,0 +1,14 @@
+{
+  "at": "2026-10-17T07:33:47.397Z",
+  "files": 545,
+  "bytes": 53156174,
+  "geminiLimitBytes": 104857600,
+  "underGeminiLimit": true,
+  "leakPaths": [],
+  "forbiddenPaths": [],
+  "largeFiles": [],
+  "sourceMismatch": [],
+  "liveImportFailures": [],
+  "historicalScriptMissingImports": [],
+  "secretsPrinted": false
+}

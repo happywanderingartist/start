@@ -1,0 +1,17 @@
+{
+  "at": "2026-10-17T06:11:52.177Z",
+  "allAcceptanceGroupsPassed": false,
+  "acceptanceGroups": 12,
+  "passedGroups": 11,
+  "failedGroups": [
+    "local-smoke"
+  ],
+  "evidence": "ACCEPTANCE_RUN.json",
+  "publicFrontendWired": true,
+  "allFrontendWired": false,
+  "deviceAcceptance": false,
+  "realWechat": false,
+  "realGps": false,
+  "cloudConnected": false,
+  "review": "Scoped local stability review; browser fixture identities are test-only, not production acceptance"
+}

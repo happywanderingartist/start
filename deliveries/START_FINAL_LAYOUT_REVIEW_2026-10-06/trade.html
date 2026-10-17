@@ -1,0 +1,2150 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="color-scheme" content="light">
+<title>START · Discovery 原型</title>
+<style>/* OD-LAYOUT-PRIMITIVES v1 — structure only: display, flex/grid, overflow, wrapping, ratio.
+   Put this @layer first; product CSS outside the layer always wins. */
+@layer od-layout {
+  :where(.od-stack,.od-row,.od-row-top,.od-cluster,.od-grid,.od-field,.od-stat,.od-cell,.od-tile) > :where(*) { min-width: 0; }
+
+  /* containers */
+  .od-stack   { display: flex; flex-direction: column; gap: var(--od-gap, 8px); }
+  .od-row     { display: flex; align-items: center; gap: var(--od-gap, 8px); }
+  .od-row-top { display: flex; align-items: flex-start; gap: var(--od-gap, 8px); }
+  .od-cluster { display: flex; flex-wrap: wrap; align-items: center; gap: var(--od-gap, 8px); }
+  .od-fill    { flex: 1 1 0; min-width: 0; }
+  .od-fixed   { flex: none; }
+  .od-grid    { display: grid; gap: var(--od-gap, 12px); grid-template-columns: repeat(var(--od-cols, 3), minmax(0, 1fr)); }
+
+  /* stacked information: each piece is its own line — never sibling inline spans */
+  .od-stat, .od-field, .od-cell { display: grid; gap: var(--od-gap, 2px); }
+  :where(.od-stat,.od-field,.od-cell) > :where(*) { display: block; }
+  .od-tile { display: grid; grid-template-rows: auto 1fr; }
+  :where(.od-tile) > :where(*) { display: block; }
+
+  /* media keeps its intrinsic ratio by default; never a distorted or cropped
+     cover by accident. height:auto lets the ratio win over an <img height="…">
+     attribute. Cropping to a uniform box is an explicit opt-in: set --od-ratio
+     AND add .od-media-cover together (per the core rule, only where a crop is
+     deliberate — tile thumbs, decorative fills — never on full-frame content). */
+  .od-media { display: block; width: 100%; height: auto; aspect-ratio: var(--od-ratio, auto); }
+  .od-media-cover { object-fit: cover; }
+
+  /* data text only — authored copy is rewritten to its budget instead */
+  .od-truncate { display: block; max-width: 100%; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+  .od-clamp-2, .od-clamp-3 { display: -webkit-box; -webkit-box-orient: vertical; overflow: hidden; overflow-wrap: anywhere; }
+  .od-clamp-2 { -webkit-line-clamp: 2; }
+  .od-clamp-3 { -webkit-line-clamp: 3; }
+  .od-lines-2 { min-height: calc(2 * 1.4em); }   /* block-level reservation for a shared baseline */
+  .od-nowrap  { white-space: nowrap; }           /* 数字+单位 · 价格+起 · 日期+星期 */
+  .od-keep    { word-break: keep-all; overflow-wrap: anywhere; } /* CJK labels break at spaces / <wbr> first */
+
+  /* screen skeleton (optional): bars take their own space, the middle scrolls — no padding guessed for chrome */
+  .od-screen { display: grid; grid-template-rows: auto minmax(0, 1fr) auto; height: 100%; }
+  .od-scroll { overflow-y: auto; overscroll-behavior: contain; min-height: 0; }
+
+  /* horizontal rail: the next item peeks at the edge; trailing room survives overflow */
+  .od-rail { display: flex; gap: var(--od-gap, 8px); overflow-x: auto; scroll-snap-type: x proximity; scrollbar-width: none;
+             padding-inline: var(--od-rail-pad, 16px); scroll-padding-inline: var(--od-rail-pad, 16px); }
+  .od-rail::-webkit-scrollbar { display: none; }
+  :where(.od-rail) > :where(*) { flex: none; scroll-snap-align: start; }
+  :where(.od-rail) > :where(:last-child) { margin-inline-end: var(--od-rail-pad, 16px); }
+
+  .od-spacer { flex: none; visibility: hidden; pointer-events: none; }
+  .od-touch  { min-width: 44px; min-height: 44px; }
+}
+/* /OD-LAYOUT-PRIMITIVES v1 */
+</style>
+<link rel="stylesheet" href="./tokens.css">
+<link rel="stylesheet" href="./style.css">
+<link rel="stylesheet" href="./journey.css"><link rel="stylesheet" href="./memory.css"><link rel="stylesheet" href="./ticket-approved.css"><script defer src="./memory-state.js"></script><script defer src="./memory-views.js"></script><script defer src="./journey-state.js"></script><script defer src="./journey-views.js"></script><link rel="stylesheet" href="./community.css"><script defer src="./community-templates.js"></script><script defer src="./community-views.js"></script><link rel="stylesheet" href="./trade.css"><script defer src="./trade-templates.js"></script><script defer src="./trade-views.js"></script><script defer src="./doll-state.js"></script><script defer src="./doll-views.js"></script><script defer src="./me-state.js"></script><script defer src="./me-templates.js"></script><script defer src="./me-views.js"></script><script defer src="./app.js"></script>
+</head>
+<body data-design-route="/events/ongoing/trade">
+<div id="app"></div>
+<dialog id="sheet" aria-labelledby="sheet-title"></dialog>
+<p class="prototype-tag">交互原型 · 合成数据，不可用于真实导航</p>
+<script id="fixture-data" type="application/json">{
+  "notice": "私有灰阶原型 · 全部合成示例，不是真实艺人足迹或正式 API",
+  "provenance": "tests/fixtures/catalog.ts + independent synthetic layout pressure data; never seed production",
+  "hub": {
+    "identity": {
+      "id": "10000000-0000-4000-8000-000000000001",
+      "canonicalName": "苏打绿",
+      "artistType": "band",
+      "verification": "verified"
+    },
+    "primaryMedia": null,
+    "footprintCities": [
+      {
+        "city": {
+          "id": "10000000-0000-4000-8000-000000000010",
+          "name": "台北",
+          "countryCode": "TW"
+        },
+        "context": "footprint",
+        "placeCount": 5,
+        "relations": [
+          {
+            "id": "10000000-0000-4000-8000-000000000030",
+            "verification": "unverified"
+          }
+        ]
+      },
+      {
+        "city": {
+          "id": "10000000-0000-4000-8000-000000000011",
+          "name": "南京",
+          "countryCode": "CN"
+        },
+        "context": "footprint",
+        "placeCount": 1,
+        "relations": [
+          {
+            "id": "20000000-0000-4000-8000-000000000035",
+            "verification": "unverified"
+          }
+        ]
+      }
+    ],
+    "eventCities": [],
+    "recommendedRoutes": [
+      {
+        "type": "route",
+        "id": "10000000-0000-4000-8000-000000000070",
+        "slug": "test-sodagreen-spring",
+        "revisionId": "10000000-0000-4000-8000-000000000071",
+        "revisionNumber": 1,
+        "title": "苏打绿 · 春日城市路线",
+        "hero": null,
+        "artist": {
+          "id": "10000000-0000-4000-8000-000000000001",
+          "canonicalName": "苏打绿",
+          "artistType": "band",
+          "verification": "verified"
+        },
+        "city": {
+          "id": "10000000-0000-4000-8000-000000000010",
+          "name": "台北",
+          "countryCode": "TW"
+        },
+        "relationSummary": "合成测试关联",
+        "whyWorthReplicating": "测试内容，不作为真实旅行建议",
+        "verificationSummary": "partial",
+        "stopCount": 5,
+        "metrics": {
+          "distanceMeters": null,
+          "transportSeconds": null,
+          "provider": null,
+          "computedAt": null,
+          "coordinateSystem": null
+        },
+        "matchedReasons": [
+          "synthetic fixture"
+        ]
+      },
+      {
+        "type": "route",
+        "id": "20000000-0000-4000-8000-000000000070",
+        "slug": "test-nanjing",
+        "revisionId": "20000000-0000-4000-8000-000000000071",
+        "revisionNumber": 1,
+        "title": "南京 · 城市声音散步",
+        "hero": null,
+        "artist": {
+          "id": "10000000-0000-4000-8000-000000000001",
+          "canonicalName": "苏打绿",
+          "artistType": "band",
+          "verification": "verified"
+        },
+        "city": {
+          "id": "10000000-0000-4000-8000-000000000011",
+          "name": "南京",
+          "countryCode": "CN"
+        },
+        "relationSummary": "合成测试关联",
+        "whyWorthReplicating": "测试内容，不作为真实旅行建议",
+        "verificationSummary": "partial",
+        "stopCount": 1,
+        "metrics": {
+          "distanceMeters": null,
+          "transportSeconds": null,
+          "provider": null,
+          "computedAt": null,
+          "coordinateSystem": null
+        },
+        "matchedReasons": [
+          "synthetic fixture"
+        ]
+      }
+    ],
+    "optionalEvents": [
+      {
+        "type": "event",
+        "id": "10000000-0000-4000-8000-000000000080",
+        "title": "[TEST]春日现场",
+        "artists": [
+          {
+            "id": "10000000-0000-4000-8000-000000000001",
+            "canonicalName": "苏打绿",
+            "artistType": "band",
+            "verification": "verified"
+          }
+        ],
+        "startsAt": "2026-12-01T10:00:00Z",
+        "endsAt": null,
+        "venue": {
+          "id": "10000000-0000-4000-8000-000000000020",
+          "name": "春日书店"
+        },
+        "city": {
+          "id": "10000000-0000-4000-8000-000000000010",
+          "name": "台北",
+          "countryCode": "TW"
+        },
+        "state": "cancelled",
+        "publication": "published",
+        "verification": "partial",
+        "hero": null,
+        "matchedReasons": [
+          "synthetic fixture"
+        ]
+      }
+    ],
+    "cityContext": null,
+    "requestId": "synthetic:wireframe:phase-a"
+  },
+  "route": {
+    "type": "route",
+    "id": "10000000-0000-4000-8000-000000000070",
+    "slug": "test-sodagreen-spring",
+    "revisionId": "10000000-0000-4000-8000-000000000071",
+    "revisionNumber": 1,
+    "title": "苏打绿 · 春日城市路线",
+    "hero": null,
+    "artist": {
+      "id": "10000000-0000-4000-8000-000000000001",
+      "canonicalName": "苏打绿",
+      "artistType": "band",
+      "verification": "verified"
+    },
+    "city": {
+      "id": "10000000-0000-4000-8000-000000000010",
+      "name": "台北",
+      "countryCode": "TW"
+    },
+    "relationSummary": "合成测试关联",
+    "whyWorthReplicating": "测试内容，不作为真实旅行建议",
+    "verificationSummary": "partial",
+    "stopCount": 5,
+    "metrics": {
+      "distanceMeters": null,
+      "transportSeconds": null,
+      "provider": null,
+      "computedAt": null,
+      "coordinateSystem": null
+    },
+    "matchedReasons": [
+      "synthetic fixture"
+    ],
+    "shortStory": "仅用于灰阶结构验证",
+    "summary": "私有示例",
+    "publishedAt": "2026-10-01T00:00:00Z",
+    "frozenAt": "2026-10-01T00:00:00Z",
+    "stops": [
+      {
+        "id": "10000000-0000-4000-8000-000000000072",
+        "placeId": "10000000-0000-4000-8000-000000000020",
+        "sequence": 1,
+        "name": "春日书店",
+        "address": "测试地址",
+        "coordinates": null,
+        "note": "示例站点",
+        "stayMinutes": null,
+        "placeVerification": "verified",
+        "relation": {
+          "id": "10000000-0000-4000-8000-000000000030",
+          "artist": {
+            "id": "10000000-0000-4000-8000-000000000001",
+            "canonicalName": "苏打绿",
+            "artistType": "band",
+            "verification": "verified"
+          },
+          "placeId": "10000000-0000-4000-8000-000000000020",
+          "relationType": "fan_lead",
+          "explanation": "合成线索用于布局验证；不声称艺人真实到访。",
+          "verification": "unverified",
+          "caveat": "示例关联尚未核验",
+          "claims": [],
+          "sources": [
+            {
+              "id": "10000000-0000-4000-8000-000000000050",
+              "sourceType": "fan_submission",
+              "title": "测试来源；并非真实到访",
+              "url": "https://example.com/synthetic",
+              "excerpt": null,
+              "observedAt": "2026-09-01T00:00:00Z",
+              "availability": "unavailable",
+              "lastCheckedAt": "2026-10-01T00:00:00Z"
+            }
+          ]
+        },
+        "claims": [],
+        "sources": [
+          {
+            "id": "10000000-0000-4000-8000-000000000050",
+            "sourceType": "fan_submission",
+            "title": "测试来源；并非真实到访",
+            "url": "https://example.com/synthetic",
+            "excerpt": null,
+            "observedAt": "2026-09-01T00:00:00Z",
+            "availability": "unavailable",
+            "lastCheckedAt": "2026-10-01T00:00:00Z"
+          }
+        ]
+      },
+      {
+        "id": "20000000-0000-4000-8000-000000000073",
+        "placeId": "20000000-0000-4000-8000-000000000021",
+        "sequence": 2,
+        "name": "街角唱片室与很长很长的独立音乐档案馆",
+        "address": "仅供原型排版的测试地址，不可导航",
+        "coordinates": null,
+        "note": "示例站点",
+        "stayMinutes": null,
+        "placeVerification": "unverified",
+        "relation": {
+          "id": "20000000-0000-4000-8000-000000000031",
+          "artist": {
+            "id": "10000000-0000-4000-8000-000000000001",
+            "canonicalName": "苏打绿",
+            "artistType": "band",
+            "verification": "verified"
+          },
+          "placeId": "20000000-0000-4000-8000-000000000021",
+          "relationType": "fan_lead",
+          "explanation": "合成线索用于布局验证；不声称艺人真实到访。",
+          "verification": "unverified",
+          "caveat": "示例关联尚未核验",
+          "claims": [],
+          "sources": [
+            {
+              "id": "10000000-0000-4000-8000-000000000050",
+              "sourceType": "fan_submission",
+              "title": "测试来源；并非真实到访",
+              "url": "https://example.com/synthetic",
+              "excerpt": null,
+              "observedAt": "2026-09-01T00:00:00Z",
+              "availability": "unavailable",
+              "lastCheckedAt": "2026-10-01T00:00:00Z"
+            }
+          ]
+        },
+        "claims": [],
+        "sources": [
+          {
+            "id": "10000000-0000-4000-8000-000000000050",
+            "sourceType": "fan_submission",
+            "title": "测试来源；并非真实到访",
+            "url": "https://example.com/synthetic",
+            "excerpt": null,
+            "observedAt": "2026-09-01T00:00:00Z",
+            "availability": "unavailable",
+            "lastCheckedAt": "2026-10-01T00:00:00Z"
+          }
+        ]
+      },
+      {
+        "id": "20000000-0000-4000-8000-000000000074",
+        "placeId": "20000000-0000-4000-8000-000000000022",
+        "sequence": 3,
+        "name": "河边步道",
+        "address": "仅供原型排版的测试地址，不可导航",
+        "coordinates": null,
+        "note": "示例站点",
+        "stayMinutes": null,
+        "placeVerification": "unverified",
+        "relation": {
+          "id": "20000000-0000-4000-8000-000000000032",
+          "artist": {
+            "id": "10000000-0000-4000-8000-000000000001",
+            "canonicalName": "苏打绿",
+            "artistType": "band",
+            "verification": "verified"
+          },
+          "placeId": "20000000-0000-4000-8000-000000000022",
+          "relationType": "fan_lead",
+          "explanation": "合成线索用于布局验证；不声称艺人真实到访。",
+          "verification": "unverified",
+          "caveat": "示例关联尚未核验",
+          "claims": [],
+          "sources": [
+            {
+              "id": "10000000-0000-4000-8000-000000000050",
+              "sourceType": "fan_submission",
+              "title": "测试来源；并非真实到访",
+              "url": "https://example.com/synthetic",
+              "excerpt": null,
+              "observedAt": "2026-09-01T00:00:00Z",
+              "availability": "unavailable",
+              "lastCheckedAt": "2026-10-01T00:00:00Z"
+            }
+          ]
+        },
+        "claims": [],
+        "sources": [
+          {
+            "id": "10000000-0000-4000-8000-000000000050",
+            "sourceType": "fan_submission",
+            "title": "测试来源；并非真实到访",
+            "url": "https://example.com/synthetic",
+            "excerpt": null,
+            "observedAt": "2026-09-01T00:00:00Z",
+            "availability": "unavailable",
+            "lastCheckedAt": "2026-10-01T00:00:00Z"
+          }
+        ]
+      },
+      {
+        "id": "20000000-0000-4000-8000-000000000075",
+        "placeId": "20000000-0000-4000-8000-000000000023",
+        "sequence": 4,
+        "name": "城市展览空间",
+        "address": "仅供原型排版的测试地址，不可导航",
+        "coordinates": null,
+        "note": "示例站点",
+        "stayMinutes": null,
+        "placeVerification": "unverified",
+        "relation": {
+          "id": "20000000-0000-4000-8000-000000000033",
+          "artist": {
+            "id": "10000000-0000-4000-8000-000000000001",
+            "canonicalName": "苏打绿",
+            "artistType": "band",
+            "verification": "verified"
+          },
+          "placeId": "20000000-0000-4000-8000-000000000023",
+          "relationType": "fan_lead",
+          "explanation": "合成线索用于布局验证；不声称艺人真实到访。",
+          "verification": "unverified",
+          "caveat": "示例关联尚未核验",
+          "claims": [],
+          "sources": [
+            {
+              "id": "10000000-0000-4000-8000-000000000050",
+              "sourceType": "fan_submission",
+              "title": "测试来源；并非真实到访",
+              "url": "https://example.com/synthetic",
+              "excerpt": null,
+              "observedAt": "2026-09-01T00:00:00Z",
+              "availability": "unavailable",
+              "lastCheckedAt": "2026-10-01T00:00:00Z"
+            }
+          ]
+        },
+        "claims": [],
+        "sources": [
+          {
+            "id": "10000000-0000-4000-8000-000000000050",
+            "sourceType": "fan_submission",
+            "title": "测试来源；并非真实到访",
+            "url": "https://example.com/synthetic",
+            "excerpt": null,
+            "observedAt": "2026-09-01T00:00:00Z",
+            "availability": "unavailable",
+            "lastCheckedAt": "2026-10-01T00:00:00Z"
+          }
+        ]
+      },
+      {
+        "id": "20000000-0000-4000-8000-000000000076",
+        "placeId": "20000000-0000-4000-8000-000000000024",
+        "sequence": 5,
+        "name": "夜间小剧场",
+        "address": "仅供原型排版的测试地址，不可导航",
+        "coordinates": null,
+        "note": "示例站点",
+        "stayMinutes": null,
+        "placeVerification": "unverified",
+        "relation": {
+          "id": "20000000-0000-4000-8000-000000000034",
+          "artist": {
+            "id": "10000000-0000-4000-8000-000000000001",
+            "canonicalName": "苏打绿",
+            "artistType": "band",
+            "verification": "verified"
+          },
+          "placeId": "20000000-0000-4000-8000-000000000024",
+          "relationType": "fan_lead",
+          "explanation": "合成线索用于布局验证；不声称艺人真实到访。",
+          "verification": "unverified",
+          "caveat": "示例关联尚未核验",
+          "claims": [],
+          "sources": [
+            {
+              "id": "10000000-0000-4000-8000-000000000050",
+              "sourceType": "fan_submission",
+              "title": "测试来源；并非真实到访",
+              "url": "https://example.com/synthetic",
+              "excerpt": null,
+              "observedAt": "2026-09-01T00:00:00Z",
+              "availability": "unavailable",
+              "lastCheckedAt": "2026-10-01T00:00:00Z"
+            }
+          ]
+        },
+        "claims": [],
+        "sources": [
+          {
+            "id": "10000000-0000-4000-8000-000000000050",
+            "sourceType": "fan_submission",
+            "title": "测试来源；并非真实到访",
+            "url": "https://example.com/synthetic",
+            "excerpt": null,
+            "observedAt": "2026-09-01T00:00:00Z",
+            "availability": "unavailable",
+            "lastCheckedAt": "2026-10-01T00:00:00Z"
+          }
+        ]
+      }
+    ],
+    "claims": [],
+    "sources": [
+      {
+        "id": "10000000-0000-4000-8000-000000000050",
+        "sourceType": "fan_submission",
+        "title": "测试来源；并非真实到访",
+        "url": "https://example.com/synthetic",
+        "excerpt": null,
+        "observedAt": "2026-09-01T00:00:00Z",
+        "availability": "unavailable",
+        "lastCheckedAt": "2026-10-01T00:00:00Z"
+      }
+    ],
+    "requestId": "synthetic:wireframe:phase-a"
+  },
+  "routes": [
+    {
+      "type": "route",
+      "id": "10000000-0000-4000-8000-000000000070",
+      "slug": "test-sodagreen-spring",
+      "revisionId": "10000000-0000-4000-8000-000000000071",
+      "revisionNumber": 1,
+      "title": "苏打绿 · 春日城市路线",
+      "hero": null,
+      "artist": {
+        "id": "10000000-0000-4000-8000-000000000001",
+        "canonicalName": "苏打绿",
+        "artistType": "band",
+        "verification": "verified"
+      },
+      "city": {
+        "id": "10000000-0000-4000-8000-000000000010",
+        "name": "台北",
+        "countryCode": "TW"
+      },
+      "relationSummary": "合成测试关联",
+      "whyWorthReplicating": "测试内容，不作为真实旅行建议",
+      "verificationSummary": "partial",
+      "stopCount": 5,
+      "metrics": {
+        "distanceMeters": null,
+        "transportSeconds": null,
+        "provider": null,
+        "computedAt": null,
+        "coordinateSystem": null
+      },
+      "matchedReasons": [
+        "synthetic fixture"
+      ],
+      "shortStory": "仅用于灰阶结构验证",
+      "summary": "私有示例",
+      "publishedAt": "2026-10-01T00:00:00Z",
+      "frozenAt": "2026-10-01T00:00:00Z",
+      "stops": [
+        {
+          "id": "10000000-0000-4000-8000-000000000072",
+          "placeId": "10000000-0000-4000-8000-000000000020",
+          "sequence": 1,
+          "name": "春日书店",
+          "address": "测试地址",
+          "coordinates": null,
+          "note": "示例站点",
+          "stayMinutes": null,
+          "placeVerification": "verified",
+          "relation": {
+            "id": "10000000-0000-4000-8000-000000000030",
+            "artist": {
+              "id": "10000000-0000-4000-8000-000000000001",
+              "canonicalName": "苏打绿",
+              "artistType": "band",
+              "verification": "verified"
+            },
+            "placeId": "10000000-0000-4000-8000-000000000020",
+            "relationType": "fan_lead",
+            "explanation": "合成线索用于布局验证；不声称艺人真实到访。",
+            "verification": "unverified",
+            "caveat": "示例关联尚未核验",
+            "claims": [],
+            "sources": [
+              {
+                "id": "10000000-0000-4000-8000-000000000050",
+                "sourceType": "fan_submission",
+                "title": "测试来源；并非真实到访",
+                "url": "https://example.com/synthetic",
+                "excerpt": null,
+                "observedAt": "2026-09-01T00:00:00Z",
+                "availability": "unavailable",
+                "lastCheckedAt": "2026-10-01T00:00:00Z"
+              }
+            ]
+          },
+          "claims": [],
+          "sources": [
+            {
+              "id": "10000000-0000-4000-8000-000000000050",
+              "sourceType": "fan_submission",
+              "title": "测试来源；并非真实到访",
+              "url": "https://example.com/synthetic",
+              "excerpt": null,
+              "observedAt": "2026-09-01T00:00:00Z",
+              "availability": "unavailable",
+              "lastCheckedAt": "2026-10-01T00:00:00Z"
+            }
+          ]
+        },
+        {
+          "id": "20000000-0000-4000-8000-000000000073",
+          "placeId": "20000000-0000-4000-8000-000000000021",
+          "sequence": 2,
+          "name": "街角唱片室与很长很长的独立音乐档案馆",
+          "address": "仅供原型排版的测试地址，不可导航",
+          "coordinates": null,
+          "note": "示例站点",
+          "stayMinutes": null,
+          "placeVerification": "unverified",
+          "relation": {
+            "id": "20000000-0000-4000-8000-000000000031",
+            "artist": {
+              "id": "10000000-0000-4000-8000-000000000001",
+              "canonicalName": "苏打绿",
+              "artistType": "band",
+              "verification": "verified"
+            },
+            "placeId": "20000000-0000-4000-8000-000000000021",
+            "relationType": "fan_lead",
+            "explanation": "合成线索用于布局验证；不声称艺人真实到访。",
+            "verification": "unverified",
+            "caveat": "示例关联尚未核验",
+            "claims": [],
+            "sources": [
+              {
+                "id": "10000000-0000-4000-8000-000000000050",
+                "sourceType": "fan_submission",
+                "title": "测试来源；并非真实到访",
+                "url": "https://example.com/synthetic",
+                "excerpt": null,
+                "observedAt": "2026-09-01T00:00:00Z",
+                "availability": "unavailable",
+                "lastCheckedAt": "2026-10-01T00:00:00Z"
+              }
+            ]
+          },
+          "claims": [],
+          "sources": [
+            {
+              "id": "10000000-0000-4000-8000-000000000050",
+              "sourceType": "fan_submission",
+              "title": "测试来源；并非真实到访",
+              "url": "https://example.com/synthetic",
+              "excerpt": null,
+              "observedAt": "2026-09-01T00:00:00Z",
+              "availability": "unavailable",
+              "lastCheckedAt": "2026-10-01T00:00:00Z"
+            }
+          ]
+        },
+        {
+          "id": "20000000-0000-4000-8000-000000000074",
+          "placeId": "20000000-0000-4000-8000-000000000022",
+          "sequence": 3,
+          "name": "河边步道",
+          "address": "仅供原型排版的测试地址，不可导航",
+          "coordinates": null,
+          "note": "示例站点",
+          "stayMinutes": null,
+          "placeVerification": "unverified",
+          "relation": {
+            "id": "20000000-0000-4000-8000-000000000032",
+            "artist": {
+              "id": "10000000-0000-4000-8000-000000000001",
+              "canonicalName": "苏打绿",
+              "artistType": "band",
+              "verification": "verified"
+            },
+            "placeId": "20000000-0000-4000-8000-000000000022",
+            "relationType": "fan_lead",
+            "explanation": "合成线索用于布局验证；不声称艺人真实到访。",
+            "verification": "unverified",
+            "caveat": "示例关联尚未核验",
+            "claims": [],
+            "sources": [
+              {
+                "id": "10000000-0000-4000-8000-000000000050",
+                "sourceType": "fan_submission",
+                "title": "测试来源；并非真实到访",
+                "url": "https://example.com/synthetic",
+                "excerpt": null,
+                "observedAt": "2026-09-01T00:00:00Z",
+                "availability": "unavailable",
+                "lastCheckedAt": "2026-10-01T00:00:00Z"
+              }
+            ]
+          },
+          "claims": [],
+          "sources": [
+            {
+              "id": "10000000-0000-4000-8000-000000000050",
+              "sourceType": "fan_submission",
+              "title": "测试来源；并非真实到访",
+              "url": "https://example.com/synthetic",
+              "excerpt": null,
+              "observedAt": "2026-09-01T00:00:00Z",
+              "availability": "unavailable",
+              "lastCheckedAt": "2026-10-01T00:00:00Z"
+            }
+          ]
+        },
+        {
+          "id": "20000000-0000-4000-8000-000000000075",
+          "placeId": "20000000-0000-4000-8000-000000000023",
+          "sequence": 4,
+          "name": "城市展览空间",
+          "address": "仅供原型排版的测试地址，不可导航",
+          "coordinates": null,
+          "note": "示例站点",
+          "stayMinutes": null,
+          "placeVerification": "unverified",
+          "relation": {
+            "id": "20000000-0000-4000-8000-000000000033",
+            "artist": {
+              "id": "10000000-0000-4000-8000-000000000001",
+              "canonicalName": "苏打绿",
+              "artistType": "band",
+              "verification": "verified"
+            },
+            "placeId": "20000000-0000-4000-8000-000000000023",
+            "relationType": "fan_lead",
+            "explanation": "合成线索用于布局验证；不声称艺人真实到访。",
+            "verification": "unverified",
+            "caveat": "示例关联尚未核验",
+            "claims": [],
+            "sources": [
+              {
+                "id": "10000000-0000-4000-8000-000000000050",
+                "sourceType": "fan_submission",
+                "title": "测试来源；并非真实到访",
+                "url": "https://example.com/synthetic",
+                "excerpt": null,
+                "observedAt": "2026-09-01T00:00:00Z",
+                "availability": "unavailable",
+                "lastCheckedAt": "2026-10-01T00:00:00Z"
+              }
+            ]
+          },
+          "claims": [],
+          "sources": [
+            {
+              "id": "10000000-0000-4000-8000-000000000050",
+              "sourceType": "fan_submission",
+              "title": "测试来源；并非真实到访",
+              "url": "https://example.com/synthetic",
+              "excerpt": null,
+              "observedAt": "2026-09-01T00:00:00Z",
+              "availability": "unavailable",
+              "lastCheckedAt": "2026-10-01T00:00:00Z"
+            }
+          ]
+        },
+        {
+          "id": "20000000-0000-4000-8000-000000000076",
+          "placeId": "20000000-0000-4000-8000-000000000024",
+          "sequence": 5,
+          "name": "夜间小剧场",
+          "address": "仅供原型排版的测试地址，不可导航",
+          "coordinates": null,
+          "note": "示例站点",
+          "stayMinutes": null,
+          "placeVerification": "unverified",
+          "relation": {
+            "id": "20000000-0000-4000-8000-000000000034",
+            "artist": {
+              "id": "10000000-0000-4000-8000-000000000001",
+              "canonicalName": "苏打绿",
+              "artistType": "band",
+              "verification": "verified"
+            },
+            "placeId": "20000000-0000-4000-8000-000000000024",
+            "relationType": "fan_lead",
+            "explanation": "合成线索用于布局验证；不声称艺人真实到访。",
+            "verification": "unverified",
+            "caveat": "示例关联尚未核验",
+            "claims": [],
+            "sources": [
+              {
+                "id": "10000000-0000-4000-8000-000000000050",
+                "sourceType": "fan_submission",
+                "title": "测试来源；并非真实到访",
+                "url": "https://example.com/synthetic",
+                "excerpt": null,
+                "observedAt": "2026-09-01T00:00:00Z",
+                "availability": "unavailable",
+                "lastCheckedAt": "2026-10-01T00:00:00Z"
+              }
+            ]
+          },
+          "claims": [],
+          "sources": [
+            {
+              "id": "10000000-0000-4000-8000-000000000050",
+              "sourceType": "fan_submission",
+              "title": "测试来源；并非真实到访",
+              "url": "https://example.com/synthetic",
+              "excerpt": null,
+              "observedAt": "2026-09-01T00:00:00Z",
+              "availability": "unavailable",
+              "lastCheckedAt": "2026-10-01T00:00:00Z"
+            }
+          ]
+        }
+      ],
+      "claims": [],
+      "sources": [
+        {
+          "id": "10000000-0000-4000-8000-000000000050",
+          "sourceType": "fan_submission",
+          "title": "测试来源；并非真实到访",
+          "url": "https://example.com/synthetic",
+          "excerpt": null,
+          "observedAt": "2026-09-01T00:00:00Z",
+          "availability": "unavailable",
+          "lastCheckedAt": "2026-10-01T00:00:00Z"
+        }
+      ],
+      "requestId": "synthetic:wireframe:phase-a"
+    },
+    {
+      "type": "route",
+      "id": "20000000-0000-4000-8000-000000000070",
+      "slug": "test-nanjing",
+      "revisionId": "20000000-0000-4000-8000-000000000071",
+      "revisionNumber": 1,
+      "title": "南京 · 城市声音散步",
+      "hero": null,
+      "artist": {
+        "id": "10000000-0000-4000-8000-000000000001",
+        "canonicalName": "苏打绿",
+        "artistType": "band",
+        "verification": "verified"
+      },
+      "city": {
+        "id": "10000000-0000-4000-8000-000000000011",
+        "name": "南京",
+        "countryCode": "CN"
+      },
+      "relationSummary": "合成测试关联",
+      "whyWorthReplicating": "测试内容，不作为真实旅行建议",
+      "verificationSummary": "partial",
+      "stopCount": 1,
+      "metrics": {
+        "distanceMeters": null,
+        "transportSeconds": null,
+        "provider": null,
+        "computedAt": null,
+        "coordinateSystem": null
+      },
+      "matchedReasons": [
+        "synthetic fixture"
+      ],
+      "shortStory": "仅用于灰阶结构验证",
+      "summary": "私有示例",
+      "publishedAt": "2026-10-01T00:00:00Z",
+      "frozenAt": "2026-10-01T00:00:00Z",
+      "stops": [
+        {
+          "id": "20000000-0000-4000-8000-000000000078",
+          "placeId": "10000000-0000-4000-8000-000000000021",
+          "sequence": 1,
+          "name": "南京测试展馆",
+          "address": "仅供原型排版的测试地址，不可导航",
+          "coordinates": null,
+          "note": "示例站点",
+          "stayMinutes": null,
+          "placeVerification": "unverified",
+          "relation": {
+            "id": "20000000-0000-4000-8000-000000000035",
+            "artist": {
+              "id": "10000000-0000-4000-8000-000000000001",
+              "canonicalName": "苏打绿",
+              "artistType": "band",
+              "verification": "verified"
+            },
+            "placeId": "10000000-0000-4000-8000-000000000021",
+            "relationType": "fan_lead",
+            "explanation": "合成线索用于布局验证；不声称艺人真实到访。",
+            "verification": "unverified",
+            "caveat": "示例关联尚未核验",
+            "claims": [],
+            "sources": [
+              {
+                "id": "10000000-0000-4000-8000-000000000050",
+                "sourceType": "fan_submission",
+                "title": "测试来源；并非真实到访",
+                "url": "https://example.com/synthetic",
+                "excerpt": null,
+                "observedAt": "2026-09-01T00:00:00Z",
+                "availability": "unavailable",
+                "lastCheckedAt": "2026-10-01T00:00:00Z"
+              }
+            ]
+          },
+          "claims": [],
+          "sources": [
+            {
+              "id": "10000000-0000-4000-8000-000000000050",
+              "sourceType": "fan_submission",
+              "title": "测试来源；并非真实到访",
+              "url": "https://example.com/synthetic",
+              "excerpt": null,
+              "observedAt": "2026-09-01T00:00:00Z",
+              "availability": "unavailable",
+              "lastCheckedAt": "2026-10-01T00:00:00Z"
+            }
+          ]
+        }
+      ],
+      "claims": [],
+      "sources": [
+        {
+          "id": "10000000-0000-4000-8000-000000000050",
+          "sourceType": "fan_submission",
+          "title": "测试来源；并非真实到访",
+          "url": "https://example.com/synthetic",
+          "excerpt": null,
+          "observedAt": "2026-09-01T00:00:00Z",
+          "availability": "unavailable",
+          "lastCheckedAt": "2026-10-01T00:00:00Z"
+        }
+      ],
+      "requestId": "synthetic:wireframe:phase-a"
+    }
+  ],
+  "places": [
+    {
+      "identity": {
+        "id": "10000000-0000-4000-8000-000000000020",
+        "name": "春日书店",
+        "city": {
+          "id": "10000000-0000-4000-8000-000000000010",
+          "name": "台北",
+          "countryCode": "TW"
+        },
+        "verification": "verified"
+      },
+      "address": "测试地址",
+      "coordinates": null,
+      "practicalInfo": null,
+      "media": null,
+      "artistRelations": [
+        {
+          "id": "10000000-0000-4000-8000-000000000030",
+          "artist": {
+            "id": "10000000-0000-4000-8000-000000000001",
+            "canonicalName": "苏打绿",
+            "artistType": "band",
+            "verification": "verified"
+          },
+          "placeId": "10000000-0000-4000-8000-000000000020",
+          "relationType": "fan_lead",
+          "explanation": "合成线索用于布局验证；不声称艺人真实到访。",
+          "verification": "unverified",
+          "caveat": "示例关联尚未核验",
+          "claims": [],
+          "sources": [
+            {
+              "id": "10000000-0000-4000-8000-000000000050",
+              "sourceType": "fan_submission",
+              "title": "测试来源；并非真实到访",
+              "url": "https://example.com/synthetic",
+              "excerpt": null,
+              "observedAt": "2026-09-01T00:00:00Z",
+              "availability": "unavailable",
+              "lastCheckedAt": "2026-10-01T00:00:00Z"
+            }
+          ]
+        }
+      ],
+      "claims": [],
+      "sources": [
+        {
+          "id": "10000000-0000-4000-8000-000000000050",
+          "sourceType": "fan_submission",
+          "title": "测试来源；并非真实到访",
+          "url": "https://example.com/synthetic",
+          "excerpt": null,
+          "observedAt": "2026-09-01T00:00:00Z",
+          "availability": "unavailable",
+          "lastCheckedAt": "2026-10-01T00:00:00Z"
+        }
+      ],
+      "relatedRoutes": [
+        {
+          "type": "route",
+          "id": "10000000-0000-4000-8000-000000000070",
+          "slug": "test-sodagreen-spring",
+          "revisionId": "10000000-0000-4000-8000-000000000071",
+          "revisionNumber": 1,
+          "title": "苏打绿 · 春日城市路线",
+          "hero": null,
+          "artist": {
+            "id": "10000000-0000-4000-8000-000000000001",
+            "canonicalName": "苏打绿",
+            "artistType": "band",
+            "verification": "verified"
+          },
+          "city": {
+            "id": "10000000-0000-4000-8000-000000000010",
+            "name": "台北",
+            "countryCode": "TW"
+          },
+          "relationSummary": "合成测试关联",
+          "whyWorthReplicating": "测试内容，不作为真实旅行建议",
+          "verificationSummary": "partial",
+          "stopCount": 5,
+          "metrics": {
+            "distanceMeters": null,
+            "transportSeconds": null,
+            "provider": null,
+            "computedAt": null,
+            "coordinateSystem": null
+          },
+          "matchedReasons": [
+            "synthetic fixture"
+          ]
+        }
+      ],
+      "relatedArtists": [
+        {
+          "id": "10000000-0000-4000-8000-000000000001",
+          "canonicalName": "苏打绿",
+          "artistType": "band",
+          "verification": "verified"
+        }
+      ],
+      "requestId": "synthetic:wireframe:phase-a"
+    },
+    {
+      "identity": {
+        "id": "20000000-0000-4000-8000-000000000021",
+        "name": "街角唱片室与很长很长的独立音乐档案馆",
+        "city": {
+          "id": "10000000-0000-4000-8000-000000000010",
+          "name": "台北",
+          "countryCode": "TW"
+        },
+        "verification": "unverified"
+      },
+      "address": "仅供原型排版的测试地址，不可导航",
+      "coordinates": null,
+      "practicalInfo": null,
+      "media": null,
+      "artistRelations": [
+        {
+          "id": "20000000-0000-4000-8000-000000000031",
+          "artist": {
+            "id": "10000000-0000-4000-8000-000000000001",
+            "canonicalName": "苏打绿",
+            "artistType": "band",
+            "verification": "verified"
+          },
+          "placeId": "20000000-0000-4000-8000-000000000021",
+          "relationType": "fan_lead",
+          "explanation": "合成线索用于布局验证；不声称艺人真实到访。",
+          "verification": "unverified",
+          "caveat": "示例关联尚未核验",
+          "claims": [],
+          "sources": [
+            {
+              "id": "10000000-0000-4000-8000-000000000050",
+              "sourceType": "fan_submission",
+              "title": "测试来源；并非真实到访",
+              "url": "https://example.com/synthetic",
+              "excerpt": null,
+              "observedAt": "2026-09-01T00:00:00Z",
+              "availability": "unavailable",
+              "lastCheckedAt": "2026-10-01T00:00:00Z"
+            }
+          ]
+        }
+      ],
+      "claims": [],
+      "sources": [
+        {
+          "id": "10000000-0000-4000-8000-000000000050",
+          "sourceType": "fan_submission",
+          "title": "测试来源；并非真实到访",
+          "url": "https://example.com/synthetic",
+          "excerpt": null,
+          "observedAt": "2026-09-01T00:00:00Z",
+          "availability": "unavailable",
+          "lastCheckedAt": "2026-10-01T00:00:00Z"
+        }
+      ],
+      "relatedRoutes": [
+        {
+          "type": "route",
+          "id": "10000000-0000-4000-8000-000000000070",
+          "slug": "test-sodagreen-spring",
+          "revisionId": "10000000-0000-4000-8000-000000000071",
+          "revisionNumber": 1,
+          "title": "苏打绿 · 春日城市路线",
+          "hero": null,
+          "artist": {
+            "id": "10000000-0000-4000-8000-000000000001",
+            "canonicalName": "苏打绿",
+            "artistType": "band",
+            "verification": "verified"
+          },
+          "city": {
+            "id": "10000000-0000-4000-8000-000000000010",
+            "name": "台北",
+            "countryCode": "TW"
+          },
+          "relationSummary": "合成测试关联",
+          "whyWorthReplicating": "测试内容，不作为真实旅行建议",
+          "verificationSummary": "partial",
+          "stopCount": 5,
+          "metrics": {
+            "distanceMeters": null,
+            "transportSeconds": null,
+            "provider": null,
+            "computedAt": null,
+            "coordinateSystem": null
+          },
+          "matchedReasons": [
+            "synthetic fixture"
+          ]
+        }
+      ],
+      "relatedArtists": [
+        {
+          "id": "10000000-0000-4000-8000-000000000001",
+          "canonicalName": "苏打绿",
+          "artistType": "band",
+          "verification": "verified"
+        }
+      ],
+      "requestId": "synthetic:wireframe:phase-a"
+    },
+    {
+      "identity": {
+        "id": "20000000-0000-4000-8000-000000000022",
+        "name": "河边步道",
+        "city": {
+          "id": "10000000-0000-4000-8000-000000000010",
+          "name": "台北",
+          "countryCode": "TW"
+        },
+        "verification": "unverified"
+      },
+      "address": "仅供原型排版的测试地址，不可导航",
+      "coordinates": null,
+      "practicalInfo": null,
+      "media": null,
+      "artistRelations": [
+        {
+          "id": "20000000-0000-4000-8000-000000000032",
+          "artist": {
+            "id": "10000000-0000-4000-8000-000000000001",
+            "canonicalName": "苏打绿",
+            "artistType": "band",
+            "verification": "verified"
+          },
+          "placeId": "20000000-0000-4000-8000-000000000022",
+          "relationType": "fan_lead",
+          "explanation": "合成线索用于布局验证；不声称艺人真实到访。",
+          "verification": "unverified",
+          "caveat": "示例关联尚未核验",
+          "claims": [],
+          "sources": [
+            {
+              "id": "10000000-0000-4000-8000-000000000050",
+              "sourceType": "fan_submission",
+              "title": "测试来源；并非真实到访",
+              "url": "https://example.com/synthetic",
+              "excerpt": null,
+              "observedAt": "2026-09-01T00:00:00Z",
+              "availability": "unavailable",
+              "lastCheckedAt": "2026-10-01T00:00:00Z"
+            }
+          ]
+        }
+      ],
+      "claims": [],
+      "sources": [
+        {
+          "id": "10000000-0000-4000-8000-000000000050",
+          "sourceType": "fan_submission",
+          "title": "测试来源；并非真实到访",
+          "url": "https://example.com/synthetic",
+          "excerpt": null,
+          "observedAt": "2026-09-01T00:00:00Z",
+          "availability": "unavailable",
+          "lastCheckedAt": "2026-10-01T00:00:00Z"
+        }
+      ],
+      "relatedRoutes": [
+        {
+          "type": "route",
+          "id": "10000000-0000-4000-8000-000000000070",
+          "slug": "test-sodagreen-spring",
+          "revisionId": "10000000-0000-4000-8000-000000000071",
+          "revisionNumber": 1,
+          "title": "苏打绿 · 春日城市路线",
+          "hero": null,
+          "artist": {
+            "id": "10000000-0000-4000-8000-000000000001",
+            "canonicalName": "苏打绿",
+            "artistType": "band",
+            "verification": "verified"
+          },
+          "city": {
+            "id": "10000000-0000-4000-8000-000000000010",
+            "name": "台北",
+            "countryCode": "TW"
+          },
+          "relationSummary": "合成测试关联",
+          "whyWorthReplicating": "测试内容，不作为真实旅行建议",
+          "verificationSummary": "partial",
+          "stopCount": 5,
+          "metrics": {
+            "distanceMeters": null,
+            "transportSeconds": null,
+            "provider": null,
+            "computedAt": null,
+            "coordinateSystem": null
+          },
+          "matchedReasons": [
+            "synthetic fixture"
+          ]
+        }
+      ],
+      "relatedArtists": [
+        {
+          "id": "10000000-0000-4000-8000-000000000001",
+          "canonicalName": "苏打绿",
+          "artistType": "band",
+          "verification": "verified"
+        }
+      ],
+      "requestId": "synthetic:wireframe:phase-a"
+    },
+    {
+      "identity": {
+        "id": "20000000-0000-4000-8000-000000000023",
+        "name": "城市展览空间",
+        "city": {
+          "id": "10000000-0000-4000-8000-000000000010",
+          "name": "台北",
+          "countryCode": "TW"
+        },
+        "verification": "unverified"
+      },
+      "address": "仅供原型排版的测试地址，不可导航",
+      "coordinates": null,
+      "practicalInfo": null,
+      "media": null,
+      "artistRelations": [
+        {
+          "id": "20000000-0000-4000-8000-000000000033",
+          "artist": {
+            "id": "10000000-0000-4000-8000-000000000001",
+            "canonicalName": "苏打绿",
+            "artistType": "band",
+            "verification": "verified"
+          },
+          "placeId": "20000000-0000-4000-8000-000000000023",
+          "relationType": "fan_lead",
+          "explanation": "合成线索用于布局验证；不声称艺人真实到访。",
+          "verification": "unverified",
+          "caveat": "示例关联尚未核验",
+          "claims": [],
+          "sources": [
+            {
+              "id": "10000000-0000-4000-8000-000000000050",
+              "sourceType": "fan_submission",
+              "title": "测试来源；并非真实到访",
+              "url": "https://example.com/synthetic",
+              "excerpt": null,
+              "observedAt": "2026-09-01T00:00:00Z",
+              "availability": "unavailable",
+              "lastCheckedAt": "2026-10-01T00:00:00Z"
+            }
+          ]
+        }
+      ],
+      "claims": [],
+      "sources": [
+        {
+          "id": "10000000-0000-4000-8000-000000000050",
+          "sourceType": "fan_submission",
+          "title": "测试来源；并非真实到访",
+          "url": "https://example.com/synthetic",
+          "excerpt": null,
+          "observedAt": "2026-09-01T00:00:00Z",
+          "availability": "unavailable",
+          "lastCheckedAt": "2026-10-01T00:00:00Z"
+        }
+      ],
+      "relatedRoutes": [
+        {
+          "type": "route",
+          "id": "10000000-0000-4000-8000-000000000070",
+          "slug": "test-sodagreen-spring",
+          "revisionId": "10000000-0000-4000-8000-000000000071",
+          "revisionNumber": 1,
+          "title": "苏打绿 · 春日城市路线",
+          "hero": null,
+          "artist": {
+            "id": "10000000-0000-4000-8000-000000000001",
+            "canonicalName": "苏打绿",
+            "artistType": "band",
+            "verification": "verified"
+          },
+          "city": {
+            "id": "10000000-0000-4000-8000-000000000010",
+            "name": "台北",
+            "countryCode": "TW"
+          },
+          "relationSummary": "合成测试关联",
+          "whyWorthReplicating": "测试内容，不作为真实旅行建议",
+          "verificationSummary": "partial",
+          "stopCount": 5,
+          "metrics": {
+            "distanceMeters": null,
+            "transportSeconds": null,
+            "provider": null,
+            "computedAt": null,
+            "coordinateSystem": null
+          },
+          "matchedReasons": [
+            "synthetic fixture"
+          ]
+        }
+      ],
+      "relatedArtists": [
+        {
+          "id": "10000000-0000-4000-8000-000000000001",
+          "canonicalName": "苏打绿",
+          "artistType": "band",
+          "verification": "verified"
+        }
+      ],
+      "requestId": "synthetic:wireframe:phase-a"
+    },
+    {
+      "identity": {
+        "id": "20000000-0000-4000-8000-000000000024",
+        "name": "夜间小剧场",
+        "city": {
+          "id": "10000000-0000-4000-8000-000000000010",
+          "name": "台北",
+          "countryCode": "TW"
+        },
+        "verification": "unverified"
+      },
+      "address": "仅供原型排版的测试地址，不可导航",
+      "coordinates": null,
+      "practicalInfo": null,
+      "media": null,
+      "artistRelations": [
+        {
+          "id": "20000000-0000-4000-8000-000000000034",
+          "artist": {
+            "id": "10000000-0000-4000-8000-000000000001",
+            "canonicalName": "苏打绿",
+            "artistType": "band",
+            "verification": "verified"
+          },
+          "placeId": "20000000-0000-4000-8000-000000000024",
+          "relationType": "fan_lead",
+          "explanation": "合成线索用于布局验证；不声称艺人真实到访。",
+          "verification": "unverified",
+          "caveat": "示例关联尚未核验",
+          "claims": [],
+          "sources": [
+            {
+              "id": "10000000-0000-4000-8000-000000000050",
+              "sourceType": "fan_submission",
+              "title": "测试来源；并非真实到访",
+              "url": "https://example.com/synthetic",
+              "excerpt": null,
+              "observedAt": "2026-09-01T00:00:00Z",
+              "availability": "unavailable",
+              "lastCheckedAt": "2026-10-01T00:00:00Z"
+            }
+          ]
+        }
+      ],
+      "claims": [],
+      "sources": [
+        {
+          "id": "10000000-0000-4000-8000-000000000050",
+          "sourceType": "fan_submission",
+          "title": "测试来源；并非真实到访",
+          "url": "https://example.com/synthetic",
+          "excerpt": null,
+          "observedAt": "2026-09-01T00:00:00Z",
+          "availability": "unavailable",
+          "lastCheckedAt": "2026-10-01T00:00:00Z"
+        }
+      ],
+      "relatedRoutes": [
+        {
+          "type": "route",
+          "id": "10000000-0000-4000-8000-000000000070",
+          "slug": "test-sodagreen-spring",
+          "revisionId": "10000000-0000-4000-8000-000000000071",
+          "revisionNumber": 1,
+          "title": "苏打绿 · 春日城市路线",
+          "hero": null,
+          "artist": {
+            "id": "10000000-0000-4000-8000-000000000001",
+            "canonicalName": "苏打绿",
+            "artistType": "band",
+            "verification": "verified"
+          },
+          "city": {
+            "id": "10000000-0000-4000-8000-000000000010",
+            "name": "台北",
+            "countryCode": "TW"
+          },
+          "relationSummary": "合成测试关联",
+          "whyWorthReplicating": "测试内容，不作为真实旅行建议",
+          "verificationSummary": "partial",
+          "stopCount": 5,
+          "metrics": {
+            "distanceMeters": null,
+            "transportSeconds": null,
+            "provider": null,
+            "computedAt": null,
+            "coordinateSystem": null
+          },
+          "matchedReasons": [
+            "synthetic fixture"
+          ]
+        }
+      ],
+      "relatedArtists": [
+        {
+          "id": "10000000-0000-4000-8000-000000000001",
+          "canonicalName": "苏打绿",
+          "artistType": "band",
+          "verification": "verified"
+        }
+      ],
+      "requestId": "synthetic:wireframe:phase-a"
+    },
+    {
+      "identity": {
+        "id": "10000000-0000-4000-8000-000000000021",
+        "name": "南京测试展馆",
+        "city": {
+          "id": "10000000-0000-4000-8000-000000000011",
+          "name": "南京",
+          "countryCode": "CN"
+        },
+        "verification": "unverified"
+      },
+      "address": "仅供原型排版的测试地址，不可导航",
+      "coordinates": null,
+      "practicalInfo": null,
+      "media": null,
+      "artistRelations": [
+        {
+          "id": "20000000-0000-4000-8000-000000000035",
+          "artist": {
+            "id": "10000000-0000-4000-8000-000000000001",
+            "canonicalName": "苏打绿",
+            "artistType": "band",
+            "verification": "verified"
+          },
+          "placeId": "10000000-0000-4000-8000-000000000021",
+          "relationType": "fan_lead",
+          "explanation": "合成线索用于布局验证；不声称艺人真实到访。",
+          "verification": "unverified",
+          "caveat": "示例关联尚未核验",
+          "claims": [],
+          "sources": [
+            {
+              "id": "10000000-0000-4000-8000-000000000050",
+              "sourceType": "fan_submission",
+              "title": "测试来源；并非真实到访",
+              "url": "https://example.com/synthetic",
+              "excerpt": null,
+              "observedAt": "2026-09-01T00:00:00Z",
+              "availability": "unavailable",
+              "lastCheckedAt": "2026-10-01T00:00:00Z"
+            }
+          ]
+        }
+      ],
+      "claims": [],
+      "sources": [
+        {
+          "id": "10000000-0000-4000-8000-000000000050",
+          "sourceType": "fan_submission",
+          "title": "测试来源；并非真实到访",
+          "url": "https://example.com/synthetic",
+          "excerpt": null,
+          "observedAt": "2026-09-01T00:00:00Z",
+          "availability": "unavailable",
+          "lastCheckedAt": "2026-10-01T00:00:00Z"
+        }
+      ],
+      "relatedRoutes": [
+        {
+          "type": "route",
+          "id": "20000000-0000-4000-8000-000000000070",
+          "slug": "test-nanjing",
+          "revisionId": "20000000-0000-4000-8000-000000000071",
+          "revisionNumber": 1,
+          "title": "南京 · 城市声音散步",
+          "hero": null,
+          "artist": {
+            "id": "10000000-0000-4000-8000-000000000001",
+            "canonicalName": "苏打绿",
+            "artistType": "band",
+            "verification": "verified"
+          },
+          "city": {
+            "id": "10000000-0000-4000-8000-000000000011",
+            "name": "南京",
+            "countryCode": "CN"
+          },
+          "relationSummary": "合成测试关联",
+          "whyWorthReplicating": "测试内容，不作为真实旅行建议",
+          "verificationSummary": "partial",
+          "stopCount": 1,
+          "metrics": {
+            "distanceMeters": null,
+            "transportSeconds": null,
+            "provider": null,
+            "computedAt": null,
+            "coordinateSystem": null
+          },
+          "matchedReasons": [
+            "synthetic fixture"
+          ]
+        }
+      ],
+      "relatedArtists": [
+        {
+          "id": "10000000-0000-4000-8000-000000000001",
+          "canonicalName": "苏打绿",
+          "artistType": "band",
+          "verification": "verified"
+        }
+      ],
+      "requestId": "synthetic:wireframe:phase-a"
+    }
+  ],
+  "event": {
+    "type": "event",
+    "id": "10000000-0000-4000-8000-000000000080",
+    "title": "[TEST]春日现场",
+    "artists": [
+      {
+        "id": "10000000-0000-4000-8000-000000000001",
+        "canonicalName": "苏打绿",
+        "artistType": "band",
+        "verification": "verified"
+      }
+    ],
+    "startsAt": "2026-12-01T10:00:00Z",
+    "endsAt": null,
+    "venue": {
+      "id": "10000000-0000-4000-8000-000000000020",
+      "name": "春日书店"
+    },
+    "city": {
+      "id": "10000000-0000-4000-8000-000000000010",
+      "name": "台北",
+      "countryCode": "TW"
+    },
+    "state": "cancelled",
+    "publication": "published",
+    "verification": "partial",
+    "hero": null,
+    "matchedReasons": [
+      "synthetic fixture"
+    ],
+    "claims": [],
+    "sources": [
+      {
+        "id": "10000000-0000-4000-8000-000000000050",
+        "sourceType": "fan_submission",
+        "title": "测试来源；并非真实到访",
+        "url": "https://example.com/synthetic",
+        "excerpt": null,
+        "observedAt": "2026-09-01T00:00:00Z",
+        "availability": "unavailable",
+        "lastCheckedAt": "2026-10-01T00:00:00Z"
+      }
+    ],
+    "requestId": "synthetic:wireframe:phase-a"
+  },
+  "search": {
+    "query": "台北",
+    "mode": "search",
+    "intent": {
+      "kind": "city",
+      "resolvedIds": {
+        "artist": [],
+        "city": [
+          "10000000-0000-4000-8000-000000000010"
+        ],
+        "place": [],
+        "event": []
+      },
+      "ambiguity": false,
+      "primaryTarget": null
+    },
+    "sections": [
+      {
+        "type": "artist",
+        "items": [
+          {
+            "type": "artist",
+            "id": "10000000-0000-4000-8000-000000000001",
+            "canonicalName": "苏打绿",
+            "artistType": "band",
+            "verification": "verified",
+            "primaryMedia": null,
+            "footprintCities": [
+              {
+                "city": {
+                  "id": "10000000-0000-4000-8000-000000000010",
+                  "name": "台北",
+                  "countryCode": "TW"
+                },
+                "context": "footprint",
+                "placeCount": 5,
+                "relations": [
+                  {
+                    "id": "10000000-0000-4000-8000-000000000030",
+                    "verification": "unverified"
+                  }
+                ]
+              },
+              {
+                "city": {
+                  "id": "10000000-0000-4000-8000-000000000011",
+                  "name": "南京",
+                  "countryCode": "CN"
+                },
+                "context": "footprint",
+                "placeCount": 1,
+                "relations": [
+                  {
+                    "id": "20000000-0000-4000-8000-000000000035",
+                    "verification": "unverified"
+                  }
+                ]
+              }
+            ],
+            "eventCities": [],
+            "routeCount": 2,
+            "matchedReasons": [
+              "synthetic fixture"
+            ]
+          }
+        ],
+        "status": "searched",
+        "page": {
+          "limit": 10,
+          "offset": 0,
+          "hasMore": false
+        }
+      },
+      {
+        "type": "route",
+        "items": [
+          {
+            "type": "route",
+            "id": "10000000-0000-4000-8000-000000000070",
+            "slug": "test-sodagreen-spring",
+            "revisionId": "10000000-0000-4000-8000-000000000071",
+            "revisionNumber": 1,
+            "title": "苏打绿 · 春日城市路线",
+            "hero": null,
+            "artist": {
+              "id": "10000000-0000-4000-8000-000000000001",
+              "canonicalName": "苏打绿",
+              "artistType": "band",
+              "verification": "verified"
+            },
+            "city": {
+              "id": "10000000-0000-4000-8000-000000000010",
+              "name": "台北",
+              "countryCode": "TW"
+            },
+            "relationSummary": "合成测试关联",
+            "whyWorthReplicating": "测试内容，不作为真实旅行建议",
+            "verificationSummary": "partial",
+            "stopCount": 5,
+            "metrics": {
+              "distanceMeters": null,
+              "transportSeconds": null,
+              "provider": null,
+              "computedAt": null,
+              "coordinateSystem": null
+            },
+            "matchedReasons": [
+              "synthetic fixture"
+            ]
+          },
+          {
+            "type": "route",
+            "id": "20000000-0000-4000-8000-000000000070",
+            "slug": "test-nanjing",
+            "revisionId": "20000000-0000-4000-8000-000000000071",
+            "revisionNumber": 1,
+            "title": "南京 · 城市声音散步",
+            "hero": null,
+            "artist": {
+              "id": "10000000-0000-4000-8000-000000000001",
+              "canonicalName": "苏打绿",
+              "artistType": "band",
+              "verification": "verified"
+            },
+            "city": {
+              "id": "10000000-0000-4000-8000-000000000011",
+              "name": "南京",
+              "countryCode": "CN"
+            },
+            "relationSummary": "合成测试关联",
+            "whyWorthReplicating": "测试内容，不作为真实旅行建议",
+            "verificationSummary": "partial",
+            "stopCount": 1,
+            "metrics": {
+              "distanceMeters": null,
+              "transportSeconds": null,
+              "provider": null,
+              "computedAt": null,
+              "coordinateSystem": null
+            },
+            "matchedReasons": [
+              "synthetic fixture"
+            ]
+          }
+        ],
+        "status": "searched",
+        "page": {
+          "limit": 10,
+          "offset": 0,
+          "hasMore": false
+        }
+      },
+      {
+        "type": "place",
+        "items": [
+          {
+            "type": "place",
+            "id": "10000000-0000-4000-8000-000000000020",
+            "name": "春日书店",
+            "city": {
+              "id": "10000000-0000-4000-8000-000000000010",
+              "name": "台北",
+              "countryCode": "TW"
+            },
+            "verification": "verified",
+            "relatedArtists": [
+              {
+                "id": "10000000-0000-4000-8000-000000000001",
+                "canonicalName": "苏打绿",
+                "artistType": "band",
+                "verification": "verified"
+              }
+            ],
+            "topVerifiedRelation": null,
+            "relations": [
+              {
+                "id": "10000000-0000-4000-8000-000000000030",
+                "artist": {
+                  "id": "10000000-0000-4000-8000-000000000001",
+                  "canonicalName": "苏打绿",
+                  "artistType": "band",
+                  "verification": "verified"
+                },
+                "placeId": "10000000-0000-4000-8000-000000000020",
+                "relationType": "fan_lead",
+                "explanation": "合成线索用于布局验证；不声称艺人真实到访。",
+                "verification": "unverified",
+                "caveat": "示例关联尚未核验",
+                "claims": [],
+                "sources": [
+                  {
+                    "id": "10000000-0000-4000-8000-000000000050",
+                    "sourceType": "fan_submission",
+                    "title": "测试来源；并非真实到访",
+                    "url": "https://example.com/synthetic",
+                    "excerpt": null,
+                    "observedAt": "2026-09-01T00:00:00Z",
+                    "availability": "unavailable",
+                    "lastCheckedAt": "2026-10-01T00:00:00Z"
+                  }
+                ]
+              }
+            ],
+            "relatedRouteCount": 1,
+            "matchedReasons": [
+              "synthetic fixture"
+            ]
+          },
+          {
+            "type": "place",
+            "id": "20000000-0000-4000-8000-000000000021",
+            "name": "街角唱片室与很长很长的独立音乐档案馆",
+            "city": {
+              "id": "10000000-0000-4000-8000-000000000010",
+              "name": "台北",
+              "countryCode": "TW"
+            },
+            "verification": "unverified",
+            "relatedArtists": [
+              {
+                "id": "10000000-0000-4000-8000-000000000001",
+                "canonicalName": "苏打绿",
+                "artistType": "band",
+                "verification": "verified"
+              }
+            ],
+            "topVerifiedRelation": null,
+            "relations": [
+              {
+                "id": "20000000-0000-4000-8000-000000000031",
+                "artist": {
+                  "id": "10000000-0000-4000-8000-000000000001",
+                  "canonicalName": "苏打绿",
+                  "artistType": "band",
+                  "verification": "verified"
+                },
+                "placeId": "20000000-0000-4000-8000-000000000021",
+                "relationType": "fan_lead",
+                "explanation": "合成线索用于布局验证；不声称艺人真实到访。",
+                "verification": "unverified",
+                "caveat": "示例关联尚未核验",
+                "claims": [],
+                "sources": [
+                  {
+                    "id": "10000000-0000-4000-8000-000000000050",
+                    "sourceType": "fan_submission",
+                    "title": "测试来源；并非真实到访",
+                    "url": "https://example.com/synthetic",
+                    "excerpt": null,
+                    "observedAt": "2026-09-01T00:00:00Z",
+                    "availability": "unavailable",
+                    "lastCheckedAt": "2026-10-01T00:00:00Z"
+                  }
+                ]
+              }
+            ],
+            "relatedRouteCount": 1,
+            "matchedReasons": [
+              "synthetic fixture"
+            ]
+          },
+          {
+            "type": "place",
+            "id": "20000000-0000-4000-8000-000000000022",
+            "name": "河边步道",
+            "city": {
+              "id": "10000000-0000-4000-8000-000000000010",
+              "name": "台北",
+              "countryCode": "TW"
+            },
+            "verification": "unverified",
+            "relatedArtists": [
+              {
+                "id": "10000000-0000-4000-8000-000000000001",
+                "canonicalName": "苏打绿",
+                "artistType": "band",
+                "verification": "verified"
+              }
+            ],
+            "topVerifiedRelation": null,
+            "relations": [
+              {
+                "id": "20000000-0000-4000-8000-000000000032",
+                "artist": {
+                  "id": "10000000-0000-4000-8000-000000000001",
+                  "canonicalName": "苏打绿",
+                  "artistType": "band",
+                  "verification": "verified"
+                },
+                "placeId": "20000000-0000-4000-8000-000000000022",
+                "relationType": "fan_lead",
+                "explanation": "合成线索用于布局验证；不声称艺人真实到访。",
+                "verification": "unverified",
+                "caveat": "示例关联尚未核验",
+                "claims": [],
+                "sources": [
+                  {
+                    "id": "10000000-0000-4000-8000-000000000050",
+                    "sourceType": "fan_submission",
+                    "title": "测试来源；并非真实到访",
+                    "url": "https://example.com/synthetic",
+                    "excerpt": null,
+                    "observedAt": "2026-09-01T00:00:00Z",
+                    "availability": "unavailable",
+                    "lastCheckedAt": "2026-10-01T00:00:00Z"
+                  }
+                ]
+              }
+            ],
+            "relatedRouteCount": 1,
+            "matchedReasons": [
+              "synthetic fixture"
+            ]
+          },
+          {
+            "type": "place",
+            "id": "20000000-0000-4000-8000-000000000023",
+            "name": "城市展览空间",
+            "city": {
+              "id": "10000000-0000-4000-8000-000000000010",
+              "name": "台北",
+              "countryCode": "TW"
+            },
+            "verification": "unverified",
+            "relatedArtists": [
+              {
+                "id": "10000000-0000-4000-8000-000000000001",
+                "canonicalName": "苏打绿",
+                "artistType": "band",
+                "verification": "verified"
+              }
+            ],
+            "topVerifiedRelation": null,
+            "relations": [
+              {
+                "id": "20000000-0000-4000-8000-000000000033",
+                "artist": {
+                  "id": "10000000-0000-4000-8000-000000000001",
+                  "canonicalName": "苏打绿",
+                  "artistType": "band",
+                  "verification": "verified"
+                },
+                "placeId": "20000000-0000-4000-8000-000000000023",
+                "relationType": "fan_lead",
+                "explanation": "合成线索用于布局验证；不声称艺人真实到访。",
+                "verification": "unverified",
+                "caveat": "示例关联尚未核验",
+                "claims": [],
+                "sources": [
+                  {
+                    "id": "10000000-0000-4000-8000-000000000050",
+                    "sourceType": "fan_submission",
+                    "title": "测试来源；并非真实到访",
+                    "url": "https://example.com/synthetic",
+                    "excerpt": null,
+                    "observedAt": "2026-09-01T00:00:00Z",
+                    "availability": "unavailable",
+                    "lastCheckedAt": "2026-10-01T00:00:00Z"
+                  }
+                ]
+              }
+            ],
+            "relatedRouteCount": 1,
+            "matchedReasons": [
+              "synthetic fixture"
+            ]
+          },
+          {
+            "type": "place",
+            "id": "20000000-0000-4000-8000-000000000024",
+            "name": "夜间小剧场",
+            "city": {
+              "id": "10000000-0000-4000-8000-000000000010",
+              "name": "台北",
+              "countryCode": "TW"
+            },
+            "verification": "unverified",
+            "relatedArtists": [
+              {
+                "id": "10000000-0000-4000-8000-000000000001",
+                "canonicalName": "苏打绿",
+                "artistType": "band",
+                "verification": "verified"
+              }
+            ],
+            "topVerifiedRelation": null,
+            "relations": [
+              {
+                "id": "20000000-0000-4000-8000-000000000034",
+                "artist": {
+                  "id": "10000000-0000-4000-8000-000000000001",
+                  "canonicalName": "苏打绿",
+                  "artistType": "band",
+                  "verification": "verified"
+                },
+                "placeId": "20000000-0000-4000-8000-000000000024",
+                "relationType": "fan_lead",
+                "explanation": "合成线索用于布局验证；不声称艺人真实到访。",
+                "verification": "unverified",
+                "caveat": "示例关联尚未核验",
+                "claims": [],
+                "sources": [
+                  {
+                    "id": "10000000-0000-4000-8000-000000000050",
+                    "sourceType": "fan_submission",
+                    "title": "测试来源；并非真实到访",
+                    "url": "https://example.com/synthetic",
+                    "excerpt": null,
+                    "observedAt": "2026-09-01T00:00:00Z",
+                    "availability": "unavailable",
+                    "lastCheckedAt": "2026-10-01T00:00:00Z"
+                  }
+                ]
+              }
+            ],
+            "relatedRouteCount": 1,
+            "matchedReasons": [
+              "synthetic fixture"
+            ]
+          },
+          {
+            "type": "place",
+            "id": "10000000-0000-4000-8000-000000000021",
+            "name": "南京测试展馆",
+            "city": {
+              "id": "10000000-0000-4000-8000-000000000011",
+              "name": "南京",
+              "countryCode": "CN"
+            },
+            "verification": "unverified",
+            "relatedArtists": [
+              {
+                "id": "10000000-0000-4000-8000-000000000001",
+                "canonicalName": "苏打绿",
+                "artistType": "band",
+                "verification": "verified"
+              }
+            ],
+            "topVerifiedRelation": null,
+            "relations": [
+              {
+                "id": "20000000-0000-4000-8000-000000000035",
+                "artist": {
+                  "id": "10000000-0000-4000-8000-000000000001",
+                  "canonicalName": "苏打绿",
+                  "artistType": "band",
+                  "verification": "verified"
+                },
+                "placeId": "10000000-0000-4000-8000-000000000021",
+                "relationType": "fan_lead",
+                "explanation": "合成线索用于布局验证；不声称艺人真实到访。",
+                "verification": "unverified",
+                "caveat": "示例关联尚未核验",
+                "claims": [],
+                "sources": [
+                  {
+                    "id": "10000000-0000-4000-8000-000000000050",
+                    "sourceType": "fan_submission",
+                    "title": "测试来源；并非真实到访",
+                    "url": "https://example.com/synthetic",
+                    "excerpt": null,
+                    "observedAt": "2026-09-01T00:00:00Z",
+                    "availability": "unavailable",
+                    "lastCheckedAt": "2026-10-01T00:00:00Z"
+                  }
+                ]
+              }
+            ],
+            "relatedRouteCount": 1,
+            "matchedReasons": [
+              "synthetic fixture"
+            ]
+          }
+        ],
+        "status": "searched",
+        "page": {
+          "limit": 10,
+          "offset": 0,
+          "hasMore": false
+        }
+      },
+      {
+        "type": "event",
+        "items": [
+          {
+            "type": "event",
+            "id": "10000000-0000-4000-8000-000000000080",
+            "title": "[TEST]春日现场",
+            "artists": [
+              {
+                "id": "10000000-0000-4000-8000-000000000001",
+                "canonicalName": "苏打绿",
+                "artistType": "band",
+                "verification": "verified"
+              }
+            ],
+            "startsAt": "2026-12-01T10:00:00Z",
+            "endsAt": null,
+            "venue": {
+              "id": "10000000-0000-4000-8000-000000000020",
+              "name": "春日书店"
+            },
+            "city": {
+              "id": "10000000-0000-4000-8000-000000000010",
+              "name": "台北",
+              "countryCode": "TW"
+            },
+            "state": "cancelled",
+            "publication": "published",
+            "verification": "partial",
+            "hero": null,
+            "matchedReasons": [
+              "synthetic fixture"
+            ]
+          }
+        ],
+        "status": "searched",
+        "page": {
+          "limit": 10,
+          "offset": 0,
+          "hasMore": false
+        }
+      }
+    ],
+    "requestId": "synthetic:wireframe:phase-a"
+  },
+  "presentation": {
+    "photoSpot": null,
+    "angle": null,
+    "extraCityLabels": [
+      "杭州",
+      "上海",
+      "成都",
+      "北京"
+    ],
+    "year": null
+  }
+}
+</script>
+<noscript><p>请启用 JavaScript 使用交互原型。</p></noscript>
+</body>
+</html>

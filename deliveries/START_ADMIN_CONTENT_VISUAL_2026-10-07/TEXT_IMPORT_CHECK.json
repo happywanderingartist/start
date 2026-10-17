@@ -1,0 +1,17 @@
+{
+  "kind": "browser with controlled API fixtures; real model/map checked separately",
+  "checks": [
+    "append preserves six original stops; POI data unverified; undo only new unreferenced places",
+    "place collection imports independently without creating route",
+    "name/city edits clear POI; source edits invalidate previous candidates",
+    "manual supplement, ordering, deletion work",
+    "late extraction after cancel ignored",
+    "manual correction during pending recognition wins over late response",
+    "model unavailable retains input and allows manual fallback",
+    "spoofed parent message rejected",
+    "overlong input never silently truncated",
+    "seven widths, populated state, parent and embedded document no horizontal overflow",
+    "nested map prefill; Escape closes nested then outer; reduced motion"
+  ],
+  "errors": []
+}

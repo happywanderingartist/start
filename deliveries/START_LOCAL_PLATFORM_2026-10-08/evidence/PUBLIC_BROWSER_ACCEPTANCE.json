@@ -1,0 +1,220 @@
+{
+  "at": "2026-10-17T06:11:19.214Z",
+  "database": "start_test_public_98f95cbf7946438b9e0d9891f3ead814",
+  "testDataOnly": true,
+  "checks": [
+    "empty database never backfills synthetic places",
+    "skip link focuses content without changing application route",
+    "unpublished draft absent",
+    "published content reaches homepage",
+    "artist city category filters preserve independent routes",
+    "one place presents independently approved evidence from multiple artists",
+    "point evidence artist route event relation and back filter restoration",
+    "community market remains reachable with event venue binding",
+    "draft edit remains private until publish then refresh updates detail",
+    "withdrawn deep link has no cached or fixture fallback",
+    "route does not invent withdrawn station",
+    "unknown valid id fails honestly",
+    "network failure exposes working retry",
+    "all artists clears prior artist filter",
+    "slow obsolete city request cannot overwrite newer selection",
+    {
+      "width": 320,
+      "url": "#/"
+    },
+    {
+      "width": 320,
+      "url": "#/discover?city=上海"
+    },
+    {
+      "width": 320,
+      "url": "#/artist/1d9011ef-5adf-4f87-a057-93bb9b0e91a2?city=济南"
+    },
+    {
+      "width": 320,
+      "url": "#/community/5854a318-20d5-4e92-b90f-12614c115739"
+    },
+    {
+      "width": 320,
+      "url": "#/route/21210738-eda8-4f6b-b8b4-9d886a6dd566"
+    },
+    {
+      "width": 320,
+      "url": "#/event/bd7e3062-9c24-4997-a194-0c98f1a09db3"
+    },
+    {
+      "width": 320,
+      "url": "#/place/0d1bd834-285f-4847-8a26-530b82e25a71"
+    },
+    {
+      "width": 375,
+      "url": "#/"
+    },
+    {
+      "width": 375,
+      "url": "#/discover?city=上海"
+    },
+    {
+      "width": 375,
+      "url": "#/artist/1d9011ef-5adf-4f87-a057-93bb9b0e91a2?city=济南"
+    },
+    {
+      "width": 375,
+      "url": "#/community/5854a318-20d5-4e92-b90f-12614c115739"
+    },
+    {
+      "width": 375,
+      "url": "#/route/21210738-eda8-4f6b-b8b4-9d886a6dd566"
+    },
+    {
+      "width": 375,
+      "url": "#/event/bd7e3062-9c24-4997-a194-0c98f1a09db3"
+    },
+    {
+      "width": 375,
+      "url": "#/place/0d1bd834-285f-4847-8a26-530b82e25a71"
+    },
+    {
+      "width": 390,
+      "url": "#/"
+    },
+    {
+      "width": 390,
+      "url": "#/discover?city=上海"
+    },
+    {
+      "width": 390,
+      "url": "#/artist/1d9011ef-5adf-4f87-a057-93bb9b0e91a2?city=济南"
+    },
+    {
+      "width": 390,
+      "url": "#/community/5854a318-20d5-4e92-b90f-12614c115739"
+    },
+    {
+      "width": 390,
+      "url": "#/route/21210738-eda8-4f6b-b8b4-9d886a6dd566"
+    },
+    {
+      "width": 390,
+      "url": "#/event/bd7e3062-9c24-4997-a194-0c98f1a09db3"
+    },
+    {
+      "width": 390,
+      "url": "#/place/0d1bd834-285f-4847-8a26-530b82e25a71"
+    },
+    {
+      "width": 414,
+      "url": "#/"
+    },
+    {
+      "width": 414,
+      "url": "#/discover?city=上海"
+    },
+    {
+      "width": 414,
+      "url": "#/artist/1d9011ef-5adf-4f87-a057-93bb9b0e91a2?city=济南"
+    },
+    {
+      "width": 414,
+      "url": "#/community/5854a318-20d5-4e92-b90f-12614c115739"
+    },
+    {
+      "width": 414,
+      "url": "#/route/21210738-eda8-4f6b-b8b4-9d886a6dd566"
+    },
+    {
+      "width": 414,
+      "url": "#/event/bd7e3062-9c24-4997-a194-0c98f1a09db3"
+    },
+    {
+      "width": 414,
+      "url": "#/place/0d1bd834-285f-4847-8a26-530b82e25a71"
+    },
+    {
+      "width": 768,
+      "url": "#/"
+    },
+    {
+      "width": 768,
+      "url": "#/discover?city=上海"
+    },
+    {
+      "width": 768,
+      "url": "#/artist/1d9011ef-5adf-4f87-a057-93bb9b0e91a2?city=济南"
+    },
+    {
+      "width": 768,
+      "url": "#/community/5854a318-20d5-4e92-b90f-12614c115739"
+    },
+    {
+      "width": 768,
+      "url": "#/route/21210738-eda8-4f6b-b8b4-9d886a6dd566"
+    },
+    {
+      "width": 768,
+      "url": "#/event/bd7e3062-9c24-4997-a194-0c98f1a09db3"
+    },
+    {
+      "width": 768,
+      "url": "#/place/0d1bd834-285f-4847-8a26-530b82e25a71"
+    },
+    {
+      "width": 834,
+      "url": "#/"
+    },
+    {
+      "width": 834,
+      "url": "#/discover?city=上海"
+    },
+    {
+      "width": 834,
+      "url": "#/artist/1d9011ef-5adf-4f87-a057-93bb9b0e91a2?city=济南"
+    },
+    {
+      "width": 834,
+      "url": "#/community/5854a318-20d5-4e92-b90f-12614c115739"
+    },
+    {
+      "width": 834,
+      "url": "#/route/21210738-eda8-4f6b-b8b4-9d886a6dd566"
+    },
+    {
+      "width": 834,
+      "url": "#/event/bd7e3062-9c24-4997-a194-0c98f1a09db3"
+    },
+    {
+      "width": 834,
+      "url": "#/place/0d1bd834-285f-4847-8a26-530b82e25a71"
+    },
+    {
+      "width": 1440,
+      "url": "#/"
+    },
+    {
+      "width": 1440,
+      "url": "#/discover?city=上海"
+    },
+    {
+      "width": 1440,
+      "url": "#/artist/1d9011ef-5adf-4f87-a057-93bb9b0e91a2?city=济南"
+    },
+    {
+      "width": 1440,
+      "url": "#/community/5854a318-20d5-4e92-b90f-12614c115739"
+    },
+    {
+      "width": 1440,
+      "url": "#/route/21210738-eda8-4f6b-b8b4-9d886a6dd566"
+    },
+    {
+      "width": 1440,
+      "url": "#/event/bd7e3062-9c24-4997-a194-0c98f1a09db3"
+    },
+    {
+      "width": 1440,
+      "url": "#/place/0d1bd834-285f-4847-8a26-530b82e25a71"
+    },
+    "keyboard search and reduced motion"
+  ],
+  "errors": []
+}

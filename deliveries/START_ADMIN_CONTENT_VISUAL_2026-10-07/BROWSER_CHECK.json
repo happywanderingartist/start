@@ -1,0 +1,226 @@
+{
+  "widths": [
+    {
+      "width": 320,
+      "view": "library",
+      "overflow": false
+    },
+    {
+      "width": 320,
+      "view": "place",
+      "overflow": false
+    },
+    {
+      "width": 320,
+      "view": "route",
+      "overflow": false
+    },
+    {
+      "width": 320,
+      "view": "event",
+      "overflow": false
+    },
+    {
+      "width": 320,
+      "view": "media",
+      "overflow": false
+    },
+    {
+      "width": 320,
+      "view": "review",
+      "overflow": false
+    },
+    {
+      "width": 375,
+      "view": "library",
+      "overflow": false
+    },
+    {
+      "width": 375,
+      "view": "place",
+      "overflow": false
+    },
+    {
+      "width": 375,
+      "view": "route",
+      "overflow": false
+    },
+    {
+      "width": 375,
+      "view": "event",
+      "overflow": false
+    },
+    {
+      "width": 375,
+      "view": "media",
+      "overflow": false
+    },
+    {
+      "width": 375,
+      "view": "review",
+      "overflow": false
+    },
+    {
+      "width": 390,
+      "view": "library",
+      "overflow": false
+    },
+    {
+      "width": 390,
+      "view": "place",
+      "overflow": false
+    },
+    {
+      "width": 390,
+      "view": "route",
+      "overflow": false
+    },
+    {
+      "width": 390,
+      "view": "event",
+      "overflow": false
+    },
+    {
+      "width": 390,
+      "view": "media",
+      "overflow": false
+    },
+    {
+      "width": 390,
+      "view": "review",
+      "overflow": false
+    },
+    {
+      "width": 414,
+      "view": "library",
+      "overflow": false
+    },
+    {
+      "width": 414,
+      "view": "place",
+      "overflow": false
+    },
+    {
+      "width": 414,
+      "view": "route",
+      "overflow": false
+    },
+    {
+      "width": 414,
+      "view": "event",
+      "overflow": false
+    },
+    {
+      "width": 414,
+      "view": "media",
+      "overflow": false
+    },
+    {
+      "width": 414,
+      "view": "review",
+      "overflow": false
+    },
+    {
+      "width": 768,
+      "view": "library",
+      "overflow": false
+    },
+    {
+      "width": 768,
+      "view": "place",
+      "overflow": false
+    },
+    {
+      "width": 768,
+      "view": "route",
+      "overflow": false
+    },
+    {
+      "width": 768,
+      "view": "event",
+      "overflow": false
+    },
+    {
+      "width": 768,
+      "view": "media",
+      "overflow": false
+    },
+    {
+      "width": 768,
+      "view": "review",
+      "overflow": false
+    },
+    {
+      "width": 834,
+      "view": "library",
+      "overflow": false
+    },
+    {
+      "width": 834,
+      "view": "place",
+      "overflow": false
+    },
+    {
+      "width": 834,
+      "view": "route",
+      "overflow": false
+    },
+    {
+      "width": 834,
+      "view": "event",
+      "overflow": false
+    },
+    {
+      "width": 834,
+      "view": "media",
+      "overflow": false
+    },
+    {
+      "width": 834,
+      "view": "review",
+      "overflow": false
+    },
+    {
+      "width": 1440,
+      "view": "library",
+      "overflow": false
+    },
+    {
+      "width": 1440,
+      "view": "place",
+      "overflow": false
+    },
+    {
+      "width": 1440,
+      "view": "route",
+      "overflow": false
+    },
+    {
+      "width": 1440,
+      "view": "event",
+      "overflow": false
+    },
+    {
+      "width": 1440,
+      "view": "media",
+      "overflow": false
+    },
+    {
+      "width": 1440,
+      "view": "review",
+      "overflow": false
+    }
+  ],
+  "flows": [
+    "catalog search/clear",
+    "edit title/cover/preview/unsaved retain/session save/blocked publish",
+    "new route/empty/add existing place/save to catalog",
+    "route reorder/preview references same place",
+    "local image preview/reject unsupported file/no upload",
+    "return requires reason/demo approve requires two checks",
+    "refresh resets demo data",
+    "keyboard navigation/preview/Escape/reduced motion"
+  ],
+  "errors": [],
+  "writes": []
+}

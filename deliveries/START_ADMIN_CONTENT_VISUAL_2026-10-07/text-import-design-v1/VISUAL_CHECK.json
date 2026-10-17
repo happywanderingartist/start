@@ -1,0 +1,18 @@
+{
+  "staticDesignOnly": true,
+  "urls": {
+    "local": "http://127.0.0.1:4327/text-import-design-v1/TEXT_IMPORT_VISUAL.html",
+    "openDesign": "http://127.0.0.1:53625/api/projects/23d86b85-b67b-42f0-8b1b-d7c118a9d81c/raw/admin-content-visual-v1/text-import-design-v1/TEXT_IMPORT_VISUAL.html"
+  },
+  "pageErrors": [],
+  "local": {
+    "status": 200,
+    "noPageOverflow": true,
+    "hashMatches": true
+  },
+  "openDesign": {
+    "status": 200,
+    "noPageOverflow": true,
+    "hashMatches": true
+  }
+}

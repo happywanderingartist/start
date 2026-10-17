@@ -1,0 +1,244 @@
+{
+  "at": "2026-10-17T07:34:53.663Z",
+  "syntax": [
+    {
+      "file": "deliveries/START_LOCAL_PLATFORM_2026-10-08/acceptance.mjs",
+      "passed": true
+    },
+    {
+      "file": "deliveries/START_LOCAL_PLATFORM_2026-10-08/boot.mjs",
+      "passed": true
+    },
+    {
+      "file": "deliveries/START_LOCAL_PLATFORM_2026-10-08/build-admin.mjs",
+      "passed": true
+    },
+    {
+      "file": "deliveries/START_LOCAL_PLATFORM_2026-10-08/build-public.mjs",
+      "passed": true
+    },
+    {
+      "file": "deliveries/START_LOCAL_PLATFORM_2026-10-08/client.mjs",
+      "passed": true
+    },
+    {
+      "file": "deliveries/START_LOCAL_PLATFORM_2026-10-08/evidence/legacy/isolated-regression.mjs",
+      "passed": true
+    },
+    {
+      "file": "deliveries/START_LOCAL_PLATFORM_2026-10-08/public-ui/book.mjs",
+      "passed": true
+    },
+    {
+      "file": "deliveries/START_LOCAL_PLATFORM_2026-10-08/public-ui/community-membership.mjs",
+      "passed": true
+    },
+    {
+      "file": "deliveries/START_LOCAL_PLATFORM_2026-10-08/public-ui/legacy-bridge.js",
+      "passed": true
+    },
+    {
+      "file": "deliveries/START_LOCAL_PLATFORM_2026-10-08/public-ui/market.mjs",
+      "passed": true
+    },
+    {
+      "file": "deliveries/START_LOCAL_PLATFORM_2026-10-08/public-ui/private-views.mjs",
+      "passed": true
+    },
+    {
+      "file": "deliveries/START_LOCAL_PLATFORM_2026-10-08/public-ui/public.js",
+      "passed": true
+    },
+    {
+      "file": "deliveries/START_LOCAL_PLATFORM_2026-10-08/public-ui/route-stops.mjs",
+      "passed": true
+    },
+    {
+      "file": "deliveries/START_LOCAL_PLATFORM_2026-10-08/public-ui/sortable.mjs",
+      "passed": true
+    },
+    {
+      "file": "deliveries/START_LOCAL_PLATFORM_2026-10-08/public-ui/submission-tools.mjs",
+      "passed": true
+    },
+    {
+      "file": "deliveries/START_LOCAL_PLATFORM_2026-10-08/report-evidence.mjs",
+      "passed": true
+    },
+    {
+      "file": "deliveries/START_LOCAL_PLATFORM_2026-10-08/server.mjs",
+      "passed": true
+    },
+    {
+      "file": "deliveries/START_LOCAL_PLATFORM_2026-10-08/src/community.mjs",
+      "passed": true
+    },
+    {
+      "file": "deliveries/START_LOCAL_PLATFORM_2026-10-08/src/content.mjs",
+      "passed": true
+    },
+    {
+      "file": "deliveries/START_LOCAL_PLATFORM_2026-10-08/src/context.mjs",
+      "passed": true
+    },
+    {
+      "file": "deliveries/START_LOCAL_PLATFORM_2026-10-08/src/contracts.mjs",
+      "passed": true
+    },
+    {
+      "file": "deliveries/START_LOCAL_PLATFORM_2026-10-08/src/http.mjs",
+      "passed": true
+    },
+    {
+      "file": "deliveries/START_LOCAL_PLATFORM_2026-10-08/src/integrations.mjs",
+      "passed": true
+    },
+    {
+      "file": "deliveries/START_LOCAL_PLATFORM_2026-10-08/src/market.mjs",
+      "passed": true
+    },
+    {
+      "file": "deliveries/START_LOCAL_PLATFORM_2026-10-08/src/media.mjs",
+      "passed": true
+    },
+    {
+      "file": "deliveries/START_LOCAL_PLATFORM_2026-10-08/src/personal.mjs",
+      "passed": true
+    },
+    {
+      "file": "deliveries/START_LOCAL_PLATFORM_2026-10-08/src/platform.mjs",
+      "passed": true
+    },
+    {
+      "file": "deliveries/START_LOCAL_PLATFORM_2026-10-08/src/public-media.mjs",
+      "passed": true
+    },
+    {
+      "file": "deliveries/START_LOCAL_PLATFORM_2026-10-08/src/runtime.mjs",
+      "passed": true
+    },
+    {
+      "file": "deliveries/START_LOCAL_PLATFORM_2026-10-08/src/static.mjs",
+      "passed": true
+    },
+    {
+      "file": "deliveries/START_LOCAL_PLATFORM_2026-10-08/sync-open-design.mjs",
+      "passed": true
+    },
+    {
+      "file": "deliveries/START_LOCAL_PLATFORM_2026-10-08/sync-public-open-design.mjs",
+      "passed": true
+    },
+    {
+      "file": "deliveries/START_LOCAL_PLATFORM_2026-10-08/tests/additional.test.mjs",
+      "passed": true
+    },
+    {
+      "file": "deliveries/START_LOCAL_PLATFORM_2026-10-08/tests/backup-acceptance.mjs",
+      "passed": true
+    },
+    {
+      "file": "deliveries/START_LOCAL_PLATFORM_2026-10-08/tests/book-browser-acceptance.mjs",
+      "passed": true
+    },
+    {
+      "file": "deliveries/START_LOCAL_PLATFORM_2026-10-08/tests/browser-acceptance.mjs",
+      "passed": true
+    },
+    {
+      "file": "deliveries/START_LOCAL_PLATFORM_2026-10-08/tests/client-workflow.test.mjs",
+      "passed": true
+    },
+    {
+      "file": "deliveries/START_LOCAL_PLATFORM_2026-10-08/tests/community-browser-acceptance.mjs",
+      "passed": true
+    },
+    {
+      "file": "deliveries/START_LOCAL_PLATFORM_2026-10-08/tests/extraction-auth.test.mjs",
+      "passed": true
+    },
+    {
+      "file": "deliveries/START_LOCAL_PLATFORM_2026-10-08/tests/extractor-live-smoke.mjs",
+      "passed": true
+    },
+    {
+      "file": "deliveries/START_LOCAL_PLATFORM_2026-10-08/tests/fetch-sortable.mjs",
+      "passed": true
+    },
+    {
+      "file": "deliveries/START_LOCAL_PLATFORM_2026-10-08/tests/http-media.test.mjs",
+      "passed": true
+    },
+    {
+      "file": "deliveries/START_LOCAL_PLATFORM_2026-10-08/tests/legacy-acceptance.mjs",
+      "passed": true
+    },
+    {
+      "file": "deliveries/START_LOCAL_PLATFORM_2026-10-08/tests/local-smoke.mjs",
+      "passed": true
+    },
+    {
+      "file": "deliveries/START_LOCAL_PLATFORM_2026-10-08/tests/market-browser-acceptance.mjs",
+      "passed": true
+    },
+    {
+      "file": "deliveries/START_LOCAL_PLATFORM_2026-10-08/tests/module-loading.test.mjs",
+      "passed": true
+    },
+    {
+      "file": "deliveries/START_LOCAL_PLATFORM_2026-10-08/tests/platform.test.mjs",
+      "passed": true
+    },
+    {
+      "file": "deliveries/START_LOCAL_PLATFORM_2026-10-08/tests/private-browser-acceptance.mjs",
+      "passed": true
+    },
+    {
+      "file": "deliveries/START_LOCAL_PLATFORM_2026-10-08/tests/private-ui-contract.test.mjs",
+      "passed": true
+    },
+    {
+      "file": "deliveries/START_LOCAL_PLATFORM_2026-10-08/tests/public-browser-acceptance.mjs",
+      "passed": true
+    },
+    {
+      "file": "deliveries/START_LOCAL_PLATFORM_2026-10-08/tests/public-preview-smoke.mjs",
+      "passed": true
+    },
+    {
+      "file": "deliveries/START_LOCAL_PLATFORM_2026-10-08/tests/route-stops-contract.test.mjs",
+      "passed": true
+    },
+    {
+      "file": "deliveries/START_LOCAL_PLATFORM_2026-10-08/ui/admin.js",
+      "passed": true
+    },
+    {
+      "file": "deliveries/START_LOCAL_PLATFORM_2026-10-08/ui/bootstrap.js",
+      "passed": true
+    },
+    {
+      "file": ".worktrees/fan-route-v0.2/worker/map/amap.js",
+      "passed": true
+    },
+    {
+      "file": ".worktrees/fan-route-v0.2/worker/map/cache.js",
+      "passed": true
+    },
+    {
+      "file": ".worktrees/fan-route-v0.2/worker/map/contracts.js",
+      "passed": true
+    },
+    {
+      "file": ".worktrees/fan-route-v0.2/worker/map/errors.js",
+      "passed": true
+    }
+  ],
+  "tests": [
+    {
+      "name": "module-contract",
+      "passed": true,
+      "output": "✔ every browser module import is served at its resolved URL (16.2322ms)\n✔ private workspace exposes clear sections and auth boundary (2.9133ms)\n✔ submission form distinguishes place and route and gives labelled fields (0.6077ms)\n✔ private view is wired into the public shell and static allowlist (0.2372ms)\n✔ route submission accepts ordered existing and map-selected new stops (5.0631ms)\n✔ route rejects ambiguous stop sources, duplicate POIs and incomplete coordinates (2.5559ms)\nℹ tests 6\nℹ suites 0\nℹ pass 6\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 439.1735\n"
+    }
+  ]
+}
